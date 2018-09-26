@@ -24,7 +24,11 @@
 <meta property="og:description" content="Hugo是一个用Go编写的静态站点生成器，由于具有丰富的主题资源和惊人的生成速度而备受青睐。本博客即是基于Hugo搭建，下面讲述一下我的建站历程以及踩的几个大坑（此处手动Doge…）。">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://ws1.sinaimg.cn/large/006tNbRwly1fvimvpcx7dj30do02g74a.jpg">
-<meta property="og:updated_time" content="2018-09-25T11:07:01.933Z">
+<meta property="og:image" content="https://ws3.sinaimg.cn/large/006tNc79ly1fvmz2x6huhj30zq04ytbn.jpg">
+<meta property="og:image" content="https://ws3.sinaimg.cn/large/006tNc79ly1fvmz5res74j31ic0nqtbg.jpg">
+<meta property="og:image" content="https://ws2.sinaimg.cn/large/006tNc79ly1fvmzc3x3wtj315m0y2jx9.jpg">
+<meta property="og:image" content="https://ws3.sinaimg.cn/large/006tNc79ly1fvmzdi2rllj309o01wjrf.jpg">
+<meta property="og:updated_time" content="2018-09-26T09:17:37.392Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="使用HUGO搭建个人博客">
 <meta name="twitter:description" content="Hugo是一个用Go编写的静态站点生成器，由于具有丰富的主题资源和惊人的生成速度而备受青睐。本博客即是基于Hugo搭建，下面讲述一下我的建站历程以及踩的几个大坑（此处手动Doge…）。">
@@ -200,7 +204,7 @@
                 
                 <section class="switch-part switch-part2">
                     <div class="widget tagcloud" id="js-tagcloud">
-                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/">Python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/网站建设/">网站建设</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/面试/">面试</a></li></ul>
+                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/">Python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/网站建设/">网站建设</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/面试/">面试</a></li></ul>
                     </div>
                 </section>
                 
@@ -213,7 +217,7 @@
                     
                       <a class="main-nav-link switch-friends-link" href="https://www.weiweiblog.cn/">尾尾部落</a>
                     
-                      <a class="main-nav-link switch-friends-link" href="https://huzhiqiang.tech/">Hu&#39;s Blos</a>
+                      <a class="main-nav-link switch-friends-link" href="https://huzhiqiang.tech/">Hu&#39;s Blog</a>
                     
                     </div>
                 </section>
@@ -346,11 +350,21 @@
 <li>在GitHub新建一个Repository命名为<code>ShaneTian.github.io</code>，其中<code>ShaneTian</code>改成自己的GitHub账户名；</li>
 <li>在<code>/mysite</code>外建立一个平行的文件夹，此处假设也命名为<code>/ShaneTian.github.io</code>；</li>
 <li>进入<code>/public</code>文件夹将内容复制到<code>/ShaneTian.github.io</code>；</li>
-<li>将<code>/ShaneTian.github.io</code>的内容<code>push</code>到远程仓库。<br>以上命令可在命令行通过以下语句实现：<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">mkdir ShaneTian.github.io</span><br><span class="line">cd mysite/public</span><br><span class="line">cp -r . ../../ShaneTian.github.io</span><br><span class="line">cd ../../ShaneTian.github.io</span><br><span class="line">git init</span><br><span class="line">git add .</span><br><span class="line">git commit -m "commit message"</span><br><span class="line">git remote add origin https://github.com/ShaneTian/ShaneTian.github.io.git</span><br><span class="line">git push -u origin master</span><br></pre></td></tr></table></figure>
-</li>
+<li>将<code>/ShaneTian.github.io</code>的内容<code>push</code>到远程仓库。</li>
 </ol>
+<p>以上命令可在命令行通过以下语句实现：<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">mkdir ShaneTian.github.io</span><br><span class="line">cd mysite/public</span><br><span class="line">cp -r . ../../ShaneTian.github.io</span><br><span class="line">cd ../../ShaneTian.github.io</span><br><span class="line">git init</span><br><span class="line">git add .</span><br><span class="line">git commit -m "commit message"</span><br><span class="line">git remote add origin https://github.com/ShaneTian/ShaneTian.github.io.git</span><br><span class="line">git push -u origin master</span><br></pre></td></tr></table></figure></p>
 <p>完成以上命令后，等待一分钟左右即可在 <a href="https://shanetian.github.io/" target="_blank" rel="noopener">https://shanetian.github.io/</a> 访问你的网站。<br>以后每次更新文章后只用将生成的<code>/public</code>文件夹的静态网站内容复制到<code>/ShaneTian.github.io</code>，然后再<code>push</code>到远程仓库即可。也可将步骤写为<code>Shell</code>脚本，此处不再赘述。</p>
-<h2 id="使用自己的域名"><a href="#使用自己的域名" class="headerlink" title="使用自己的域名"></a>使用自己的域名</h2><p>当然，GitHub的域名怎么能满足装*的心理，这时可以将网站设置为自己的域名。购买域名的地方很多，如国外知名网站<a href="https://sg.godaddy.com/zh/" target="_blank" rel="noopener">GoDaddy</a></p>
+<h2 id="使用自己的域名"><a href="#使用自己的域名" class="headerlink" title="使用自己的域名"></a>使用自己的域名</h2><p>当然，GitHub的域名怎么能满足装*的心理，这时可以将网站设置为自己的域名。购买域名的地方很多，如国外知名网站<a href="https://sg.godaddy.com/zh/" target="_blank" rel="noopener">GoDaddy</a>，简体中文页面、支持支付宝付款、不用备案等都带来了很多方便。我的域名<a href="https://suixinblog.cn">suixinblog.cn</a>即是在此购买。购买域名后完成下面两步即可访问自己的域名：</p>
+<ol>
+<li>在上面存放静态网站的Repository设置里面Custom domain填上自己的域名点击save；</li>
+<li><p>执行以下语句获得自己的GitHub Pages的IP：  </p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ping shanetian.github.io</span><br></pre></td></tr></table></figure>
+<p>即可得到下面的IP地址：<br><img src="https://ws3.sinaimg.cn/large/006tNc79ly1fvmz2x6huhj30zq04ytbn.jpg" alt=""></p>
+</li>
+<li>在域名提供商的网站配置DNS即可，以Godaddy为例配置两条记录如下：<br><img src="https://ws3.sinaimg.cn/large/006tNc79ly1fvmz5res74j31ic0nqtbg.jpg" alt=""></li>
+<li>可以在GitHub Pages设置强制https协议，这样你的网站就有安全锁啦～<br><img src="https://ws2.sinaimg.cn/large/006tNc79ly1fvmzc3x3wtj315m0y2jx9.jpg" alt=""><br><img src="https://ws3.sinaimg.cn/large/006tNc79ly1fvmzdi2rllj309o01wjrf.jpg" alt=""></li>
+</ol>
+<p>大功告成！快去访问你的域名吧！<br><strong>Tips</strong>：<br>另外一款好看的Hugo主题：<a href="https://github.com/laozhu/hugo-nuo" target="_blank" rel="noopener">hugo-nuo</a></p>
 
       
     </div>
@@ -362,7 +376,7 @@
         <p><span>本文标题:</span><a href="/20180925/hugo.html">使用HUGO搭建个人博客</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">Suixin</a></p>
         <p><span>发布时间:</span>2018-09-25, 19:05:33</p>
-        <p><span>最后更新:</span>2018-09-25, 19:07:01</p>
+        <p><span>最后更新:</span>2018-09-26, 17:17:37</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/20180925/hugo.html" title="使用HUGO搭建个人博客">https://suixinblog.cn/20180925/hugo.html</a>
             <span class="copy-path" data-clipboard-text="原文: https://suixinblog.cn/20180925/hugo.html　　作者: Suixin" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
@@ -406,8 +420,8 @@
         .left-col .switch-area {
             display: none;
         }
-        .toc-level-3 i,
-        .toc-level-3 ol {
+        .toc-level-4 i,
+        .toc-level-4 ol {
             display: none !important;
         }
     </style>
@@ -490,7 +504,7 @@
         
     </div>
 
-    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/20180925/mihomegiftbag.html">小米笔试题「小米大礼包」Python代码</a></li><li class="post-list-item"><a class="post-list-link" href="/20180925/hugo.html">使用HUGO搭建个人博客</a></li><li class="post-list-item"><a class="post-list-link" href="/20180924/index.html">Hello World</a></li></ul>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/20180926/hexo.html">从Hugo到Hexo</a></li><li class="post-list-item"><a class="post-list-link" href="/20180925/mihomegiftbag.html">小米笔试题「小米大礼包」Python代码</a></li><li class="post-list-item"><a class="post-list-link" href="/20180925/hugo.html">使用HUGO搭建个人博客</a></li><li class="post-list-item"><a class="post-list-link" href="/20180924/index.html">Hello World</a></li></ul>
 
 
 
