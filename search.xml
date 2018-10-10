@@ -3,6 +3,31 @@
   
     
     <entry>
+      <title>线性分类模型(一)——线性判别函数</title>
+      <link href="/2018/10/linear-classification1.html"/>
+      <url>/2018/10/linear-classification1.html</url>
+      
+        <content type="html"><![CDATA[<p>线性分类模型主要有四种不同的方法，线性判别函数、生成式模型、判别式模型以及贝叶斯观点下的Logistic回归。我们直接考虑对原始输入空间$\pmb{x}$进行分类，当然也适用于对输入变量进行一个固定的变换$\phi(\pmb{x})$。<br>判别函数是一个以向量$\pmb{x}$为输入，把它直接分配到$K$个类别中的某一个类别（$C_k$）的函数。<br><a id="more"></a></p><h2 id="二分类"><a href="#二分类" class="headerlink" title="二分类"></a>二分类</h2><p>线性判别函数为<br>$$<br>y(\pmb{x})=\pmb{w}^\top\pmb{x}+w_0<br>$$<br>如果$y(\pmb{x})\geqslant0$，则它被分到$C_1$中，否则被分到$C_2$中。</p><h2 id="多分类"><a href="#多分类" class="headerlink" title="多分类"></a>多分类</h2><h3 id="造成困难的方法"><a href="#造成困难的方法" class="headerlink" title="造成困难的方法"></a>造成困难的方法</h3><p><strong>‘one-versus-the-rest’</strong>方法使用$K-1$个分类器，每个分类器是一个二分类问题，分开属于$C_k$和不属于的部分。但是可能会产生输入空间无法分类的区域，如图所示。<br><img src="https://ws1.sinaimg.cn/large/006tNbRwly1fw27x8xbuuj30r80nyjsm.jpg" alt=""><br><strong>‘one-versus-one’</strong>方法使用$\frac{K(K-1)}{2}$个分类器，每个数据点的类别根据这些判别函数中的大多数输出类别确定。但是这也可能会产生输入空间无法分类的区域，如图所示。<br><img src="https://ws2.sinaimg.cn/large/006tNbRwly1fw27zv6m6mj30ne0myta5.jpg" alt=""></p><h3 id="正确的方法"><a href="#正确的方法" class="headerlink" title="正确的方法"></a>正确的方法</h3><p>引入一个$K$类判别函数可以避免上述问题。该函数由$K$个线性函数构成：<br>$$y_k(\pmb{x})=\pmb{w}<em>k^\top\pmb{x}+w</em>{k0}$$<br>对于一个数据点$\pmb{x}$，如果$y_k(\pmb{x})$最大，就把它分到$C_k$中。于是类别$C_k$与$C_j$之间的决策面为$y_k(\pmb{x})=y_j(\pmb{x})$。这样的决策区域总是单连通的，并且是凸的。<br>对于二分类问题也可以构造基于两个线性函数$y_1(\pmb{x})$和$y_2(\pmb{x})$的判别函数，只是前述方法更简单且是等价的。</p><h3 id="分类的最小平方法（Least-Squares）求解参数矩阵"><a href="#分类的最小平方法（Least-Squares）求解参数矩阵" class="headerlink" title="分类的最小平方法（Least Squares）求解参数矩阵"></a>分类的最小平方法（Least Squares）求解参数矩阵</h3><p>对于一个一般的$K$分类问题，每个类别$C_k$有一个线性模型<br>$$<br>y_k(\pmb{x})=\pmb{w}<em>k^\top\pmb{x}+w</em>{k0}<br>$$<br>使用矩阵记号<br>$$<br>\pmb{y}(\pmb{x})=\tilde{W}^\top\tilde{\pmb{x}}<br>$$<br>其中，$W^\top=(\tilde{\pmb{w}}_1,\tilde{\pmb{w}}_2,\cdots,\tilde{\pmb{w}}_K)^\top$每行为$\tilde{\pmb{w}}_k^\top$，$\tilde{\pmb{w}}<em>k=(w</em>{k0},\pmb{w}_k^\top)^\top$为列向量，$\tilde{\pmb{x}}=(1,\pmb{x}^\top)^\top$为列向量。<br>一个新的输入$\pmb{x}$将被分到$y_k(\pmb{x})=\tilde{\pmb{w}}_k^\top\tilde{\pmb{x}}$最大的类别中。<br>对于训练集${\pmb{x}_n,\pmb{t}_n}$，其中$n=1,2,\cdots,N$，平方和误差函数为<br>$$<br>E_D(\tilde{W})=\frac{1}{2}Tr{(\tilde{X}\tilde{W}-T)^\top(\tilde{X}\tilde{W}-T)}<br>$$<br>其中，$\tilde{X}=(\tilde{\pmb{x}}_1^\top,\tilde{\pmb{x}}_2^\top,\cdots,\tilde{\pmb{x}}_N^\top)^\top$，$T=(\tilde{\pmb{t}}_1^\top,\tilde{\pmb{t}}_2^\top,\cdots,\tilde{\pmb{t}}_N^\top)^\top$采用‘1-of-K’表示方式。求导可得参数矩阵最优解为<br>$$<br>\tilde{W}=(\tilde{X}^\top\tilde{X})^{-1}\tilde{X}^\top T=\tilde{X}^\dagger T<br>$$<br>即可得判别函数为<br>$$<br>\pmb{y}(\pmb{x})=\tilde{W}^\top\tilde{\pmb{x}}=T^\top(\tilde{X}^\dagger)^\top\tilde{\pmb{x}}<br>$$<br>然而，最小平方解对于离群点缺少鲁棒性，且通常不会给出较好的结果，这与高斯条件分布假设有关。</p><h2 id="Fisher线性判别函数"><a href="#Fisher线性判别函数" class="headerlink" title="Fisher线性判别函数"></a>Fisher线性判别函数</h2><p>针对二分类问题，我们将数据投影到一维，通过调整权向量，使类别之间分开最大。投影式为<br>$$<br>y=\pmb{w}^\top\pmb{x}<br>$$<br>当得到最佳的投影之后，只需设置一个恰当的阈值即可将样本分类。<br>投影之后的类别均值差为<br>$$<br>m_2-m_1=\pmb{w}^\top(\pmb{m}_2-\pmb{m}_1)<br>$$<br>其中，$\pmb{m}_1$和$\pmb{m}_2$为原始数据的类别均值向量，此处限制$\pmb{w}$为单位长度，即$\sum_iw_i^2=1$。<br>Fisher思想：最大化一个函数，使得类均值的投影分开较大，类内的方差较小。<br><strong>Fisher准则</strong>根据类间方差和类内方差的比值定义：<br>$$<br>J(\pmb{w})=\frac{(m_2-m_1)^2}{s_1^2+s_2^2}<br>$$<br>其中，投影后的一维类内方差为$s_k^2=\sum_{n\in C_k}(y_n-m_k)^2$，$y_n=\pmb{w}^\top\pmb{x}_n$。<br>化简可得<br>$$<br>J(\pmb{w})=\frac{\pmb{w}^\top S_B\pmb{w}}{\pmb{w}^\top S_W\pmb{w}}<br>$$<br>其中，$S_B$和$S_W$分别为类间协方差阵和类内协方差阵<br>$$<br>S_B=(\pmb{m}_2-\pmb{m}_1)(\pmb{m}_2-\pmb{m}_1)^\top \<br>S_W=\sum_{n\in C_1}(\pmb{x}_n-\pmb{m}_1)(\pmb{x}_n-\pmb{m}<em>1)^\top+\sum</em>{n\in C_2}(\pmb{x}_n-\pmb{m}_2)(\pmb{x}_n-\pmb{m}_2)^\top<br>$$<br>对$J(\pmb{w})$求导可得<br>$$<br>(\pmb{w}^\top S_B\pmb{w})S_W\pmb{w}=(\pmb{w}^\top S_W\pmb{w})S_B\pmb{w}\<br>\pmb{w}\propto S_W^{-1}(\pmb{m}_2-\pmb{m}_1)<br>$$<br>若类内协方差阵是各向同性的，则$S_W$正比于单位矩阵，$\pmb{w}$正比于原始数据的类均值差。<br>对于多分类问题，也有对应的Fisher判别函数。</p><h2 id="感知器算法"><a href="#感知器算法" class="headerlink" title="感知器算法"></a>感知器算法</h2><p>对输入向量先进行一个固定的非线性变换再构造一个线性模型，为<br>$$<br>y(\pmb{x})=f(\pmb{w}^\top\phi(\pmb{x}))<br>$$<br>其中，$f(·)$为一个阶梯函数<br>$$<br>f(a)= \begin{cases} 1, &amp; a\geqslant0 \ -1, &amp; a<0 \end{cases}="" $$="" 此处我们使用$t="+1$表示$C_1$，$t=-1$表示$C_2$。" 我们需要找到合适的权向量$\pmb{w}$使得对所有的数据点有$\pmb{w}^\top\phi(\pmb{x}_n)\pmb{t}_n="">0$。<br><strong>感知器准则</strong>：对于误分类的数据$\pmb{x}_n$赋予误差，则误差函数为<br>$$<br>E_P(\pmb{w})=-\sum_{n\in \mathscr{M}}\pmb{w}^\top\phi_n\pmb{t}_n<br>$$<br>其中，$\mathscr{M}$表示所有误分类数据的集合。对该误差函数使用随机梯度下降（SGD）<br>$$<br>\pmb{w}^{(\tau+1)}=\pmb{w}^{(\tau)}-\eta\nabla E_P(\pmb{w})=\pmb{w}^{(\tau)}+\eta\phi_n\pmb{t}_n<br>$$<br>由于$f(·)$的设置，不失一般性可设$\eta=1$。<strong>则实际上SGD变为了：如果该数据点分类正确，则权向量保持不变；如果分类错误，对于类别$C_1$，把向量$\phi(\pmb{x}_n)$加到当前的权向量上得到新的权向量，对于类别$C_2$，则从当前的权向量中减掉$\phi(\pmb{x}_n)$得到新的权向量。</strong><br><strong>注</strong>：感知器学习规则并不保证在每个阶段都会减小整体误差。但由感知器收敛定理，如果训练数据线性可分，那么感知器算法可以保证在有限步骤内找到精确解。对于线性不可分数据，则永远不会收敛。</0></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 术业专攻 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 机器学习 </tag>
+            
+            <tag> 分类 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
       <title>Python中正则表达式的特殊字符</title>
       <link href="/2018/09/re.html"/>
       <url>/2018/09/re.html</url>

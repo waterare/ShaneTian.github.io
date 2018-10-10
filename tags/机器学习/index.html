@@ -15,19 +15,13 @@
 
 
 
-<meta name="description" content="Blog 这里是我的个人博客，主要记录学习笔记以及知识汇总。如有不当，请多多指正。博客主题：Yelee from MOxFIVE  About me 理工男，研究僧一枚，爱科技、爱探索、爱吃、爱玩。主要研究方向为机器学习、自然语言处理、知识图谱。  Contact me 社交信息见边栏文末评论留言均可">
 <meta property="og:type" content="website">
-<meta property="og:title" content="About">
-<meta property="og:url" content="https://suixinblog.cn/about/index.html">
+<meta property="og:title" content="Suixin&#39;s Blog">
+<meta property="og:url" content="https://suixinblog.cn/tags/机器学习/index.html">
 <meta property="og:site_name" content="Suixin&#39;s Blog">
-<meta property="og:description" content="Blog 这里是我的个人博客，主要记录学习笔记以及知识汇总。如有不当，请多多指正。博客主题：Yelee from MOxFIVE  About me 理工男，研究僧一枚，爱科技、爱探索、爱吃、爱玩。主要研究方向为机器学习、自然语言处理、知识图谱。  Contact me 社交信息见边栏文末评论留言均可">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://ws1.sinaimg.cn/large/006tNbRwly1fvluxdpgo4g30b408c4je.gif">
-<meta property="og:updated_time" content="2018-09-28T06:55:15.113Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="About">
-<meta name="twitter:description" content="Blog 这里是我的个人博客，主要记录学习笔记以及知识汇总。如有不当，请多多指正。博客主题：Yelee from MOxFIVE  About me 理工男，研究僧一枚，爱科技、爱探索、爱吃、爱玩。主要研究方向为机器学习、自然语言处理、知识图谱。  Contact me 社交信息见边栏文末评论留言均可">
-<meta name="twitter:image" content="https://ws1.sinaimg.cn/large/006tNbRwly1fvluxdpgo4g30b408c4je.gif">
+<meta name="twitter:title" content="Suixin&#39;s Blog">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
@@ -59,7 +53,7 @@
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>About | Suixin&#39;s Blog</title>
+<title>Tag: 机器学习 | Suixin&#39;s Blog</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -71,7 +65,7 @@
         isHome: false,
         isPost: false,
         isArchive: false,
-        isTag: false,
+        isTag: true,
         isCategory: false,
         fancybox_js: "//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.js",
         scrollreveal: "//cdn.bootcss.com/scrollReveal.js/3.1.4/scrollreveal.min.js",
@@ -288,114 +282,60 @@
     </div>
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
 </nav>
-      <div class="body-wrap"><article id="page-" class="article article-type-page" itemscope itemprop="blogPost">
+      <div class="body-wrap">
   
-    <div class="article-meta">
-      <a href="/about/index.html" class="article-date">
-      <time datetime="2018-09-24T14:45:43.000Z" itemprop="datePublished">2018-09-24</time>
+  
+    
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2018" class="archive-year">2018</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+          <div class="article-meta">
+              <a href="/2018/10/linear-classification1.html" class="archive-article-date">
+      <time datetime="2018-10-10T01:30:49.000Z" itemprop="datePublished">10-10</time>
 </a>
 
 
-    </div>
+        </div>
+         
   
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="article-title" itemprop="name">
-      About
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2018/10/linear-classification1.html">线性分类模型(一)——线性判别函数</a>
     </h1>
   
 
-      </header>
-      
-      <div class="article-info article-info-post">
-        
-
-        
-        <div class="clearfix"></div>
-      </div>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
+        <div class="article-info info-on-archive">
           
-              <style>
-    .article-meta { display: none; }
-    #container .article .article-title { padding-right: 0; }
-    .article-header {
-        padding: 0;
-        padding-top: 26px;
-        border-left: none;
-        text-align: center;
-    }
-    .article-header:hover { border-left: none; }
-    .article-title { font-size: 1.6em }
-    .article-entry hr { margin: 0;}
-    .article-meta,
-    #container .article-info-post.article-info { display: none;}
-    #container .article .article-title { padding: 0; }
-</style>
-
-
-          
-        <center><img src="https://ws1.sinaimg.cn/large/006tNbRwly1fvluxdpgo4g30b408c4je.gif" alt=""></center>
-
-<h2 id="Blog"><a href="#Blog" class="headerlink" title="Blog"></a>Blog</h2><blockquote>
-<p>这里是我的个人博客，主要记录学习笔记以及知识汇总。如有不当，请多多指正。<br>博客主题：<a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" rel="noopener">Yelee</a> from <a href="https://github.com/MOxFIVE" target="_blank" rel="noopener">MOxFIVE</a></p>
-</blockquote>
-<h2 id="About-me"><a href="#About-me" class="headerlink" title="About me"></a>About me</h2><blockquote>
-<p>理工男，研究僧一枚，爱科技、爱探索、爱吃、爱玩。<br>主要研究方向为机器学习、自然语言处理、知识图谱。</p>
-</blockquote>
-<h2 id="Contact-me"><a href="#Contact-me" class="headerlink" title="Contact me"></a>Contact me</h2><blockquote>
-<p>社交信息见边栏<br>文末评论留言均可</p>
-</blockquote>
-
-      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/术业专攻/">术业专攻</a>
     </div>
-    
+
+
+          
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/分类/">分类</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/机器学习/">机器学习</a></li></ul>
+    </div>
+
+        </div>
+        <div class="clearfix"></div>
+    </header>
   </div>
-  
-    
-
-
-  
 </article>
-
-
-
-
+  
+  
+    </div></section>
+  
 
     
-        <section id="comments" style="margin: 2em; padding: 2em; background: rgba(255, 255, 255, 0.5)">
-    <div id="vcomment" class="comment"></div>
-    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
-    <script src="//unpkg.com/valine@1.2.0-beta1/dist/Valine.min.js"></script>
-    <script>
-      new Valine({
-        el: '#vcomment',
-        notify: 'true',
-        verify: 'true',
-        app_id: "JbEkmNyN4oduuYuIVapp3mp7-gzGzoHsz",
-        app_key: "lEKLgYFFECP8JrDYvUedV0z7",
-        placeholder: "Just do it!",
-        avatar: "mp"
-      });
-    </script>
-</section>
-    
 
-
-
-
-
-    <script>
-        
-    </script>
 </div>
       <footer id="footer">
     <div class="outer">
