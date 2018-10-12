@@ -25,7 +25,7 @@
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://ws1.sinaimg.cn/large/006tNbRwly1fw27x8xbuuj30r80nyjsm.jpg">
 <meta property="og:image" content="https://ws2.sinaimg.cn/large/006tNbRwly1fw27zv6m6mj30ne0myta5.jpg">
-<meta property="og:updated_time" content="2018-10-10T03:43:33.774Z">
+<meta property="og:updated_time" content="2018-10-12T03:39:16.820Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="线性分类模型(一)——线性判别函数">
 <meta name="twitter:description" content="线性分类模型主要有四种不同的方法，线性判别函数、生成式模型、判别式模型以及贝叶斯观点下的Logistic回归。我们直接考虑对原始输入空间$\pmb{x}$进行分类，当然也适用于对输入变量进行一个固定的变换$\phi(\pmb{x})$。判别函数是一个以向量$\pmb{x}$为输入，把它直接分配到$K$个类别中的某一个类别（$C_k$）的函数。">
@@ -376,6 +376,7 @@ f(a)= \begin{cases} 1, & a\geqslant0 \\ -1, & a<0 \end{cases}</script><p>此处�
 E_P(\pmb{w})=-\sum_{n\in \mathscr{M}}\pmb{w}^\top\phi_n\pmb{t}_n</script><p>其中，$\mathscr{M}$表示所有误分类数据的集合。对该误差函数使用随机梯度下降（SGD）</p>
 <script type="math/tex; mode=display">
 \pmb{w}^{(\tau+1)}=\pmb{w}^{(\tau)}-\eta\nabla E_P(\pmb{w})=\pmb{w}^{(\tau)}+\eta\phi_n\pmb{t}_n</script><p>由于$f(·)$的设置，不失一般性可设$\eta=1$。<strong>则实际上SGD变为了：如果该数据点分类正确，则权向量保持不变；如果分类错误，对于类别$C_1$，把向量$\phi(\pmb{x}_n)$加到当前的权向量上得到新的权向量，对于类别$C_2$，则从当前的权向量中减掉$\phi(\pmb{x}_n)$得到新的权向量。</strong><br><strong>注</strong>：感知器学习规则并不保证在每个阶段都会减小整体误差。但由感知器收敛定理，如果训练数据线性可分，那么感知器算法可以保证在有限步骤内找到精确解。对于线性不可分数据，则永远不会收敛。</p>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><a href="http://xueshu.baidu.com/s?wd=paperuri%3A%28039d5c0802df10a9c04decf174c5409d%29&amp;filter=sc_long_sign&amp;sc_ks_para=q%3DPattern%20Recognition%20and%20Machine%20Learning%20%28Information%20Science%20and%20Statistics%29&amp;sc_us=9652015233931872413&amp;tn=SE_baiduxueshu_c1gjeupa&amp;ie=utf-8" target="_blank" rel="noopener">“Pattern Recognition and Machine Learning”</a></p>
 
       
     </div>
@@ -387,7 +388,7 @@ E_P(\pmb{w})=-\sum_{n\in \mathscr{M}}\pmb{w}^\top\phi_n\pmb{t}_n</script><p>其�
         <p><span>本文标题:</span><a href="/2018/10/linear-classification1.html">线性分类模型(一)——线性判别函数</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">Suixin</a></p>
         <p><span>发布时间:</span>2018-10-10, 09:30:49</p>
-        <p><span>最后更新:</span>2018-10-10, 11:43:33</p>
+        <p><span>最后更新:</span>2018-10-12, 11:39:16</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2018/10/linear-classification1.html" title="线性分类模型(一)——线性判别函数">https://suixinblog.cn/2018/10/linear-classification1.html</a>
             <span class="copy-path" data-clipboard-text="原文: https://suixinblog.cn/2018/10/linear-classification1.html　　作者: Suixin" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
@@ -401,6 +402,12 @@ E_P(\pmb{w})=-\sum_{n\in \mathscr{M}}\pmb{w}^\top\phi_n\pmb{t}_n</script><p>其�
 
 
     <nav id="article-nav">
+        
+            <div id="article-nav-newer" class="article-nav-title">
+                <a href="/2018/10/linear-classification2.html">
+                    线性分类模型(二)——生成式模型
+                </a>
+            </div>
         
         
             <div id="article-nav-older" class="article-nav-title">
@@ -417,7 +424,7 @@ E_P(\pmb{w})=-\sum_{n\in \mathscr{M}}\pmb{w}^\top\phi_n\pmb{t}_n</script><p>其�
     <div id="toc" class="toc-article">
         <strong class="toc-title">文章目录</strong>
         
-            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#二分类"><span class="toc-number">1.</span> <span class="toc-text">二分类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#多分类"><span class="toc-number">2.</span> <span class="toc-text">多分类</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#造成困难的方法"><span class="toc-number">2.1.</span> <span class="toc-text">造成困难的方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#正确的方法"><span class="toc-number">2.2.</span> <span class="toc-text">正确的方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#分类的最小平方法（Least-Squares）求解参数矩阵"><span class="toc-number">2.3.</span> <span class="toc-text">分类的最小平方法（Least Squares）求解参数矩阵</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Fisher线性判别函数"><span class="toc-number">3.</span> <span class="toc-text">Fisher线性判别函数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#感知器算法"><span class="toc-number">4.</span> <span class="toc-text">感知器算法</span></a></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#二分类"><span class="toc-number">1.</span> <span class="toc-text">二分类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#多分类"><span class="toc-number">2.</span> <span class="toc-text">多分类</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#造成困难的方法"><span class="toc-number">2.1.</span> <span class="toc-text">造成困难的方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#正确的方法"><span class="toc-number">2.2.</span> <span class="toc-text">正确的方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#分类的最小平方法（Least-Squares）求解参数矩阵"><span class="toc-number">2.3.</span> <span class="toc-text">分类的最小平方法（Least Squares）求解参数矩阵</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Fisher线性判别函数"><span class="toc-number">3.</span> <span class="toc-text">Fisher线性判别函数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#感知器算法"><span class="toc-number">4.</span> <span class="toc-text">感知器算法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#参考"><span class="toc-number">5.</span> <span class="toc-text">参考</span></a></li></ol>
         
     </div>
     <style>
@@ -465,7 +472,9 @@ E_P(\pmb{w})=-\sum_{n\in \mathscr{M}}\pmb{w}^\top\phi_n\pmb{t}_n</script><p>其�
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
+            <a href="/2018/10/linear-classification2.html" title="上一篇: 线性分类模型(二)——生成式模型">
+                <i class="fa fa-angle-left"></i>
+            </a>
         
 
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
@@ -477,7 +486,7 @@ E_P(\pmb{w})=-\sum_{n\in \mathscr{M}}\pmb{w}^\top\phi_n\pmb{t}_n</script><p>其�
         
     </div>
 
-    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2018/10/linear-classification1.html">线性分类模型(一)——线性判别函数</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/re.html">Python中正则表达式的特殊字符</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/valine.html">评论系统从Disqus到Valine</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/hexo.html">从Hugo到Hexo</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/mihomegiftbag.html">小米笔试题「小米大礼包」Python代码</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/hugo.html">使用HUGO搭建个人博客</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/index.html">Hello World</a></li></ul>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2018/10/linear-classification2.html">线性分类模型(二)——生成式模型</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/10/linear-classification1.html">线性分类模型(一)——线性判别函数</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/re.html">Python中正则表达式的特殊字符</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/valine.html">评论系统从Disqus到Valine</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/hexo.html">从Hugo到Hexo</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/mihomegiftbag.html">小米笔试题「小米大礼包」Python代码</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/hugo.html">使用HUGO搭建个人博客</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/index.html">Hello World</a></li></ul>
 
 
 
