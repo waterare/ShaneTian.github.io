@@ -25,7 +25,7 @@
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://ws1.sinaimg.cn/large/006tNbRwly1fw27x8xbuuj30r80nyjsm.jpg">
 <meta property="og:image" content="https://ws2.sinaimg.cn/large/006tNbRwly1fw27zv6m6mj30ne0myta5.jpg">
-<meta property="og:updated_time" content="2018-10-12T03:39:16.820Z">
+<meta property="og:updated_time" content="2018-10-13T03:44:27.753Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="线性分类模型(一)——线性判别函数">
 <meta name="twitter:description" content="线性分类模型主要有四种不同的方法，线性判别函数、生成式模型、判别式模型以及贝叶斯观点下的Logistic回归。我们直接考虑对原始输入空间$\pmb{x}$进行分类，当然也适用于对输入变量进行一个固定的变换$\phi(\pmb{x})$。判别函数是一个以向量$\pmb{x}$为输入，把它直接分配到$K$个类别中的某一个类别（$C_k$）的函数。">
@@ -205,7 +205,7 @@
                 
                 <section class="switch-part switch-part2">
                     <div class="widget tagcloud" id="js-tagcloud">
-                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/">Python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/分类/">分类</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/机器学习/">机器学习</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/网站建设/">网站建设</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/面试/">面试</a></li></ul>
+                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/LaTex/">LaTex</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/">Python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/分类/">分类</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/机器学习/">机器学习</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/网站建设/">网站建设</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/面试/">面试</a></li></ul>
                     </div>
                 </section>
                 
@@ -338,7 +338,9 @@
 <h2 id="二分类"><a href="#二分类" class="headerlink" title="二分类"></a>二分类</h2><p>线性判别函数为</p>
 <script type="math/tex; mode=display">
 y(\pmb{x})=\pmb{w}^\top\pmb{x}+w_0</script><p>如果$y(\pmb{x})\geqslant0$，则它被分到$C_1$中，否则被分到$C_2$中。</p>
-<h2 id="多分类"><a href="#多分类" class="headerlink" title="多分类"></a>多分类</h2><h3 id="造成困难的方法"><a href="#造成困难的方法" class="headerlink" title="造成困难的方法"></a>造成困难的方法</h3><p><strong>‘one-versus-the-rest’</strong>方法使用$K-1$个分类器，每个分类器是一个二分类问题，分开属于$C_k$和不属于的部分。但是可能会产生输入空间无法分类的区域，如图所示。<br><img src="https://ws1.sinaimg.cn/large/006tNbRwly1fw27x8xbuuj30r80nyjsm.jpg" alt=""><br><strong>‘one-versus-one’</strong>方法使用$\frac{K(K-1)}{2}$个分类器，每个数据点的类别根据这些判别函数中的大多数输出类别确定。但是这也可能会产生输入空间无法分类的区域，如图所示。<br><img src="https://ws2.sinaimg.cn/large/006tNbRwly1fw27zv6m6mj30ne0myta5.jpg" alt=""></p>
+<h2 id="多分类"><a href="#多分类" class="headerlink" title="多分类"></a>多分类</h2><h3 id="造成困难的方法"><a href="#造成困难的方法" class="headerlink" title="造成困难的方法"></a>造成困难的方法</h3><p><strong>‘one-versus-the-rest’</strong>方法使用$K-1$个分类器，每个分类器是一个二分类问题，分开属于$C_k$和不属于的部分。但是可能会产生输入空间无法分类的区域，如图所示。</p>
+<p><center><img src="https://ws1.sinaimg.cn/large/006tNbRwly1fw27x8xbuuj30r80nyjsm.jpg" width="50%"></center><br><strong>‘one-versus-one’</strong>方法使用$\frac{K(K-1)}{2}$个分类器，每个数据点的类别根据这些判别函数中的大多数输出类别确定。但是这也可能会产生输入空间无法分类的区域，如图所示。</p>
+<p><center><img src="https://ws2.sinaimg.cn/large/006tNbRwly1fw27zv6m6mj30ne0myta5.jpg" width="50%"></center></p>
 <h3 id="正确的方法"><a href="#正确的方法" class="headerlink" title="正确的方法"></a>正确的方法</h3><p>引入一个$K$类判别函数可以避免上述问题。该函数由$K$个线性函数构成：</p>
 <script type="math/tex; mode=display">y_k(\pmb{x})=\pmb{w}_k^\top\pmb{x}+w_{k0}</script><p>对于一个数据点$\pmb{x}$，如果$y_k(\pmb{x})$最大，就把它分到$C_k$中。于是类别$C_k$与$C_j$之间的决策面为$y_k(\pmb{x})=y_j(\pmb{x})$。这样的决策区域总是单连通的，并且是凸的。<br>对于二分类问题也可以构造基于两个线性函数$y_1(\pmb{x})$和$y_2(\pmb{x})$的判别函数，只是前述方法更简单且是等价的。</p>
 <h3 id="分类的最小平方法（Least-Squares）求解参数矩阵"><a href="#分类的最小平方法（Least-Squares）求解参数矩阵" class="headerlink" title="分类的最小平方法（Least Squares）求解参数矩阵"></a>分类的最小平方法（Least Squares）求解参数矩阵</h3><p>对于一个一般的$K$分类问题，每个类别$C_k$有一个线性模型</p>
@@ -388,7 +390,7 @@ E_P(\pmb{w})=-\sum_{n\in \mathscr{M}}\pmb{w}^\top\phi_n\pmb{t}_n</script><p>其�
         <p><span>本文标题:</span><a href="/2018/10/linear-classification1.html">线性分类模型(一)——线性判别函数</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">Suixin</a></p>
         <p><span>发布时间:</span>2018-10-10, 09:30:49</p>
-        <p><span>最后更新:</span>2018-10-12, 11:39:16</p>
+        <p><span>最后更新:</span>2018-10-13, 11:44:27</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2018/10/linear-classification1.html" title="线性分类模型(一)——线性判别函数">https://suixinblog.cn/2018/10/linear-classification1.html</a>
             <span class="copy-path" data-clipboard-text="原文: https://suixinblog.cn/2018/10/linear-classification1.html　　作者: Suixin" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
@@ -486,7 +488,7 @@ E_P(\pmb{w})=-\sum_{n\in \mathscr{M}}\pmb{w}^\top\phi_n\pmb{t}_n</script><p>其�
         
     </div>
 
-    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2018/10/linear-classification2.html">线性分类模型(二)——生成式模型</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/10/linear-classification1.html">线性分类模型(一)——线性判别函数</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/re.html">Python中正则表达式的特殊字符</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/valine.html">评论系统从Disqus到Valine</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/hexo.html">从Hugo到Hexo</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/mihomegiftbag.html">小米笔试题「小米大礼包」Python代码</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/hugo.html">使用HUGO搭建个人博客</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/index.html">Hello World</a></li></ul>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2018/10/hexo-latex.html">Hexo中的LaTex公式渲染问题</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/10/linear-classification2.html">线性分类模型(二)——生成式模型</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/10/linear-classification1.html">线性分类模型(一)——线性判别函数</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/re.html">Python中正则表达式的特殊字符</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/valine.html">评论系统从Disqus到Valine</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/hexo.html">从Hugo到Hexo</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/mihomegiftbag.html">小米笔试题「小米大礼包」Python代码</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/hugo.html">使用HUGO搭建个人博客</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/index.html">Hello World</a></li></ul>
 
 
 

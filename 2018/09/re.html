@@ -23,7 +23,7 @@
 <meta property="og:site_name" content="Suixin&#39;s Blog">
 <meta property="og:description" content="Python的 re 模块提供了正则表达式匹配的功能，其中经常会用到一些特殊字符，下面罗列它们以及各自的用法。 特殊字符 .：匹配除了换行符\n之外的任何字符； ^：匹配字符串的开头（需放到正则表达式开头）； $：匹配字符串的结尾（需放到正则表达式结尾）；">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-10-04T05:43:12.763Z">
+<meta property="og:updated_time" content="2018-10-13T03:45:04.479Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Python中正则表达式的特殊字符">
 <meta name="twitter:description" content="Python的 re 模块提供了正则表达式匹配的功能，其中经常会用到一些特殊字符，下面罗列它们以及各自的用法。 特殊字符 .：匹配除了换行符\n之外的任何字符； ^：匹配字符串的开头（需放到正则表达式开头）； $：匹配字符串的结尾（需放到正则表达式结尾）；">
@@ -202,7 +202,7 @@
                 
                 <section class="switch-part switch-part2">
                     <div class="widget tagcloud" id="js-tagcloud">
-                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/">Python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/分类/">分类</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/机器学习/">机器学习</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/网站建设/">网站建设</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/面试/">面试</a></li></ul>
+                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/LaTex/">LaTex</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/">Python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/分类/">分类</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/机器学习/">机器学习</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/网站建设/">网站建设</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/面试/">面试</a></li></ul>
                     </div>
                 </section>
                 
@@ -374,8 +374,9 @@
 <h3 id="re-match-pattern-string-flags-0"><a href="#re-match-pattern-string-flags-0" class="headerlink" title="re.match(pattern, string, flags=0)"></a>re.match(pattern, string, flags=0)</h3><p>从字符串开头进行匹配，返回<strong>“匹配对象”</strong>，如果未匹配到，则返回None。<br><strong>“匹配对象”</strong>：布尔值为True，使用<code>.group()</code>或<code>.group(0)</code>返回匹配得到的字符串，使用<code>.group(1)</code>返回匹配的第一个括号内的字符串，依次类推……使用<code>.start()</code>和<code>.end()</code>分别返回匹配开始和结束的位置。</p>
 <h3 id="re-search-pattern-string-flags-0"><a href="#re-search-pattern-string-flags-0" class="headerlink" title="re.search(pattern, string, flags=0)"></a>re.search(pattern, string, flags=0)</h3><p>在字符串任意位置进行匹配，查到第一个符合pattern的字符串，返回<strong>“匹配对象”</strong>，如果未匹配到，则返回None。</p>
 <h3 id="re-sub-pattern-repl-string-count-0-flags-0"><a href="#re-sub-pattern-repl-string-count-0-flags-0" class="headerlink" title="re.sub(pattern, repl, string, count=0, flags=0)"></a>re.sub(pattern, repl, string, count=0, flags=0)</h3><p>返回将string中匹配的pattern替换为repl后的字符串，如果未匹配到则返回string。count表示可替换的最大次数，默认为0表示所有的都将被替换。</p>
-<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><a href="https://docs.python.org/3/library/re.html" target="_blank" rel="noopener">https://docs.python.org/3/library/re.html</a></p>
-<h2 id="http-www-runoob-com-python-python-reg-expressions-html"><a href="#http-www-runoob-com-python-python-reg-expressions-html" class="headerlink" title="http://www.runoob.com/python/python-reg-expressions.html"></a><a href="http://www.runoob.com/python/python-reg-expressions.html" target="_blank" rel="noopener">http://www.runoob.com/python/python-reg-expressions.html</a></h2><p><a id="bib1" href="#bib1ref"><sup>[1]</sup></a> ‘\r’: 换行，光标在上一行；’f’: 换页符；’\v’: 垂直制表符。</p>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><a href="https://docs.python.org/3/library/re.html" target="_blank" rel="noopener">https://docs.python.org/3/library/re.html</a><br><a href="http://www.runoob.com/python/python-reg-expressions.html" target="_blank" rel="noopener">http://www.runoob.com/python/python-reg-expressions.html</a></p>
+<hr>
+<p><a id="bib1" href="#bib1ref"><sup>[1]</sup></a> ‘\r’: 换行，光标在上一行；’f’: 换页符；’\v’: 垂直制表符。</p>
 
       
     </div>
@@ -387,7 +388,7 @@
         <p><span>本文标题:</span><a href="/2018/09/re.html">Python中正则表达式的特殊字符</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">Suixin</a></p>
         <p><span>发布时间:</span>2018-09-30, 22:36:25</p>
-        <p><span>最后更新:</span>2018-10-04, 13:43:12</p>
+        <p><span>最后更新:</span>2018-10-13, 11:45:04</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2018/09/re.html" title="Python中正则表达式的特殊字符">https://suixinblog.cn/2018/09/re.html</a>
             <span class="copy-path" data-clipboard-text="原文: https://suixinblog.cn/2018/09/re.html　　作者: Suixin" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
@@ -423,7 +424,7 @@
     <div id="toc" class="toc-article">
         <strong class="toc-title">文章目录</strong>
         
-            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#特殊字符"><span class="toc-number">1.</span> <span class="toc-text">特殊字符</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#巧用"><span class="toc-number">2.</span> <span class="toc-text">巧用?</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#与"><span class="toc-number">2.1.</span> <span class="toc-text">.+?与.*?</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#re中常用的四个函数findall，match，search和sub"><span class="toc-number">3.</span> <span class="toc-text">re中常用的四个函数findall，match，search和sub</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#re-findall-pattern-string-flags-0"><span class="toc-number">3.1.</span> <span class="toc-text">re.findall(pattern, string, flags=0)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#re-match-pattern-string-flags-0"><span class="toc-number">3.2.</span> <span class="toc-text">re.match(pattern, string, flags=0)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#re-search-pattern-string-flags-0"><span class="toc-number">3.3.</span> <span class="toc-text">re.search(pattern, string, flags=0)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#re-sub-pattern-repl-string-count-0-flags-0"><span class="toc-number">3.4.</span> <span class="toc-text">re.sub(pattern, repl, string, count=0, flags=0)</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#参考"><span class="toc-number">4.</span> <span class="toc-text">参考</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#http-www-runoob-com-python-python-reg-expressions-html"><span class="toc-number">5.</span> <span class="toc-text">http://www.runoob.com/python/python-reg-expressions.html</span></a></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#特殊字符"><span class="toc-number">1.</span> <span class="toc-text">特殊字符</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#巧用"><span class="toc-number">2.</span> <span class="toc-text">巧用?</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#与"><span class="toc-number">2.1.</span> <span class="toc-text">.+?与.*?</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#re中常用的四个函数findall，match，search和sub"><span class="toc-number">3.</span> <span class="toc-text">re中常用的四个函数findall，match，search和sub</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#re-findall-pattern-string-flags-0"><span class="toc-number">3.1.</span> <span class="toc-text">re.findall(pattern, string, flags=0)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#re-match-pattern-string-flags-0"><span class="toc-number">3.2.</span> <span class="toc-text">re.match(pattern, string, flags=0)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#re-search-pattern-string-flags-0"><span class="toc-number">3.3.</span> <span class="toc-text">re.search(pattern, string, flags=0)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#re-sub-pattern-repl-string-count-0-flags-0"><span class="toc-number">3.4.</span> <span class="toc-text">re.sub(pattern, repl, string, count=0, flags=0)</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#参考"><span class="toc-number">4.</span> <span class="toc-text">参考</span></a></li></ol>
         
     </div>
     <style>
@@ -485,7 +486,7 @@
         
     </div>
 
-    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2018/10/linear-classification2.html">线性分类模型(二)——生成式模型</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/10/linear-classification1.html">线性分类模型(一)——线性判别函数</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/re.html">Python中正则表达式的特殊字符</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/valine.html">评论系统从Disqus到Valine</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/hexo.html">从Hugo到Hexo</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/mihomegiftbag.html">小米笔试题「小米大礼包」Python代码</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/hugo.html">使用HUGO搭建个人博客</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/index.html">Hello World</a></li></ul>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2018/10/hexo-latex.html">Hexo中的LaTex公式渲染问题</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/10/linear-classification2.html">线性分类模型(二)——生成式模型</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/10/linear-classification1.html">线性分类模型(一)——线性判别函数</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/re.html">Python中正则表达式的特殊字符</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/valine.html">评论系统从Disqus到Valine</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/hexo.html">从Hugo到Hexo</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/mihomegiftbag.html">小米笔试题「小米大礼包」Python代码</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/hugo.html">使用HUGO搭建个人博客</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/index.html">Hello World</a></li></ul>
 
 
 

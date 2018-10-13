@@ -23,7 +23,7 @@
 <meta property="og:site_name" content="Suixin&#39;s Blog">
 <meta property="og:description" content="生成式方法：对类条件概率密度$p(\pmb{x}|C_k)$和类先验概率分布$p(C_k)$建模，然后使用贝叶斯定理计算后验概率密度$p(C_k|\pmb{x})$，从而进行预测。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-10-12T03:38:08.915Z">
+<meta property="og:updated_time" content="2018-10-12T13:40:48.974Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="线性分类模型(二)——生成式模型">
 <meta name="twitter:description" content="生成式方法：对类条件概率密度$p(\pmb{x}|C_k)$和类先验概率分布$p(C_k)$建模，然后使用贝叶斯定理计算后验概率密度$p(C_k|\pmb{x})$，从而进行预测。">
@@ -202,7 +202,7 @@
                 
                 <section class="switch-part switch-part2">
                     <div class="widget tagcloud" id="js-tagcloud">
-                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/">Python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/分类/">分类</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/机器学习/">机器学习</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/网站建设/">网站建设</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/面试/">面试</a></li></ul>
+                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/LaTex/">LaTex</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/">Python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/分类/">分类</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/机器学习/">机器学习</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/网站建设/">网站建设</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/面试/">面试</a></li></ul>
                     </div>
                 </section>
                 
@@ -341,10 +341,10 @@ p(\pmb{x}|C_k)=\frac{1}{ {(2\pi)}^\frac{D}{2} }\frac{1}{|\Sigma|^\frac{1}{2}}\ex
 p(C_1|\pmb{x})=\sigma(\pmb{w}^\top\pmb{x}+w_0)</script><p>其中，定义了$\pmb{w}=\Sigma^{-1}(\pmb{\mu}_1-\pmb{\mu}_2)$，$w_0=-\frac{1}{2}\pmb{\mu}_1^\top\Sigma^{-1}\pmb{\mu}_1+\frac{1}{2}\pmb{\mu}_2^\top\Sigma^{-1}\pmb{\mu}_2+\ln\frac{p(C_1)}{p(C_2)}$</p>
 <h2 id="多分类模型"><a href="#多分类模型" class="headerlink" title="多分类模型"></a>多分类模型</h2><p>类别$C_k$的后验概率为</p>
 <script type="math/tex; mode=display">
-p(C_k|\pmb{x})=\frac{p(\pmb{x}|C_k)p(C_k)}{\sum_jp(\pmb{x}|C_j)p(C_j)}=\frac{\exp(a_k)}{\sum_j\exp(a_j)}\triangleq softmax_k(\pmb{a})</script><p>其中，$a_k=\ln p(\pmb{x}|C_k)p(C_k)$。<br>在同样的假设下，有</p>
+p(C_k|\pmb{x})=\frac{p(\pmb{x}|C_k)p(C_k)}{\sum_jp(\pmb{x}|C_j)p(C_j)}=\frac{\exp(a_k)}{\sum_j\exp(a_j)}\triangleq softmax_k(\pmb{a})</script><p>其中，$a_k=\ln (p(\pmb{x}|C_k)p(C_k))$。<br>在同样的高斯分布和类别协方差阵假设下，有</p>
 <script type="math/tex; mode=display">
 a_k(\pmb{x})=\pmb{w}_k^\top\pmb{x}+w_{k0}</script><p>其中，$\pmb{w}_k=\Sigma^{-1}\pmb{\mu}_k$，$w_{k0}=-\frac{1}{2}\pmb{\mu}_k^\top\Sigma^{-1}\pmb{\mu}_k+\ln p(C_k)$</p>
-<h2 id="极大似然解"><a href="#极大似然解" class="headerlink" title="极大似然解"></a>极大似然解</h2><p>首先考虑二分类的情形。<br>假设有一个数据集${\pmb{x}_n,t_n}$，其中$n=1,2,\cdots,N$，$t_n=1,0$分别表示类别$C_1,C_2$，把先验记为$p(C_1)=\pi$，则有</p>
+<h2 id="极大似然解"><a href="#极大似然解" class="headerlink" title="极大似然解"></a>极大似然解</h2><p>首先考虑二分类的情形。<br>假设有一个数据集$\{\pmb{x}_n,t_n\}$，其中$n=1,2,\cdots,N$。$t_n=1,0$分别表示类别$C_1,C_2$，把先验记为$p(C_1)=\pi$，则有</p>
 <script type="math/tex; mode=display">
 p(\pmb{x}_n,C_1)=p(C_1)p(\pmb{x}_n|C_1)=\pi\mathscr{N}(\pmb{x}_n|\pmb{\mu}_1,\Sigma)</script><p>根据全概率公式可得<strong>似然函数</strong>为</p>
 <script type="math/tex; mode=display">
@@ -366,7 +366,7 @@ p(\textbf{t}|\pi,\mu_1,\mu_2,\Sigma)=\prod_{n=1}^{N}[\pi\mathscr{N}(\pmb{x}_n|\p
         <p><span>本文标题:</span><a href="/2018/10/linear-classification2.html">线性分类模型(二)——生成式模型</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">Suixin</a></p>
         <p><span>发布时间:</span>2018-10-12, 10:09:48</p>
-        <p><span>最后更新:</span>2018-10-12, 11:38:08</p>
+        <p><span>最后更新:</span>2018-10-12, 21:40:48</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2018/10/linear-classification2.html" title="线性分类模型(二)——生成式模型">https://suixinblog.cn/2018/10/linear-classification2.html</a>
             <span class="copy-path" data-clipboard-text="原文: https://suixinblog.cn/2018/10/linear-classification2.html　　作者: Suixin" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
@@ -380,6 +380,12 @@ p(\textbf{t}|\pi,\mu_1,\mu_2,\Sigma)=\prod_{n=1}^{N}[\pi\mathscr{N}(\pmb{x}_n|\p
 
 
     <nav id="article-nav">
+        
+            <div id="article-nav-newer" class="article-nav-title">
+                <a href="/2018/10/hexo-latex.html">
+                    Hexo中的LaTex公式渲染问题
+                </a>
+            </div>
         
         
             <div id="article-nav-older" class="article-nav-title">
@@ -444,7 +450,9 @@ p(\textbf{t}|\pi,\mu_1,\mu_2,\Sigma)=\prod_{n=1}^{N}[\pi\mathscr{N}(\pmb{x}_n|\p
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
+            <a href="/2018/10/hexo-latex.html" title="上一篇: Hexo中的LaTex公式渲染问题">
+                <i class="fa fa-angle-left"></i>
+            </a>
         
 
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
@@ -456,7 +464,7 @@ p(\textbf{t}|\pi,\mu_1,\mu_2,\Sigma)=\prod_{n=1}^{N}[\pi\mathscr{N}(\pmb{x}_n|\p
         
     </div>
 
-    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2018/10/linear-classification2.html">线性分类模型(二)——生成式模型</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/10/linear-classification1.html">线性分类模型(一)——线性判别函数</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/re.html">Python中正则表达式的特殊字符</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/valine.html">评论系统从Disqus到Valine</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/hexo.html">从Hugo到Hexo</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/mihomegiftbag.html">小米笔试题「小米大礼包」Python代码</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/hugo.html">使用HUGO搭建个人博客</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/index.html">Hello World</a></li></ul>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2018/10/hexo-latex.html">Hexo中的LaTex公式渲染问题</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/10/linear-classification2.html">线性分类模型(二)——生成式模型</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/10/linear-classification1.html">线性分类模型(一)——线性判别函数</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/re.html">Python中正则表达式的特殊字符</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/valine.html">评论系统从Disqus到Valine</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/hexo.html">从Hugo到Hexo</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/mihomegiftbag.html">小米笔试题「小米大礼包」Python代码</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/hugo.html">使用HUGO搭建个人博客</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/index.html">Hello World</a></li></ul>
 
 
 
