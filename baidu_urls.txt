@@ -1,2 +1,2 @@
+https://suixinblog.cn/2018/10/git.html
 https://suixinblog.cn/2018/10/list-index.html
-https://suixinblog.cn/2018/10/hexo-latex.html
