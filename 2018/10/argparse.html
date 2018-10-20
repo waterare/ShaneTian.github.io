@@ -23,7 +23,7 @@
 <meta property="og:site_name" content="Suixin&#39;s Blog">
 <meta property="og:description" content="argparse是Python内置的一个用于命令项选项与参数解析的模块，在编写脚本的过程中是非常常用的。在其使用中主要包含三个步骤：">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-10-19T13:46:48.468Z">
+<meta property="og:updated_time" content="2018-10-19T13:51:45.223Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Python命令行解析器argparse的使用">
 <meta name="twitter:description" content="argparse是Python内置的一个用于命令项选项与参数解析的模块，在编写脚本的过程中是非常常用的。在其使用中主要包含三个步骤：">
@@ -334,7 +334,7 @@
         <p>argparse是Python内置的一个用于命令项选项与参数解析的模块，在编写脚本的过程中是非常常用的。<br>在其使用中主要包含三个步骤：<br><a id="more"></a><br><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> argparse</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">parser = argparse.ArgumentParser(description=<span class="string">'this is a process for read file'</span>)</span><br><span class="line">parser.add_argument(<span class="string">'fileinPath'</span>, help=<span class="string">'path to input file'</span>)</span><br><span class="line">parser.add_argument(<span class="string">'fileoutPath'</span>, help=<span class="string">'path to output file'</span>)</span><br><span class="line">args = parser.parse_args()</span><br></pre></td></tr></table></figure></p>
 <p>而当如上定义后，即可在需要用到参数的地方调用<code>args.fileinPath</code>和<code>args.fileoutPath</code>。下面详细讲解一下<code>add_argument()</code>方法。</p>
 <h2 id="add-argument-方法"><a href="#add-argument-方法" class="headerlink" title="add_argument()方法"></a><code>add_argument()</code>方法</h2><h3 id="位置参数"><a href="#位置参数" class="headerlink" title="位置参数"></a>位置参数</h3><p>位置参数是必选参数，如果命令行解析不到就会报错，上面例子中两个参数都是位置参数。</p>
-<h3 id="可选参数"><a href="#可选参数" class="headerlink" title="可选参数"></a>可选参数</h3><p>可选参数可以填写两种，长的可选参数以及短的，并且可以并存。如：<br><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">parser.add_argument(<span class="string">'-s'</span>, <span class="string">'square'</span>, help=<span class="string">'display a square of a given number'</span>, type=int)</span><br></pre></td></tr></table></figure></p>
+<h3 id="可选参数"><a href="#可选参数" class="headerlink" title="可选参数"></a>可选参数</h3><p>可选参数可以填写两种，长的可选参数以及短的，并且可以并存，会首先解析长可选参数。如：<br><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">parser.add_argument(<span class="string">'-s'</span>, <span class="string">'--square'</span>, help=<span class="string">'display a square of a given number'</span>, type=int)</span><br></pre></td></tr></table></figure></p>
 <p>当然在一个脚本中，位置参数与可选参数是可以并存的。</p>
 <h3 id="一个例子"><a href="#一个例子" class="headerlink" title="一个例子"></a>一个例子</h3><p>给一个整数序列，输出它们的和或最大值（默认）<br><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> argparse</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">parser = argparse.ArgumentParser(description=<span class="string">'Process some integers.'</span>)</span><br><span class="line">parser.add_argument(<span class="string">'integers'</span>, metavar=<span class="string">'N'</span>, type=int, nargs=<span class="string">'+'</span>,</span><br><span class="line">                   help=<span class="string">'an integer for the accumulator'</span>)</span><br><span class="line">parser.add_argument(<span class="string">'--sum'</span>, dest=<span class="string">'accumulate'</span>, action=<span class="string">'store_const'</span>,</span><br><span class="line">                   const=sum, default=max,</span><br><span class="line">                   help=<span class="string">'sum the integers (default: find the max)'</span>)</span><br><span class="line">args = parser.parse_args()</span><br><span class="line"></span><br><span class="line">print(args.accumulate(args.integers))</span><br></pre></td></tr></table></figure></p>
 <p>则在调用的时候：<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;</span>&gt;&gt; python test.py</span><br><span class="line">usage: test.py [-h] [--sum] N [N ...]</span><br><span class="line">test.py: error: the following arguments are required: N</span><br><span class="line"><span class="meta">&gt;</span>&gt;&gt; python test.py -h</span><br><span class="line">usage: test.py [-h] [--sum] N [N ...]</span><br><span class="line"></span><br><span class="line">Process some integers.</span><br><span class="line"></span><br><span class="line">positional arguments:</span><br><span class="line">  N           an integer for the accumulator</span><br><span class="line"></span><br><span class="line">optional arguments:</span><br><span class="line">  -h, --help  show this help message and exit</span><br><span class="line">  --sum       sum the integers (default: find the max)</span><br><span class="line"><span class="meta">&gt;</span>&gt;&gt; python test.py 1 2 3 4</span><br><span class="line">4</span><br><span class="line"><span class="meta">&gt;</span>&gt;&gt; python test.py 1 2 3 4 --sum</span><br><span class="line">10</span><br></pre></td></tr></table></figure></p>
@@ -354,11 +354,11 @@
 </li>
 <li><p><code>count</code>，存储遇到的参数次数。</p>
 </li>
-</ul>
-</li>
 <li><p><code>nrgs</code> - 应该读取的命令行参数个数，可以是具体的数字、<code>*</code>、<code>+</code>和<code>?</code>。<code>*</code>表示0个或多个；<code>+</code>表示1个或多个；<code>?</code>时，若解析不到参数，则使用<code>default</code>值，对于可选参数，若只写了参数名而后面没有值，则使用<code>const</code>值。如</p>
-  <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">    &gt;&gt;&gt; parser = argparse.ArgumentParser()</span><br><span class="line"><span class="meta">&gt;</span>&gt;&gt; parser.add_argument('--foo', nargs='?', const='c', default='d')</span><br><span class="line"><span class="meta">&gt;</span>&gt;&gt; parser.add_argument('bar', nargs='?', default='d')</span><br><span class="line"><span class="meta">&gt;</span>&gt;&gt; parser.parse_args(['XX', '--foo', 'YY'])</span><br><span class="line">Namespace(bar='XX', foo='YY')</span><br><span class="line"><span class="meta">&gt;</span>&gt;&gt; parser.parse_args(['XX', '--foo'])</span><br><span class="line">Namespace(bar='XX', foo='c')</span><br><span class="line"><span class="meta">&gt;</span>&gt;&gt; parser.parse_args([])</span><br><span class="line">Namespace(bar='d', foo='d')</span><br></pre></td></tr></table></figure>
-<p>  <strong>注：</strong><code>nargs=1</code>会将参数存放为<code>list</code>，不同于不设置；对参数加<code>nargs=&#39;*&#39;</code>或<code>nargs=&#39;+&#39;</code>在一定程度可以代替<code>action=&#39;append&#39;</code>。</p>
+  <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;</span>&gt;&gt; parser = argparse.ArgumentParser()</span><br><span class="line"><span class="meta">&gt;</span>&gt;&gt; parser.add_argument('--foo', nargs='?', const='c', default='d')</span><br><span class="line"><span class="meta">&gt;</span>&gt;&gt; parser.add_argument('bar', nargs='?', default='d')</span><br><span class="line"><span class="meta">&gt;</span>&gt;&gt; parser.parse_args(['XX', '--foo', 'YY'])</span><br><span class="line">Namespace(bar='XX', foo='YY')</span><br><span class="line"><span class="meta">&gt;</span>&gt;&gt; parser.parse_args(['XX', '--foo'])</span><br><span class="line">Namespace(bar='XX', foo='c')</span><br><span class="line"><span class="meta">&gt;</span>&gt;&gt; parser.parse_args([])</span><br><span class="line">Namespace(bar='d', foo='d')</span><br></pre></td></tr></table></figure>
+<p><strong>注：</strong><code>nargs=1</code>会将参数存放为<code>list</code>，不同于不设置；对参数加<code>nargs=&#39;*&#39;</code>或<code>nargs=&#39;+&#39;</code>在一定程度可以代替<code>action=&#39;append&#39;</code>。</p>
+</li>
+</ul>
 </li>
 <li><code>const</code> - <code>action</code>和<code>nargs</code>所需要的常量值；</li>
 <li><code>default</code> - 不指定参数时的默认值；</li>
@@ -380,7 +380,7 @@
         <p><span>本文标题:</span><a href="/2018/10/argparse.html">Python命令行解析器argparse的使用</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">Suixin</a></p>
         <p><span>发布时间:</span>2018-10-19, 21:45:33</p>
-        <p><span>最后更新:</span>2018-10-19, 21:46:48</p>
+        <p><span>最后更新:</span>2018-10-19, 21:51:45</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2018/10/argparse.html" title="Python命令行解析器argparse的使用">https://suixinblog.cn/2018/10/argparse.html</a>
             <span class="copy-path" data-clipboard-text="原文: https://suixinblog.cn/2018/10/argparse.html　　作者: Suixin" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
@@ -394,6 +394,12 @@
 
 
     <nav id="article-nav">
+        
+            <div id="article-nav-newer" class="article-nav-title">
+                <a href="/2018/10/linear-classification3.html">
+                    线性分类模型(三)——判别式模型
+                </a>
+            </div>
         
         
             <div id="article-nav-older" class="article-nav-title">
@@ -458,7 +464,9 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
+            <a href="/2018/10/linear-classification3.html" title="上一篇: 线性分类模型(三)——判别式模型">
+                <i class="fa fa-angle-left"></i>
+            </a>
         
 
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
@@ -470,7 +478,7 @@
         
     </div>
 
-    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2018/10/argparse.html">Python命令行解析器argparse的使用</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/10/git.html">git常用命令</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/10/list-index.html">Python中list的查找</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/10/hexo-latex.html">Hexo中的LaTex公式渲染问题</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/10/linear-classification2.html">线性分类模型(二)——生成式模型</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/10/linear-classification1.html">线性分类模型(一)——线性判别函数</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/re.html">Python中正则表达式的特殊字符</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/valine.html">评论系统从Disqus到Valine</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/hexo.html">从Hugo到Hexo</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/mihomegiftbag.html">小米笔试题「小米大礼包」Python代码</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/hugo.html">使用HUGO搭建个人博客</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/index.html">Hello World</a></li></ul>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2018/10/linear-classification3.html">线性分类模型(三)——判别式模型</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/10/argparse.html">Python命令行解析器argparse的使用</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/10/git.html">git常用命令</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/10/list-index.html">Python中list的查找</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/10/hexo-latex.html">Hexo中的LaTex公式渲染问题</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/10/linear-classification2.html">线性分类模型(二)——生成式模型</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/10/linear-classification1.html">线性分类模型(一)——线性判别函数</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/re.html">Python中正则表达式的特殊字符</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/valine.html">评论系统从Disqus到Valine</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/hexo.html">从Hugo到Hexo</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/mihomegiftbag.html">小米笔试题「小米大礼包」Python代码</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/hugo.html">使用HUGO搭建个人博客</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/index.html">Hello World</a></li></ul>
 
 
 
