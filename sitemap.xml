@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://suixinblog.cn/2018/09/valine.html</loc>
+    
+    <lastmod>2018-11-09T05:42:21.039Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://suixinblog.cn/about/index.html</loc>
     
     <lastmod>2018-11-09T03:35:14.496Z</lastmod>
@@ -82,13 +89,6 @@
     <loc>https://suixinblog.cn/2018/09/hexo.html</loc>
     
     <lastmod>2018-10-13T03:43:05.504Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://suixinblog.cn/2018/09/valine.html</loc>
-    
-    <lastmod>2018-10-13T03:41:15.919Z</lastmod>
     
   </url>
   
