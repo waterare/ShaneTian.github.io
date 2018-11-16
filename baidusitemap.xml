@@ -1,8 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://suixinblog.cn/2018/11/wget.html</loc>
+    <lastmod>2018-11-16T14:58:32.922Z</lastmod>
+  </url>  <url>
     <loc>https://suixinblog.cn/2018/11/ssr.html</loc>
-    <lastmod>2018-11-16T07:09:50.732Z</lastmod>
+    <lastmod>2018-11-16T08:15:14.107Z</lastmod>
+  </url>  <url>
+    <loc>https://suixinblog.cn/2018/10/argparse.html</loc>
+    <lastmod>2018-11-16T08:09:54.997Z</lastmod>
   </url>  <url>
     <loc>https://suixinblog.cn/2018/09/valine.html</loc>
     <lastmod>2018-11-09T05:49:31.337Z</lastmod>
@@ -18,9 +24,6 @@
   </url>  <url>
     <loc>https://suixinblog.cn/2018/10/linear-classification3.html</loc>
     <lastmod>2018-10-20T04:32:30.389Z</lastmod>
-  </url>  <url>
-    <loc>https://suixinblog.cn/2018/10/argparse.html</loc>
-    <lastmod>2018-10-19T13:51:45.223Z</lastmod>
   </url>  <url>
     <loc>https://suixinblog.cn/2018/10/git.html</loc>
     <lastmod>2018-10-16T08:32:38.075Z</lastmod>
