@@ -3,16 +3,16 @@
   
     
     <entry>
-      <title>Linux下载命令wget</title>
-      <link href="/2018/11/wget.html"/>
-      <url>/2018/11/wget.html</url>
+      <title>Linux压缩和解压命令：tar，gzip，zip（unzip），rar</title>
+      <link href="/2018/11/tar-gzip-zip-rar.html"/>
+      <url>/2018/11/tar-gzip-zip-rar.html</url>
       
-        <content type="html"><![CDATA[<p><code>wget</code>是Linux下下载文件的最常用命令。<code>wget</code>支持<code>HTTP</code>，<code>HTTPS</code>和<code>FTP</code>协议，支持自动下载，即可以在用户退出系统后在后台执行，直到下载结束。<br><strong>用法</strong>：<code>wget [参数] [URL]</code><br><a id="more"></a></p><h2 id="常用参数"><a href="#常用参数" class="headerlink" title="常用参数"></a>常用参数</h2><ul><li><code>-o</code>：将日志信息写入FILE；</li><li><code>-b</code>：启动后转入后台；</li><li><code>-O</code>：将文档写入FILE（重命名）；</li><li><code>-q</code>：安静模式（无信息输出）；</li><li><code>-N</code>：只获取比本地文件新的文件；</li><li><code>--no-check-certificate</code>：不要验证HTTPS服务器的证书；</li><li><code>-r</code>：指定递归下载；</li><li><code>-c</code>：断点续传下载文件；</li></ul><p><strong>最常用</strong>：<code>wget -O newname URL</code>，如<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget -O jump.gif https://ws1.sinaimg.cn/large/006tNbRwly1fvluxdpgo4g30b408c4je.gif</span><br></pre></td></tr></table></figure></p><p><center><img src="https://ws1.sinaimg.cn/large/006tNbRwgy1fxaanor5epj31da0i0k5i.jpg" width="80%" alt="wget gif"><center></center></center></p>]]></content>
+        <content type="html"><![CDATA[<p>很多大型文件或者数据从服务器上传或者下载的时候都需要打包和压缩解压，这时候知道压缩和解压的各种命令是很有必要的。<br>常见的压缩文件后缀名有<code>.tar.gz</code>，<code>.gz</code>，<code>.zip</code>和<code>.rar</code>，下面来看看在Linux上它们分别的解压和压缩命令。<br><a id="more"></a></p><h2 id="gzip"><a href="#gzip" class="headerlink" title="gzip"></a>gzip</h2><p>Linux压缩文件中最常见的后缀名即为<code>.gz</code>，<code>gzip</code>是用来压缩和解压<code>.gz</code>文件的命令。</p><h3 id="常用参数"><a href="#常用参数" class="headerlink" title="常用参数"></a>常用参数</h3><ul><li><code>-d</code>或<code>--decompress</code>或<code>--uncompress</code>：解压文件；</li><li><code>-r</code>或<code>--recursive</code>：递归压缩指定文件夹下的文件（该文件夹下的所有文件被压缩成单独的<code>.gz</code>文件）；</li><li><code>-v</code>或<code>--verbose</code>：显示指令执行过程。</li></ul><p><strong>注</strong>：<code>gzip</code>命令只能压缩单个文件，而不能把一个文件夹压缩成一个文件（与打包命令的区别）。</p><h3 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h3><p>压缩当前目录下所有文件，并显示进度：</p><p><center><img src="https://ws2.sinaimg.cn/large/006tNbRwly1fxei1viqinj31020i2alj.jpg" width="80%" alt="gzip"></center></p><h2 id="tar"><a href="#tar" class="headerlink" title="tar"></a>tar</h2><p><code>tar</code>本身是一个打包命令，用来打包或者解包后缀名为<code>.tar</code>。配合参数可同时实现打包和压缩。</p><h3 id="常用参数-1"><a href="#常用参数-1" class="headerlink" title="常用参数"></a>常用参数</h3><ul><li><code>-c</code>或<code>--create</code>：建立新的备份文件；</li><li><code>-x</code>或<code>--extract</code>或<code>--get</code>：从备份文件中还原文件；</li><li><code>-v</code>：显示指令执行过程；</li><li><code>-f</code>或<code>--file</code>：指定备份文件；</li><li><code>-C</code>：指定目的目录；</li><li><code>-z</code>：通过<code>gzip</code>指令处理备份文件；</li><li><code>-j</code>：通过<code>bzip2</code>指令处理备份文件。</li></ul><h3 id="例子-1"><a href="#例子-1" class="headerlink" title="例子"></a>例子</h3><p>最常用的是将<code>tar</code>命令与<code>gzip</code>命令组合起来，直接对文件夹先打包后压缩：</p><p><center><img src="https://ws1.sinaimg.cn/large/006tNbRwly1fxetbja0swj31e60n81a0.jpg" width="80%" alt="tar打包压缩"></center><br>解压解包：</p><p><center><img src="https://ws2.sinaimg.cn/large/006tNbRwly1fxetew4avbj31aw0n67kt.jpg" width="80%" alt="tar解压解包"></center></p><h2 id="zip和unzip"><a href="#zip和unzip" class="headerlink" title="zip和unzip"></a>zip和unzip</h2><p><code>zip</code>命令和<code>unzip</code>命令用在在Linux上处理<code>.zip</code>的压缩文件。</p><h3 id="常用参数-2"><a href="#常用参数-2" class="headerlink" title="常用参数"></a>常用参数</h3><ul><li><code>zip</code><ul><li><code>-v</code>：显示指令执行过程；</li><li><code>-m</code>：不保留原文件；</li><li><code>-r</code>：递归处理。</li></ul></li><li><code>unzip</code><ul><li><code>-v</code>：显示指令执行过程；</li><li><code>-d</code>：解压到指定目录。</li></ul></li></ul><h3 id="例子-2"><a href="#例子-2" class="headerlink" title="例子"></a>例子</h3><p>将两个文件压缩为<code>new.zip</code>且保留原文件：</p><p><center><img src="https://ws1.sinaimg.cn/large/006tNbRwly1fxeu5yhebdj31aa0j8h0b.jpg" width="80%" alt="zip"></center><br>将<code>new.zip</code>解压到上级目录：</p><p><center><img src="https://ws1.sinaimg.cn/large/006tNbRwly1fxeu5y0n96j313i0og7kb.jpg" width="80%" alt="unzip"></center></p><h2 id="rar"><a href="#rar" class="headerlink" title="rar"></a>rar</h2><p><code>.rar</code>是Windows上比较常见的压缩文件格式，在Linux上使用<code>rar</code>命令来操作。</p><h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><p>Linux中默认不带<code>rar</code>工具，需要自行安装，在<a href="https://www.rarlab.com/download.htm" target="_blank" rel="noopener">RARLAB</a>找到自己系统位数对应链接下载直接编译即可，如<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">wget https://www.rarlab.com/rar/rarlinux-x64-5.6.1.tar.gz</span><br><span class="line">tar -zxvf rarlinux-x64-5.6.1.tar.gz</span><br><span class="line">cd rar</span><br><span class="line">make</span><br></pre></td></tr></table></figure></p><h3 id="常用参数-3"><a href="#常用参数-3" class="headerlink" title="常用参数"></a>常用参数</h3><ul><li><code>a</code>：压缩文件；</li><li><code>x</code>：解压文件；</li><li><code>-p</code>：设置密码。密码紧随其后，如<code>-p123</code>。</li></ul><h3 id="例子-3"><a href="#例子-3" class="headerlink" title="例子"></a>例子</h3><p>将两个文件压缩为<code>new.rar</code>，设置密码为123（默认保留原文件）：</p><p><center><img src="https://ws2.sinaimg.cn/large/006tNbRwly1fxev056zfxj31cy0tikao.jpg" width="80%" alt="rar压缩"></center><br>将<code>new.rar</code>解压（默认保留原文件）：</p><p><center><img src="https://ws4.sinaimg.cn/large/006tNbRwly1fxev10vxyvj316u0u04h9.jpg" width="80%" alt="rar解压"></center></p><h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><blockquote><p><a href="https://www.cnblogs.com/eoiioe/archive/2008/09/20/1294681.html" target="_blank" rel="noopener">https://www.cnblogs.com/eoiioe/archive/2008/09/20/1294681.html</a><br><a href="https://blog.csdn.net/zyw_anquan/article/details/8672024" target="_blank" rel="noopener">https://blog.csdn.net/zyw_anquan/article/details/8672024</a></p></blockquote>]]></content>
       
       
       <categories>
           
-          <category> 技术驿站 </category>
+          <category> Linux </category>
           
       </categories>
       
@@ -21,9 +21,34 @@
             
             <tag> Linux </tag>
             
-            <tag> 服务器 </tag>
+            <tag> 命令行 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
+      <title>Linux下载命令wget</title>
+      <link href="/2018/11/wget.html"/>
+      <url>/2018/11/wget.html</url>
+      
+        <content type="html"><![CDATA[<p><code>wget</code>是Linux下下载文件的最常用命令。<code>wget</code>支持<code>HTTP</code>，<code>HTTPS</code>和<code>FTP</code>协议，支持自动下载，即可以在用户退出系统后在后台执行，直到下载结束。<br><strong>用法</strong>：<code>wget [参数] [URL]</code><br><a id="more"></a></p><h2 id="常用参数"><a href="#常用参数" class="headerlink" title="常用参数"></a>常用参数</h2><ul><li><code>-o</code>：将日志信息写入FILE；</li><li><code>-b</code>：启动后转入后台；</li><li><code>-O</code>：将文档写入FILE（重命名）；</li><li><code>-q</code>：安静模式（无信息输出）；</li><li><code>-N</code>：只获取比本地文件新的文件；</li><li><code>--no-check-certificate</code>：不要验证HTTPS服务器的证书；</li><li><code>-r</code>：指定递归下载；</li><li><code>-c</code>：断点续传下载文件。</li></ul><p><strong>最常用</strong>：<code>wget -O newname URL</code>，如：</p><p><center><img src="https://ws1.sinaimg.cn/large/006tNbRwgy1fxaanor5epj31da0i0k5i.jpg" width="80%" alt="wget gif"><center></center></center></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Linux </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Linux </tag>
             
             <tag> 命令行 </tag>
+            
+            <tag> 服务器 </tag>
             
         </tags>
       
@@ -71,9 +96,11 @@
             
             <tag> Linux </tag>
             
+            <tag> 命令行 </tag>
+            
             <tag> 服务器 </tag>
             
-            <tag> 命令行 </tag>
+            <tag> Python </tag>
             
         </tags>
       
@@ -89,7 +116,7 @@
       
       <categories>
           
-          <category> 术业专攻 </category>
+          <category> Linux </category>
           
       </categories>
       
@@ -426,7 +453,7 @@
       <link href="/2018/09/index.html"/>
       <url>/2018/09/index.html</url>
       
-        <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.<br><a id="more"></a></p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> hexo new "My New Post"</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>]]></content>
+        <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.<br><a id="more"></a></p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> hexo new <span class="string">"My New Post"</span></span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>]]></content>
       
       
       
