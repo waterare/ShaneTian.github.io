@@ -15,13 +15,18 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="Suixin&#39;s Blog">
-<meta property="og:url" content="https://suixinblog.cn/archives/page/2/index.html">
+<meta name="description" content="在日常的编码中肯定需要登录到远程Linux服务器，经常需要在上面运行一些需要很长时间才能完成的任务，如：传输文件、跑爬虫代码等，需要保证退出服务器的连接，该任务也不会终止掉。使用nohup命令已经可以完成一些较为简单的任务（nohup：在Linux服务器后台跑程序），但真正的多会话管理还是要用到screen命令。一般的Linux系统都自带screen命令，所以无需手动安装。">
+<meta name="keywords" content="Linux,命令行,服务器">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Linux多重视窗管理命令screen">
+<meta property="og:url" content="https://suixinblog.cn/2018/11/screen.html">
 <meta property="og:site_name" content="Suixin&#39;s Blog">
+<meta property="og:description" content="在日常的编码中肯定需要登录到远程Linux服务器，经常需要在上面运行一些需要很长时间才能完成的任务，如：传输文件、跑爬虫代码等，需要保证退出服务器的连接，该任务也不会终止掉。使用nohup命令已经可以完成一些较为简单的任务（nohup：在Linux服务器后台跑程序），但真正的多会话管理还是要用到screen命令。一般的Linux系统都自带screen命令，所以无需手动安装。">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-11-25T03:39:50.118Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Suixin&#39;s Blog">
+<meta name="twitter:title" content="Linux多重视窗管理命令screen">
+<meta name="twitter:description" content="在日常的编码中肯定需要登录到远程Linux服务器，经常需要在上面运行一些需要很长时间才能完成的任务，如：传输文件、跑爬虫代码等，需要保证退出服务器的连接，该任务也不会终止掉。使用nohup命令已经可以完成一些较为简单的任务（nohup：在Linux服务器后台跑程序），但真正的多会话管理还是要用到screen命令。一般的Linux系统都自带screen命令，所以无需手动安装。">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
@@ -53,7 +58,7 @@
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>Archives | Suixin&#39;s Blog</title>
+<title>Linux多重视窗管理命令screen | Suixin&#39;s Blog</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -63,8 +68,8 @@
         fancybox: true,
         animate: true,
         isHome: false,
-        isPost: false,
-        isArchive: true,
+        isPost: true,
+        isArchive: false,
         isTag: false,
         isCategory: false,
         fancybox_js: "//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.js",
@@ -270,389 +275,179 @@
     </div>
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
 </nav>
-      <div class="body-wrap">
+      <div class="body-wrap"><article id="post-Linux多重视窗管理命令screen" class="article article-type-post" itemscope itemprop="blogPost">
   
+    <div class="article-meta">
+      <a href="/2018/11/screen.html" class="article-date">
+      <time datetime="2018-11-25T03:38:44.000Z" itemprop="datePublished">2018-11-25</time>
+</a>
+
+
+    </div>
   
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
     
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Linux多重视窗管理命令screen
+    </h1>
+  
+
+      </header>
       
+      <div class="article-info article-info-post">
+        
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/Linux/">Linux</a>
+    </div>
+
+
+        
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/命令行/">命令行</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/服务器/">服务器</a></li></ul>
+    </div>
+
+        <div class="clearfix"></div>
+      </div>
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
     
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-          <div class="article-meta">
-              <a href="/2018/10/list-index.html" class="archive-article-date">
-      <time datetime="2018-10-15T09:36:05.000Z" itemprop="datePublished">10-15</time>
-</a>
-
-
-        </div>
-         
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/10/list-index.html">Python中list的查找</a>
-    </h1>
-  
-
-        <div class="article-info info-on-archive">
+    <div class="article-entry" itemprop="articleBody">
+      
           
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/术业专攻/">术业专攻</a>
+        <p>在日常的编码中肯定需要登录到远程Linux服务器，经常需要在上面运行一些需要很长时间才能完成的任务，如：传输文件、跑爬虫代码等，需要保证退出服务器的连接，该任务也不会终止掉。使用<code>nohup</code>命令已经可以完成一些较为简单的任务（<a href="https://suixinblog.cn/2018/11/nohup.html">nohup：在Linux服务器后台跑程序</a>），但真正的多会话管理还是要用到<code>screen</code>命令。<br>一般的Linux系统都自带<code>screen</code>命令，所以无需手动安装。<br><a id="more"></a></p>
+<h2 id="常用参数"><a href="#常用参数" class="headerlink" title="常用参数"></a>常用参数</h2><ul>
+<li><code>-S</code>：后加作业名称新建一个screen作业；</li>
+<li><code>-ls</code>或<code>-list</code>：列出目前的所有screen作业；</li>
+<li><code>-d</code>：后加作业名称远程使该作业离线；</li>
+<li><code>-r</code>：后加作业名称恢复该离线的作业；</li>
+<li><code>-wipe</code>：删除已经无法使用的作业。</li>
+</ul>
+<h2 id="快捷键"><a href="#快捷键" class="headerlink" title="快捷键"></a>快捷键</h2><p>进入一个screen session后，可能你开始跑一些程序，这时不能在命令行输入任何东西，就需要使用快捷键来操作。这里所有的快捷键都是以<code>Ctrl+A</code>开头的（Mac也是<code>⌃+A</code>而不是<code>⌘+A</code>）。</p>
+<ul>
+<li><code>Ctrl+A+D</code>：detach当前session，会将当前的session任务放到后台执行，回到还没进入当前session的状态，即使断开远程连接session也不会中断（<strong>最常用</strong>）；</li>
+<li><code>Ctrl+A+T</code>：在底线显示当前时间以及登入时间；</li>
+<li><code>Ctrl+A+K</code>：强行关闭当前的window；</li>
+<li><code>Ctrl+A+W</code>：显示所有window列表；</li>
+<li><code>Ctrl+A+X</code>：锁定当前window，需要用用户密码解锁。</li>
+</ul>
+<h2 id="经典使用方式"><a href="#经典使用方式" class="headerlink" title="经典使用方式"></a>经典使用方式</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span> 新建suixinPython作业</span><br><span class="line">screen -S suixinPython</span><br><span class="line"><span class="meta">#</span> 在新作业中运行长时间的代码</span><br><span class="line">python test.py</span><br><span class="line"><span class="meta">#</span> 使用快捷键detach当前session</span><br><span class="line">⌃+A+D</span><br><span class="line"><span class="meta">#</span> 退出ssh连接</span><br><span class="line">exit</span><br><span class="line"><span class="meta">#</span> 重新链接服务器</span><br><span class="line">ssh root@……</span><br><span class="line"><span class="meta">#</span> 恢复suixinPython会话</span><br><span class="line">screen -r suixinPython</span><br></pre></td></tr></table></figure>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><blockquote>
+<p><a href="https://www.cnblogs.com/mchina/archive/2013/01/30/2880680.html" target="_blank" rel="noopener">https://www.cnblogs.com/mchina/archive/2013/01/30/2880680.html</a></p>
+</blockquote>
+
+      
     </div>
-
-
-          
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li></ul>
-    </div>
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
+    
   </div>
-</article>
   
     
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-          <div class="article-meta">
-              <a href="/2018/10/hexo-latex.html" class="archive-article-date">
-      <time datetime="2018-10-13T03:27:57.000Z" itemprop="datePublished">10-13</time>
-</a>
-
-
-        </div>
-         
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/10/hexo-latex.html">Hexo中的LaTex公式渲染问题</a>
-    </h1>
-  
-
-        <div class="article-info info-on-archive">
-          
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/技术驿站/">技术驿站</a>
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/2018/11/screen.html">Linux多重视窗管理命令screen</a></p>
+        <p><span>文章作者:</span><a href="/" title="回到主页">Suixin</a></p>
+        <p><span>发布时间:</span>2018-11-25, 11:38:44</p>
+        <p><span>最后更新:</span>2018-11-25, 11:39:50</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/2018/11/screen.html" title="Linux多重视窗管理命令screen">https://suixinblog.cn/2018/11/screen.html</a>
+            <span class="copy-path" data-clipboard-text="原文: https://suixinblog.cn/2018/11/screen.html　　作者: Suixin" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+        </p>
     </div>
 
 
-          
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/">Hexo</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/LaTex/">LaTex</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/网站建设/">网站建设</a></li></ul>
-    </div>
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-          <div class="article-meta">
-              <a href="/2018/10/linear-classification2.html" class="archive-article-date">
-      <time datetime="2018-10-12T02:09:48.000Z" itemprop="datePublished">10-12</time>
-</a>
-
-
-        </div>
-         
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/10/linear-classification2.html">线性分类模型(二)——生成式模型</a>
-    </h1>
-  
-
-        <div class="article-info info-on-archive">
-          
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/术业专攻/">术业专攻</a>
-    </div>
-
-
-          
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/分类/">分类</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/机器学习/">机器学习</a></li></ul>
-    </div>
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-          <div class="article-meta">
-              <a href="/2018/10/linear-classification1.html" class="archive-article-date">
-      <time datetime="2018-10-10T01:30:49.000Z" itemprop="datePublished">10-10</time>
-</a>
-
-
-        </div>
-         
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/10/linear-classification1.html">线性分类模型(一)——线性判别函数</a>
-    </h1>
-  
-
-        <div class="article-info info-on-archive">
-          
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/术业专攻/">术业专攻</a>
-    </div>
-
-
-          
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/分类/">分类</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/机器学习/">机器学习</a></li></ul>
-    </div>
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-          <div class="article-meta">
-              <a href="/2018/09/re.html" class="archive-article-date">
-      <time datetime="2018-09-30T14:36:25.000Z" itemprop="datePublished">09-30</time>
-</a>
-
-
-        </div>
-         
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/09/re.html">Python中正则表达式的特殊字符</a>
-    </h1>
-  
-
-        <div class="article-info info-on-archive">
-          
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/术业专攻/">术业专攻</a>
-    </div>
-
-
-          
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li></ul>
-    </div>
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-          <div class="article-meta">
-              <a href="/2018/09/valine.html" class="archive-article-date">
-      <time datetime="2018-09-27T12:24:58.000Z" itemprop="datePublished">09-27</time>
-</a>
-
-
-        </div>
-         
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/09/valine.html">评论系统从Disqus到Valine</a>
-    </h1>
-  
-
-        <div class="article-info info-on-archive">
-          
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/技术驿站/">技术驿站</a>
-    </div>
-
-
-          
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/">Hexo</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/网站建设/">网站建设</a></li></ul>
-    </div>
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-          <div class="article-meta">
-              <a href="/2018/09/hexo.html" class="archive-article-date">
-      <time datetime="2018-09-26T08:54:29.000Z" itemprop="datePublished">09-26</time>
-</a>
-
-
-        </div>
-         
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/09/hexo.html">从Hugo到Hexo</a>
-    </h1>
-  
-
-        <div class="article-info info-on-archive">
-          
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/技术驿站/">技术驿站</a>
-    </div>
-
-
-          
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/">Hexo</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/网站建设/">网站建设</a></li></ul>
-    </div>
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-          <div class="article-meta">
-              <a href="/2018/09/mihomegiftbag.html" class="archive-article-date">
-      <time datetime="2018-09-25T11:09:01.000Z" itemprop="datePublished">09-25</time>
-</a>
-
-
-        </div>
-         
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/09/mihomegiftbag.html">小米笔试题「小米大礼包」Python代码</a>
-    </h1>
-  
-
-        <div class="article-info info-on-archive">
-          
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/术业专攻/">术业专攻</a>
-    </div>
-
-
-          
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/面试/">面试</a></li></ul>
-    </div>
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-          <div class="article-meta">
-              <a href="/2018/09/hugo.html" class="archive-article-date">
-      <time datetime="2018-09-25T11:05:33.000Z" itemprop="datePublished">09-25</time>
-</a>
-
-
-        </div>
-         
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/09/hugo.html">使用HUGO搭建个人博客</a>
-    </h1>
-  
-
-        <div class="article-info info-on-archive">
-          
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/技术驿站/">技术驿站</a>
-    </div>
-
-
-          
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/网站建设/">网站建设</a></li></ul>
-    </div>
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-          <div class="article-meta">
-              <a href="/2018/09/index.html" class="archive-article-date">
-      <time datetime="2018-09-24T13:43:58.480Z" itemprop="datePublished">09-24</time>
-</a>
-
-
-        </div>
-         
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/09/index.html">Hello World</a>
-    </h1>
-  
-
-        <div class="article-info info-on-archive">
-          
-
-          
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/archives/">&laquo; Prev</a><a class="page-number" href="/archives/">1</a><span class="page-number current">2</span>
+    <nav id="article-nav">
+        
+        
+            <div id="article-nav-older" class="article-nav-title">
+                <a href="/2018/11/tar-gzip-zip-rar.html">
+                    Linux压缩和解压命令：tar，gzip，zip（unzip），rar
+                </a>
+            </div>
+        
     </nav>
-  
 
+  
+</article>
+
+    <div id="toc" class="toc-article">
+        <strong class="toc-title">文章目录</strong>
+        
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#常用参数"><span class="toc-number">1.</span> <span class="toc-text">常用参数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#快捷键"><span class="toc-number">2.</span> <span class="toc-text">快捷键</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#经典使用方式"><span class="toc-number">3.</span> <span class="toc-text">经典使用方式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#参考"><span class="toc-number">4.</span> <span class="toc-text">参考</span></a></li></ol>
+        
+    </div>
+    <style>
+        .left-col .switch-btn,
+        .left-col .switch-area {
+            display: none;
+        }
+        .toc-level-4 i,
+        .toc-level-4 ol {
+            display: none !important;
+        }
+    </style>
+
+    <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+
+    <script>
+        yiliaConfig.toc = ["隐藏目录", "显示目录", !!"false"];
+    </script>
+
+
+
+
+
+    
+        <section id="comments" style="margin: 2em; padding: 2em; background: rgba(255, 255, 255, 0.5)">
+    <div id="vcomment" class="comment"></div>
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+    <script src="//unpkg.com/valine@1.2.0-beta1/dist/Valine.min.js"></script>
+    <script>
+      new Valine({
+        el: '#vcomment',
+        notify: 'true',
+        verify: 'true',
+        app_id: "JbEkmNyN4oduuYuIVapp3mp7-gzGzoHsz",
+        app_key: "lEKLgYFFECP8JrDYvUedV0z7",
+        placeholder: "Just do it!",
+        avatar: "mp"
+      });
+    </script>
+</section>
+    
+
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
+        
+
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+
+        
+            <a href="/2018/11/tar-gzip-zip-rar.html" title="下一篇: Linux压缩和解压命令：tar，gzip，zip（unzip），rar">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2018/11/screen.html">Linux多重视窗管理命令screen</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/11/tar-gzip-zip-rar.html">Linux压缩和解压命令：tar，gzip，zip（unzip），rar</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/11/wget.html">Linux下载命令wget</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/11/ssr.html">SSR搭建教程</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/11/nohup.html">nohup：在Linux服务器后台跑程序</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/10/ps-grep-tail.html">Linux三个命令：ps，grep，tail</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/10/linear-classification4.html">线性分类模型(四)——贝叶斯观点下的Logistic回归</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/10/linear-classification3.html">线性分类模型(三)——判别式模型</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/10/argparse.html">Python命令行解析器argparse的使用</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/10/git.html">git常用命令</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/10/list-index.html">Python中list的查找</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/10/hexo-latex.html">Hexo中的LaTex公式渲染问题</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/10/linear-classification2.html">线性分类模型(二)——生成式模型</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/10/linear-classification1.html">线性分类模型(一)——线性判别函数</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/re.html">Python中正则表达式的特殊字符</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/valine.html">评论系统从Disqus到Valine</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/hexo.html">从Hugo到Hexo</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/mihomegiftbag.html">小米笔试题「小米大礼包」Python代码</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/hugo.html">使用HUGO搭建个人博客</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/index.html">Hello World</a></li></ul>
+
+
+
+
+    <script>
+        
+    </script>
 </div>
       <footer id="footer">
     <div class="outer">
