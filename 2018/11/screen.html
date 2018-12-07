@@ -23,7 +23,7 @@
 <meta property="og:site_name" content="Suixin&#39;s Blog">
 <meta property="og:description" content="在日常的编码中肯定需要登录到远程Linux服务器，经常需要在上面运行一些需要很长时间才能完成的任务，如：传输文件、跑爬虫代码等，需要保证退出服务器的连接，该任务也不会终止掉。使用nohup命令已经可以完成一些较为简单的任务（nohup：在Linux服务器后台跑程序），但真正的多会话管理还是要用到screen命令。一般的Linux系统都自带screen命令，所以无需手动安装。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-11-25T03:39:50.118Z">
+<meta property="og:updated_time" content="2018-12-07T12:55:48.735Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Linux多重视窗管理命令screen">
 <meta name="twitter:description" content="在日常的编码中肯定需要登录到远程Linux服务器，经常需要在上面运行一些需要很长时间才能完成的任务，如：传输文件、跑爬虫代码等，需要保证退出服务器的连接，该任务也不会终止掉。使用nohup命令已经可以完成一些较为简单的任务（nohup：在Linux服务器后台跑程序），但真正的多会话管理还是要用到screen命令。一般的Linux系统都自带screen命令，所以无需手动安装。">
@@ -327,7 +327,7 @@
 <li><code>-r</code>：后加作业名称恢复该离线的作业；</li>
 <li><code>-wipe</code>：删除已经无法使用的作业。</li>
 </ul>
-<h2 id="快捷键"><a href="#快捷键" class="headerlink" title="快捷键"></a>快捷键</h2><p>进入一个screen session后，可能你开始跑一些程序，这时不能在命令行输入任何东西，就需要使用快捷键来操作。这里所有的快捷键都是以<code>Ctrl+A</code>开头的（Mac也是<code>⌃+A</code>而不是<code>⌘+A</code>）。</p>
+<h2 id="快捷键（在screen-session中）"><a href="#快捷键（在screen-session中）" class="headerlink" title="快捷键（在screen session中）"></a>快捷键（在screen session中）</h2><p>进入一个screen session后，可能你开始跑一些程序，这时不能在命令行输入任何东西，就需要使用快捷键来操作。这里所有的快捷键都是以<code>Ctrl+A</code>开头的（Mac也是<code>⌃+A</code>而不是<code>⌘+A</code>）。</p>
 <ul>
 <li><code>Ctrl+A+D</code>：detach当前session，会将当前的session任务放到后台执行，回到还没进入当前session的状态，即使断开远程连接session也不会中断（<strong>最常用</strong>）；</li>
 <li><code>Ctrl+A+T</code>：在底线显示当前时间以及登入时间；</li>
@@ -335,6 +335,7 @@
 <li><code>Ctrl+A+W</code>：显示所有window列表；</li>
 <li><code>Ctrl+A+X</code>：锁定当前window，需要用用户密码解锁。</li>
 </ul>
+<h2 id="在session中启用鼠标滚动"><a href="#在session中启用鼠标滚动" class="headerlink" title="在session中启用鼠标滚动"></a>在session中启用鼠标滚动</h2><p>screen默认设置中在session中不能使用鼠标滚屏。通过在<code>/etc/screenrc</code>文件中加入以下内容启动鼠标滚动：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">termcapinfo xterm* ti@:te@</span><br></pre></td></tr></table></figure></p>
 <h2 id="经典使用方式"><a href="#经典使用方式" class="headerlink" title="经典使用方式"></a>经典使用方式</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span> 新建suixinPython作业</span><br><span class="line">screen -S suixinPython</span><br><span class="line"><span class="meta">#</span> 在新作业中运行长时间的代码</span><br><span class="line">python test.py</span><br><span class="line"><span class="meta">#</span> 使用快捷键detach当前session</span><br><span class="line">⌃+A+D</span><br><span class="line"><span class="meta">#</span> 退出ssh连接</span><br><span class="line">exit</span><br><span class="line"><span class="meta">#</span> 重新链接服务器</span><br><span class="line">ssh root@……</span><br><span class="line"><span class="meta">#</span> 恢复suixinPython会话</span><br><span class="line">screen -r suixinPython</span><br></pre></td></tr></table></figure>
 <h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><blockquote>
 <p><a href="https://www.cnblogs.com/mchina/archive/2013/01/30/2880680.html" target="_blank" rel="noopener">https://www.cnblogs.com/mchina/archive/2013/01/30/2880680.html</a></p>
@@ -350,7 +351,7 @@
         <p><span>本文标题:</span><a href="/2018/11/screen.html">Linux多重视窗管理命令screen</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">Suixin</a></p>
         <p><span>发布时间:</span>2018-11-25, 11:38:44</p>
-        <p><span>最后更新:</span>2018-11-25, 11:39:50</p>
+        <p><span>最后更新:</span>2018-12-07, 20:55:48</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2018/11/screen.html" title="Linux多重视窗管理命令screen">https://suixinblog.cn/2018/11/screen.html</a>
             <span class="copy-path" data-clipboard-text="原文: https://suixinblog.cn/2018/11/screen.html　　作者: Suixin" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
@@ -364,6 +365,12 @@
 
 
     <nav id="article-nav">
+        
+            <div id="article-nav-newer" class="article-nav-title">
+                <a href="/2018/12/tmux.html">
+                    强大的tmux
+                </a>
+            </div>
         
         
             <div id="article-nav-older" class="article-nav-title">
@@ -380,7 +387,7 @@
     <div id="toc" class="toc-article">
         <strong class="toc-title">文章目录</strong>
         
-            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#常用参数"><span class="toc-number">1.</span> <span class="toc-text">常用参数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#快捷键"><span class="toc-number">2.</span> <span class="toc-text">快捷键</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#经典使用方式"><span class="toc-number">3.</span> <span class="toc-text">经典使用方式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#参考"><span class="toc-number">4.</span> <span class="toc-text">参考</span></a></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#常用参数"><span class="toc-number">1.</span> <span class="toc-text">常用参数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#快捷键（在screen-session中）"><span class="toc-number">2.</span> <span class="toc-text">快捷键（在screen session中）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#在session中启用鼠标滚动"><span class="toc-number">3.</span> <span class="toc-text">在session中启用鼠标滚动</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#经典使用方式"><span class="toc-number">4.</span> <span class="toc-text">经典使用方式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#参考"><span class="toc-number">5.</span> <span class="toc-text">参考</span></a></li></ol>
         
     </div>
     <style>
@@ -428,7 +435,9 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
+            <a href="/2018/12/tmux.html" title="上一篇: 强大的tmux">
+                <i class="fa fa-angle-left"></i>
+            </a>
         
 
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
@@ -440,7 +449,7 @@
         
     </div>
 
-    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2018/11/screen.html">Linux多重视窗管理命令screen</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/11/tar-gzip-zip-rar.html">Linux压缩和解压命令：tar，gzip，zip（unzip），rar</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/11/wget.html">Linux下载命令wget</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/11/ssr.html">SSR搭建教程</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/11/nohup.html">nohup：在Linux服务器后台跑程序</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/10/ps-grep-tail.html">Linux三个命令：ps，grep，tail</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/10/linear-classification4.html">线性分类模型(四)——贝叶斯观点下的Logistic回归</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/10/linear-classification3.html">线性分类模型(三)——判别式模型</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/10/argparse.html">Python命令行解析器argparse的使用</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/10/git.html">git常用命令</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/10/list-index.html">Python中list的查找</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/10/hexo-latex.html">Hexo中的LaTex公式渲染问题</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/10/linear-classification2.html">线性分类模型(二)——生成式模型</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/10/linear-classification1.html">线性分类模型(一)——线性判别函数</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/re.html">Python中正则表达式的特殊字符</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/valine.html">评论系统从Disqus到Valine</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/hexo.html">从Hugo到Hexo</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/mihomegiftbag.html">小米笔试题「小米大礼包」Python代码</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/hugo.html">使用HUGO搭建个人博客</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/index.html">Hello World</a></li></ul>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2018/12/tmux.html">强大的tmux</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/11/screen.html">Linux多重视窗管理命令screen</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/11/tar-gzip-zip-rar.html">Linux压缩和解压命令：tar，gzip，zip（unzip），rar</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/11/wget.html">Linux下载命令wget</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/11/ssr.html">SSR搭建教程</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/11/nohup.html">nohup：在Linux服务器后台跑程序</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/10/ps-grep-tail.html">Linux三个命令：ps，grep，tail</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/10/linear-classification4.html">线性分类模型(四)——贝叶斯观点下的Logistic回归</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/10/linear-classification3.html">线性分类模型(三)——判别式模型</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/10/argparse.html">Python命令行解析器argparse的使用</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/10/git.html">git常用命令</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/10/list-index.html">Python中list的查找</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/10/hexo-latex.html">Hexo中的LaTex公式渲染问题</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/10/linear-classification2.html">线性分类模型(二)——生成式模型</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/10/linear-classification1.html">线性分类模型(一)——线性判别函数</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/re.html">Python中正则表达式的特殊字符</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/valine.html">评论系统从Disqus到Valine</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/hexo.html">从Hugo到Hexo</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/mihomegiftbag.html">小米笔试题「小米大礼包」Python代码</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/hugo.html">使用HUGO搭建个人博客</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/index.html">Hello World</a></li></ul>
 
 
 
