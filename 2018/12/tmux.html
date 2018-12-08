@@ -25,7 +25,7 @@
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://ws1.sinaimg.cn/large/006tNbRwgy1fxylrik0mbj31c00u07wh.jpg">
 <meta property="og:image" content="https://ws2.sinaimg.cn/large/006tNbRwgy1fxyltju6r7j31c00u0u0e.jpg">
-<meta property="og:updated_time" content="2018-12-07T16:00:21.045Z">
+<meta property="og:updated_time" content="2018-12-08T02:30:42.649Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="强大的tmux">
 <meta name="twitter:description" content="之前在服务器跑代码的时候用到了screen会话管理命令，可以新建不同的session来不间断运行shell。而tmux更为强大，不仅提供了会话的管理，还支持同一窗口下分出不同的窗格。总的来说，tmux的结构分为：  session window pane">
@@ -346,7 +346,7 @@
 </li>
 </ol>
 <h2 id="常用参数"><a href="#常用参数" class="headerlink" title="常用参数"></a>常用参数</h2><p><code>tmux new -s &lt;name&gt;</code>：<strong>新建</strong>名为<code>name</code>的会话（无<code>-s</code>参数则默认以数字命名）；<br><code>tmux at -t &lt;name&gt;</code>：<strong>恢复（attach）</strong>名为<code>name</code>的会话（无<code>-t</code>参数则默认恢复上一次的会话（<code>at</code>可简写为<code>a</code>）；<br><code>tmux ls</code>：<strong>列出</strong>所有会话；<br><code>tmux kill-session -t &lt;name&gt;</code>：<strong>关闭</strong>名为<code>name</code>的会话；<br><code>tmux kill-server</code>：关闭所有会话。</p>
-<h2 id="快捷键（在tmux-session中）"><a href="#快捷键（在tmux-session中）" class="headerlink" title="快捷键（在tmux session中）"></a>快捷键（在tmux session中）</h2><p>这里所有的快捷键都是以<code>Ctrl+B</code>开头的（Mac也是<code>⌃+B</code>而不是<code>⌘+B</code>）。一下所有命令均在按下前缀<code>Ctrl+B</code>后再按下生效。</p>
+<h2 id="快捷键（在tmux-session中）"><a href="#快捷键（在tmux-session中）" class="headerlink" title="快捷键（在tmux session中）"></a>快捷键（在tmux session中）</h2><p>这里所有的快捷键都是以<code>Ctrl+B</code>开头的（Mac也是<code>⌃+B</code>而不是<code>⌘+B</code>）。以下所有命令均在按下前缀<code>Ctrl+B</code>后再按下生效。</p>
 <h3 id="会话"><a href="#会话" class="headerlink" title="会话"></a>会话</h3><p><code>D</code>：<strong>分离（detach）</strong>当前会话（会话仍在后台运行）；<br><code>S</code>：列出所有会话，此时可通过方向键和回车键切换；<br><code>$</code>：重命名当前会话；<br><code>:new -s &lt;name&gt;</code>：创建并进入名为<code>name</code>的会话（不存在父子级关系）。</p>
 <h3 id="窗口（标签页）"><a href="#窗口（标签页）" class="headerlink" title="窗口（标签页）"></a>窗口（标签页）</h3><p><strong>窗口</strong>在tmux中相当于同一个session下的子窗口。<br>想到的使用场景为：在一个多人使用的服务器下，你只需新建自己名字的session<code>tmux new -s suixin</code>，想要再新建会话时，不去<code>tmux new -s suixin2</code>，而是选择在已有的<code>suixin</code>session下新建窗口，避免了多用户用<code>tmux</code>开启巨多session的困扰。（说的有点绕……）<br><code>c</code>：新建窗口；<br><code>w</code>：列出所有窗口，此时可通过方向键和回车键切换；<br><code>n</code>：切换到后一个窗口（使用后面的主题后失效）；<br><code>p</code>：切换到前一个窗口（使用后面的主题后失效）；<br><code>,</code>：重命名当前窗口（不知是否可以在创建时就命名）；<br><code>&amp;</code>：关闭当前窗口。</p>
 <h3 id="窗格（分割窗口）"><a href="#窗格（分割窗口）" class="headerlink" title="窗格（分割窗口）"></a>窗格（分割窗口）</h3><p><strong>窗格</strong>为<code>tmux</code>优于<code>screen</code>的一个强大的功能，可以实现在同一个窗口下分割窗口为多个窗格运行不同的命令，一览无余。棒棒棒！！<br><code>%</code>：垂直分割；<br><code>:</code>：水平分割；<br><code>x</code>：关闭窗格（也可以直接在命令行输入<code>exit</code>）；<br><code>o</code>：交换窗格（将输入切换到下一个窗格）；<br><code>q</code>：显示窗格的编号（和尺寸），此时可通过按下数字切换（使用后面的主题后数字切换失效）；<br><code>{</code>：与上一个窗格交换位置；<br><code>}</code>：与下一个窗格交换位置。</p>
@@ -355,12 +355,13 @@
 <li>鼠标（开启键为<code>Ctrl+A+M</code>）。可切换windows、panes，鼠标滚动，复制等；</li>
 <li>快捷键前缀改为<code>Ctrl+A</code>并兼容<code>Ctrl+B</code>；</li>
 <li>更改了部分快捷键，使之更方便，见<a href="https://github.com/gpakosz/.tmux#bindings" target="_blank" rel="noopener">https://github.com/gpakosz/.tmux#bindings</a> ；</li>
+<li>美化底栏；</li>
 <li>窗口编号从1开始；</li>
 <li>当前窗口用蓝底显示，当前pane用蓝框显示；</li>
 <li>漂亮的界面。</li>
 </ul>
 <p>拉取文件：<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git clone https://github.com/gpakosz/.tmux.git</span><br><span class="line">ln -s -f .tmux/.tmux.conf</span><br><span class="line">cp .tmux/.tmux.conf.local ./</span><br></pre></td></tr></table></figure></p>
-<p>我修改了<code>~/.tmux/.tmux.conf.local</code>文件中的左右底栏配置，然后<code>source</code>该文件（好像Linux服务器不能显示电池信息）：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">tmux_conf_theme_status_left=&apos; ❐ #S &apos;</span><br><span class="line">tmux_conf_theme_status_right=&apos;#&#123;prefix&#125;#&#123;pairing&#125;#&#123;synchronized&#125; #&#123;?battery_status, #&#123;battery_status&#125;,&#125;#&#123;?battery_bar, #&#123;battery_bar&#125;,&#125;#&#123;?battery_percentage, #&#123;battery_percentage&#125;,&#125; , %R , %d %b | #&#123;loadavg&#125; | #&#123;username&#125;#&#123;root&#125; | #&#123;hostname&#125; &apos;</span><br></pre></td></tr></table></figure></p>
+<p>我修改了<code>~/.tmux.conf.local</code>文件中的左右底栏配置，然后<code>source</code>该文件（好像Linux服务器不能显示电池信息）：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">tmux_conf_theme_status_left=&apos; ❐ #S &apos;</span><br><span class="line">tmux_conf_theme_status_right=&apos;#&#123;prefix&#125;#&#123;pairing&#125;#&#123;synchronized&#125; #&#123;?battery_status, #&#123;battery_status&#125;,&#125;#&#123;?battery_bar, #&#123;battery_bar&#125;,&#125;#&#123;?battery_percentage, #&#123;battery_percentage&#125;,&#125; , %R , %d %b | #&#123;loadavg&#125; | #&#123;username&#125;#&#123;root&#125; | #&#123;hostname&#125; &apos;</span><br></pre></td></tr></table></figure></p>
 <p>我比较常用的窗格设置，左边主界面，右上角可以实时<code>cd</code>到某些文件夹查看，右下角为<code>top</code>：<br><img src="https://ws1.sinaimg.cn/large/006tNbRwgy1fxylrik0mbj31c00u07wh.jpg" alt=""></p>
 <h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><p><code>Ctrl+B+T</code>：显示时间，按任意键返回。<br><img src="https://ws2.sinaimg.cn/large/006tNbRwgy1fxyltju6r7j31c00u0u0e.jpg" alt=""></p>
 <p>查找窗口、调整窗口排序、调整窗格尺寸、同步窗格、文本复制模式等功能在参考中可以找到。</p>
@@ -378,7 +379,7 @@
         <p><span>本文标题:</span><a href="/2018/12/tmux.html">强大的tmux</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">Suixin</a></p>
         <p><span>发布时间:</span>2018-12-07, 23:58:49</p>
-        <p><span>最后更新:</span>2018-12-08, 00:00:21</p>
+        <p><span>最后更新:</span>2018-12-08, 10:30:42</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2018/12/tmux.html" title="强大的tmux">https://suixinblog.cn/2018/12/tmux.html</a>
             <span class="copy-path" data-clipboard-text="原文: https://suixinblog.cn/2018/12/tmux.html　　作者: Suixin" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
@@ -392,6 +393,12 @@
 
 
     <nav id="article-nav">
+        
+            <div id="article-nav-newer" class="article-nav-title">
+                <a href="/2018/12/ssh-timeout.html">
+                    ssh连接服务器超时解决方案
+                </a>
+            </div>
         
         
             <div id="article-nav-older" class="article-nav-title">
@@ -456,7 +463,9 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
+            <a href="/2018/12/ssh-timeout.html" title="上一篇: ssh连接服务器超时解决方案">
+                <i class="fa fa-angle-left"></i>
+            </a>
         
 
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
@@ -468,7 +477,7 @@
         
     </div>
 
-    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2018/12/tmux.html">强大的tmux</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/11/screen.html">Linux多重视窗管理命令screen</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/11/tar-gzip-zip-rar.html">Linux压缩和解压命令：tar，gzip，zip（unzip），rar</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/11/wget.html">Linux下载命令wget</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/11/ssr.html">SSR搭建教程</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/11/nohup.html">nohup：在Linux服务器后台跑程序</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/10/ps-grep-tail.html">Linux三个命令：ps，grep，tail</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/10/linear-classification4.html">线性分类模型(四)——贝叶斯观点下的Logistic回归</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/10/linear-classification3.html">线性分类模型(三)——判别式模型</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/10/argparse.html">Python命令行解析器argparse的使用</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/10/git.html">git常用命令</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/10/list-index.html">Python中list的查找</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/10/hexo-latex.html">Hexo中的LaTex公式渲染问题</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/10/linear-classification2.html">线性分类模型(二)——生成式模型</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/10/linear-classification1.html">线性分类模型(一)——线性判别函数</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/re.html">Python中正则表达式的特殊字符</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/valine.html">评论系统从Disqus到Valine</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/hexo.html">从Hugo到Hexo</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/mihomegiftbag.html">小米笔试题「小米大礼包」Python代码</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/hugo.html">使用HUGO搭建个人博客</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/index.html">Hello World</a></li></ul>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2018/12/ssh-timeout.html">ssh连接服务器超时解决方案</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/12/tmux.html">强大的tmux</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/11/screen.html">Linux多重视窗管理命令screen</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/11/tar-gzip-zip-rar.html">Linux压缩和解压命令：tar，gzip，zip（unzip），rar</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/11/wget.html">Linux下载命令wget</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/11/ssr.html">SSR搭建教程</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/11/nohup.html">nohup：在Linux服务器后台跑程序</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/10/ps-grep-tail.html">Linux三个命令：ps，grep，tail</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/10/linear-classification4.html">线性分类模型(四)——贝叶斯观点下的Logistic回归</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/10/linear-classification3.html">线性分类模型(三)——判别式模型</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/10/argparse.html">Python命令行解析器argparse的使用</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/10/git.html">git常用命令</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/10/list-index.html">Python中list的查找</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/10/hexo-latex.html">Hexo中的LaTex公式渲染问题</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/10/linear-classification2.html">线性分类模型(二)——生成式模型</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/10/linear-classification1.html">线性分类模型(一)——线性判别函数</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/re.html">Python中正则表达式的特殊字符</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/valine.html">评论系统从Disqus到Valine</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/hexo.html">从Hugo到Hexo</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/mihomegiftbag.html">小米笔试题「小米大礼包」Python代码</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/hugo.html">使用HUGO搭建个人博客</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/index.html">Hello World</a></li></ul>
 
 
 
