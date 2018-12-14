@@ -27,7 +27,7 @@
 <meta property="og:image" content="https://ws1.sinaimg.cn/large/006tNbRwly1fy49d17bmhj31ii0n8tc5.jpg">
 <meta property="og:image" content="https://ws4.sinaimg.cn/large/006tNbRwly1fy49e3i4b8j312s0u0tg5.jpg">
 <meta property="og:image" content="https://ws2.sinaimg.cn/large/006tNbRwly1fy49krf9xdj31dw0u0e28.jpg">
-<meta property="og:updated_time" content="2018-12-12T13:17:23.608Z">
+<meta property="og:updated_time" content="2018-12-14T09:49:28.910Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Anaconda快速使用教程">
 <meta name="twitter:description" content="Anaconda 是一种Python语言的免费增值开源发行版，用于进行大规模数据处理、预测分析，和科学计算，致力于简化包的管理和部署。Anaconda使用软件包管理系统Conda进行包管理。—维基百科)The Most Popular Python Data Science Platform —https://www.anaconda.com  Anaconda具有非常多的优点：开源、全平台支持">
@@ -363,6 +363,8 @@
 <p><center><img src="https://ws1.sinaimg.cn/large/006tNbRwly1fy49d17bmhj31ii0n8tc5.jpg" alt="官网搜索包" width="80%"></center><br>一般选择第一个即可</p>
 <p><center><img src="https://ws4.sinaimg.cn/large/006tNbRwly1fy49e3i4b8j312s0u0tg5.jpg" width="80%"></center><br>使用图示的命令安装即可。</p>
 <p><center><img src="https://ws2.sinaimg.cn/large/006tNbRwly1fy49krf9xdj31dw0u0e28.jpg" alt="安装指定channel的包" width="80%"></center><br>注：<code>conda install</code>的<code>-c</code>参数表示指定对应的<code>channel</code>安装。</p>
+<h3 id="添加清华的镜像"><a href="#添加清华的镜像" class="headerlink" title="添加清华的镜像"></a>添加清华的镜像</h3><p>TUNA提供了Anaconda仓库的镜像，可以加速访问速度。而且维护了一些anaconda三方源。<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span> 添加Anaconda仓库的镜像</span><br><span class="line">conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/</span><br><span class="line">conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main/</span><br><span class="line"><span class="meta">#</span> 添加Conda Forge源</span><br><span class="line">conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/conda-forge/</span><br><span class="line">conda config --set show_channel_urls yes</span><br></pre></td></tr></table></figure></p>
+<p>添加了以上的源之后，大部分包都能搜索得到了。还有搜索不到的可按照前两种方式再安装。</p>
 <h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><blockquote>
 <p><a href="https://zhuanlan.zhihu.com/p/32925500" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/32925500</a></p>
 </blockquote>
@@ -377,7 +379,7 @@
         <p><span>本文标题:</span><a href="/2018/12/anaconda.html">Anaconda快速使用教程</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">Suixin</a></p>
         <p><span>发布时间:</span>2018-12-12, 21:07:16</p>
-        <p><span>最后更新:</span>2018-12-12, 21:17:23</p>
+        <p><span>最后更新:</span>2018-12-14, 17:49:28</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2018/12/anaconda.html" title="Anaconda快速使用教程">https://suixinblog.cn/2018/12/anaconda.html</a>
             <span class="copy-path" data-clipboard-text="原文: https://suixinblog.cn/2018/12/anaconda.html　　作者: Suixin" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
@@ -391,6 +393,12 @@
 
 
     <nav id="article-nav">
+        
+            <div id="article-nav-newer" class="article-nav-title">
+                <a href="/2018/12/monitorix-glances.html">
+                    monitorix--服务器监控程序安装及配置
+                </a>
+            </div>
         
         
             <div id="article-nav-older" class="article-nav-title">
@@ -407,7 +415,7 @@
     <div id="toc" class="toc-article">
         <strong class="toc-title">文章目录</strong>
         
-            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#安装Anaconda"><span class="toc-number">1.</span> <span class="toc-text">安装Anaconda</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#macOS"><span class="toc-number">1.1.</span> <span class="toc-text">macOS</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Linux"><span class="toc-number">1.2.</span> <span class="toc-text">Linux</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Windows"><span class="toc-number">1.3.</span> <span class="toc-text">Windows</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#检查安装"><span class="toc-number">1.4.</span> <span class="toc-text">检查安装</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#使用conda管理环境和包"><span class="toc-number">2.</span> <span class="toc-text">使用conda管理环境和包</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#安装conda中搜索不到的包"><span class="toc-number">3.</span> <span class="toc-text">安装conda中搜索不到的包</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#pip安装"><span class="toc-number">3.1.</span> <span class="toc-text">pip安装</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#通过官网搜索安装"><span class="toc-number">3.2.</span> <span class="toc-text">通过官网搜索安装</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#参考"><span class="toc-number">4.</span> <span class="toc-text">参考</span></a></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#安装Anaconda"><span class="toc-number">1.</span> <span class="toc-text">安装Anaconda</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#macOS"><span class="toc-number">1.1.</span> <span class="toc-text">macOS</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Linux"><span class="toc-number">1.2.</span> <span class="toc-text">Linux</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Windows"><span class="toc-number">1.3.</span> <span class="toc-text">Windows</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#检查安装"><span class="toc-number">1.4.</span> <span class="toc-text">检查安装</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#使用conda管理环境和包"><span class="toc-number">2.</span> <span class="toc-text">使用conda管理环境和包</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#安装conda中搜索不到的包"><span class="toc-number">3.</span> <span class="toc-text">安装conda中搜索不到的包</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#pip安装"><span class="toc-number">3.1.</span> <span class="toc-text">pip安装</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#通过官网搜索安装"><span class="toc-number">3.2.</span> <span class="toc-text">通过官网搜索安装</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#添加清华的镜像"><span class="toc-number">3.3.</span> <span class="toc-text">添加清华的镜像</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#参考"><span class="toc-number">4.</span> <span class="toc-text">参考</span></a></li></ol>
         
     </div>
     <style>
@@ -455,7 +463,9 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
+            <a href="/2018/12/monitorix-glances.html" title="上一篇: monitorix--服务器监控程序安装及配置">
+                <i class="fa fa-angle-left"></i>
+            </a>
         
 
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
@@ -467,7 +477,7 @@
         
     </div>
 
-    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2018/12/anaconda.html">Anaconda快速使用教程</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/12/ssh-timeout.html">ssh连接服务器超时解决方案</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/12/tmux.html">强大的tmux</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/11/screen.html">Linux多重视窗管理命令screen</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/11/tar-gzip-zip-rar.html">Linux压缩和解压命令：tar，gzip，zip（unzip），rar</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/11/wget.html">Linux下载命令wget</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/11/ssr.html">SSR搭建教程</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/11/nohup.html">nohup：在Linux服务器后台跑程序</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/10/ps-grep-tail.html">Linux三个命令：ps，grep，tail</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/10/linear-classification4.html">线性分类模型(四)——贝叶斯观点下的Logistic回归</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/10/linear-classification3.html">线性分类模型(三)——判别式模型</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/10/argparse.html">Python命令行解析器argparse的使用</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/10/git.html">git常用命令</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/10/list-index.html">Python中list的查找</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/10/hexo-latex.html">Hexo中的LaTex公式渲染问题</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/10/linear-classification2.html">线性分类模型(二)——生成式模型</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/10/linear-classification1.html">线性分类模型(一)——线性判别函数</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/re.html">Python中正则表达式的特殊字符</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/valine.html">评论系统从Disqus到Valine</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/hexo.html">从Hugo到Hexo</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/mihomegiftbag.html">小米笔试题「小米大礼包」Python代码</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/hugo.html">使用HUGO搭建个人博客</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/index.html">Hello World</a></li></ul>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2018/12/monitorix-glances.html">monitorix--服务器监控程序安装及配置</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/12/anaconda.html">Anaconda快速使用教程</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/12/ssh-timeout.html">ssh连接服务器超时解决方案</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/12/tmux.html">强大的tmux</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/11/screen.html">Linux多重视窗管理命令screen</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/11/tar-gzip-zip-rar.html">Linux压缩和解压命令：tar，gzip，zip（unzip），rar</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/11/wget.html">Linux下载命令wget</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/11/ssr.html">SSR搭建教程</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/11/nohup.html">nohup：在Linux服务器后台跑程序</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/10/ps-grep-tail.html">Linux三个命令：ps，grep，tail</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/10/linear-classification4.html">线性分类模型(四)——贝叶斯观点下的Logistic回归</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/10/linear-classification3.html">线性分类模型(三)——判别式模型</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/10/argparse.html">Python命令行解析器argparse的使用</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/10/git.html">git常用命令</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/10/list-index.html">Python中list的查找</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/10/hexo-latex.html">Hexo中的LaTex公式渲染问题</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/10/linear-classification2.html">线性分类模型(二)——生成式模型</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/10/linear-classification1.html">线性分类模型(一)——线性判别函数</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/re.html">Python中正则表达式的特殊字符</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/valine.html">评论系统从Disqus到Valine</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/hexo.html">从Hugo到Hexo</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/mihomegiftbag.html">小米笔试题「小米大礼包」Python代码</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/hugo.html">使用HUGO搭建个人博客</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/index.html">Hello World</a></li></ul>
 
 
 
