@@ -2,9 +2,23 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://suixinblog.cn/2018/12/chmod.html</loc>
+    
+    <lastmod>2018-12-17T13:02:56.622Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://suixinblog.cn/2018/12/ssh-timeout.html</loc>
+    
+    <lastmod>2018-12-17T12:02:34.346Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://suixinblog.cn/2018/12/anaconda.html</loc>
     
-    <lastmod>2018-12-14T09:49:28.910Z</lastmod>
+    <lastmod>2018-12-14T10:35:51.415Z</lastmod>
     
   </url>
   
@@ -19,13 +33,6 @@
     <loc>https://suixinblog.cn/2018/12/tmux.html</loc>
     
     <lastmod>2018-12-12T13:12:21.802Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://suixinblog.cn/2018/12/ssh-timeout.html</loc>
-    
-    <lastmod>2018-12-08T03:29:28.822Z</lastmod>
     
   </url>
   
