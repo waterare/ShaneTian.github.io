@@ -15,18 +15,21 @@
 
 
 
-<meta name="description" content="经常需要连接到Linux服务器，发现过一段时间不输入命令，服务器的ssh连接就会断开，又需要重新ssh登录。">
-<meta name="keywords" content="Linux,服务器">
+<meta name="description" content="可以使用Python中自带的print输出带有颜色或者背景的字符串。">
+<meta name="keywords" content="Python">
 <meta property="og:type" content="article">
-<meta property="og:title" content="ssh连接服务器超时解决方案">
-<meta property="og:url" content="https://suixinblog.cn/2018/12/ssh-timeout.html">
+<meta property="og:title" content="Python打印带颜色的字符串">
+<meta property="og:url" content="https://suixinblog.cn/2019/01/print-colorful.html">
 <meta property="og:site_name" content="Suixin&#39;s Blog">
-<meta property="og:description" content="经常需要连接到Linux服务器，发现过一段时间不输入命令，服务器的ssh连接就会断开，又需要重新ssh登录。">
+<meta property="og:description" content="可以使用Python中自带的print输出带有颜色或者背景的字符串。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-12-17T12:02:34.346Z">
+<meta property="og:image" content="https://ws2.sinaimg.cn/large/006tNc79ly1fz4sjpfz49j30al03uwes.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/006tNc79ly1fz4sv8ele2j30d00bktab.jpg">
+<meta property="og:updated_time" content="2019-01-13T03:56:43.372Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="ssh连接服务器超时解决方案">
-<meta name="twitter:description" content="经常需要连接到Linux服务器，发现过一段时间不输入命令，服务器的ssh连接就会断开，又需要重新ssh登录。">
+<meta name="twitter:title" content="Python打印带颜色的字符串">
+<meta name="twitter:description" content="可以使用Python中自带的print输出带有颜色或者背景的字符串。">
+<meta name="twitter:image" content="https://ws2.sinaimg.cn/large/006tNc79ly1fz4sjpfz49j30al03uwes.jpg">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
@@ -58,7 +61,7 @@
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>ssh连接服务器超时解决方案 | Suixin&#39;s Blog</title>
+<title>Python打印带颜色的字符串 | Suixin&#39;s Blog</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -275,11 +278,11 @@
     </div>
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
 </nav>
-      <div class="body-wrap"><article id="post-ssh连接服务器超时解决方案" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-Python打印带颜色的字符串" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2018/12/ssh-timeout.html" class="article-date">
-      <time datetime="2018-12-08T03:26:41.000Z" itemprop="datePublished">2018-12-08</time>
+      <a href="/2019/01/print-colorful.html" class="article-date">
+      <time datetime="2019-01-13T03:52:28.000Z" itemprop="datePublished">2019-01-13</time>
 </a>
 
 
@@ -294,7 +297,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      ssh连接服务器超时解决方案
+      Python打印带颜色的字符串
     </h1>
   
 
@@ -303,13 +306,13 @@
       <div class="article-info article-info-post">
         
     <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/Linux/">Linux</a>
+    <a class="article-category-link" href="/categories/技术驿站/">技术驿站</a>
     </div>
 
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/服务器/">服务器</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -319,12 +322,99 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>经常需要连接到Linux服务器，发现过一段时间不输入命令，服务器的ssh连接就会断开，又需要重新ssh登录。<br><a id="more"></a></p>
-<h2 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h2><p>在Linux服务器端配置<code>/etc/ssh/sshd_config</code>文件，修改其中两行：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ClientAliveInterval 60</span><br><span class="line">ClientAliveCountMax 60</span><br></pre></td></tr></table></figure></p>
-<p>其中，<code>ClientAliveInterval</code>表示服务器每隔多久向客户端发送一个“空包”，以保持连接，单位为秒，此处为60秒；<code>ClientAliveCountMax</code>表示如果发现客户端没有响应，则判断一次超时，这个参数为允许超时的次数，此处为60次。相当于1小时无通信后断开ssh连接。<br>之后重启ssh服务：<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl restart ssh</span><br></pre></td></tr></table></figure></p>
-<p>再重新ssh连接即可。</p>
+        <p>可以使用Python中自带的<code>print</code>输出带有颜色或者背景的字符串。<br><a id="more"></a></p>
+<h2 id="书写语法"><a href="#书写语法" class="headerlink" title="书写语法"></a>书写语法</h2><p><code>print(\033[显示方式;前景色;背景色m输出内容\033[0m)</code><br>其中，显示方式、前景色、背景色都是可选参数<br>（可缺省一个或多个）。</p>
+<h2 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h2><h3 id="显示方式"><a href="#显示方式" class="headerlink" title="显示方式"></a>显示方式</h3><div class="table-container">
+<table>
+<thead>
+<tr>
+<th>显示方式</th>
+<th>效果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>默认</td>
+</tr>
+<tr>
+<td>1</td>
+<td>粗体</td>
+</tr>
+<tr>
+<td>4</td>
+<td>下划线</td>
+</tr>
+<tr>
+<td>5</td>
+<td>闪烁</td>
+</tr>
+<tr>
+<td>7</td>
+<td>反白显示</td>
+</tr>
+</tbody>
+</table>
+</div>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">print(<span class="string">"显示方式："</span>)</span><br><span class="line">print(<span class="string">"\033[0mSuixinBlog: https://suixinblog.cn\033[0m"</span>)</span><br><span class="line">print(<span class="string">"\033[1mSuixinBlog: https://suixinblog.cn\033[0m"</span>)</span><br><span class="line">print(<span class="string">"\033[4mSuixinBlog: https://suixinblog.cn\033[0m"</span>)</span><br><span class="line">print(<span class="string">"\033[5mSuixinBlog: https://suixinblog.cn\033[0m"</span>)</span><br><span class="line">print(<span class="string">"\033[7mSuixinBlog: https://suixinblog.cn\033[0m"</span>)</span><br></pre></td></tr></table></figure>
+<p><img src="https://ws2.sinaimg.cn/large/006tNc79ly1fz4sjpfz49j30al03uwes.jpg" alt=""></p>
+<h3 id="颜色"><a href="#颜色" class="headerlink" title="颜色"></a>颜色</h3><div class="table-container">
+<table>
+<thead>
+<tr>
+<th>字体色编号</th>
+<th>背景色编号</th>
+<th>颜色</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>30</td>
+<td>40</td>
+<td>黑色</td>
+</tr>
+<tr>
+<td>31</td>
+<td>41</td>
+<td>红色</td>
+</tr>
+<tr>
+<td>32</td>
+<td>42</td>
+<td>绿色</td>
+</tr>
+<tr>
+<td>33</td>
+<td>43</td>
+<td>黄色</td>
+</tr>
+<tr>
+<td>34</td>
+<td>44</td>
+<td>蓝色</td>
+</tr>
+<tr>
+<td>35</td>
+<td>45</td>
+<td>紫色</td>
+</tr>
+<tr>
+<td>36</td>
+<td>46</td>
+<td>青色</td>
+</tr>
+<tr>
+<td>37</td>
+<td>47</td>
+<td>白色</td>
+</tr>
+</tbody>
+</table>
+</div>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">print(<span class="string">"字体色："</span>)</span><br><span class="line">print(<span class="string">"\033[30mSuixinBlog: https://suixinblog.cn\033[0m"</span>)</span><br><span class="line">print(<span class="string">"\033[31mSuixinBlog: https://suixinblog.cn\033[0m"</span>)</span><br><span class="line">print(<span class="string">"\033[32mSuixinBlog: https://suixinblog.cn\033[0m"</span>)</span><br><span class="line">print(<span class="string">"\033[4;33mSuixinBlog: https://suixinblog.cn\033[0m"</span>)</span><br><span class="line">print(<span class="string">"\033[34mSuixinBlog: https://suixinblog.cn\033[0m"</span>)</span><br><span class="line">print(<span class="string">"\033[1;35mSuixinBlog: https://suixinblog.cn\033[0m"</span>)</span><br><span class="line">print(<span class="string">"\033[4;36mSuixinBlog: https://suixinblog.cn\033[0m"</span>)</span><br><span class="line">print(<span class="string">"\033[37mSuixinBlog: https://suixinblog.cn\033[0m"</span>)</span><br><span class="line">print(<span class="string">"背景色："</span>)</span><br><span class="line">print(<span class="string">"\033[1;37;40m\tSuixinBlog: https://suixinblog.cn\033[0m"</span>)</span><br><span class="line">print(<span class="string">"\033[37;41m\tSuixinBlog: https://suixinblog.cn\033[0m"</span>)</span><br><span class="line">print(<span class="string">"\033[37;42m\tSuixinBlog: https://suixinblog.cn\033[0m"</span>)</span><br><span class="line">print(<span class="string">"\033[37;43m\tSuixinBlog: https://suixinblog.cn\033[0m"</span>)</span><br><span class="line">print(<span class="string">"\033[37;44m\tSuixinBlog: https://suixinblog.cn\033[0m"</span>)</span><br><span class="line">print(<span class="string">"\033[37;45m\tSuixinBlog: https://suixinblog.cn\033[0m"</span>)</span><br><span class="line">print(<span class="string">"\033[37;46m\tSuixinBlog: https://suixinblog.cn\033[0m"</span>)</span><br><span class="line">print(<span class="string">"\033[1;30;47m\tSuixinBlog: https://suixinblog.cn\033[0m"</span>)</span><br></pre></td></tr></table></figure>
+<p><img src="https://ws1.sinaimg.cn/large/006tNc79ly1fz4sv8ele2j30d00bktab.jpg" alt=""></p>
 <h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><blockquote>
-<p><a href="https://www.awaimai.com/2523.html" target="_blank" rel="noopener">https://www.awaimai.com/2523.html</a></p>
+<p><a href="https://blog.csdn.net/qq_34857250/article/details/79673698" target="_blank" rel="noopener">https://blog.csdn.net/qq_34857250/article/details/79673698</a><br><a href="https://www.cnblogs.com/fangbei/p/python-print-color.html" target="_blank" rel="noopener">https://www.cnblogs.com/fangbei/p/python-print-color.html</a></p>
 </blockquote>
 
       
@@ -334,13 +424,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2018/12/ssh-timeout.html">ssh连接服务器超时解决方案</a></p>
+        <p><span>本文标题:</span><a href="/2019/01/print-colorful.html">Python打印带颜色的字符串</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">Suixin</a></p>
-        <p><span>发布时间:</span>2018-12-08, 11:26:41</p>
-        <p><span>最后更新:</span>2018-12-17, 20:02:34</p>
+        <p><span>发布时间:</span>2019-01-13, 11:52:28</p>
+        <p><span>最后更新:</span>2019-01-13, 11:56:43</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2018/12/ssh-timeout.html" title="ssh连接服务器超时解决方案">https://suixinblog.cn/2018/12/ssh-timeout.html</a>
-            <span class="copy-path" data-clipboard-text="原文: https://suixinblog.cn/2018/12/ssh-timeout.html　　作者: Suixin" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2019/01/print-colorful.html" title="Python打印带颜色的字符串">https://suixinblog.cn/2019/01/print-colorful.html</a>
+            <span class="copy-path" data-clipboard-text="原文: https://suixinblog.cn/2019/01/print-colorful.html　　作者: Suixin" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
         <p>
@@ -352,16 +442,10 @@
 
     <nav id="article-nav">
         
-            <div id="article-nav-newer" class="article-nav-title">
-                <a href="/2018/12/anaconda.html">
-                    Anaconda快速使用教程
-                </a>
-            </div>
-        
         
             <div id="article-nav-older" class="article-nav-title">
-                <a href="/2018/12/tmux.html">
-                    强大的tmux
+                <a href="/2018/12/chmod.html">
+                    Linux文件权限管理命令chmod
                 </a>
             </div>
         
@@ -373,7 +457,7 @@
     <div id="toc" class="toc-article">
         <strong class="toc-title">文章目录</strong>
         
-            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#解决方案"><span class="toc-number">1.</span> <span class="toc-text">解决方案</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#参考"><span class="toc-number">2.</span> <span class="toc-text">参考</span></a></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#书写语法"><span class="toc-number">1.</span> <span class="toc-text">书写语法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#参数"><span class="toc-number">2.</span> <span class="toc-text">参数</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#显示方式"><span class="toc-number">2.1.</span> <span class="toc-text">显示方式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#颜色"><span class="toc-number">2.2.</span> <span class="toc-text">颜色</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#参考"><span class="toc-number">3.</span> <span class="toc-text">参考</span></a></li></ol>
         
     </div>
     <style>
@@ -421,15 +505,13 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2018/12/anaconda.html" title="上一篇: Anaconda快速使用教程">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
 
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/2018/12/tmux.html" title="下一篇: 强大的tmux">
+            <a href="/2018/12/chmod.html" title="下一篇: Linux文件权限管理命令chmod">
                 <i class="fa fa-angle-right"></i>
             </a>
         
