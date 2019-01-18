@@ -15,20 +15,27 @@
 
 
 
-<meta name="description" content="wget是Linux下下载文件的最常用命令。wget支持HTTP，HTTPS和FTP协议，支持自动下载，即可以在用户退出系统后在后台执行，直到下载结束。用法：wget [参数] [URL]">
-<meta name="keywords" content="Linux,命令行,服务器">
+<meta name="description" content="Transformer是个叠加的“自注意力机制（Self Attention）”构成的深度网络，是目前NLP里最强的特征提取器。论文：Attention Is All You Need">
+<meta name="keywords" content="深度学习,NLP">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Linux下载命令wget">
-<meta property="og:url" content="https://suixinblog.cn/2018/11/wget.html">
+<meta property="og:title" content="The Transformer">
+<meta property="og:url" content="https://suixinblog.cn/2019/01/transformer.html">
 <meta property="og:site_name" content="Suixin&#39;s Blog">
-<meta property="og:description" content="wget是Linux下下载文件的最常用命令。wget支持HTTP，HTTPS和FTP协议，支持自动下载，即可以在用户退出系统后在后台执行，直到下载结束。用法：wget [参数] [URL]">
+<meta property="og:description" content="Transformer是个叠加的“自注意力机制（Self Attention）”构成的深度网络，是目前NLP里最强的特征提取器。论文：Attention Is All You Need">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://ws1.sinaimg.cn/large/006tNbRwgy1fxaanor5epj31da0i0k5i.jpg">
-<meta property="og:updated_time" content="2018-11-20T13:51:01.656Z">
+<meta property="og:image" content="https://ws3.sinaimg.cn/large/006tNc79ly1fz9wzpgnsxj30g50iaaat.jpg">
+<meta property="og:image" content="https://ws4.sinaimg.cn/large/006tNc79ly1fz9wzvwzxgj30ot09p3yw.jpg">
+<meta property="og:image" content="https://ws4.sinaimg.cn/large/006tNc79ly1fzajx9mh42j30kw0420tb.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/006tNc79ly1fzaqej0qupj30k8028aa8.jpg">
+<meta property="og:image" content="https://ws4.sinaimg.cn/large/006tNc79ly1fzaqigx5gwj30js0ii0ur.jpg">
+<meta property="og:image" content="https://ws4.sinaimg.cn/large/006tNc79ly1fzaule5ofkj313b0mc7a2.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/006tNc79ly1fzaujsgus8g30m80jo4ni.gif">
+<meta property="og:image" content="https://ws2.sinaimg.cn/large/006tNc79ly1fzaustjxg4j30fw0jcq4s.jpg">
+<meta property="og:updated_time" content="2019-01-18T10:18:03.967Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Linux下载命令wget">
-<meta name="twitter:description" content="wget是Linux下下载文件的最常用命令。wget支持HTTP，HTTPS和FTP协议，支持自动下载，即可以在用户退出系统后在后台执行，直到下载结束。用法：wget [参数] [URL]">
-<meta name="twitter:image" content="https://ws1.sinaimg.cn/large/006tNbRwgy1fxaanor5epj31da0i0k5i.jpg">
+<meta name="twitter:title" content="The Transformer">
+<meta name="twitter:description" content="Transformer是个叠加的“自注意力机制（Self Attention）”构成的深度网络，是目前NLP里最强的特征提取器。论文：Attention Is All You Need">
+<meta name="twitter:image" content="https://ws3.sinaimg.cn/large/006tNc79ly1fz9wzpgnsxj30g50iaaat.jpg">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
@@ -60,7 +67,7 @@
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>Linux下载命令wget | Suixin&#39;s Blog</title>
+<title>The Transformer | Suixin&#39;s Blog</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -277,11 +284,11 @@
     </div>
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
 </nav>
-      <div class="body-wrap"><article id="post-Linux下载命令wget" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-The-Transformer" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2018/11/wget.html" class="article-date">
-      <time datetime="2018-11-16T14:57:33.000Z" itemprop="datePublished">2018-11-16</time>
+      <a href="/2019/01/transformer.html" class="article-date">
+      <time datetime="2019-01-18T10:16:53.000Z" itemprop="datePublished">2019-01-18</time>
 </a>
 
 
@@ -296,7 +303,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      Linux下载命令wget
+      The Transformer
     </h1>
   
 
@@ -305,13 +312,13 @@
       <div class="article-info article-info-post">
         
     <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/Linux/">Linux</a>
+    <a class="article-category-link" href="/categories/术业专攻/">术业专攻</a>
     </div>
 
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/命令行/">命令行</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/服务器/">服务器</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/NLP/">NLP</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/深度学习/">深度学习</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -321,19 +328,47 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p><code>wget</code>是Linux下下载文件的最常用命令。<code>wget</code>支持<code>HTTP</code>，<code>HTTPS</code>和<code>FTP</code>协议，支持自动下载，即可以在用户退出系统后在后台执行，直到下载结束。<br><strong>用法</strong>：<code>wget [参数] [URL]</code><br><a id="more"></a></p>
-<h2 id="常用参数"><a href="#常用参数" class="headerlink" title="常用参数"></a>常用参数</h2><ul>
-<li><code>-o</code>：将日志信息写入FILE；</li>
-<li><code>-b</code>：启动后转入后台；</li>
-<li><code>-O</code>：将文档写入FILE（重命名）；</li>
-<li><code>-q</code>：安静模式（无信息输出）；</li>
-<li><code>-N</code>：只获取比本地文件新的文件；</li>
-<li><code>--no-check-certificate</code>：不要验证HTTPS服务器的证书；</li>
-<li><code>-r</code>：指定递归下载；</li>
-<li><code>-c</code>：断点续传下载文件。</li>
-</ul>
-<p><strong>最常用</strong>：<code>wget -O newname URL</code>，如：</p>
-<p><center><img src="https://ws1.sinaimg.cn/large/006tNbRwgy1fxaanor5epj31da0i0k5i.jpg" width="80%" alt="wget gif"><center></center></center></p>
+        <p>Transformer是个叠加的“自注意力机制（Self Attention）”构成的深度网络，是目前NLP里最强的特征提取器。<br>论文：<a href="https://arxiv.org/abs/1706.03762" target="_blank" rel="noopener">Attention Is All You Need</a><br><a id="more"></a></p>
+<h2 id="模型架构"><a href="#模型架构" class="headerlink" title="模型架构"></a>模型架构</h2><p>整体上还是由Encoders和Decoders两部分组成的，而每一个部分是由6个Encoder和Decoder堆栈成的，每个的结构完全相同，但不共享权重。</p>
+<h3 id="Encoder"><a href="#Encoder" class="headerlink" title="Encoder"></a>Encoder</h3><p>每个Encoder由两部分组成：Multi-head self-attention层和Feed Forward NN层。</p>
+<h3 id="Decoder"><a href="#Decoder" class="headerlink" title="Decoder"></a>Decoder</h3><p>每个Decoder由三部分组成：Multi-head self-attention层，Encoder-Decoder Attention层和Feed Forward NN层。</p>
+<h2 id="模型细节"><a href="#模型细节" class="headerlink" title="模型细节"></a>模型细节</h2><h3 id="Encoder-1"><a href="#Encoder-1" class="headerlink" title="Encoder"></a>Encoder</h3><h4 id="self-attention"><a href="#self-attention" class="headerlink" title="self-attention"></a>self-attention</h4><p>动机：当模型处理每个单词（输入序列中的每个位置）时，self-attention允许它查看输入序列中的其他位置以寻找可以帮助导致对该单词更好的编码的线索。</p>
+<ol>
+<li>每个单词除了本身的Embedding向量$x$都对应三个向量，分别有不同的用处：Query向量$q$，Key向量$k$和Value向量$v$。维数一般低于单词的嵌入向量，论文中使用64（Embedding为512维）。这三个向量分别是在训练过程中将Embedding向量$x$乘以三个矩阵$W^Q$，$W^K$和$W^V$得到。</li>
+<li>我们需要根据当前编码的单词对输入句子的每个单词进行评分，分数决定了对输入句子的其他部分放置多少焦点。通过将当前单词的Query向量与其它单词的Key向量做内积计算得分。</li>
+<li>将得分除以8（论文中使用Key向量维数的平方根）。可以使得梯度更稳定？</li>
+<li>softmax层将所有的分值变为概率值。</li>
+<li>用softmax概率值乘以Value向量。直观解释：保持想要关注的值更大，不想关注的单词被淹没掉。</li>
+<li>对上面得到的向量求和得到当前编码单词的self-attention输出向量$z$。</li>
+</ol>
+<p>使用矩阵形式可以并行计算。<br><strong>图示</strong>：<br><img src="https://ws3.sinaimg.cn/large/006tNc79ly1fz9wzpgnsxj30g50iaaat.jpg" alt=""><br><img src="https://ws4.sinaimg.cn/large/006tNc79ly1fz9wzvwzxgj30ot09p3yw.jpg" alt=""></p>
+<h4 id="Multi-head"><a href="#Multi-head" class="headerlink" title="Multi-head"></a>Multi-head</h4><p>动机：将信息映射到不同的子空间，可能会抓取到不同位置的注意信息。<br>按照self-attention方式进行相同的几次计算（论文中使用8头），每次使用不同的权重矩阵（$W^Q$，$W^K$和$W^V$），最终会得到几个不同的$Z$矩阵，将它们直接拼接起来得到一个很长的矩阵$Z$，再乘以一个参数矩阵$W^O$将矩阵压缩到低维（同Embedding维数）。</p>
+<h4 id="Position-encoding"><a href="#Position-encoding" class="headerlink" title="Position encoding"></a>Position encoding</h4><p>单词顺序是NLP中非常重要的信息，所以加入Position encoding是考虑输入序列中单词顺序的一种方法。将位置编码与Embedding向量直接加起来得到真正的单词输入向量。<br>论文中给出了两个位置编码公式：<br><img src="https://ws4.sinaimg.cn/large/006tNc79ly1fzajx9mh42j30kw0420tb.jpg" alt="">此处，pos是当前单词所处的位置，$2i/2i+1$是Position encoding的维度信息（如第一个单词的第一维位置编码值为$PE_{(0,2\times0)}=sin(0/10000^{2\times0/512})=0$，pos和维度都是从0开始。<em>参考1中Position Encoding算错了</em>）。使用这个正弦余弦的公式的优点是可以扩展到序列长度大于训练模型中任意长度的情况。</p>
+<h4 id="Feed-Forward-NN层"><a href="#Feed-Forward-NN层" class="headerlink" title="Feed Forward NN层"></a>Feed Forward NN层</h4><p>该层为简单的全连接层，使用了RELU激活函数，论文中该全连接的隐藏层维数为2048，公式如下：<br><img src="https://ws1.sinaimg.cn/large/006tNc79ly1fzaqej0qupj30k8028aa8.jpg" alt=""></p>
+<h4 id="Add-amp-Norm"><a href="#Add-amp-Norm" class="headerlink" title="Add &amp; Norm"></a>Add &amp; Norm</h4><p>在每一个子层的结束，输出矩阵为$Z$，我们将该层的输入矩阵$X$和$Z$直接相加，再做Normalize操作$LayerNorm(X+Z)$，该Norm函数引用了<a href="https://arxiv.org/pdf/1607.06450.pdf" target="_blank" rel="noopener">参考文献1: Layer Normalization</a>。<br>Norm方法有很多，但它们都有一个共同的目的，那就是把输入转化成均值为0方差为1的数据。我们在把数据送入激活函数之前进行normalization，因为我们不希望输入数据落在激活函数的饱和区。</p>
+<h4 id="总架构图"><a href="#总架构图" class="headerlink" title="总架构图"></a>总架构图</h4><p><img src="https://ws4.sinaimg.cn/large/006tNc79ly1fzaqigx5gwj30js0ii0ur.jpg" alt=""><br><strong>真正的Encoders由N（论文中N=6）个相同的Encoder堆栈而成</strong></p>
+<h3 id="Decoder-1"><a href="#Decoder-1" class="headerlink" title="Decoder"></a>Decoder</h3><ol>
+<li>由Encoder最后的输出矩阵变换得到两个Attention矩阵$K_{encoder}$和$V_{encoder}$，分别输入到每个Encoder-Decoder Attention层，需使用时直接查询其中的Key向量和Value向量。这有助于解码器关注输入序列中的适当位置。而此层的Query向量则由之前的Decoder层得到。</li>
+<li>在每一次Decoders解码一个单词的时候，整个模型的输入有三个：网络底层输入上一个解码出单词的embedding向量，在Encoder-Decoder层输入Encoders最后输出的两个矩阵$K_{encoder}$和$V_{encoder}$。使用上一个解码出的单词embedding向量传到Decoders最底层过一遍Masked Multi-head Attention，最后输出一个向量，再用这个向量生成Query向量以供中间的Encoder-Decoder Attention层使用。</li>
+<li>只有第一个Decoder需要上一个解码出单词的embedding向量信息，后面的几个Decoder直接将上一个Decoder的输出作为Masked Multi-head Attention的输入。</li>
+<li>每一个Decoder也都和Encoder一样使用了Add &amp; Norm以及Position encoding。</li>
+</ol>
+<h4 id="Linear层和softmax层"><a href="#Linear层和softmax层" class="headerlink" title="Linear层和softmax层"></a>Linear层和softmax层</h4><p>该层是一个简单的全连接网络，将最后一个Decoder输出的向量投影到一个更高维度的空间去（词典维数）。<br>softmax层将Linear层的输出向量转化为概率输出，选择最大概率的单词作为输出。</p>
+<h3 id="两张有助于理解的图"><a href="#两张有助于理解的图" class="headerlink" title="两张有助于理解的图"></a>两张有助于理解的图</h3><p>Encoders最后将$K_{encoder}$和$V_{encoder}$输出给每个Decoder的Encoder-Decoder层：<br><img src="https://ws4.sinaimg.cn/large/006tNc79ly1fzaule5ofkj313b0mc7a2.jpg" alt=""><br>Google AI Blog做的动图：<br><img src="https://ws1.sinaimg.cn/large/006tNc79ly1fzaujsgus8g30m80jo4ni.gif" alt=""></p>
+<h3 id="Mask"><a href="#Mask" class="headerlink" title="Mask"></a>Mask</h3><p>Padding mask在所有的scaled dot-product attention里面都需要用到，而Sequence mask只有在Decoder的self-attention里面用到。</p>
+<h4 id="Padding-mask"><a href="#Padding-mask" class="headerlink" title="Padding mask"></a>Padding mask</h4><p>语料库中每个句子的长度是不同的，我们需要对齐。使用我们设置的阈值（一般为255），对于较长的序列，直接截取左边的序列，对于较短的序列，在其后添加0。<br>而在scaled dot-product attention中，不能对这部分添加了0的单词位置加上较高的注意力，所以在self-attention中的softmax之前，直接将这些位置的值设为$-Inf$，经过softmax后这些位置的概率值会变为0。<br>即下图中的<code>Mask(opt.)</code>块：<br><img src="https://ws2.sinaimg.cn/large/006tNc79ly1fzaustjxg4j30fw0jcq4s.jpg" alt=""></p>
+<h4 id="Sequence-mask"><a href="#Sequence-mask" class="headerlink" title="Sequence mask"></a>Sequence mask</h4><p>Sequence mask是为了使得Decoder不能看见未来的信息，使得解码器的attention只能关注当前解码单词之前的输出单词，而不能依赖后面未解码出来的。<br>所以跟Padding mask一样，对其后的单词位置直接设为$-Inf$，经过softmax后这些位置的概率值会变为0。<br>这步操作对应Decoder中第一个构件：Masked Multi-head Attention。</p>
+<h3 id="Loss-Function"><a href="#Loss-Function" class="headerlink" title="Loss Function"></a>Loss Function</h3><p>使用交叉熵或者KL散度去比较两个输出之间的差距，然后使用反向传播优化其中的所有参数。</p>
+<h4 id="beam-search（束搜索）"><a href="#beam-search（束搜索）" class="headerlink" title="beam search（束搜索）"></a>beam search（束搜索）</h4><p>在最后的softmax层我们直接输出了最大值位置的单词，叫做贪婪解码。<br>另一种更合理的解码方式叫做<strong>束搜索</strong>。假设第1#位置解码出的概率值，前两大的位置单词为<code>I</code>和<code>me</code>，那么在第2#位置解码时，依赖的第1#位置单词分别取为<code>I</code>和<code>me</code>，分别跑两次算法，在其中再选两个得分最高（或误差最小）的结果，依次类推。最终会得到两个得分最高的序列。</p>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><blockquote>
+<ol>
+<li>主要参考: <a href="https://jalammar.github.io/illustrated-transformer/" target="_blank" rel="noopener">The Illustrated Transformer</a></li>
+<li>Google AI Blog: <a href="https://ai.googleblog.com/2017/08/transformer-novel-neural-network.html" target="_blank" rel="noopener">Transformer: A Novel Neural Network Architecture for Language Understanding</a></li>
+<li><a href="https://www.jianshu.com/p/ef41302edeef" target="_blank" rel="noopener">神经机器翻译 之 谷歌 transformer 模型</a></li>
+<li><a href="https://terrifyzhao.github.io/2019/01/11/Transformer%E6%A8%A1%E5%9E%8B%E8%AF%A6%E8%A7%A3.html" target="_blank" rel="noopener">Transformer模型详解</a></li>
+<li>Harvard NLP的解释和代码: <a href="http://nlp.seas.harvard.edu/2018/04/03/attention.html" target="_blank" rel="noopener">The Annotated Transformer</a></li>
+</ol>
+</blockquote>
 
       
     </div>
@@ -342,13 +377,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2018/11/wget.html">Linux下载命令wget</a></p>
+        <p><span>本文标题:</span><a href="/2019/01/transformer.html">The Transformer</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">Suixin</a></p>
-        <p><span>发布时间:</span>2018-11-16, 22:57:33</p>
-        <p><span>最后更新:</span>2018-11-20, 21:51:01</p>
+        <p><span>发布时间:</span>2019-01-18, 18:16:53</p>
+        <p><span>最后更新:</span>2019-01-18, 18:18:03</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2018/11/wget.html" title="Linux下载命令wget">https://suixinblog.cn/2018/11/wget.html</a>
-            <span class="copy-path" data-clipboard-text="原文: https://suixinblog.cn/2018/11/wget.html　　作者: Suixin" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2019/01/transformer.html" title="The Transformer">https://suixinblog.cn/2019/01/transformer.html</a>
+            <span class="copy-path" data-clipboard-text="原文: https://suixinblog.cn/2019/01/transformer.html　　作者: Suixin" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
         <p>
@@ -360,16 +395,10 @@
 
     <nav id="article-nav">
         
-            <div id="article-nav-newer" class="article-nav-title">
-                <a href="/2018/11/tar-gzip-zip-rar.html">
-                    Linux压缩和解压命令：tar，gzip，zip（unzip），rar
-                </a>
-            </div>
-        
         
             <div id="article-nav-older" class="article-nav-title">
-                <a href="/2018/11/ssr.html">
-                    SSR搭建教程
+                <a href="/2019/01/os-walk.html">
+                    Python递归处理目录下的文件
                 </a>
             </div>
         
@@ -381,7 +410,7 @@
     <div id="toc" class="toc-article">
         <strong class="toc-title">文章目录</strong>
         
-            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#常用参数"><span class="toc-number">1.</span> <span class="toc-text">常用参数</span></a></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#模型架构"><span class="toc-number">1.</span> <span class="toc-text">模型架构</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Encoder"><span class="toc-number">1.1.</span> <span class="toc-text">Encoder</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Decoder"><span class="toc-number">1.2.</span> <span class="toc-text">Decoder</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#模型细节"><span class="toc-number">2.</span> <span class="toc-text">模型细节</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Encoder-1"><span class="toc-number">2.1.</span> <span class="toc-text">Encoder</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#self-attention"><span class="toc-number">2.1.1.</span> <span class="toc-text">self-attention</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Multi-head"><span class="toc-number">2.1.2.</span> <span class="toc-text">Multi-head</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Position-encoding"><span class="toc-number">2.1.3.</span> <span class="toc-text">Position encoding</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Feed-Forward-NN层"><span class="toc-number">2.1.4.</span> <span class="toc-text">Feed Forward NN层</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Add-amp-Norm"><span class="toc-number">2.1.5.</span> <span class="toc-text">Add &amp; Norm</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#总架构图"><span class="toc-number">2.1.6.</span> <span class="toc-text">总架构图</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Decoder-1"><span class="toc-number">2.2.</span> <span class="toc-text">Decoder</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Linear层和softmax层"><span class="toc-number">2.2.1.</span> <span class="toc-text">Linear层和softmax层</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#两张有助于理解的图"><span class="toc-number">2.3.</span> <span class="toc-text">两张有助于理解的图</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Mask"><span class="toc-number">2.4.</span> <span class="toc-text">Mask</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Padding-mask"><span class="toc-number">2.4.1.</span> <span class="toc-text">Padding mask</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Sequence-mask"><span class="toc-number">2.4.2.</span> <span class="toc-text">Sequence mask</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Loss-Function"><span class="toc-number">2.5.</span> <span class="toc-text">Loss Function</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#beam-search（束搜索）"><span class="toc-number">2.5.1.</span> <span class="toc-text">beam search（束搜索）</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#参考"><span class="toc-number">3.</span> <span class="toc-text">参考</span></a></li></ol>
         
     </div>
     <style>
@@ -429,15 +458,13 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2018/11/tar-gzip-zip-rar.html" title="上一篇: Linux压缩和解压命令：tar，gzip，zip（unzip），rar">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
 
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/2018/11/ssr.html" title="下一篇: SSR搭建教程">
+            <a href="/2019/01/os-walk.html" title="下一篇: Python递归处理目录下的文件">
                 <i class="fa fa-angle-right"></i>
             </a>
         
