@@ -31,7 +31,7 @@
 <meta property="og:image" content="https://ws4.sinaimg.cn/large/006tNc79ly1fzaule5ofkj313b0mc7a2.jpg">
 <meta property="og:image" content="https://ws1.sinaimg.cn/large/006tNc79ly1fzaujsgus8g30m80jo4ni.gif">
 <meta property="og:image" content="https://ws2.sinaimg.cn/large/006tNc79ly1fzaustjxg4j30fw0jcq4s.jpg">
-<meta property="og:updated_time" content="2019-01-18T10:18:03.967Z">
+<meta property="og:updated_time" content="2019-01-18T10:25:11.235Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="The Transformer">
 <meta name="twitter:description" content="Transformer是个叠加的“自注意力机制（Self Attention）”构成的深度网络，是目前NLP里最强的特征提取器。论文：Attention Is All You Need">
@@ -341,12 +341,22 @@
 <li>用softmax概率值乘以Value向量。直观解释：保持想要关注的值更大，不想关注的单词被淹没掉。</li>
 <li>对上面得到的向量求和得到当前编码单词的self-attention输出向量$z$。</li>
 </ol>
-<p>使用矩阵形式可以并行计算。<br><strong>图示</strong>：<br><img src="https://ws3.sinaimg.cn/large/006tNc79ly1fz9wzpgnsxj30g50iaaat.jpg" alt=""><br><img src="https://ws4.sinaimg.cn/large/006tNc79ly1fz9wzvwzxgj30ot09p3yw.jpg" alt=""></p>
+<p>使用矩阵形式可以并行计算。<br><strong>图示</strong>：</p>
+<center><img src="https://ws3.sinaimg.cn/large/006tNc79ly1fz9wzpgnsxj30g50iaaat.jpg" ,="" alt="self-attention矩阵形式1" width="30%"></center>
+<center><img src="https://ws4.sinaimg.cn/large/006tNc79ly1fz9wzvwzxgj30ot09p3yw.jpg" ,="" alt="self-attention矩阵形式2" width="50%"></center>
+
 <h4 id="Multi-head"><a href="#Multi-head" class="headerlink" title="Multi-head"></a>Multi-head</h4><p>动机：将信息映射到不同的子空间，可能会抓取到不同位置的注意信息。<br>按照self-attention方式进行相同的几次计算（论文中使用8头），每次使用不同的权重矩阵（$W^Q$，$W^K$和$W^V$），最终会得到几个不同的$Z$矩阵，将它们直接拼接起来得到一个很长的矩阵$Z$，再乘以一个参数矩阵$W^O$将矩阵压缩到低维（同Embedding维数）。</p>
-<h4 id="Position-encoding"><a href="#Position-encoding" class="headerlink" title="Position encoding"></a>Position encoding</h4><p>单词顺序是NLP中非常重要的信息，所以加入Position encoding是考虑输入序列中单词顺序的一种方法。将位置编码与Embedding向量直接加起来得到真正的单词输入向量。<br>论文中给出了两个位置编码公式：<br><img src="https://ws4.sinaimg.cn/large/006tNc79ly1fzajx9mh42j30kw0420tb.jpg" alt="">此处，pos是当前单词所处的位置，$2i/2i+1$是Position encoding的维度信息（如第一个单词的第一维位置编码值为$PE_{(0,2\times0)}=sin(0/10000^{2\times0/512})=0$，pos和维度都是从0开始。<em>参考1中Position Encoding算错了</em>）。使用这个正弦余弦的公式的优点是可以扩展到序列长度大于训练模型中任意长度的情况。</p>
-<h4 id="Feed-Forward-NN层"><a href="#Feed-Forward-NN层" class="headerlink" title="Feed Forward NN层"></a>Feed Forward NN层</h4><p>该层为简单的全连接层，使用了RELU激活函数，论文中该全连接的隐藏层维数为2048，公式如下：<br><img src="https://ws1.sinaimg.cn/large/006tNc79ly1fzaqej0qupj30k8028aa8.jpg" alt=""></p>
+<h4 id="Position-encoding"><a href="#Position-encoding" class="headerlink" title="Position encoding"></a>Position encoding</h4><p>单词顺序是NLP中非常重要的信息，所以加入Position encoding是考虑输入序列中单词顺序的一种方法。将位置编码与Embedding向量直接加起来得到真正的单词输入向量。<br>论文中给出了两个位置编码公式：</p>
+<center><img src="https://ws4.sinaimg.cn/large/006tNc79ly1fzajx9mh42j30kw0420tb.jpg" ,="" alt="Position encoding公式" width="40%"></center>
+
+<p>此处，pos是当前单词所处的位置，$2i/2i+1$是Position encoding的维度信息（如第一个单词的第一维位置编码值为$PE_{(0,2\times0)}=sin(0/10000^{2\times0/512})=0$，pos和维度都是从0开始。<em>参考1中Position Encoding算错了</em>）。使用这个正弦余弦的公式的优点是可以扩展到序列长度大于训练模型中任意长度的情况。</p>
+<h4 id="Feed-Forward-NN层"><a href="#Feed-Forward-NN层" class="headerlink" title="Feed Forward NN层"></a>Feed Forward NN层</h4><p>该层为简单的全连接层，使用了RELU激活函数，论文中该全连接的隐藏层维数为2048，公式如下：</p>
+<center><img src="https://ws1.sinaimg.cn/large/006tNc79ly1fzaqej0qupj30k8028aa8.jpg" ,="" alt="Feed Forward NN层公式" width="40%"></center>
+
 <h4 id="Add-amp-Norm"><a href="#Add-amp-Norm" class="headerlink" title="Add &amp; Norm"></a>Add &amp; Norm</h4><p>在每一个子层的结束，输出矩阵为$Z$，我们将该层的输入矩阵$X$和$Z$直接相加，再做Normalize操作$LayerNorm(X+Z)$，该Norm函数引用了<a href="https://arxiv.org/pdf/1607.06450.pdf" target="_blank" rel="noopener">参考文献1: Layer Normalization</a>。<br>Norm方法有很多，但它们都有一个共同的目的，那就是把输入转化成均值为0方差为1的数据。我们在把数据送入激活函数之前进行normalization，因为我们不希望输入数据落在激活函数的饱和区。</p>
-<h4 id="总架构图"><a href="#总架构图" class="headerlink" title="总架构图"></a>总架构图</h4><p><img src="https://ws4.sinaimg.cn/large/006tNc79ly1fzaqigx5gwj30js0ii0ur.jpg" alt=""><br><strong>真正的Encoders由N（论文中N=6）个相同的Encoder堆栈而成</strong></p>
+<h4 id="总架构图"><a href="#总架构图" class="headerlink" title="总架构图"></a>总架构图</h4><center><img src="https://ws4.sinaimg.cn/large/006tNc79ly1fzaqigx5gwj30js0ii0ur.jpg" ,="" alt="Encoder总架构图" width="50%"></center>
+
+<p><strong>真正的Encoders由N（论文中N=6）个相同的Encoder堆栈而成</strong></p>
 <h3 id="Decoder-1"><a href="#Decoder-1" class="headerlink" title="Decoder"></a>Decoder</h3><ol>
 <li>由Encoder最后的输出矩阵变换得到两个Attention矩阵$K_{encoder}$和$V_{encoder}$，分别输入到每个Encoder-Decoder Attention层，需使用时直接查询其中的Key向量和Value向量。这有助于解码器关注输入序列中的适当位置。而此层的Query向量则由之前的Decoder层得到。</li>
 <li>在每一次Decoders解码一个单词的时候，整个模型的输入有三个：网络底层输入上一个解码出单词的embedding向量，在Encoder-Decoder层输入Encoders最后输出的两个矩阵$K_{encoder}$和$V_{encoder}$。使用上一个解码出的单词embedding向量传到Decoders最底层过一遍Masked Multi-head Attention，最后输出一个向量，再用这个向量生成Query向量以供中间的Encoder-Decoder Attention层使用。</li>
@@ -354,9 +364,15 @@
 <li>每一个Decoder也都和Encoder一样使用了Add &amp; Norm以及Position encoding。</li>
 </ol>
 <h4 id="Linear层和softmax层"><a href="#Linear层和softmax层" class="headerlink" title="Linear层和softmax层"></a>Linear层和softmax层</h4><p>该层是一个简单的全连接网络，将最后一个Decoder输出的向量投影到一个更高维度的空间去（词典维数）。<br>softmax层将Linear层的输出向量转化为概率输出，选择最大概率的单词作为输出。</p>
-<h3 id="两张有助于理解的图"><a href="#两张有助于理解的图" class="headerlink" title="两张有助于理解的图"></a>两张有助于理解的图</h3><p>Encoders最后将$K_{encoder}$和$V_{encoder}$输出给每个Decoder的Encoder-Decoder层：<br><img src="https://ws4.sinaimg.cn/large/006tNc79ly1fzaule5ofkj313b0mc7a2.jpg" alt=""><br>Google AI Blog做的动图：<br><img src="https://ws1.sinaimg.cn/large/006tNc79ly1fzaujsgus8g30m80jo4ni.gif" alt=""></p>
+<h3 id="两张有助于理解的图"><a href="#两张有助于理解的图" class="headerlink" title="两张有助于理解的图"></a>两张有助于理解的图</h3><p>Encoders最后将$K_{encoder}$和$V_{encoder}$输出给每个Decoder的Encoder-Decoder层：</p>
+<center><img src="https://ws4.sinaimg.cn/large/006tNc79ly1fzaule5ofkj313b0mc7a2.jpg" ,="" alt="架构图" width="80%"></center>
+Google AI Blog做的动图：
+<center><img src="https://ws1.sinaimg.cn/large/006tNc79ly1fzaujsgus8g30m80jo4ni.gif" ,="" alt="Google AI Blog动图" width="50%"></center>
+
 <h3 id="Mask"><a href="#Mask" class="headerlink" title="Mask"></a>Mask</h3><p>Padding mask在所有的scaled dot-product attention里面都需要用到，而Sequence mask只有在Decoder的self-attention里面用到。</p>
-<h4 id="Padding-mask"><a href="#Padding-mask" class="headerlink" title="Padding mask"></a>Padding mask</h4><p>语料库中每个句子的长度是不同的，我们需要对齐。使用我们设置的阈值（一般为255），对于较长的序列，直接截取左边的序列，对于较短的序列，在其后添加0。<br>而在scaled dot-product attention中，不能对这部分添加了0的单词位置加上较高的注意力，所以在self-attention中的softmax之前，直接将这些位置的值设为$-Inf$，经过softmax后这些位置的概率值会变为0。<br>即下图中的<code>Mask(opt.)</code>块：<br><img src="https://ws2.sinaimg.cn/large/006tNc79ly1fzaustjxg4j30fw0jcq4s.jpg" alt=""></p>
+<h4 id="Padding-mask"><a href="#Padding-mask" class="headerlink" title="Padding mask"></a>Padding mask</h4><p>语料库中每个句子的长度是不同的，我们需要对齐。使用我们设置的阈值（一般为255），对于较长的序列，直接截取左边的序列，对于较短的序列，在其后添加0。<br>而在scaled dot-product attention中，不能对这部分添加了0的单词位置加上较高的注意力，所以在self-attention中的softmax之前，直接将这些位置的值设为$-Inf$，经过softmax后这些位置的概率值会变为0。<br>即下图中的<code>Mask(opt.)</code>块：</p>
+<center><img src="https://ws2.sinaimg.cn/large/006tNc79ly1fzaustjxg4j30fw0jcq4s.jpg" ,="" alt="Padding mask" width="30%"></center>
+
 <h4 id="Sequence-mask"><a href="#Sequence-mask" class="headerlink" title="Sequence mask"></a>Sequence mask</h4><p>Sequence mask是为了使得Decoder不能看见未来的信息，使得解码器的attention只能关注当前解码单词之前的输出单词，而不能依赖后面未解码出来的。<br>所以跟Padding mask一样，对其后的单词位置直接设为$-Inf$，经过softmax后这些位置的概率值会变为0。<br>这步操作对应Decoder中第一个构件：Masked Multi-head Attention。</p>
 <h3 id="Loss-Function"><a href="#Loss-Function" class="headerlink" title="Loss Function"></a>Loss Function</h3><p>使用交叉熵或者KL散度去比较两个输出之间的差距，然后使用反向传播优化其中的所有参数。</p>
 <h4 id="beam-search（束搜索）"><a href="#beam-search（束搜索）" class="headerlink" title="beam search（束搜索）"></a>beam search（束搜索）</h4><p>在最后的softmax层我们直接输出了最大值位置的单词，叫做贪婪解码。<br>另一种更合理的解码方式叫做<strong>束搜索</strong>。假设第1#位置解码出的概率值，前两大的位置单词为<code>I</code>和<code>me</code>，那么在第2#位置解码时，依赖的第1#位置单词分别取为<code>I</code>和<code>me</code>，分别跑两次算法，在其中再选两个得分最高（或误差最小）的结果，依次类推。最终会得到两个得分最高的序列。</p>
@@ -380,7 +396,7 @@
         <p><span>本文标题:</span><a href="/2019/01/transformer.html">The Transformer</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">Suixin</a></p>
         <p><span>发布时间:</span>2019-01-18, 18:16:53</p>
-        <p><span>最后更新:</span>2019-01-18, 18:18:03</p>
+        <p><span>最后更新:</span>2019-01-18, 18:25:11</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2019/01/transformer.html" title="The Transformer">https://suixinblog.cn/2019/01/transformer.html</a>
             <span class="copy-path" data-clipboard-text="原文: https://suixinblog.cn/2019/01/transformer.html　　作者: Suixin" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
