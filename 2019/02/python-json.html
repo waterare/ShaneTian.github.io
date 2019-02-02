@@ -28,7 +28,7 @@
 <meta property="og:image" content="https://ws4.sinaimg.cn/large/006tNc79ly1fzs65ln3v9j30wi06g41a.jpg">
 <meta property="og:image" content="https://ws3.sinaimg.cn/large/006tNc79ly1fzs6nisyd6j30vq05cmzb.jpg">
 <meta property="og:image" content="https://ws3.sinaimg.cn/large/006tNc79ly1fzs6nsw1xsj30o401it8u.jpg">
-<meta property="og:updated_time" content="2019-02-02T09:43:29.447Z">
+<meta property="og:updated_time" content="2019-02-02T09:48:14.296Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="利用Python处理json文件">
 <meta name="twitter:description" content="JSON（JavaScript Object Notation）是一种轻量级的数据交换格式，尽管JSON是JavaScript的一个子集，但它是独立于语言的文本格式。在Python中，我们使用json包来实现json文件的读取和写入。">
@@ -327,12 +327,17 @@
           
         <p>JSON（JavaScript Object Notation）是一种轻量级的数据交换格式，尽管JSON是JavaScript的一个子集，但它是独立于语言的文本格式。<br>在Python中，我们使用<code>json</code>包来实现json文件的读取和写入。<br><a id="more"></a></p>
 <h2 id="读取json文件"><a href="#读取json文件" class="headerlink" title="读取json文件"></a>读取json文件</h2><p>使用<code>json.loads()</code>或<code>json.load()</code>两个函数来读取json文件。</p>
-<h3 id="json-loads"><a href="#json-loads" class="headerlink" title="json.loads()"></a><code>json.loads()</code></h3><p><code>json.loads()</code>用来解析包含JSON数据的字符串，解析后变量格式为字典。<br>用法：<br><img src="https://ws3.sinaimg.cn/large/006tNc79ly1fzs3tggakvj310o06gtbp.jpg" alt=""></p>
-<h3 id="json-load"><a href="#json-load" class="headerlink" title="json.load()"></a><code>json.load()</code></h3><p><code>json.load()</code>用来解析json文件，这也是和<code>json.loads()</code>唯一的区别。<br>解析json文件时，要么该文件只包含一行（只有一个字典），要么每个字典是列表的一个元素，如图：<br><img src="https://ws3.sinaimg.cn/large/006tNc79ly1fzs5m8jkf4j30pk03wgmd.jpg" alt=""><br>如果是后一种，则解析出的变量也为列表格式，每个元素是对应的字典。</p>
+<h3 id="json-loads"><a href="#json-loads" class="headerlink" title="json.loads()"></a><code>json.loads()</code></h3><p><code>json.loads()</code>用来解析包含JSON数据的字符串，解析后变量格式为字典。<br>用法：</p>
+<p><center><img src="https://ws3.sinaimg.cn/large/006tNc79ly1fzs3tggakvj310o06gtbp.jpg" ,="" width="50%" alt="json.loads()用法"></center></p>
+<h3 id="json-load"><a href="#json-load" class="headerlink" title="json.load()"></a><code>json.load()</code></h3><p><code>json.load()</code>用来解析json文件，这也是和<code>json.loads()</code>唯一的区别。<br>解析json文件时，要么该文件只包含一行（只有一个字典），要么每个字典是列表的一个元素，如图：</p>
+<p><center><img src="https://ws3.sinaimg.cn/large/006tNc79ly1fzs5m8jkf4j30pk03wgmd.jpg" ,="" width="50%" alt="json.load()用法"></center><br>如果是后一种，则解析出的变量也为列表格式，每个元素是对应的字典。</p>
 <h2 id="编码为json格式"><a href="#编码为json格式" class="headerlink" title="编码为json格式"></a>编码为json格式</h2><p>使用<code>json.dumps()</code>或<code>json.dump()</code>两个函数来编码json格式。</p>
-<h3 id="json-dumps"><a href="#json-dumps" class="headerlink" title="json.dumps()"></a><code>json.dumps()</code></h3><p><code>json.dumps()</code>将一个Python数据结构（字典）编码成json格式的字符串。<br>用法：<br><img src="https://ws4.sinaimg.cn/large/006tNc79ly1fzs65ln3v9j30wi06g41a.jpg" alt=""></p>
-<h3 id="json-dump"><a href="#json-dump" class="headerlink" title="json.dump()"></a><code>json.dump()</code></h3><p><code>json.dump()</code>将一个Python数据结构（字典）编码成json格式，并写入到文件中。<br>用法：<br><img src="https://ws3.sinaimg.cn/large/006tNc79ly1fzs6nisyd6j30vq05cmzb.jpg" alt=""><br><code>jj.json</code>文件为：<br><img src="https://ws3.sinaimg.cn/large/006tNc79ly1fzs6nsw1xsj30o401it8u.jpg" alt=""></p>
-<h3 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h3><ul>
+<h3 id="json-dumps"><a href="#json-dumps" class="headerlink" title="json.dumps()"></a><code>json.dumps()</code></h3><p><code>json.dumps()</code>将一个Python数据结构（字典）编码成json格式的字符串。<br>用法：</p>
+<p><center><img src="https://ws4.sinaimg.cn/large/006tNc79ly1fzs65ln3v9j30wi06g41a.jpg" ,="" width="50%" alt="json.dumps()用法"></center></p>
+<h3 id="json-dump"><a href="#json-dump" class="headerlink" title="json.dump()"></a><code>json.dump()</code></h3><p><code>json.dump()</code>将一个Python数据结构（字典）编码成json格式，并写入到文件中。<br>用法：</p>
+<p><center><img src="https://ws3.sinaimg.cn/large/006tNc79ly1fzs6nisyd6j30vq05cmzb.jpg" ,="" width="50%" alt="json.dump()用法"></center><br><code>jj.json</code>文件为：</p>
+<p><center><img src="https://ws3.sinaimg.cn/large/006tNc79ly1fzs6nsw1xsj30o401it8u.jpg" ,="" width="50%" alt="写入的json文件"></center></p>
+<h3 id="共有参数"><a href="#共有参数" class="headerlink" title="共有参数"></a>共有参数</h3><ul>
 <li><code>ensure_ascii=True</code>：如果有中文时，需改为False，即不转义为ASCII码；</li>
 <li><code>indent=None</code>：缩进。默认为紧凑格式，0/负数或者<code>&quot;&quot;</code>为只换行，正数代表缩进多少个空格，也可以使用<code>&quot;\t&quot;</code>等；</li>
 <li><code>sort_keys=False</code>：是否按照键排序；</li>
@@ -352,7 +357,7 @@
         <p><span>本文标题:</span><a href="/2019/02/python-json.html">利用Python处理json文件</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">Suixin</a></p>
         <p><span>发布时间:</span>2019-02-02, 17:42:13</p>
-        <p><span>最后更新:</span>2019-02-02, 17:43:29</p>
+        <p><span>最后更新:</span>2019-02-02, 17:48:14</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2019/02/python-json.html" title="利用Python处理json文件">https://suixinblog.cn/2019/02/python-json.html</a>
             <span class="copy-path" data-clipboard-text="原文: https://suixinblog.cn/2019/02/python-json.html　　作者: Suixin" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
@@ -382,7 +387,7 @@
     <div id="toc" class="toc-article">
         <strong class="toc-title">文章目录</strong>
         
-            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#读取json文件"><span class="toc-number">1.</span> <span class="toc-text">读取json文件</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#json-loads"><span class="toc-number">1.1.</span> <span class="toc-text">json.loads()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#json-load"><span class="toc-number">1.2.</span> <span class="toc-text">json.load()</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#编码为json格式"><span class="toc-number">2.</span> <span class="toc-text">编码为json格式</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#json-dumps"><span class="toc-number">2.1.</span> <span class="toc-text">json.dumps()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#json-dump"><span class="toc-number">2.2.</span> <span class="toc-text">json.dump()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#参数"><span class="toc-number">2.3.</span> <span class="toc-text">参数</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#参考"><span class="toc-number">3.</span> <span class="toc-text">参考</span></a></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#读取json文件"><span class="toc-number">1.</span> <span class="toc-text">读取json文件</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#json-loads"><span class="toc-number">1.1.</span> <span class="toc-text">json.loads()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#json-load"><span class="toc-number">1.2.</span> <span class="toc-text">json.load()</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#编码为json格式"><span class="toc-number">2.</span> <span class="toc-text">编码为json格式</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#json-dumps"><span class="toc-number">2.1.</span> <span class="toc-text">json.dumps()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#json-dump"><span class="toc-number">2.2.</span> <span class="toc-text">json.dump()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#共有参数"><span class="toc-number">2.3.</span> <span class="toc-text">共有参数</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#参考"><span class="toc-number">3.</span> <span class="toc-text">参考</span></a></li></ol>
         
     </div>
     <style>
