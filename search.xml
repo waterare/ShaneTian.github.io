@@ -12,7 +12,7 @@
       
       <categories>
           
-          <category> 技术驿站 </category>
+          <category> 编程语言 </category>
           
       </categories>
       
@@ -21,11 +21,11 @@
             
             <tag> Python </tag>
             
-            <tag> 字典 </tag>
-            
-            <tag> 列表 </tag>
-            
             <tag> 踩坑 </tag>
+            
+            <tag> dict </tag>
+            
+            <tag> list </tag>
             
         </tags>
       
@@ -41,7 +41,7 @@
       
       <categories>
           
-          <category> 技术驿站 </category>
+          <category> 编程语言 </category>
           
       </categories>
       
@@ -66,7 +66,7 @@
       
       <categories>
           
-          <category> 术业专攻 </category>
+          <category> 编程语言 </category>
           
       </categories>
       
@@ -116,7 +116,7 @@
       
       <categories>
           
-          <category> 技术驿站 </category>
+          <category> 编程语言 </category>
           
       </categories>
       
@@ -139,7 +139,7 @@
       
       <categories>
           
-          <category> 技术驿站 </category>
+          <category> 编程语言 </category>
           
       </categories>
       
@@ -242,8 +242,6 @@
       
         <tags>
             
-            <tag> Linux </tag>
-            
             <tag> 服务器 </tag>
             
         </tags>
@@ -266,8 +264,6 @@
       
       
         <tags>
-            
-            <tag> Linux </tag>
             
             <tag> 命令行 </tag>
             
@@ -387,14 +383,14 @@
           
           <category> 技术驿站 </category>
           
+          <category> Linux </category>
+          
       </categories>
       
       
         <tags>
             
             <tag> Python </tag>
-            
-            <tag> Linux </tag>
             
             <tag> 命令行 </tag>
             
@@ -489,7 +485,7 @@
       
       <categories>
           
-          <category> 术业专攻 </category>
+          <category> 编程语言 </category>
           
       </categories>
       
@@ -535,7 +531,7 @@
       
       <categories>
           
-          <category> 术业专攻 </category>
+          <category> 编程语言 </category>
           
       </categories>
       
@@ -543,6 +539,8 @@
         <tags>
             
             <tag> Python </tag>
+            
+            <tag> list </tag>
             
         </tags>
       
@@ -635,7 +633,7 @@
       
       <categories>
           
-          <category> 技术驿站 </category>
+          <category> 编程语言 </category>
           
       </categories>
       
@@ -696,6 +694,8 @@
             
             <tag> Hexo </tag>
             
+            <tag> Hugo </tag>
+            
         </tags>
       
     </entry>
@@ -743,6 +743,8 @@
         <tags>
             
             <tag> 网站建设 </tag>
+            
+            <tag> Hugo </tag>
             
         </tags>
       
