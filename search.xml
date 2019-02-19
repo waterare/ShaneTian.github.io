@@ -7,7 +7,7 @@
       <link href="/2019/02/python-dict-list-trouble.html"/>
       <url>/2019/02/python-dict-list-trouble.html</url>
       
-        <content type="html"><![CDATA[<p>本质上，如果你设置一个dict的值为list，那么你大概率是想该dict的键能够映射多个值，并且能够不断的增添、删除或者修改。<br>Python中list的操作总是简单的，所以很多时候我都将容器设置为list，而在这次操作中，却踩了坑。</p><h2 id="dict的值为list的坑"><a href="#dict的值为list的坑" class="headerlink" title="dict的值为list的坑"></a>dict的值为list的坑</h2><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">info_keys = [<span class="string">'NAME'</span>, <span class="string">'AGE'</span>, <span class="string">'SEX'</span>]</span><br><span class="line">info_all = dict.fromkeys(info_keys, [])</span><br><span class="line">info = &#123;<span class="string">'NAME'</span>: <span class="string">'Tom'</span>, <span class="string">'AGE'</span>: <span class="number">22</span>, <span class="string">'SEX'</span>: <span class="string">'F'</span>&#125;</span><br><span class="line"><span class="keyword">for</span> key <span class="keyword">in</span> info_keys:</span><br><span class="line">    info_all[key].append(info[key])</span><br><span class="line">print(info_all)</span><br></pre></td></tr></table></figure><p>输出却为：<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;<span class="string">'NAME'</span>: [<span class="string">'Tom'</span>, 22, <span class="string">'F'</span>], <span class="string">'AGE'</span>: [<span class="string">'Tom'</span>, 22, <span class="string">'F'</span>], <span class="string">'SEX'</span>: [<span class="string">'Tom'</span>, 22, <span class="string">'F'</span>]&#125;</span><br></pre></td></tr></table></figure></p><p><strong>为什么？</strong></p><h2 id="正确方法"><a href="#正确方法" class="headerlink" title="正确方法"></a>正确方法</h2><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">info_keys = [<span class="string">'NAME'</span>, <span class="string">'AGE'</span>, <span class="string">'SEX'</span>]</span><br><span class="line">info_all = &#123;<span class="string">'NAME'</span>: [], <span class="string">'AGE'</span>: [], <span class="string">'SEX'</span>: []&#125;</span><br><span class="line">info = &#123;<span class="string">'NAME'</span>: <span class="string">'Tom'</span>, <span class="string">'AGE'</span>: <span class="number">22</span>, <span class="string">'SEX'</span>: <span class="string">'F'</span>&#125;</span><br><span class="line"><span class="keyword">for</span> key <span class="keyword">in</span> info_keys:</span><br><span class="line">    info_all[key].append(info[key])</span><br><span class="line">print(info_all)</span><br></pre></td></tr></table></figure><p>或者<br><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">info_keys = [<span class="string">'NAME'</span>, <span class="string">'AGE'</span>, <span class="string">'SEX'</span>]</span><br><span class="line">info_all = &#123;&#125;</span><br><span class="line">info = &#123;<span class="string">'NAME'</span>: <span class="string">'Tom'</span>, <span class="string">'AGE'</span>: <span class="number">22</span>, <span class="string">'SEX'</span>: <span class="string">'F'</span>&#125;</span><br><span class="line"><span class="keyword">for</span> key <span class="keyword">in</span> info_keys:</span><br><span class="line">    info_all.setdefault(key, []).append(info[key])</span><br><span class="line">print(info_all)</span><br></pre></td></tr></table></figure></p><p>均能正确输出结果：<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;<span class="string">'NAME'</span>: [<span class="string">'Tom'</span>], <span class="string">'AGE'</span>: [22], <span class="string">'SEX'</span>: [<span class="string">'F'</span>]&#125;</span><br></pre></td></tr></table></figure></p><p>所以，好像是<code>dict.fromkeys()</code>的锅？？</p><h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><blockquote><p><a href="https://python3-cookbook.readthedocs.io/zh_CN/latest/c01/p06_map_keys_to_multiple_values_in_dict.html" target="_blank" rel="noopener">https://python3-cookbook.readthedocs.io/zh_CN/latest/c01/p06_map_keys_to_multiple_values_in_dict.html</a></p></blockquote>]]></content>
+        <content type="html"><![CDATA[<p>本质上，如果你设置一个dict的值为list，那么你大概率是想该dict的键能够映射多个值，并且能够不断的增添、删除或者修改。<br>Python中list的操作总是简单的，所以很多时候我都将容器设置为list，而在这次操作中，却踩了坑。<br><a id="more"></a></p><h2 id="dict的值为list的坑"><a href="#dict的值为list的坑" class="headerlink" title="dict的值为list的坑"></a>dict的值为list的坑</h2><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">info_keys = [<span class="string">'NAME'</span>, <span class="string">'AGE'</span>, <span class="string">'SEX'</span>]</span><br><span class="line">info_all = dict.fromkeys(info_keys, [])</span><br><span class="line">info = &#123;<span class="string">'NAME'</span>: <span class="string">'Tom'</span>, <span class="string">'AGE'</span>: <span class="number">22</span>, <span class="string">'SEX'</span>: <span class="string">'F'</span>&#125;</span><br><span class="line"><span class="keyword">for</span> key <span class="keyword">in</span> info_keys:</span><br><span class="line">    info_all[key].append(info[key])</span><br><span class="line">print(info_all)</span><br></pre></td></tr></table></figure><p>输出却为：<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;<span class="string">'NAME'</span>: [<span class="string">'Tom'</span>, 22, <span class="string">'F'</span>], <span class="string">'AGE'</span>: [<span class="string">'Tom'</span>, 22, <span class="string">'F'</span>], <span class="string">'SEX'</span>: [<span class="string">'Tom'</span>, 22, <span class="string">'F'</span>]&#125;</span><br></pre></td></tr></table></figure></p><p><strong>为什么？</strong></p><h2 id="正确方法"><a href="#正确方法" class="headerlink" title="正确方法"></a>正确方法</h2><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">info_keys = [<span class="string">'NAME'</span>, <span class="string">'AGE'</span>, <span class="string">'SEX'</span>]</span><br><span class="line">info_all = &#123;<span class="string">'NAME'</span>: [], <span class="string">'AGE'</span>: [], <span class="string">'SEX'</span>: []&#125;</span><br><span class="line">info = &#123;<span class="string">'NAME'</span>: <span class="string">'Tom'</span>, <span class="string">'AGE'</span>: <span class="number">22</span>, <span class="string">'SEX'</span>: <span class="string">'F'</span>&#125;</span><br><span class="line"><span class="keyword">for</span> key <span class="keyword">in</span> info_keys:</span><br><span class="line">    info_all[key].append(info[key])</span><br><span class="line">print(info_all)</span><br></pre></td></tr></table></figure><p>或者<br><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">info_keys = [<span class="string">'NAME'</span>, <span class="string">'AGE'</span>, <span class="string">'SEX'</span>]</span><br><span class="line">info_all = &#123;&#125;</span><br><span class="line">info = &#123;<span class="string">'NAME'</span>: <span class="string">'Tom'</span>, <span class="string">'AGE'</span>: <span class="number">22</span>, <span class="string">'SEX'</span>: <span class="string">'F'</span>&#125;</span><br><span class="line"><span class="keyword">for</span> key <span class="keyword">in</span> info_keys:</span><br><span class="line">    info_all.setdefault(key, []).append(info[key])</span><br><span class="line">print(info_all)</span><br></pre></td></tr></table></figure></p><p>均能正确输出结果：<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;<span class="string">'NAME'</span>: [<span class="string">'Tom'</span>], <span class="string">'AGE'</span>: [22], <span class="string">'SEX'</span>: [<span class="string">'F'</span>]&#125;</span><br></pre></td></tr></table></figure></p><p>所以，好像是<code>dict.fromkeys()</code>的锅？？</p><h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><blockquote><p><a href="https://python3-cookbook.readthedocs.io/zh_CN/latest/c01/p06_map_keys_to_multiple_values_in_dict.html" target="_blank" rel="noopener">https://python3-cookbook.readthedocs.io/zh_CN/latest/c01/p06_map_keys_to_multiple_values_in_dict.html</a></p></blockquote>]]></content>
       
       
       <categories>
@@ -187,12 +187,12 @@
           
           <category> 技术驿站 </category>
           
+          <category> Linux </category>
+          
       </categories>
       
       
         <tags>
-            
-            <tag> Linux </tag>
             
             <tag> 服务器 </tag>
             
@@ -210,7 +210,7 @@
       
       <categories>
           
-          <category> 术业专攻 </category>
+          <category> 技术驿站 </category>
           
       </categories>
       
@@ -218,6 +218,8 @@
         <tags>
             
             <tag> Python </tag>
+            
+            <tag> Anaconda </tag>
             
         </tags>
       
@@ -292,8 +294,6 @@
       
         <tags>
             
-            <tag> Linux </tag>
-            
             <tag> 命令行 </tag>
             
             <tag> 服务器 </tag>
@@ -319,9 +319,9 @@
       
         <tags>
             
-            <tag> Linux </tag>
-            
             <tag> 命令行 </tag>
+            
+            <tag> 服务器 </tag>
             
         </tags>
       
@@ -343,8 +343,6 @@
       
       
         <tags>
-            
-            <tag> Linux </tag>
             
             <tag> 命令行 </tag>
             
@@ -423,9 +421,9 @@
       
         <tags>
             
-            <tag> Linux </tag>
-            
             <tag> 命令行 </tag>
+            
+            <tag> 服务器 </tag>
             
         </tags>
       
@@ -514,14 +512,14 @@
       
       <categories>
           
-          <category> 术业专攻 </category>
+          <category> 技术驿站 </category>
           
       </categories>
       
       
         <tags>
             
-            <tag> Python </tag>
+            <tag> git </tag>
             
         </tags>
       
@@ -637,7 +635,7 @@
       
       <categories>
           
-          <category> 术业专攻 </category>
+          <category> 技术驿站 </category>
           
       </categories>
       
@@ -645,6 +643,8 @@
         <tags>
             
             <tag> Python </tag>
+            
+            <tag> 正则表达式 </tag>
             
         </tags>
       

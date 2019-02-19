@@ -1,8 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://suixinblog.cn/2018/12/monitorix-glances.html</loc>
+    <lastmod>2019-02-19T06:05:28.636Z</lastmod>
+  </url>  <url>
+    <loc>https://suixinblog.cn/2018/11/screen.html</loc>
+    <lastmod>2019-02-19T06:05:02.853Z</lastmod>
+  </url>  <url>
+    <loc>https://suixinblog.cn/2018/11/tar-gzip-zip-rar.html</loc>
+    <lastmod>2019-02-19T06:04:54.775Z</lastmod>
+  </url>  <url>
+    <loc>https://suixinblog.cn/2018/11/wget.html</loc>
+    <lastmod>2019-02-19T06:04:28.410Z</lastmod>
+  </url>  <url>
+    <loc>https://suixinblog.cn/2018/10/ps-grep-tail.html</loc>
+    <lastmod>2019-02-19T06:04:19.717Z</lastmod>
+  </url>  <url>
+    <loc>https://suixinblog.cn/2018/10/git.html</loc>
+    <lastmod>2019-02-19T06:03:46.030Z</lastmod>
+  </url>  <url>
+    <loc>https://suixinblog.cn/2018/12/anaconda.html</loc>
+    <lastmod>2019-02-19T06:03:35.011Z</lastmod>
+  </url>  <url>
+    <loc>https://suixinblog.cn/2018/09/re.html</loc>
+    <lastmod>2019-02-19T05:59:28.409Z</lastmod>
+  </url>  <url>
     <loc>https://suixinblog.cn/2019/02/python-dict-list-trouble.html</loc>
-    <lastmod>2019-02-19T05:57:12.396Z</lastmod>
+    <lastmod>2019-02-19T05:58:27.275Z</lastmod>
   </url>  <url>
     <loc>https://suixinblog.cn/2019/02/python-excel.html</loc>
     <lastmod>2019-02-17T12:00:11.472Z</lastmod>
@@ -28,29 +52,11 @@
     <loc>https://suixinblog.cn/2018/12/ssh-timeout.html</loc>
     <lastmod>2018-12-17T12:02:34.346Z</lastmod>
   </url>  <url>
-    <loc>https://suixinblog.cn/2018/12/anaconda.html</loc>
-    <lastmod>2018-12-14T10:35:51.415Z</lastmod>
-  </url>  <url>
-    <loc>https://suixinblog.cn/2018/12/monitorix-glances.html</loc>
-    <lastmod>2018-12-14T09:44:30.847Z</lastmod>
-  </url>  <url>
     <loc>https://suixinblog.cn/2018/12/tmux.html</loc>
     <lastmod>2018-12-12T13:12:21.802Z</lastmod>
   </url>  <url>
-    <loc>https://suixinblog.cn/2018/11/screen.html</loc>
-    <lastmod>2018-12-07T12:55:48.735Z</lastmod>
-  </url>  <url>
     <loc>https://suixinblog.cn/2018/11/nohup.html</loc>
     <lastmod>2018-11-20T14:15:27.937Z</lastmod>
-  </url>  <url>
-    <loc>https://suixinblog.cn/2018/11/tar-gzip-zip-rar.html</loc>
-    <lastmod>2018-11-20T13:51:31.525Z</lastmod>
-  </url>  <url>
-    <loc>https://suixinblog.cn/2018/11/wget.html</loc>
-    <lastmod>2018-11-20T13:51:01.656Z</lastmod>
-  </url>  <url>
-    <loc>https://suixinblog.cn/2018/10/ps-grep-tail.html</loc>
-    <lastmod>2018-11-20T13:50:54.853Z</lastmod>
   </url>  <url>
     <loc>https://suixinblog.cn/2018/10/argparse.html</loc>
     <lastmod>2018-11-16T08:09:54.997Z</lastmod>
@@ -64,17 +70,11 @@
     <loc>https://suixinblog.cn/2018/10/linear-classification3.html</loc>
     <lastmod>2018-10-20T04:32:30.389Z</lastmod>
   </url>  <url>
-    <loc>https://suixinblog.cn/2018/10/git.html</loc>
-    <lastmod>2018-10-16T08:32:38.075Z</lastmod>
-  </url>  <url>
     <loc>https://suixinblog.cn/2018/10/list-index.html</loc>
     <lastmod>2018-10-15T09:37:22.697Z</lastmod>
   </url>  <url>
     <loc>https://suixinblog.cn/2018/09/hugo.html</loc>
     <lastmod>2018-10-13T03:45:47.269Z</lastmod>
-  </url>  <url>
-    <loc>https://suixinblog.cn/2018/09/re.html</loc>
-    <lastmod>2018-10-13T03:45:04.479Z</lastmod>
   </url>  <url>
     <loc>https://suixinblog.cn/2018/10/linear-classification1.html</loc>
     <lastmod>2018-10-13T03:44:27.753Z</lastmod>

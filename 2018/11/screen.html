@@ -16,14 +16,14 @@
 
 
 <meta name="description" content="在日常的编码中肯定需要登录到远程Linux服务器，经常需要在上面运行一些需要很长时间才能完成的任务，如：传输文件、跑爬虫代码等，需要保证退出服务器的连接，该任务也不会终止掉。使用nohup命令已经可以完成一些较为简单的任务（nohup：在Linux服务器后台跑程序），但真正的多会话管理还是要用到screen命令。一般的Linux系统都自带screen命令，所以无需手动安装。">
-<meta name="keywords" content="Linux,命令行,服务器">
+<meta name="keywords" content="命令行,服务器">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Linux多重视窗管理命令screen">
 <meta property="og:url" content="https://suixinblog.cn/2018/11/screen.html">
 <meta property="og:site_name" content="Suixin&#39;s Blog">
 <meta property="og:description" content="在日常的编码中肯定需要登录到远程Linux服务器，经常需要在上面运行一些需要很长时间才能完成的任务，如：传输文件、跑爬虫代码等，需要保证退出服务器的连接，该任务也不会终止掉。使用nohup命令已经可以完成一些较为简单的任务（nohup：在Linux服务器后台跑程序），但真正的多会话管理还是要用到screen命令。一般的Linux系统都自带screen命令，所以无需手动安装。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-12-07T12:55:48.735Z">
+<meta property="og:updated_time" content="2019-02-19T06:05:02.853Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Linux多重视窗管理命令screen">
 <meta name="twitter:description" content="在日常的编码中肯定需要登录到远程Linux服务器，经常需要在上面运行一些需要很长时间才能完成的任务，如：传输文件、跑爬虫代码等，需要保证退出服务器的连接，该任务也不会终止掉。使用nohup命令已经可以完成一些较为简单的任务（nohup：在Linux服务器后台跑程序），但真正的多会话管理还是要用到screen命令。一般的Linux系统都自带screen命令，所以无需手动安装。">
@@ -196,7 +196,7 @@
                 
                 <section class="switch-part switch-part2">
                     <div class="widget tagcloud" id="js-tagcloud">
-                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Excel/">Excel</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/LaTex/">LaTex</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/">Linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/NLP/">NLP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/">Python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/json/">json</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/分类/">分类</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/列表/">列表</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/命令行/">命令行</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/字典/">字典</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/服务器/">服务器</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/机器学习/">机器学习</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/深度学习/">深度学习</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/网站建设/">网站建设</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/踩坑/">踩坑</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/面试/">面试</a></li></ul>
+                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Anaconda/">Anaconda</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Excel/">Excel</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/LaTex/">LaTex</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/">Linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/NLP/">NLP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/">Python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/json/">json</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/分类/">分类</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/列表/">列表</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/命令行/">命令行</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/字典/">字典</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/服务器/">服务器</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/机器学习/">机器学习</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/正则表达式/">正则表达式</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/深度学习/">深度学习</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/网站建设/">网站建设</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/踩坑/">踩坑</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/面试/">面试</a></li></ul>
                     </div>
                 </section>
                 
@@ -309,7 +309,7 @@
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/命令行/">命令行</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/服务器/">服务器</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/命令行/">命令行</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/服务器/">服务器</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -351,7 +351,7 @@
         <p><span>本文标题:</span><a href="/2018/11/screen.html">Linux多重视窗管理命令screen</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">Suixin</a></p>
         <p><span>发布时间:</span>2018-11-25, 11:38:44</p>
-        <p><span>最后更新:</span>2018-12-07, 20:55:48</p>
+        <p><span>最后更新:</span>2019-02-19, 14:05:02</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2018/11/screen.html" title="Linux多重视窗管理命令screen">https://suixinblog.cn/2018/11/screen.html</a>
             <span class="copy-path" data-clipboard-text="原文: https://suixinblog.cn/2018/11/screen.html　　作者: Suixin" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>

@@ -196,7 +196,7 @@
                 
                 <section class="switch-part switch-part2">
                     <div class="widget tagcloud" id="js-tagcloud">
-                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Excel/">Excel</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/LaTex/">LaTex</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/">Linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/NLP/">NLP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/">Python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/json/">json</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/分类/">分类</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/列表/">列表</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/命令行/">命令行</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/字典/">字典</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/服务器/">服务器</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/机器学习/">机器学习</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/深度学习/">深度学习</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/网站建设/">网站建设</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/踩坑/">踩坑</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/面试/">面试</a></li></ul>
+                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Anaconda/">Anaconda</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Excel/">Excel</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/LaTex/">LaTex</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/">Linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/NLP/">NLP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/">Python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/json/">json</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/分类/">分类</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/列表/">列表</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/命令行/">命令行</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/字典/">字典</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/服务器/">服务器</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/机器学习/">机器学习</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/正则表达式/">正则表达式</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/深度学习/">深度学习</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/网站建设/">网站建设</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/踩坑/">踩坑</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/面试/">面试</a></li></ul>
                     </div>
                 </section>
                 
@@ -378,18 +378,8 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>本质上，如果你设置一个dict的值为list，那么你大概率是想该dict的键能够映射多个值，并且能够不断的增添、删除或者修改。<br>Python中list的操作总是简单的，所以很多时候我都将容器设置为list，而在这次操作中，却踩了坑。</p>
-<h2 id="dict的值为list的坑"><a href="#dict的值为list的坑" class="headerlink" title="dict的值为list的坑"></a>dict的值为list的坑</h2><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">info_keys = [<span class="string">'NAME'</span>, <span class="string">'AGE'</span>, <span class="string">'SEX'</span>]</span><br><span class="line">info_all = dict.fromkeys(info_keys, [])</span><br><span class="line">info = &#123;<span class="string">'NAME'</span>: <span class="string">'Tom'</span>, <span class="string">'AGE'</span>: <span class="number">22</span>, <span class="string">'SEX'</span>: <span class="string">'F'</span>&#125;</span><br><span class="line"><span class="keyword">for</span> key <span class="keyword">in</span> info_keys:</span><br><span class="line">    info_all[key].append(info[key])</span><br><span class="line">print(info_all)</span><br></pre></td></tr></table></figure>
-<p>输出却为：<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;<span class="string">'NAME'</span>: [<span class="string">'Tom'</span>, 22, <span class="string">'F'</span>], <span class="string">'AGE'</span>: [<span class="string">'Tom'</span>, 22, <span class="string">'F'</span>], <span class="string">'SEX'</span>: [<span class="string">'Tom'</span>, 22, <span class="string">'F'</span>]&#125;</span><br></pre></td></tr></table></figure></p>
-<p><strong>为什么？</strong></p>
-<h2 id="正确方法"><a href="#正确方法" class="headerlink" title="正确方法"></a>正确方法</h2><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">info_keys = [<span class="string">'NAME'</span>, <span class="string">'AGE'</span>, <span class="string">'SEX'</span>]</span><br><span class="line">info_all = &#123;<span class="string">'NAME'</span>: [], <span class="string">'AGE'</span>: [], <span class="string">'SEX'</span>: []&#125;</span><br><span class="line">info = &#123;<span class="string">'NAME'</span>: <span class="string">'Tom'</span>, <span class="string">'AGE'</span>: <span class="number">22</span>, <span class="string">'SEX'</span>: <span class="string">'F'</span>&#125;</span><br><span class="line"><span class="keyword">for</span> key <span class="keyword">in</span> info_keys:</span><br><span class="line">    info_all[key].append(info[key])</span><br><span class="line">print(info_all)</span><br></pre></td></tr></table></figure>
-<p>或者<br><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">info_keys = [<span class="string">'NAME'</span>, <span class="string">'AGE'</span>, <span class="string">'SEX'</span>]</span><br><span class="line">info_all = &#123;&#125;</span><br><span class="line">info = &#123;<span class="string">'NAME'</span>: <span class="string">'Tom'</span>, <span class="string">'AGE'</span>: <span class="number">22</span>, <span class="string">'SEX'</span>: <span class="string">'F'</span>&#125;</span><br><span class="line"><span class="keyword">for</span> key <span class="keyword">in</span> info_keys:</span><br><span class="line">    info_all.setdefault(key, []).append(info[key])</span><br><span class="line">print(info_all)</span><br></pre></td></tr></table></figure></p>
-<p>均能正确输出结果：<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;<span class="string">'NAME'</span>: [<span class="string">'Tom'</span>], <span class="string">'AGE'</span>: [22], <span class="string">'SEX'</span>: [<span class="string">'F'</span>]&#125;</span><br></pre></td></tr></table></figure></p>
-<p>所以，好像是<code>dict.fromkeys()</code>的锅？？</p>
-<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><blockquote>
-<p><a href="https://python3-cookbook.readthedocs.io/zh_CN/latest/c01/p06_map_keys_to_multiple_values_in_dict.html" target="_blank" rel="noopener">https://python3-cookbook.readthedocs.io/zh_CN/latest/c01/p06_map_keys_to_multiple_values_in_dict.html</a></p>
-</blockquote>
-
+              <p>本质上，如果你设置一个dict的值为list，那么你大概率是想该dict的键能够映射多个值，并且能够不断的增添、删除或者修改。<br>Python中list的操作总是简单的，所以很多时候我都将容器设置为list，而在这次操作中，却踩了坑。<br>
+          
       
     </div>
     
@@ -406,6 +396,10 @@
         <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/列表/">列表</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/字典/">字典</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/踩坑/">踩坑</a></li></ul>
     </div>
 
+      
+        <p class="article-more-link">
+          <a href="/2019/02/python-dict-list-trouble.html#more">阅读全文 >></a>
+        </p>
       
       <div class="clearfix"></div>
     </div>
@@ -870,13 +864,13 @@
       
       
     <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/技术驿站/">技术驿站</a>
+    <a class="article-category-link" href="/categories/技术驿站/">技术驿站</a><a class="article-category-link" href="/categories/技术驿站/Linux/">Linux</a>
     </div>
 
 
       
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/服务器/">服务器</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/服务器/">服务器</a></li></ul>
     </div>
 
       
@@ -941,13 +935,13 @@
       
       
     <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/术业专攻/">术业专攻</a>
+    <a class="article-category-link" href="/categories/技术驿站/">技术驿站</a>
     </div>
 
 
       
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Anaconda/">Anaconda</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li></ul>
     </div>
 
       
