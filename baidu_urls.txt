@@ -1,2 +1,2 @@
+https://suixinblog.cn/2019/02/target-offer-reverse-linked-list.html
 https://suixinblog.cn/2019/02/target-offer-repeating-digits.html
-https://suixinblog.cn/2019/02/target-offer-replace-space.html
