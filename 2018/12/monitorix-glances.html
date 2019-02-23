@@ -27,7 +27,7 @@
 <meta property="og:image" content="https://ws1.sinaimg.cn/large/006tNbRwgy1fy6dau5escj31c00u0h6d.jpg">
 <meta property="og:image" content="https://ws4.sinaimg.cn/large/006tNbRwly1fy6dhrxfn1j31hc0u045c.jpg">
 <meta property="og:image" content="https://ws1.sinaimg.cn/large/006tNbRwgy1fy6ebhv2eoj31ir0u01a3.jpg">
-<meta property="og:updated_time" content="2019-02-19T06:05:28.636Z">
+<meta property="og:updated_time" content="2019-02-23T03:55:18.999Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="monitorix--服务器监控程序安装及配置">
 <meta name="twitter:description" content="monitorix是一个轻量的Linux监控程序，可以实现远程监控，而且有非常丰富的图形。 安装以CentOS为例，Ubuntu大同小异。">
@@ -308,7 +308,7 @@
       <div class="article-info article-info-post">
         
     <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/技术驿站/">技术驿站</a><a class="article-category-link" href="/categories/技术驿站/Linux/">Linux</a>
+    <a class="article-category-link" href="/categories/技术驿站/">技术驿站</a>
     </div>
 
 
@@ -325,7 +325,7 @@
       
           
         <p>monitorix是一个轻量的Linux监控程序，可以实现远程监控，而且有非常丰富的图形。</p>
-<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>以CentOS为例，Ubuntu大同小异。<br><a id="more"></a><br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">sudo yum -y install epel-release</span><br><span class="line">sudo yum -y install glib2</span><br><span class="line"><span class="meta">#</span><span class="bash"> 安装依赖包</span></span><br><span class="line">sudo yum -y install rrdtool rrdtool-perl perl-libwww-perl perl-MailTools perl-MIME-Lite perl-CGI perl-DBI perl-XML-Simple perl-Config-General perl-HTTP-Server-Simple perl-IO-Socket-SSL</span><br><span class="line"><span class="meta">#</span><span class="bash"> 安装monitorix</span></span><br><span class="line">sudo yum -y install monitorix</span><br><span class="line"><span class="meta">#</span><span class="bash"> 设置开机启动monitorix</span></span><br><span class="line">sudo systemctl enable monitorix</span><br><span class="line"><span class="meta">#</span><span class="bash"> 启动monitorix</span></span><br><span class="line">sudo systemctl start monitorix</span><br></pre></td></tr></table></figure></p>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>以CentOS为例，Ubuntu大同小异。<br><a id="more"></a><br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">sudo yum -y install epel-release</span><br><span class="line">sudo yum -y install glib2</span><br><span class="line"><span class="meta">#</span> 安装依赖包</span><br><span class="line">sudo yum -y install rrdtool rrdtool-perl perl-libwww-perl perl-MailTools perl-MIME-Lite perl-CGI perl-DBI perl-XML-Simple perl-Config-General perl-HTTP-Server-Simple perl-IO-Socket-SSL</span><br><span class="line"><span class="meta">#</span> 安装monitorix</span><br><span class="line">sudo yum -y install monitorix</span><br><span class="line"><span class="meta">#</span> 设置开机启动monitorix</span><br><span class="line">sudo systemctl enable monitorix</span><br><span class="line"><span class="meta">#</span> 启动monitorix</span><br><span class="line">sudo systemctl start monitorix</span><br></pre></td></tr></table></figure></p>
 <p>直接在浏览器输入<code>http://IP:8080/monitorix</code>即可访问界面。</p>
 <h3 id="防火墙设置"><a href="#防火墙设置" class="headerlink" title="防火墙设置"></a>防火墙设置</h3><p>有些服务器设置了防火墙，则需要在防火墙允许8080端口（monitorix默认端口）<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">firewall-cmd --permanent --zone=public --add-port=8080/tcp</span><br><span class="line">firewall-cmd --reload</span><br></pre></td></tr></table></figure></p>
 <h3 id="配置文件"><a href="#配置文件" class="headerlink" title="配置文件"></a>配置文件</h3><p>monitorix的默认配置文件为<code>/etc/monitorix/monitorix.conf</code>，具有很丰富的功能，如登录验证、自定义显示等。所有的配置可以在官方文档看到很详细的说明<a href="https://www.monitorix.org/documentation.html" target="_blank" rel="noopener">https://www.monitorix.org/documentation.html</a>。</p>
@@ -361,7 +361,7 @@
         <p><span>本文标题:</span><a href="/2018/12/monitorix-glances.html">monitorix--服务器监控程序安装及配置</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">Suixin</a></p>
         <p><span>发布时间:</span>2018-12-14, 17:43:10</p>
-        <p><span>最后更新:</span>2019-02-19, 14:05:28</p>
+        <p><span>最后更新:</span>2019-02-23, 11:55:18</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2018/12/monitorix-glances.html" title="monitorix--服务器监控程序安装及配置">https://suixinblog.cn/2018/12/monitorix-glances.html</a>
             <span class="copy-path" data-clipboard-text="原文: https://suixinblog.cn/2018/12/monitorix-glances.html　　作者: Suixin" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
