@@ -15,18 +15,18 @@
 
 
 
-<meta name="description" content="链表的基础知识+Python实现四种链表 题目描述输入一个链表的头节点，按链表值从尾到头的顺序返回一个ArrayList。">
+<meta name="description" content="链表的基础知识+Python实现四种链表 题目描述输入一个链表，反转链表后，输出新链表的表头。 解题思路只需要一个中间节点过渡一下就好。">
 <meta name="keywords" content="Python,剑指Offer,链表">
 <meta property="og:type" content="article">
-<meta property="og:title" content="[剑指Offer]从尾到头打印链表">
+<meta property="og:title" content="[剑指Offer]反转链表">
 <meta property="og:url" content="https://suixinblog.cn/2019/02/target-offer-reverse-linked-list.html">
 <meta property="og:site_name" content="Suixin&#39;s Blog">
-<meta property="og:description" content="链表的基础知识+Python实现四种链表 题目描述输入一个链表的头节点，按链表值从尾到头的顺序返回一个ArrayList。">
+<meta property="og:description" content="链表的基础知识+Python实现四种链表 题目描述输入一个链表，反转链表后，输出新链表的表头。 解题思路只需要一个中间节点过渡一下就好。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-02-23T03:47:11.521Z">
+<meta property="og:updated_time" content="2019-02-23T06:37:22.688Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="[剑指Offer]从尾到头打印链表">
-<meta name="twitter:description" content="链表的基础知识+Python实现四种链表 题目描述输入一个链表的头节点，按链表值从尾到头的顺序返回一个ArrayList。">
+<meta name="twitter:title" content="[剑指Offer]反转链表">
+<meta name="twitter:description" content="链表的基础知识+Python实现四种链表 题目描述输入一个链表，反转链表后，输出新链表的表头。 解题思路只需要一个中间节点过渡一下就好。">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
@@ -58,7 +58,7 @@
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>[剑指Offer]从尾到头打印链表 | Suixin&#39;s Blog</title>
+<title>[剑指Offer]反转链表 | Suixin&#39;s Blog</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -275,11 +275,11 @@
     </div>
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
 </nav>
-      <div class="body-wrap"><article id="post-剑指Offer-从尾到头打印链表" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-剑指Offer-反转链表" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
       <a href="/2019/02/target-offer-reverse-linked-list.html" class="article-date">
-      <time datetime="2019-02-21T10:25:09.000Z" itemprop="datePublished">2019-02-21</time>
+      <time datetime="2019-02-23T06:36:17.000Z" itemprop="datePublished">2019-02-23</time>
 </a>
 
 
@@ -294,7 +294,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      [剑指Offer]从尾到头打印链表
+      [剑指Offer]反转链表
     </h1>
   
 
@@ -320,13 +320,13 @@
       
           
         <p><a href="https://suixinblog.cn/2019/02/linked-list.html">链表的基础知识+Python实现四种链表</a></p>
-<h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>输入一个链表的头节点，按链表值从尾到头的顺序返回一个ArrayList。<br><a id="more"></a></p>
-<h2 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h2><ol>
-<li>正常的思路就是先从前至后依次将链表的元素<code>append</code>到一个list中，最后再取list的逆。当然可以直接每次<code>ls.insert(0, value)</code>；</li>
-<li>特殊输入测试：空链表。</li>
-</ol>
-<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><p><code>Python(2.7.3)</code><br><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># -*- coding:utf-8 -*-</span></span><br><span class="line"><span class="comment"># class ListNode:</span></span><br><span class="line"><span class="comment">#     def __init__(self, x):</span></span><br><span class="line"><span class="comment">#         self.val = x</span></span><br><span class="line"><span class="comment">#         self.next = None</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="comment"># 返回从尾部到头部的列表值序列，例如[1,2,3]</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">printListFromTailToHead</span><span class="params">(self, listNode)</span>:</span></span><br><span class="line">        <span class="comment"># write code here</span></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> listNode:</span><br><span class="line">            <span class="keyword">return</span> []</span><br><span class="line">        ls = []</span><br><span class="line">        current = listNode</span><br><span class="line">        <span class="keyword">while</span> current <span class="keyword">is</span> <span class="keyword">not</span> <span class="keyword">None</span>:</span><br><span class="line">            ls.append(current.val)</span><br><span class="line">            current = current.next</span><br><span class="line">        <span class="keyword">return</span> ls[::<span class="number">-1</span>]</span><br></pre></td></tr></table></figure></p>
-<p><code>运行时间：30ms</code><br><code>占用内存：5860k</code></p>
+<h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>输入一个链表，反转链表后，输出新链表的表头。</p>
+<h2 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h2><p>只需要一个中间节点过渡一下就好。<br><a id="more"></a></p>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><p><code>Python(2.7.3)</code><br>代码中，<code>last</code>指上一个反转的节点，<code>tmp</code>指当前节点的后继节点（为了赋值给当前节点完成循环），<code>pHead</code>为当前节点。<br><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># -*- coding:utf-8 -*-</span></span><br><span class="line"><span class="comment"># class ListNode:</span></span><br><span class="line"><span class="comment">#     def __init__(self, x):</span></span><br><span class="line"><span class="comment">#         self.val = x</span></span><br><span class="line"><span class="comment">#         self.next = None</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="comment"># 返回ListNode</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">ReverseList</span><span class="params">(self, pHead)</span>:</span></span><br><span class="line">        <span class="comment"># write code here</span></span><br><span class="line">        <span class="keyword">if</span> pHead <span class="keyword">is</span> <span class="keyword">None</span> <span class="keyword">or</span> pHead.next <span class="keyword">is</span> <span class="keyword">None</span>:</span><br><span class="line">            <span class="keyword">return</span> pHead</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            last = <span class="keyword">None</span></span><br><span class="line">            <span class="keyword">while</span> pHead <span class="keyword">is</span> <span class="keyword">not</span> <span class="keyword">None</span>:</span><br><span class="line">                tmp = pHead.next</span><br><span class="line">                pHead.next = last</span><br><span class="line">                last = pHead</span><br><span class="line">                pHead = tmp</span><br><span class="line">            <span class="keyword">return</span> last</span><br></pre></td></tr></table></figure></p>
+<p><code>运行时间：45ms</code><br><code>占用内存：5856k</code></p>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><blockquote>
+<p><a href="https://www.nowcoder.com/profile/689085/codeBookDetail?submissionId=10032913" target="_blank" rel="noopener">https://www.nowcoder.com/profile/689085/codeBookDetail?submissionId=10032913</a></p>
+</blockquote>
 
       
     </div>
@@ -335,12 +335,12 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2019/02/target-offer-reverse-linked-list.html">[剑指Offer]从尾到头打印链表</a></p>
+        <p><span>本文标题:</span><a href="/2019/02/target-offer-reverse-linked-list.html">[剑指Offer]反转链表</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">Suixin</a></p>
-        <p><span>发布时间:</span>2019-02-21, 18:25:09</p>
-        <p><span>最后更新:</span>2019-02-23, 11:47:11</p>
+        <p><span>发布时间:</span>2019-02-23, 14:36:17</p>
+        <p><span>最后更新:</span>2019-02-23, 14:37:22</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2019/02/target-offer-reverse-linked-list.html" title="[剑指Offer]从尾到头打印链表">https://suixinblog.cn/2019/02/target-offer-reverse-linked-list.html</a>
+            <span>原始链接:</span><a class="post-url" href="/2019/02/target-offer-reverse-linked-list.html" title="[剑指Offer]反转链表">https://suixinblog.cn/2019/02/target-offer-reverse-linked-list.html</a>
             <span class="copy-path" data-clipboard-text="原文: https://suixinblog.cn/2019/02/target-offer-reverse-linked-list.html　　作者: Suixin" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
@@ -353,16 +353,10 @@
 
     <nav id="article-nav">
         
-            <div id="article-nav-newer" class="article-nav-title">
-                <a href="/2019/02/target-offer-linked-list-remove-repetition.html">
-                    [剑指Offer]删除链表中重复的节点
-                </a>
-            </div>
-        
         
             <div id="article-nav-older" class="article-nav-title">
-                <a href="/2019/02/linked-list.html">
-                    链表的基础知识+Python实现四种链表
+                <a href="/2019/02/target-offer-linked-list-remove-repetition.html">
+                    [剑指Offer]删除链表中重复的节点
                 </a>
             </div>
         
@@ -374,7 +368,7 @@
     <div id="toc" class="toc-article">
         <strong class="toc-title">文章目录</strong>
         
-            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#题目描述"><span class="toc-number">1.</span> <span class="toc-text">题目描述</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#解题思路"><span class="toc-number">2.</span> <span class="toc-text">解题思路</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#代码"><span class="toc-number">3.</span> <span class="toc-text">代码</span></a></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#题目描述"><span class="toc-number">1.</span> <span class="toc-text">题目描述</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#解题思路"><span class="toc-number">2.</span> <span class="toc-text">解题思路</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#代码"><span class="toc-number">3.</span> <span class="toc-text">代码</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#参考"><span class="toc-number">4.</span> <span class="toc-text">参考</span></a></li></ol>
         
     </div>
     <style>
@@ -422,21 +416,19 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2019/02/target-offer-linked-list-remove-repetition.html" title="上一篇: [剑指Offer]删除链表中重复的节点">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
 
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/2019/02/linked-list.html" title="下一篇: 链表的基础知识+Python实现四种链表">
+            <a href="/2019/02/target-offer-linked-list-remove-repetition.html" title="下一篇: [剑指Offer]删除链表中重复的节点">
                 <i class="fa fa-angle-right"></i>
             </a>
         
     </div>
 
-    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2019/02/target-offer-linked-list-remove-repetition.html">[剑指Offer]删除链表中重复的节点</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/02/target-offer-reverse-linked-list.html">[剑指Offer]从尾到头打印链表</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/02/linked-list.html">链表的基础知识+Python实现四种链表</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/02/target-offer-repeating-digits.html">[剑指Offer]数组中重复的数字</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/02/target-offer-replace-space.html">[剑指Offer]替换空格</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/02/target-offer-array-find.html">[剑指Offer]二维数组中的查找</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/02/python-dict-list-trouble.html">Python中dict的值为list的问题</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/02/python-excel.html">Python处理Excel文件(csv, xls, xlsx)</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/02/python-json.html">利用Python处理json文件</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/01/transformer.html">The Transformer</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/01/os-walk.html">Python递归处理目录下的文件</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/01/print-colorful.html">Python打印带颜色的字符串</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/12/chmod.html">Linux文件权限管理命令chmod</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/12/monitorix-glances.html">monitorix--服务器监控程序安装及配置</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/12/anaconda.html">Anaconda快速使用教程</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/12/ssh-timeout.html">ssh连接服务器超时解决方案</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/12/tmux.html">强大的tmux</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/11/screen.html">Linux多重视窗管理命令screen</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/11/tar-gzip-zip-rar.html">Linux压缩和解压命令：tar，gzip，zip（unzip），rar</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/11/wget.html">Linux下载命令wget</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/11/ssr.html">SSR搭建教程</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/11/nohup.html">nohup：在Linux服务器后台跑程序</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/10/ps-grep-tail.html">Linux三个命令：ps，grep，tail</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/10/linear-classification4.html">线性分类模型(四)——贝叶斯观点下的Logistic回归</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/10/linear-classification3.html">线性分类模型(三)——判别式模型</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/10/argparse.html">Python命令行解析器argparse的使用</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/10/git.html">git常用命令</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/10/list-index.html">Python中list的查找</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/10/hexo-latex.html">Hexo中的LaTex公式渲染问题</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/10/linear-classification2.html">线性分类模型(二)——生成式模型</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/10/linear-classification1.html">线性分类模型(一)——线性判别函数</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/re.html">Python中正则表达式的特殊字符</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/valine.html">评论系统从Disqus到Valine</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/hexo.html">从Hugo到Hexo</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/mihomegiftbag.html">小米笔试题「小米大礼包」Python代码</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/hugo.html">使用HUGO搭建个人博客</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/index.html">Hello World</a></li></ul>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2019/02/target-offer-reverse-linked-list.html">[剑指Offer]反转链表</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/02/target-offer-linked-list-remove-repetition.html">[剑指Offer]删除链表中重复的节点</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/02/target-offer-reverse-print-linked-list.html">[剑指Offer]从尾到头打印链表</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/02/linked-list.html">链表的基础知识+Python实现四种链表</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/02/target-offer-repeating-digits.html">[剑指Offer]数组中重复的数字</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/02/target-offer-replace-space.html">[剑指Offer]替换空格</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/02/target-offer-array-find.html">[剑指Offer]二维数组中的查找</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/02/python-dict-list-trouble.html">Python中dict的值为list的问题</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/02/python-excel.html">Python处理Excel文件(csv, xls, xlsx)</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/02/python-json.html">利用Python处理json文件</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/01/transformer.html">The Transformer</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/01/os-walk.html">Python递归处理目录下的文件</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/01/print-colorful.html">Python打印带颜色的字符串</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/12/chmod.html">Linux文件权限管理命令chmod</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/12/monitorix-glances.html">monitorix--服务器监控程序安装及配置</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/12/anaconda.html">Anaconda快速使用教程</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/12/ssh-timeout.html">ssh连接服务器超时解决方案</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/12/tmux.html">强大的tmux</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/11/screen.html">Linux多重视窗管理命令screen</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/11/tar-gzip-zip-rar.html">Linux压缩和解压命令：tar，gzip，zip（unzip），rar</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/11/wget.html">Linux下载命令wget</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/11/ssr.html">SSR搭建教程</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/11/nohup.html">nohup：在Linux服务器后台跑程序</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/10/ps-grep-tail.html">Linux三个命令：ps，grep，tail</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/10/linear-classification4.html">线性分类模型(四)——贝叶斯观点下的Logistic回归</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/10/linear-classification3.html">线性分类模型(三)——判别式模型</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/10/argparse.html">Python命令行解析器argparse的使用</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/10/git.html">git常用命令</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/10/list-index.html">Python中list的查找</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/10/hexo-latex.html">Hexo中的LaTex公式渲染问题</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/10/linear-classification2.html">线性分类模型(二)——生成式模型</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/10/linear-classification1.html">线性分类模型(一)——线性判别函数</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/re.html">Python中正则表达式的特殊字符</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/valine.html">评论系统从Disqus到Valine</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/hexo.html">从Hugo到Hexo</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/mihomegiftbag.html">小米笔试题「小米大礼包」Python代码</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/hugo.html">使用HUGO搭建个人博客</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/index.html">Hello World</a></li></ul>
 
 
 
