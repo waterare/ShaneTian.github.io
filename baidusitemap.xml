@@ -1,14 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://suixinblog.cn/2019/02/linked-list.html</loc>
+    <lastmod>2019-02-23T04:02:58.326Z</lastmod>
+  </url>  <url>
     <loc>https://suixinblog.cn/2018/11/nohup.html</loc>
-    <lastmod>2019-02-23T03:55:28.479Z</lastmod>
+    <lastmod>2019-02-23T04:02:08.579Z</lastmod>
   </url>  <url>
     <loc>https://suixinblog.cn/2018/12/monitorix-glances.html</loc>
-    <lastmod>2019-02-23T03:55:18.999Z</lastmod>
+    <lastmod>2019-02-23T04:01:27.761Z</lastmod>
   </url>  <url>
-    <loc>https://suixinblog.cn/2019/02/linked-list.html</loc>
-    <lastmod>2019-02-23T03:54:15.598Z</lastmod>
+    <loc>https://suixinblog.cn/2018/09/valine.html</loc>
+    <lastmod>2019-02-23T04:00:30.405Z</lastmod>
   </url>  <url>
     <loc>https://suixinblog.cn/2019/02/target-offer-linked-list-remove-repetition.html</loc>
     <lastmod>2019-02-23T03:47:23.115Z</lastmod>
@@ -90,9 +93,6 @@
   </url>  <url>
     <loc>https://suixinblog.cn/2019/01/transformer.html</loc>
     <lastmod>2019-01-18T10:25:11.235Z</lastmod>
-  </url>  <url>
-    <loc>https://suixinblog.cn/2018/09/valine.html</loc>
-    <lastmod>2018-11-09T05:49:31.337Z</lastmod>
   </url>  <url>
     <loc>https://suixinblog.cn/2018/10/linear-classification4.html</loc>
     <lastmod>2018-10-20T12:40:36.039Z</lastmod>
