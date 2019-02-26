@@ -3,9 +3,34 @@
   
     
     <entry>
+      <title>广义表的一些概念</title>
+      <link href="/2019/02/generalized-list.html"/>
+      <url>/2019/02/generalized-list.html</url>
+      
+        <content type="html"><![CDATA[<h2 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h2><p>广义表（Lists，又称列表）是线性表的推广。广义表是$n(n\geqslant 0)$个元素$a_1,a_2,a_3,…,a_n$的有限序列，其中$a_i$或者是原子项，或者是一个广义表。<br><a id="more"></a></p><ul><li><strong>元素</strong>：广义表的元素可以是原子，也可以是广义表，也可以为空。</li><li><strong>表头</strong>：若广义表$LS（n\geqslant 1)$非空，则$a_1$是LS的表头。表头可以是单元素值，也可以是表。空的广义表不能求表头。</li><li><strong>表尾</strong>：若广义表$LS（n\geqslant 1)$非空，则除去表头后剩下的元素组成的表是LS的表尾。表尾一定是表。空的广义表不能求表尾。</li></ul><h2 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h2><ol><li>$A=()$——A是一个空表，其长度为零。</li><li>$B=(e)$——表B只有一个原子$e$，其长度为1。</li><li>$C=(a,(b,c,d))$——表C的长度为2，两个元素分别为原子$a$和子表$(b,c,d)$，其表尾为$((b,c,d))$。</li><li>$D=(A，B，C)$——表D的长度为3，三个元素都是广义表。显然，将子表的值代入后，则有$D=((),(e),(a,(b,c,d)))$。</li><li>$E=(a,E)$——这是一个递归的表，它的长度为2，E相当于一个无限的广义表$E=(a,(a,(a,(a,…))))$.</li></ol><h2 id="考点"><a href="#考点" class="headerlink" title="考点"></a>考点</h2><ol><li>广义表是0个或多个单因素或子表组成的有限序列，广义表可以是自身的子表，广义表的长度$n\geqslant 0$，所以可以为空表。广义表的同级元素(直属于同一个表中的各元素)具有线性关系。</li><li>广义表的表头为空，并不代表该广义表为空表。广义表$()$和$(())$不同。前者是长度为0的空表，对其不能做求表头和表尾的运算；而后者是长度为1的非空表(只不过该表中惟一的一个元素是空表)，对其可进行分解，得到的表头和表尾均是空表$()$。</li><li>已知广义表$LS＝((a,b,c),(d,e,f))$,运用$head$和$tail$函数取出LS中原子$e$的运算是$head(tail(head(tail(LS)))$。根据表头、表尾的定义可知：任何一个非空广义表的表头是表中第一个元素，它可以是原子，也可以是子表，而其表尾必定是子表。也就是说，广义表的$head$操作，取出的元素是什么，那么结果就是什么。但是$tail$操作取出的元素外必须加一个表——“$()$“。$tail(LS)＝((d,e,f))$；$head(tail(LS))=(d,e,f)$；$tail(head(tail(LS)))=(e,f)$；$head(tail(head(tail(LS))))=e$。</li><li>二维以上的数组其实是一种特殊的广义表。</li><li>在（非空）广义表中：1、表头$head$可以是原子或者一个表；2、表尾$tail$一定是一个表；3.广义表难以用顺序存储结构；4.广义表可以是一个多层次的结构。</li></ol><h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><blockquote><p><a href="https://github.com/Jack-Lee-Hiter/AlgorithmsByPython/blob/master/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84.md#%E5%B9%BF%E4%B9%89%E8%A1%A8" target="_blank" rel="noopener">数据结构：广义表</a></p></blockquote>]]></content>
+      
+      
+      <categories>
+          
+          <category> 笔试面经 </category>
+          
+          <category> 术业专攻 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 广义表 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
       <title>2017校招真题--小米--「电话号码分身」</title>
-      <link href="/2019/02/recruit-cell-phone.html"/>
-      <url>/2019/02/recruit-cell-phone.html</url>
+      <link href="/2019/02/recruit-telephone-number.html"/>
+      <url>/2019/02/recruit-telephone-number.html</url>
       
         <content type="html"><![CDATA[<h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>继MIUI8推出手机分身功能之后，MIUI9计划推出一个电话号码分身的功能：首先将电话号码中的每个数字加上8取个位，然后使用对应的大写字母代替 （”ZERO”, “ONE”, “TWO”, “THREE”, “FOUR”, “FIVE”, “SIX”, “SEVEN”, “EIGHT”, “NINE”）， 然后随机打乱这些字母，所生成的字符串即为电话号码对应的分身。<br><strong>输入描述:</strong></p><blockquote><p>第一行是一个整数T（1 ≤ T ≤ 100)表示测试样例数；接下来T行，每行给定一个分身后的电话号码的分身（长度在3到10000之间）。</p></blockquote><p><strong>输出描述:</strong></p><blockquote><p>输出T行，分别对应输入中每行字符串对应的分身前的最小电话号码（允许前导0）。<br><a id="more"></a><br><strong>示例1</strong><br>输入</p><blockquote><p>4<br>EIGHT<br>ZEROTWOONE<br>OHWETENRTEO<br>OHEWTIEGTHENRTEO</p></blockquote><p>输出</p><blockquote><p>0<br>234<br>345<br>0345</p></blockquote></blockquote><h2 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h2><ol><li>分身步骤：+8取个位—使用大写字母代替—随机打乱字母；</li><li>给的输入是分身后的电话号码，需要输出为分身前的最小电话号码。实际上问题的本质是需要从乱序的大写字母版数字组合中识别出数字及其个数；</li><li>思路：部分单词有唯一识别字母，如’ZERO’的’Z’，可以先把这部分数出来；剩下的单词又可以通过在剩下单词中的唯一识别字母识别（后减去之前识别出有重复字母的单词个数即为当前单词个数）；</li><li><strong>别忘了最后需要将数字的个数映射回去（减去8）。</strong></li></ol><h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><p><code>Python(3.5.2)</code><br><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">num = int(input())</span><br><span class="line"><span class="keyword">for</span> _ <span class="keyword">in</span> range(num):</span><br><span class="line">    s = input()</span><br><span class="line">    n0, n2, n4, n6, n8 = s.count(<span class="string">'Z'</span>), s.count(<span class="string">'W'</span>), s.count(<span class="string">'U'</span>), s.count(<span class="string">'X'</span>), s.count(<span class="string">'G'</span>)</span><br><span class="line">    n1, n3, n5, n7 = s.count(<span class="string">'O'</span>) - n0 - n2 - n4, s.count(<span class="string">'H'</span>) - n8, s.count(<span class="string">'F'</span>) - n4, s.count(<span class="string">'S'</span>) - n6</span><br><span class="line">    n9 = s.count(<span class="string">'I'</span>) - n5 - n6 - n8</span><br><span class="line">    print(<span class="string">'0'</span> * n8 + <span class="string">'1'</span> * n9 + <span class="string">'2'</span> * n0 + <span class="string">'3'</span> * n1 + <span class="string">'4'</span> * n2 + <span class="string">'5'</span> * n3 + <span class="string">'6'</span> * n4 + <span class="string">'7'</span> * n5 + <span class="string">'8'</span> * n6 + <span class="string">'9'</span> * n7)</span><br></pre></td></tr></table></figure></p><p><code>运行时间：34ms</code><br><code>占用内存：3688k</code></p><h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><blockquote><p><a href="https://www.nowcoder.com/profile/6259171/codeBookDetail?submissionId=28510058" target="_blank" rel="noopener">https://www.nowcoder.com/profile/6259171/codeBookDetail?submissionId=28510058</a></p></blockquote>]]></content>
       
@@ -20,6 +45,8 @@
         <tags>
             
             <tag> Python </tag>
+            
+            <tag> 字符串 </tag>
             
         </tags>
       
