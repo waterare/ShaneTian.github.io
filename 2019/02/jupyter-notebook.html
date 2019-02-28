@@ -15,19 +15,19 @@
 
 
 
-<meta name="description" content="安装一般通过两种方式来安装Jupyter Notebook，但由于Anaconda的易用性，一般推荐第一种方式。  Anaconda。如果服务器已经安装了Anaconda作为Python的解释器，那么你不需要任何操作； pip3 install jupyter（或pip install jupyter），使用Python的包管理命令来安装最新版本。">
+<meta name="description" content="Jupyter Notebook（此前被称为 IPython notebook）是一个交互式笔记本，支持运行 40 多种编程语言。它的核心在于展示与快速迭代。">
 <meta name="keywords" content="Python">
 <meta property="og:type" content="article">
 <meta property="og:title" content="在服务器部署Jupyter Notebook">
 <meta property="og:url" content="https://suixinblog.cn/2019/02/jupyter-notebook.html">
 <meta property="og:site_name" content="Suixin&#39;s Blog">
-<meta property="og:description" content="安装一般通过两种方式来安装Jupyter Notebook，但由于Anaconda的易用性，一般推荐第一种方式。  Anaconda。如果服务器已经安装了Anaconda作为Python的解释器，那么你不需要任何操作； pip3 install jupyter（或pip install jupyter），使用Python的包管理命令来安装最新版本。">
+<meta property="og:description" content="Jupyter Notebook（此前被称为 IPython notebook）是一个交互式笔记本，支持运行 40 多种编程语言。它的核心在于展示与快速迭代。">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://ws3.sinaimg.cn/large/006tKfTcly1g0l3kub58dj31su0lmn0i.jpg">
-<meta property="og:updated_time" content="2019-02-27T09:18:17.473Z">
+<meta property="og:updated_time" content="2019-02-28T03:33:53.727Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="在服务器部署Jupyter Notebook">
-<meta name="twitter:description" content="安装一般通过两种方式来安装Jupyter Notebook，但由于Anaconda的易用性，一般推荐第一种方式。  Anaconda。如果服务器已经安装了Anaconda作为Python的解释器，那么你不需要任何操作； pip3 install jupyter（或pip install jupyter），使用Python的包管理命令来安装最新版本。">
+<meta name="twitter:description" content="Jupyter Notebook（此前被称为 IPython notebook）是一个交互式笔记本，支持运行 40 多种编程语言。它的核心在于展示与快速迭代。">
 <meta name="twitter:image" content="https://ws3.sinaimg.cn/large/006tKfTcly1g0l3kub58dj31su0lmn0i.jpg">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
@@ -321,12 +321,12 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>一般通过两种方式来安装Jupyter Notebook，但由于Anaconda的易用性，一般推荐第一种方式。</p>
+        <p>Jupyter Notebook（此前被称为 IPython notebook）是一个交互式笔记本，支持运行 40 多种编程语言。它的核心在于展示与快速迭代。<br><a id="more"></a></p>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>一般通过两种方式来安装Jupyter Notebook，但由于Anaconda的易用性，一般推荐第一种方式。</p>
 <ol>
 <li>Anaconda。如果服务器已经安装了Anaconda作为Python的解释器，那么你不需要任何操作；</li>
 <li><code>pip3 install jupyter</code>（或<code>pip install jupyter</code>），使用Python的包管理命令来安装最新版本。</li>
 </ol>
-<a id="more"></a>
 <h2 id="部署"><a href="#部署" class="headerlink" title="部署"></a>部署</h2><p>安装完成之后，简单几步即可完成Jupyter Notebook的部署。</p>
 <ol>
 <li>创建一个主目录。<code>mkdir /root/jpynotebook</code>（目录名字可以随意，与后面配置文件中保持一致）；</li>
@@ -343,6 +343,53 @@
 <li>在浏览器输入<code>http://服务器IP:8888</code>即可访问。</li>
 </ol>
 <p><strong>Happy coding！</strong><br><img src="https://ws3.sinaimg.cn/large/006tKfTcly1g0l3kub58dj31su0lmn0i.jpg" alt=""></p>
+<h2 id="快捷键"><a href="#快捷键" class="headerlink" title="快捷键"></a>快捷键</h2><p>Jupyter Notebook有两种不同的键盘输入模式。<strong>编辑模式</strong>允许您将代码或文本输入到一个单元格中，并通过一个绿色的单元格来表示；<strong>命令模式</strong>将键盘与笔记本级命令绑定在一起，并通过一个灰色的单元格边界显示，该边框为蓝色的左边框。<br>以<code>macOS</code>为例。</p>
+<h3 id="命令模式（按下Esc，单元格为蓝色）"><a href="#命令模式（按下Esc，单元格为蓝色）" class="headerlink" title="命令模式（按下Esc，单元格为蓝色）"></a>命令模式（按下<kbd>Esc</kbd>，单元格为蓝色）</h3><ul>
+<li><kbd>F</kbd>：查找与替换；</li>
+<li><kbd>⌃↩︎</kbd>：运行所选代码块（适用于编辑模式）；</li>
+<li><kbd>⇧↩︎</kbd>：运行所选代码块，并选中下一个代码块（适用于编辑模式）；</li>
+<li><kbd>⌥↩︎</kbd>：运行所选代码块，并在下面插入新的代码块（适用于编辑模式）；</li>
+<li><kbd>Y</kbd>：将当前单元格切换为代码；</li>
+<li><kbd>M</kbd>：将当前单元格切换为标签（Markdown）；</li>
+<li><kbd>R</kbd>：将当前单元格切换为Raw NBConvert。Raw NBConvert中的文字或代码等都不会被运行；</li>
+<li><kbd>1~6</kbd>：将当前单元格切换为标题；</li>
+<li><kbd>↑</kbd>：选中上面的单元格；</li>
+<li><kbd>↓</kbd>：选中下面的单元格；</li>
+<li><kbd>⇧↑</kbd>：扩选中上面的单元格；</li>
+<li><kbd>⇧↓</kbd>：扩选中下面的单元格；</li>
+<li><kbd>⇧M</kbd>：合并选中单元格；</li>
+<li><kbd>A</kbd>：在上面插入代码块；</li>
+<li><kbd>B</kbd>：在下面插入代码块；</li>
+<li><kbd>X</kbd>：剪切当前单元格；</li>
+<li><kbd>C</kbd>：复制当前单元格；</li>
+<li><kbd>V</kbd>：粘贴到下面；</li>
+<li><kbd>⇧V</kbd>：粘贴到上面；</li>
+<li><kbd>DD</kbd>：删除当前单元格；</li>
+<li><kbd>Z</kbd>：撤销删除；</li>
+<li><kbd>S</kbd>：保存并检查；</li>
+<li><kbd>L</kbd>：显示行号与否；</li>
+<li><kbd>⇧L</kbd>：所有单元格显示行号与否；</li>
+<li><kbd>O</kbd>：显示单元格的输出与否；</li>
+<li><kbd>II</kbd>：中断Jupyter服务；</li>
+<li><kbd>00</kbd>：重启Jupyter服务。</li>
+</ul>
+<h3 id="编辑模式（按下↩︎，单元格为绿色）"><a href="#编辑模式（按下↩︎，单元格为绿色）" class="headerlink" title="编辑模式（按下↩︎，单元格为绿色）"></a>编辑模式（按下<kbd>↩︎</kbd>，单元格为绿色）</h3><ul>
+<li><kbd>⇥</kbd>：代码补全或缩进；</li>
+<li><kbd>⇧⇥</kbd>：取消代码缩进；</li>
+<li><kbd>⌘A</kbd>：全选；</li>
+<li><kbd>⌘Z</kbd>：撤销；</li>
+<li><kbd>⌘⇧Z</kbd>：重做；</li>
+<li><kbd>⌘S</kbd>：保存并检查；</li>
+<li><kbd>⌘/</kbd>：注释；</li>
+<li><kbd>⌘D</kbd>：删除整行；</li>
+<li><kbd>⌥←</kbd>：跳到单词左边；</li>
+<li><kbd>⌥→</kbd>：跳到单词右边；</li>
+<li><kbd>⌥⌫</kbd>：删除前面的单词；</li>
+<li><kbd>⌥⌦</kbd>：删除后面的单词；</li>
+<li><kbd>⌘⌫</kbd>：删除光标前面的所有；</li>
+<li><kbd>⌘⌦</kbd>：删除光标后面的所有；</li>
+<li><kbd>⌃⇧-</kbd>：在鼠标出分割代码块。</li>
+</ul>
 
       
     </div>
@@ -354,7 +401,7 @@
         <p><span>本文标题:</span><a href="/2019/02/jupyter-notebook.html">在服务器部署Jupyter Notebook</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">Suixin</a></p>
         <p><span>发布时间:</span>2019-02-27, 17:14:48</p>
-        <p><span>最后更新:</span>2019-02-27, 17:18:17</p>
+        <p><span>最后更新:</span>2019-02-28, 11:33:53</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2019/02/jupyter-notebook.html" title="在服务器部署Jupyter Notebook">https://suixinblog.cn/2019/02/jupyter-notebook.html</a>
             <span class="copy-path" data-clipboard-text="原文: https://suixinblog.cn/2019/02/jupyter-notebook.html　　作者: Suixin" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
@@ -384,7 +431,7 @@
     <div id="toc" class="toc-article">
         <strong class="toc-title">文章目录</strong>
         
-            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#安装"><span class="toc-number">1.</span> <span class="toc-text">安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#部署"><span class="toc-number">2.</span> <span class="toc-text">部署</span></a></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#安装"><span class="toc-number">1.</span> <span class="toc-text">安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#部署"><span class="toc-number">2.</span> <span class="toc-text">部署</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#快捷键"><span class="toc-number">3.</span> <span class="toc-text">快捷键</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#命令模式（按下Esc，单元格为蓝色）"><span class="toc-number">3.1.</span> <span class="toc-text">命令模式（按下Esc，单元格为蓝色）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#编辑模式（按下↩︎，单元格为绿色）"><span class="toc-number">3.2.</span> <span class="toc-text">编辑模式（按下↩︎，单元格为绿色）</span></a></li></ol></li></ol>
         
     </div>
     <style>
