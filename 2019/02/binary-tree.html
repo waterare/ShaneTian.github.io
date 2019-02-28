@@ -23,7 +23,7 @@
 <meta property="og:site_name" content="Suixin&#39;s Blog">
 <meta property="og:description" content="基础知识树树（Tree）是一种非线性结构，用来模拟具有树状结构性质的数据集合。它是由$n(n&amp;gt;0)$个有限结点组成一个具有层次关系的集合。树是递归结构，在树的定义中又用到了树的概念。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-02-28T12:33:16.521Z">
+<meta property="og:updated_time" content="2019-02-28T12:40:37.002Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="二叉树基础知识+Python实现">
 <meta name="twitter:description" content="基础知识树树（Tree）是一种非线性结构，用来模拟具有树状结构性质的数据集合。它是由$n(n&amp;gt;0)$个有限结点组成一个具有层次关系的集合。树是递归结构，在树的定义中又用到了树的概念。">
@@ -346,9 +346,9 @@
 <h3 id="二叉树"><a href="#二叉树" class="headerlink" title="二叉树"></a>二叉树</h3><p><strong>二叉树（Binary tree）</strong>是每个节点最多只有两个分支（即不存在分支度大于2的节点）的树结构。通常分支被称作“左子树”或“右子树”。二叉树的分支具有左右次序，不能随意颠倒。二叉树可以为空。</p>
 <h4 id="性质-1"><a href="#性质-1" class="headerlink" title="性质"></a>性质</h4><ol>
 <li>在二叉树的第$i$层上至多有$2^{i-1}$个结点；</li>
-<li>深度为$k(k\geqslant 1)$的二叉树上至多含$2^k-1$个结点<sup><a href="#fn_1" id="reffn_1">1</a></sup>；</li>
-<li>对任何一棵二叉树，若它含有$n_0$个叶子结点、$n_2$个度为2的结点，则必存在关系式：$n_0=n_2+1$<sup><a href="#fn_2" id="reffn_2">2</a></sup>；</li>
-<li>具有$n$个结点的<a href="#完全二叉树">完全二叉树</a>的深度为$⎣\log_2n⎦+1$或$⎡\log_2(n+1)⎤$<sup><a href="#fn_3" id="reffn_3">3</a></sup>；</li>
+<li>深度为$k(k\geqslant 1)$的二叉树上至多含$2^k-1$个结点（参见<sup><a href="#fn_1" id="reffn_1">1</a></sup>）；</li>
+<li>对任何一棵二叉树，若它含有$n_0$个叶子结点、$n_2$个度为2的结点，则必存在关系式：$n_0=n_2+1$（参见<sup><a href="#fn_2" id="reffn_2">2</a></sup>）；</li>
+<li>具有$n$个结点的<a href="#完全二叉树">完全二叉树</a>的深度为$⎣\log_2n⎦+1$或$⎡\log_2(n+1)⎤$（参见<sup><a href="#fn_3" id="reffn_3">3</a></sup>）；</li>
 <li>$n$个结点的二叉树中，完全二叉树具有最小的路径长度；</li>
 <li>如果对一棵有$n$个结点的完全二叉树的结点按层序编号,则对任一结点$i(1\leqslant i\leqslant n)$，有：<ul>
 <li>如果$i＝1$，则结点$i$无双亲，是二叉树的根；如果$i&gt;1$，则其双亲的编号是$⎣\frac{i}{2}⎦$。</li>
@@ -369,7 +369,7 @@
 <h4 id="完全二叉树"><a href="#完全二叉树" class="headerlink" title="完全二叉树"></a><a href="https://baike.baidu.com/item/%E5%AE%8C%E5%85%A8%E4%BA%8C%E5%8F%89%E6%A0%91" target="_blank" rel="noopener">完全二叉树</a></h4><p>若设二叉树的深度为$h$，除第$h$层外，其它各层$(1～h-1)$的结点数都达到最大个数，第$h$层所有的结点都连续集中在最左边，这就是完全二叉树。</p>
 <ul>
 <li>完全二叉树的$n_1=0$或$n_1=1$；</li>
-<li>完全二叉树的$n_0=⎡\frac{n}{2}⎤$<sup><a href="#fn_4" id="reffn_4">4</a></sup>。</li>
+<li>完全二叉树的$n_0=⎡\frac{n}{2}⎤$（参见<sup><a href="#fn_4" id="reffn_4">4</a></sup>）。</li>
 </ul>
 <blockquote id="fn_4">
 <sup>4</sup>. $s=2\times n_0+n_1-1$，而完全二叉树的$n_1=0$或$n_1=1$，所以$n_0=\frac{n}{2}$或$n_0=\frac{n+1}{2}$，即$n_0=⎡\frac{n}{2}⎤$。<a href="#reffn_4" title="Jump back to footnote [4] in the text."> &#8617;</a>
@@ -400,7 +400,7 @@
         <p><span>本文标题:</span><a href="/2019/02/binary-tree.html">二叉树基础知识+Python实现</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">Suixin</a></p>
         <p><span>发布时间:</span>2019-02-28, 20:32:08</p>
-        <p><span>最后更新:</span>2019-02-28, 20:33:16</p>
+        <p><span>最后更新:</span>2019-02-28, 20:40:37</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2019/02/binary-tree.html" title="二叉树基础知识+Python实现">https://suixinblog.cn/2019/02/binary-tree.html</a>
             <span class="copy-path" data-clipboard-text="原文: https://suixinblog.cn/2019/02/binary-tree.html　　作者: Suixin" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
