@@ -15,20 +15,17 @@
 
 
 
-<meta name="description" content="Markdown中插入数学公式是常有的事，而Hexo博客框架主要是Markdown格式的文档，如果不能正常渲染Latex公式，那岂不gg……下面来看看Hexo渲染数学公式遇到的问题以及解决方案。 渲染下划线的问题">
-<meta name="keywords" content="网站建设,Hexo,LaTex">
-<meta property="og:type" content="article">
-<meta property="og:title" content="Hexo中的LaTex公式渲染问题">
-<meta property="og:url" content="https://suixinblog.cn/2018/10/hexo-latex.html">
+<meta name="description" content="小游戏森林冰火人4  天天跑酷">
+<meta property="og:type" content="website">
+<meta property="og:title" content="games">
+<meta property="og:url" content="https://suixinblog.cn/games.html">
 <meta property="og:site_name" content="Suixin&#39;s Blog">
-<meta property="og:description" content="Markdown中插入数学公式是常有的事，而Hexo博客框架主要是Markdown格式的文档，如果不能正常渲染Latex公式，那岂不gg……下面来看看Hexo渲染数学公式遇到的问题以及解决方案。 渲染下划线的问题">
+<meta property="og:description" content="小游戏森林冰火人4  天天跑酷">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://ws2.sinaimg.cn/large/006tNbRwgy1fw6fw1wt83j31080p6nah.jpg">
-<meta property="og:updated_time" content="2018-10-13T03:40:15.116Z">
+<meta property="og:updated_time" content="2019-03-01T06:51:19.306Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo中的LaTex公式渲染问题">
-<meta name="twitter:description" content="Markdown中插入数学公式是常有的事，而Hexo博客框架主要是Markdown格式的文档，如果不能正常渲染Latex公式，那岂不gg……下面来看看Hexo渲染数学公式遇到的问题以及解决方案。 渲染下划线的问题">
-<meta name="twitter:image" content="https://ws2.sinaimg.cn/large/006tNbRwgy1fw6fw1wt83j31080p6nah.jpg">
+<meta name="twitter:title" content="games">
+<meta name="twitter:description" content="小游戏森林冰火人4  天天跑酷">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
@@ -60,7 +57,7 @@
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>Hexo中的LaTex公式渲染问题 | Suixin&#39;s Blog</title>
+<title>games | Suixin&#39;s Blog</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -70,7 +67,7 @@
         fancybox: true,
         animate: true,
         isHome: false,
-        isPost: true,
+        isPost: false,
         isArchive: false,
         isTag: false,
         isCategory: false,
@@ -281,11 +278,11 @@
     </div>
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
 </nav>
-      <div class="body-wrap"><article id="post-Hexo中的LaTex公式渲染问题" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="page-" class="article article-type-page" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2018/10/hexo-latex.html" class="article-date">
-      <time datetime="2018-10-13T03:27:57.000Z" itemprop="datePublished">2018-10-13</time>
+      <a href="/games.html" class="article-date">
+      <time datetime="2019-03-01T06:51:19.306Z" itemprop="datePublished">2019-03-01</time>
 </a>
 
 
@@ -300,7 +297,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      Hexo中的LaTex公式渲染问题
+      games
     </h1>
   
 
@@ -308,16 +305,8 @@
       
       <div class="article-info article-info-post">
         
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/技术驿站/">技术驿站</a>
-    </div>
-
 
         
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/">Hexo</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/LaTex/">LaTex</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/网站建设/">网站建设</a></li></ul>
-    </div>
-
         <div class="clearfix"></div>
       </div>
       
@@ -325,15 +314,28 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>Markdown中插入数学公式是常有的事，而Hexo博客框架主要是Markdown格式的文档，如果不能正常渲染Latex公式，那岂不gg……<br>下面来看看Hexo渲染数学公式遇到的问题以及解决方案。</p>
-<h2 id="渲染下划线的问题"><a href="#渲染下划线的问题" class="headerlink" title="渲染下划线的问题"></a>渲染下划线的问题</h2><a id="more"></a>
-<p><code>_</code>在Latex公式中代表脚标，是非常常用的符号，而在Markdown中代表<em>斜体</em>，如果直接使用，将会产生公式无法渲染的问题，因为被Hexo强制渲染成了<code>&lt;em&gt;</code>标签。<br>如何解决呢？<strong>更换Hexo默认的Markdown渲染引擎！</strong><br>Hexo默认的渲染引擎为hexo-renderer-marked，这里将其更换为hexo-renderer-kramed，该引擎在前者的基础上修复了一些bug，具体操作：<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm uninstall hexo-renderer-marked --save</span><br><span class="line">npm install hexo-renderer-kramed --save</span><br></pre></td></tr></table></figure></p>
-<h2 id="行内公式的问题"><a href="#行内公式的问题" class="headerlink" title="行内公式的问题"></a>行内公式的问题</h2><p>执行上述操作后，虽然块状公式的渲染问题解决了，但发现行内公式仍然是老样子，无法成功渲染，这是因为hexo-renderer-kramed也有语义冲突的问题，这里我们直接修改转义即可。打开文件<code>\node_modules\kramed\lib\rules\inline.js</code>，修改其中一行<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//  em: /^\b_((?:__|[\s\S])+?)_\b|^\*((?:\*\*|[\s\S])+?)\*(?!\*)/,</span></span><br><span class="line">  em: <span class="regexp">/^\*((?:\*\*|[\s\S])+?)\*(?!\*)/</span>,</span><br></pre></td></tr></table></figure></p>
-<p>把之前的<code>em</code>转义注释掉，添加新的即可完美解决。</p>
-<h2 id="双花括号的问题"><a href="#双花括号的问题" class="headerlink" title="双花括号的问题"></a>双花括号的问题</h2><p>除此之外，如果在公式内连续使用两个花括号，如<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">\frac&#123;1&#125;&#123;&#123;(2\pi)&#125;^\frac&#123;D&#125;&#123;2&#125;&#125;</span><br></pre></td></tr></table></figure></p>
-<p>时会渲染失败</p>
-<p><center><img src="https://ws2.sinaimg.cn/large/006tNbRwgy1fw6fw1wt83j31080p6nah.jpg" width="50%" height="50%"></center><br>此时必须在两个花括号中间加一个<strong>空格</strong>，<code>\frac{1}{ {(2\pi)}^\frac{D}{2} }</code>即可正常渲染$\frac{1}{ {(2\pi)}^\frac{D}{2} }$<br><strong>注</strong>：上述操作完成后均需重启Hexo，即<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo g</span><br><span class="line">hexo s</span><br></pre></td></tr></table></figure></p>
-<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><a href="https://www.jianshu.com/p/7ab21c7f0674" target="_blank" rel="noopener">https://www.jianshu.com/p/7ab21c7f0674</a></p>
+              <style>
+    .article-meta { display: none; }
+    #container .article .article-title { padding-right: 0; }
+    .article-header {
+        padding: 0;
+        padding-top: 26px;
+        border-left: none;
+        text-align: center;
+    }
+    .article-header:hover { border-left: none; }
+    .article-title { font-size: 1.6em }
+    .article-entry hr { margin: 0;}
+    .article-meta,
+    #container .article-info-post.article-info { display: none;}
+    #container .article .article-title { padding: 0; }
+</style>
+
+
+          
+        <h1 id="小游戏"><a href="#小游戏" class="headerlink" title="小游戏"></a>小游戏</h1><h2 id="森林冰火人4"><a href="#森林冰火人4" class="headerlink" title="森林冰火人4"></a>森林冰火人4</h2><center><embed src="http://flash.7k7k.com/cms/cms10/20130329/1709131801/Loadinggame.swf" type="application/x-shockwave-flash" width="640" height="480"></center>
+
+<h2 id="天天跑酷"><a href="#天天跑酷" class="headerlink" title="天天跑酷"></a>天天跑酷</h2><center><embed src="http://flash.7k7k.com/cms/cms10/20140702/1002142783/3w.swf" type="application/x-shockwave-flash" width="640" height="480"></center>
 
       
     </div>
@@ -341,109 +343,15 @@
   </div>
   
     
-    <div class="copyright">
-        <p><span>本文标题:</span><a href="/2018/10/hexo-latex.html">Hexo中的LaTex公式渲染问题</a></p>
-        <p><span>文章作者:</span><a href="/" title="回到主页">Suixin</a></p>
-        <p><span>发布时间:</span>2018-10-13, 11:27:57</p>
-        <p><span>最后更新:</span>2018-10-13, 11:40:15</p>
-        <p>
-            <span>原始链接:</span><a class="post-url" href="/2018/10/hexo-latex.html" title="Hexo中的LaTex公式渲染问题">https://suixinblog.cn/2018/10/hexo-latex.html</a>
-            <span class="copy-path" data-clipboard-text="原文: https://suixinblog.cn/2018/10/hexo-latex.html　　作者: Suixin" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
-            <script> var clipboard = new Clipboard('.copy-path'); </script>
-        </p>
-        <p>
-            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
-        </p>
-    </div>
 
-
-
-    <nav id="article-nav">
-        
-            <div id="article-nav-newer" class="article-nav-title">
-                <a href="/2018/10/list-index.html">
-                    Python中list的查找
-                </a>
-            </div>
-        
-        
-            <div id="article-nav-older" class="article-nav-title">
-                <a href="/2018/10/linear-classification2.html">
-                    线性分类模型(二)——生成式模型
-                </a>
-            </div>
-        
-    </nav>
 
   
 </article>
 
-    <div id="toc" class="toc-article">
-        <strong class="toc-title">文章目录</strong>
-        
-            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#渲染下划线的问题"><span class="toc-number">1.</span> <span class="toc-text">渲染下划线的问题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#行内公式的问题"><span class="toc-number">2.</span> <span class="toc-text">行内公式的问题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#双花括号的问题"><span class="toc-number">3.</span> <span class="toc-text">双花括号的问题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#参考"><span class="toc-number">4.</span> <span class="toc-text">参考</span></a></li></ol>
-        
-    </div>
-    <style>
-        .left-col .switch-btn,
-        .left-col .switch-area {
-            display: none;
-        }
-        .toc-level-4 i,
-        .toc-level-4 ol {
-            display: none !important;
-        }
-    </style>
-
-    <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
-
-    <script>
-        yiliaConfig.toc = ["隐藏目录", "显示目录", !!"false"];
-    </script>
 
 
 
 
-
-    
-        <section id="comments" style="margin: 2em; padding: 2em; background: rgba(255, 255, 255, 0.5)">
-    <div id="vcomment" class="comment"></div>
-    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
-    <script src="//unpkg.com/valine@1.2.0-beta1/dist/Valine.min.js"></script>
-    <script>
-      new Valine({
-        el: '#vcomment',
-        notify: 'true',
-        verify: 'true',
-        app_id: "JbEkmNyN4oduuYuIVapp3mp7-gzGzoHsz",
-        app_key: "lEKLgYFFECP8JrDYvUedV0z7",
-        placeholder: "Just do it!",
-        avatar: "mp"
-      });
-    </script>
-</section>
-    
-
-
-
-
-    <div class="scroll" id="post-nav-button">
-        
-            <a href="/2018/10/list-index.html" title="上一篇: Python中list的查找">
-                <i class="fa fa-angle-left"></i>
-            </a>
-        
-
-        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
-
-        
-            <a href="/2018/10/linear-classification2.html" title="下一篇: 线性分类模型(二)——生成式模型">
-                <i class="fa fa-angle-right"></i>
-            </a>
-        
-    </div>
-
-    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2019/02/binary-tree.html">二叉树基础知识+Python实现</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/02/jupyter-notebook.html">在服务器部署Jupyter Notebook</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/02/generalized-list.html">广义表的一些概念</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/02/recruit-telephone-number.html">2017校招真题--小米--「电话号码分身」</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/02/queue.html">队列的基础知识+Python实现</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/02/stack.html">栈的基础知识+Python实现</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/02/target-offer-regulation.html">[剑指Offer]正则表达式匹配</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/02/target-offer-reverse-linked-list.html">[剑指Offer]反转链表</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/02/target-offer-linked-list-remove-repetition.html">[剑指Offer]删除链表中重复的节点</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/02/target-offer-reverse-print-linked-list.html">[剑指Offer]从尾到头打印链表</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/02/linked-list.html">链表的基础知识+Python实现四种链表</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/02/target-offer-repeating-digits.html">[剑指Offer]数组中重复的数字</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/02/target-offer-replace-space.html">[剑指Offer]替换空格</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/02/target-offer-array-find.html">[剑指Offer]二维数组中的查找</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/02/python-dict-list-trouble.html">Python中dict的值为list的问题</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/02/python-excel.html">Python处理Excel文件(csv, xls, xlsx)</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/02/python-json.html">利用Python处理json文件</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/01/transformer.html">The Transformer</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/01/os-walk.html">Python递归处理目录下的文件</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/01/print-colorful.html">Python打印带颜色的字符串</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/12/chmod.html">Linux文件权限管理命令chmod</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/12/monitorix-glances.html">monitorix--服务器监控程序安装及配置</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/12/anaconda.html">Anaconda快速使用教程</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/12/ssh-timeout.html">ssh连接服务器超时解决方案</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/12/tmux.html">强大的tmux</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/11/screen.html">Linux多重视窗管理命令screen</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/11/tar-gzip-zip-rar.html">Linux压缩和解压命令：tar，gzip，zip（unzip），rar</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/11/wget.html">Linux下载命令wget</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/11/ssr.html">SSR搭建教程</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/11/nohup.html">nohup：在Linux服务器后台跑程序</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/10/ps-grep-tail.html">Linux三个命令：ps，grep，tail</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/10/linear-classification4.html">线性分类模型(四)——贝叶斯观点下的Logistic回归</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/10/linear-classification3.html">线性分类模型(三)——判别式模型</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/10/argparse.html">Python命令行解析器argparse的使用</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/10/git.html">git常用命令</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/10/list-index.html">Python中list的查找</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/10/hexo-latex.html">Hexo中的LaTex公式渲染问题</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/10/linear-classification2.html">线性分类模型(二)——生成式模型</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/10/linear-classification1.html">线性分类模型(一)——线性判别函数</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/re.html">Python中正则表达式的特殊字符</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/valine.html">评论系统从Disqus到Valine</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/hexo.html">从Hugo到Hexo</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/mihomegiftbag.html">小米笔试题「小米大礼包」Python代码</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/hugo.html">使用HUGO搭建个人博客</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/index.html">Hello World</a></li></ul>
 
 
 
