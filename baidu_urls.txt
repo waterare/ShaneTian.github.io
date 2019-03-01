@@ -1,2 +1,2 @@
+https://suixinblog.cn/2019/03/target-offer-reconstruct-binary-tree.html
 https://suixinblog.cn/2019/03/target-offer-queue-from-two-stacks.html
-https://suixinblog.cn/2019/03/target-offer-binary-tree-depth.html
