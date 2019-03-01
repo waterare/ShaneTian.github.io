@@ -15,18 +15,18 @@
 
 
 
-<meta name="description" content="经常需要连接到Linux服务器，发现过一段时间不输入命令，服务器的ssh连接就会断开，又需要重新ssh登录。">
-<meta name="keywords" content="服务器">
+<meta name="description" content="题目描述输入一棵二叉树，求该树的深度。从根结点到叶结点依次经过的结点（含根、叶结点）形成树的一条路径，最长路径的长度为树的深度。 解题思路在二叉树Python实现中已经写过，这里直接照搬一下。基本思路是递归，从根节点出发，求其左右子树的深度，取左右子树的深度+1的较大者为当前树的深度（求所有子树深度的时候使用递归）。如果到达叶子结点，那么返回0。">
+<meta name="keywords" content="Python,剑指Offer,二叉树">
 <meta property="og:type" content="article">
-<meta property="og:title" content="ssh连接服务器超时解决方案">
-<meta property="og:url" content="https://suixinblog.cn/2018/12/ssh-timeout.html">
+<meta property="og:title" content="[剑指Offer]二叉树的深度">
+<meta property="og:url" content="https://suixinblog.cn/2019/03/target-offer-binary-tree-depth.html">
 <meta property="og:site_name" content="Suixin&#39;s Blog">
-<meta property="og:description" content="经常需要连接到Linux服务器，发现过一段时间不输入命令，服务器的ssh连接就会断开，又需要重新ssh登录。">
+<meta property="og:description" content="题目描述输入一棵二叉树，求该树的深度。从根结点到叶结点依次经过的结点（含根、叶结点）形成树的一条路径，最长路径的长度为树的深度。 解题思路在二叉树Python实现中已经写过，这里直接照搬一下。基本思路是递归，从根节点出发，求其左右子树的深度，取左右子树的深度+1的较大者为当前树的深度（求所有子树深度的时候使用递归）。如果到达叶子结点，那么返回0。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-02-19T06:10:57.948Z">
+<meta property="og:updated_time" content="2019-03-01T08:34:15.981Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="ssh连接服务器超时解决方案">
-<meta name="twitter:description" content="经常需要连接到Linux服务器，发现过一段时间不输入命令，服务器的ssh连接就会断开，又需要重新ssh登录。">
+<meta name="twitter:title" content="[剑指Offer]二叉树的深度">
+<meta name="twitter:description" content="题目描述输入一棵二叉树，求该树的深度。从根结点到叶结点依次经过的结点（含根、叶结点）形成树的一条路径，最长路径的长度为树的深度。 解题思路在二叉树Python实现中已经写过，这里直接照搬一下。基本思路是递归，从根节点出发，求其左右子树的深度，取左右子树的深度+1的较大者为当前树的深度（求所有子树深度的时候使用递归）。如果到达叶子结点，那么返回0。">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
@@ -58,7 +58,7 @@
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>ssh连接服务器超时解决方案 | Suixin&#39;s Blog</title>
+<title>[剑指Offer]二叉树的深度 | Suixin&#39;s Blog</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -275,11 +275,11 @@
     </div>
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
 </nav>
-      <div class="body-wrap"><article id="post-ssh连接服务器超时解决方案" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-剑指Offer-二叉树的深度" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2018/12/ssh-timeout.html" class="article-date">
-      <time datetime="2018-12-08T03:26:41.000Z" itemprop="datePublished">2018-12-08</time>
+      <a href="/2019/03/target-offer-binary-tree-depth.html" class="article-date">
+      <time datetime="2019-03-01T08:32:49.000Z" itemprop="datePublished">2019-03-01</time>
 </a>
 
 
@@ -294,7 +294,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      ssh连接服务器超时解决方案
+      [剑指Offer]二叉树的深度
     </h1>
   
 
@@ -303,13 +303,13 @@
       <div class="article-info article-info-post">
         
     <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/Linux/">Linux</a>
+    <a class="article-category-link" href="/categories/笔试面经/">笔试面经</a>
     </div>
 
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/服务器/">服务器</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/二叉树/">二叉树</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/剑指Offer/">剑指Offer</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -319,13 +319,10 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>经常需要连接到Linux服务器，发现过一段时间不输入命令，服务器的ssh连接就会断开，又需要重新ssh登录。<br><a id="more"></a></p>
-<h2 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h2><p>在Linux服务器端配置<code>/etc/ssh/sshd_config</code>文件，修改其中两行：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ClientAliveInterval 60</span><br><span class="line">ClientAliveCountMax 60</span><br></pre></td></tr></table></figure></p>
-<p>其中，<code>ClientAliveInterval</code>表示服务器每隔多久向客户端发送一个“空包”，以保持连接，单位为秒，此处为60秒；<code>ClientAliveCountMax</code>表示如果发现客户端没有响应，则判断一次超时，这个参数为允许超时的次数，此处为60次。相当于1小时无通信后断开ssh连接。<br>之后重启ssh服务：<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl restart ssh</span><br></pre></td></tr></table></figure></p>
-<p>再重新ssh连接即可。</p>
-<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><blockquote>
-<p><a href="https://www.awaimai.com/2523.html" target="_blank" rel="noopener">https://www.awaimai.com/2523.html</a></p>
-</blockquote>
+        <h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>输入一棵二叉树，求该树的深度。从根结点到叶结点依次经过的结点（含根、叶结点）形成树的一条路径，最长路径的长度为树的深度。</p>
+<h2 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h2><p>在<a href="https://suixinblog.cn/2019/02/binary-tree.html#%E4%BA%8C%E5%8F%89%E6%A0%91%E7%B1%BB">二叉树Python实现</a>中已经写过，这里直接照搬一下。基本思路是递归，从根节点出发，求其左右子树的深度，取左右子树的深度+1的较大者为当前树的深度（求所有子树深度的时候使用递归）。如果到达叶子结点，那么返回0。<br><a id="more"></a></p>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><p><code>Python(3.5.2)</code><br><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># -*- coding:utf-8 -*-</span></span><br><span class="line"><span class="comment"># class TreeNode:</span></span><br><span class="line"><span class="comment">#     def __init__(self, x):</span></span><br><span class="line"><span class="comment">#         self.val = x</span></span><br><span class="line"><span class="comment">#         self.left = None</span></span><br><span class="line"><span class="comment">#         self.right = None</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">TreeDepth</span><span class="params">(self, pRoot)</span>:</span></span><br><span class="line">        <span class="comment"># write code here</span></span><br><span class="line">        <span class="keyword">if</span> pRoot <span class="keyword">is</span> <span class="keyword">None</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">        llength = self.TreeDepth(pRoot.left)</span><br><span class="line">        rlength = self.TreeDepth(pRoot.right)</span><br><span class="line">        <span class="keyword">return</span> max(llength + <span class="number">1</span>, rlength + <span class="number">1</span>)</span><br></pre></td></tr></table></figure></p>
+<p><code>运行时间：32ms</code><br><code>占用内存：5752k</code></p>
 
       
     </div>
@@ -334,13 +331,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2018/12/ssh-timeout.html">ssh连接服务器超时解决方案</a></p>
+        <p><span>本文标题:</span><a href="/2019/03/target-offer-binary-tree-depth.html">[剑指Offer]二叉树的深度</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">Suixin</a></p>
-        <p><span>发布时间:</span>2018-12-08, 11:26:41</p>
-        <p><span>最后更新:</span>2019-02-19, 14:10:57</p>
+        <p><span>发布时间:</span>2019-03-01, 16:32:49</p>
+        <p><span>最后更新:</span>2019-03-01, 16:34:15</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2018/12/ssh-timeout.html" title="ssh连接服务器超时解决方案">https://suixinblog.cn/2018/12/ssh-timeout.html</a>
-            <span class="copy-path" data-clipboard-text="原文: https://suixinblog.cn/2018/12/ssh-timeout.html　　作者: Suixin" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2019/03/target-offer-binary-tree-depth.html" title="[剑指Offer]二叉树的深度">https://suixinblog.cn/2019/03/target-offer-binary-tree-depth.html</a>
+            <span class="copy-path" data-clipboard-text="原文: https://suixinblog.cn/2019/03/target-offer-binary-tree-depth.html　　作者: Suixin" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
         <p>
@@ -352,16 +349,10 @@
 
     <nav id="article-nav">
         
-            <div id="article-nav-newer" class="article-nav-title">
-                <a href="/2018/12/anaconda.html">
-                    Anaconda快速使用教程
-                </a>
-            </div>
-        
         
             <div id="article-nav-older" class="article-nav-title">
-                <a href="/2018/12/tmux.html">
-                    强大的tmux
+                <a href="/2019/02/binary-tree.html">
+                    二叉树基础知识+Python实现
                 </a>
             </div>
         
@@ -373,7 +364,7 @@
     <div id="toc" class="toc-article">
         <strong class="toc-title">文章目录</strong>
         
-            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#解决方案"><span class="toc-number">1.</span> <span class="toc-text">解决方案</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#参考"><span class="toc-number">2.</span> <span class="toc-text">参考</span></a></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#题目描述"><span class="toc-number">1.</span> <span class="toc-text">题目描述</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#解题思路"><span class="toc-number">2.</span> <span class="toc-text">解题思路</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#代码"><span class="toc-number">3.</span> <span class="toc-text">代码</span></a></li></ol>
         
     </div>
     <style>
@@ -421,15 +412,13 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2018/12/anaconda.html" title="上一篇: Anaconda快速使用教程">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
 
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/2018/12/tmux.html" title="下一篇: 强大的tmux">
+            <a href="/2019/02/binary-tree.html" title="下一篇: 二叉树基础知识+Python实现">
                 <i class="fa fa-angle-right"></i>
             </a>
         

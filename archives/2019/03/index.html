@@ -15,18 +15,13 @@
 
 
 
-<meta name="description" content="经常需要连接到Linux服务器，发现过一段时间不输入命令，服务器的ssh连接就会断开，又需要重新ssh登录。">
-<meta name="keywords" content="服务器">
-<meta property="og:type" content="article">
-<meta property="og:title" content="ssh连接服务器超时解决方案">
-<meta property="og:url" content="https://suixinblog.cn/2018/12/ssh-timeout.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Suixin&#39;s Blog">
+<meta property="og:url" content="https://suixinblog.cn/archives/2019/03/index.html">
 <meta property="og:site_name" content="Suixin&#39;s Blog">
-<meta property="og:description" content="经常需要连接到Linux服务器，发现过一段时间不输入命令，服务器的ssh连接就会断开，又需要重新ssh登录。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-02-19T06:10:57.948Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="ssh连接服务器超时解决方案">
-<meta name="twitter:description" content="经常需要连接到Linux服务器，发现过一段时间不输入命令，服务器的ssh连接就会断开，又需要重新ssh登录。">
+<meta name="twitter:title" content="Suixin&#39;s Blog">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
@@ -58,7 +53,7 @@
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>ssh连接服务器超时解决方案 | Suixin&#39;s Blog</title>
+<title>Archives: 2019/3 | Suixin&#39;s Blog</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -68,8 +63,8 @@
         fancybox: true,
         animate: true,
         isHome: false,
-        isPost: true,
-        isArchive: false,
+        isPost: false,
+        isArchive: true,
         isTag: false,
         isCategory: false,
         fancybox_js: "//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.js",
@@ -275,174 +270,60 @@
     </div>
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
 </nav>
-      <div class="body-wrap"><article id="post-ssh连接服务器超时解决方案" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap">
   
-    <div class="article-meta">
-      <a href="/2018/12/ssh-timeout.html" class="article-date">
-      <time datetime="2018-12-08T03:26:41.000Z" itemprop="datePublished">2018-12-08</time>
+  
+    
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2019" class="archive-year">2019</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+          <div class="article-meta">
+              <a href="/2019/03/target-offer-binary-tree-depth.html" class="archive-article-date">
+      <time datetime="2019-03-01T08:32:49.000Z" itemprop="datePublished">03-01</time>
 </a>
 
 
-    </div>
+        </div>
+         
   
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="article-title" itemprop="name">
-      ssh连接服务器超时解决方案
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2019/03/target-offer-binary-tree-depth.html">[剑指Offer]二叉树的深度</a>
     </h1>
   
 
-      </header>
-      
-      <div class="article-info article-info-post">
-        
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/Linux/">Linux</a>
-    </div>
-
-
-        
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/服务器/">服务器</a></li></ul>
-    </div>
-
-        <div class="clearfix"></div>
-      </div>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
+        <div class="article-info info-on-archive">
           
-        <p>经常需要连接到Linux服务器，发现过一段时间不输入命令，服务器的ssh连接就会断开，又需要重新ssh登录。<br><a id="more"></a></p>
-<h2 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h2><p>在Linux服务器端配置<code>/etc/ssh/sshd_config</code>文件，修改其中两行：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ClientAliveInterval 60</span><br><span class="line">ClientAliveCountMax 60</span><br></pre></td></tr></table></figure></p>
-<p>其中，<code>ClientAliveInterval</code>表示服务器每隔多久向客户端发送一个“空包”，以保持连接，单位为秒，此处为60秒；<code>ClientAliveCountMax</code>表示如果发现客户端没有响应，则判断一次超时，这个参数为允许超时的次数，此处为60次。相当于1小时无通信后断开ssh连接。<br>之后重启ssh服务：<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl restart ssh</span><br></pre></td></tr></table></figure></p>
-<p>再重新ssh连接即可。</p>
-<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><blockquote>
-<p><a href="https://www.awaimai.com/2523.html" target="_blank" rel="noopener">https://www.awaimai.com/2523.html</a></p>
-</blockquote>
-
-      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/笔试面经/">笔试面经</a>
     </div>
-    
+
+
+          
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/二叉树/">二叉树</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/剑指Offer/">剑指Offer</a></li></ul>
+    </div>
+
+        </div>
+        <div class="clearfix"></div>
+    </header>
   </div>
-  
-    
-    <div class="copyright">
-        <p><span>本文标题:</span><a href="/2018/12/ssh-timeout.html">ssh连接服务器超时解决方案</a></p>
-        <p><span>文章作者:</span><a href="/" title="回到主页">Suixin</a></p>
-        <p><span>发布时间:</span>2018-12-08, 11:26:41</p>
-        <p><span>最后更新:</span>2019-02-19, 14:10:57</p>
-        <p>
-            <span>原始链接:</span><a class="post-url" href="/2018/12/ssh-timeout.html" title="ssh连接服务器超时解决方案">https://suixinblog.cn/2018/12/ssh-timeout.html</a>
-            <span class="copy-path" data-clipboard-text="原文: https://suixinblog.cn/2018/12/ssh-timeout.html　　作者: Suixin" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
-            <script> var clipboard = new Clipboard('.copy-path'); </script>
-        </p>
-        <p>
-            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
-        </p>
-    </div>
-
-
-
-    <nav id="article-nav">
-        
-            <div id="article-nav-newer" class="article-nav-title">
-                <a href="/2018/12/anaconda.html">
-                    Anaconda快速使用教程
-                </a>
-            </div>
-        
-        
-            <div id="article-nav-older" class="article-nav-title">
-                <a href="/2018/12/tmux.html">
-                    强大的tmux
-                </a>
-            </div>
-        
-    </nav>
-
-  
 </article>
-
-    <div id="toc" class="toc-article">
-        <strong class="toc-title">文章目录</strong>
-        
-            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#解决方案"><span class="toc-number">1.</span> <span class="toc-text">解决方案</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#参考"><span class="toc-number">2.</span> <span class="toc-text">参考</span></a></li></ol>
-        
-    </div>
-    <style>
-        .left-col .switch-btn,
-        .left-col .switch-area {
-            display: none;
-        }
-        .toc-level-4 i,
-        .toc-level-4 ol {
-            display: none !important;
-        }
-    </style>
-
-    <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
-
-    <script>
-        yiliaConfig.toc = ["隐藏目录", "显示目录", !!"false"];
-    </script>
-
-
-
-
+  
+  
+    </div></section>
+  
 
     
-        <section id="comments" style="margin: 2em; padding: 2em; background: rgba(255, 255, 255, 0.5)">
-    <div id="vcomment" class="comment"></div>
-    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
-    <script src="//unpkg.com/valine@1.2.0-beta1/dist/Valine.min.js"></script>
-    <script>
-      new Valine({
-        el: '#vcomment',
-        notify: 'true',
-        verify: 'true',
-        app_id: "JbEkmNyN4oduuYuIVapp3mp7-gzGzoHsz",
-        app_key: "lEKLgYFFECP8JrDYvUedV0z7",
-        placeholder: "Just do it!",
-        avatar: "mp"
-      });
-    </script>
-</section>
-    
 
-
-
-
-    <div class="scroll" id="post-nav-button">
-        
-            <a href="/2018/12/anaconda.html" title="上一篇: Anaconda快速使用教程">
-                <i class="fa fa-angle-left"></i>
-            </a>
-        
-
-        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
-
-        
-            <a href="/2018/12/tmux.html" title="下一篇: 强大的tmux">
-                <i class="fa fa-angle-right"></i>
-            </a>
-        
-    </div>
-
-    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2019/03/target-offer-binary-tree-depth.html">[剑指Offer]二叉树的深度</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/02/binary-tree.html">二叉树基础知识+Python实现</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/02/jupyter-notebook.html">在服务器部署Jupyter Notebook</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/02/generalized-list.html">广义表的一些概念</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/02/recruit-telephone-number.html">2017校招真题--小米--「电话号码分身」</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/02/queue.html">队列的基础知识+Python实现</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/02/stack.html">栈的基础知识+Python实现</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/02/target-offer-regulation.html">[剑指Offer]正则表达式匹配</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/02/target-offer-reverse-linked-list.html">[剑指Offer]反转链表</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/02/target-offer-linked-list-remove-repetition.html">[剑指Offer]删除链表中重复的节点</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/02/target-offer-reverse-print-linked-list.html">[剑指Offer]从尾到头打印链表</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/02/linked-list.html">链表的基础知识+Python实现四种链表</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/02/target-offer-repeating-digits.html">[剑指Offer]数组中重复的数字</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/02/target-offer-replace-space.html">[剑指Offer]替换空格</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/02/target-offer-array-find.html">[剑指Offer]二维数组中的查找</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/02/python-dict-list-trouble.html">Python中dict的值为list的问题</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/02/python-excel.html">Python处理Excel文件(csv, xls, xlsx)</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/02/python-json.html">利用Python处理json文件</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/01/transformer.html">The Transformer</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/01/os-walk.html">Python递归处理目录下的文件</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/01/print-colorful.html">Python打印带颜色的字符串</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/12/chmod.html">Linux文件权限管理命令chmod</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/12/monitorix-glances.html">monitorix--服务器监控程序安装及配置</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/12/anaconda.html">Anaconda快速使用教程</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/12/ssh-timeout.html">ssh连接服务器超时解决方案</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/12/tmux.html">强大的tmux</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/11/screen.html">Linux多重视窗管理命令screen</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/11/tar-gzip-zip-rar.html">Linux压缩和解压命令：tar，gzip，zip（unzip），rar</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/11/wget.html">Linux下载命令wget</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/11/ssr.html">SSR搭建教程</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/11/nohup.html">nohup：在Linux服务器后台跑程序</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/10/ps-grep-tail.html">Linux三个命令：ps，grep，tail</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/10/linear-classification4.html">线性分类模型(四)——贝叶斯观点下的Logistic回归</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/10/linear-classification3.html">线性分类模型(三)——判别式模型</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/10/argparse.html">Python命令行解析器argparse的使用</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/10/git.html">git常用命令</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/10/list-index.html">Python中list的查找</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/10/hexo-latex.html">Hexo中的LaTex公式渲染问题</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/10/linear-classification2.html">线性分类模型(二)——生成式模型</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/10/linear-classification1.html">线性分类模型(一)——线性判别函数</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/re.html">Python中正则表达式的特殊字符</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/valine.html">评论系统从Disqus到Valine</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/hexo.html">从Hugo到Hexo</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/mihomegiftbag.html">小米笔试题「小米大礼包」Python代码</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/hugo.html">使用HUGO搭建个人博客</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/index.html">Hello World</a></li></ul>
-
-
-
-
-    <script>
-        
-    </script>
 </div>
       <footer id="footer">
     <div class="outer">
