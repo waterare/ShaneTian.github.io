@@ -15,26 +15,18 @@
 
 
 
-<meta name="description" content="很多大型文件或者数据从服务器上传或者下载的时候都需要打包和压缩解压，这时候知道压缩和解压的各种命令是很有必要的。常见的压缩文件后缀名有.tar.gz，.gz，.zip和.rar，下面来看看在Linux上它们分别的解压和压缩命令。">
-<meta name="keywords" content="服务器,命令行">
+<meta name="description" content="斐波那契数列a_0=0\\ a_1=a_2=1\\ a_n=a_{n-1}+a_{n-2}注：$a_0=0$不是斐波那契数列的第一项，而是第零项。 题目描述大家都知道斐波那契数列，现在要求输入一个整数n，请你输出斐波那契数列的第n项（从0开始，第0项为0）。n&amp;lt;=39 解题思路只需注意斐波那契数列的第零项即可。 代码Python(2.7.3)123456789101112131415# -*">
+<meta name="keywords" content="Python,剑指Offer">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Linux压缩和解压命令：tar，gzip，zip（unzip），rar">
-<meta property="og:url" content="https://suixinblog.cn/2018/11/tar-gzip-zip-rar.html">
+<meta property="og:title" content="[剑指Offer]斐波那契数列">
+<meta property="og:url" content="https://suixinblog.cn/2019/03/target-offer-fibonacci-sequence.html">
 <meta property="og:site_name" content="Suixin&#39;s Blog">
-<meta property="og:description" content="很多大型文件或者数据从服务器上传或者下载的时候都需要打包和压缩解压，这时候知道压缩和解压的各种命令是很有必要的。常见的压缩文件后缀名有.tar.gz，.gz，.zip和.rar，下面来看看在Linux上它们分别的解压和压缩命令。">
+<meta property="og:description" content="斐波那契数列a_0=0\\ a_1=a_2=1\\ a_n=a_{n-1}+a_{n-2}注：$a_0=0$不是斐波那契数列的第一项，而是第零项。 题目描述大家都知道斐波那契数列，现在要求输入一个整数n，请你输出斐波那契数列的第n项（从0开始，第0项为0）。n&amp;lt;=39 解题思路只需注意斐波那契数列的第零项即可。 代码Python(2.7.3)123456789101112131415# -*">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://ws2.sinaimg.cn/large/006tNbRwly1fxei1viqinj31020i2alj.jpg">
-<meta property="og:image" content="https://ws1.sinaimg.cn/large/006tNbRwly1fxetbja0swj31e60n81a0.jpg">
-<meta property="og:image" content="https://ws2.sinaimg.cn/large/006tNbRwly1fxetew4avbj31aw0n67kt.jpg">
-<meta property="og:image" content="https://ws1.sinaimg.cn/large/006tNbRwly1fxeu5yhebdj31aa0j8h0b.jpg">
-<meta property="og:image" content="https://ws1.sinaimg.cn/large/006tNbRwly1fxeu5y0n96j313i0og7kb.jpg">
-<meta property="og:image" content="https://ws2.sinaimg.cn/large/006tNbRwly1fxev056zfxj31cy0tikao.jpg">
-<meta property="og:image" content="https://ws4.sinaimg.cn/large/006tNbRwly1fxev10vxyvj316u0u04h9.jpg">
-<meta property="og:updated_time" content="2019-02-19T06:04:54.775Z">
+<meta property="og:updated_time" content="2019-03-02T07:00:06.411Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Linux压缩和解压命令：tar，gzip，zip（unzip），rar">
-<meta name="twitter:description" content="很多大型文件或者数据从服务器上传或者下载的时候都需要打包和压缩解压，这时候知道压缩和解压的各种命令是很有必要的。常见的压缩文件后缀名有.tar.gz，.gz，.zip和.rar，下面来看看在Linux上它们分别的解压和压缩命令。">
-<meta name="twitter:image" content="https://ws2.sinaimg.cn/large/006tNbRwly1fxei1viqinj31020i2alj.jpg">
+<meta name="twitter:title" content="[剑指Offer]斐波那契数列">
+<meta name="twitter:description" content="斐波那契数列a_0=0\\ a_1=a_2=1\\ a_n=a_{n-1}+a_{n-2}注：$a_0=0$不是斐波那契数列的第一项，而是第零项。 题目描述大家都知道斐波那契数列，现在要求输入一个整数n，请你输出斐波那契数列的第n项（从0开始，第0项为0）。n&amp;lt;=39 解题思路只需注意斐波那契数列的第零项即可。 代码Python(2.7.3)123456789101112131415# -*">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
@@ -66,7 +58,7 @@
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>Linux压缩和解压命令：tar，gzip，zip（unzip），rar | Suixin&#39;s Blog</title>
+<title>[剑指Offer]斐波那契数列 | Suixin&#39;s Blog</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -283,11 +275,11 @@
     </div>
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
 </nav>
-      <div class="body-wrap"><article id="post-Linux压缩和解压命令：tar，gzip，zip（unzip），rar" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-剑指Offer-斐波那契数列" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2018/11/tar-gzip-zip-rar.html" class="article-date">
-      <time datetime="2018-11-20T13:48:59.000Z" itemprop="datePublished">2018-11-20</time>
+      <a href="/2019/03/target-offer-fibonacci-sequence.html" class="article-date">
+      <time datetime="2019-03-02T06:57:38.000Z" itemprop="datePublished">2019-03-02</time>
 </a>
 
 
@@ -302,7 +294,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      Linux压缩和解压命令：tar，gzip，zip（unzip），rar
+      [剑指Offer]斐波那契数列
     </h1>
   
 
@@ -311,13 +303,13 @@
       <div class="article-info article-info-post">
         
     <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/Linux/">Linux</a>
+    <a class="article-category-link" href="/categories/互联网笔试/">互联网笔试</a>
     </div>
 
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/命令行/">命令行</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/服务器/">服务器</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/剑指Offer/">剑指Offer</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -327,59 +319,13 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>很多大型文件或者数据从服务器上传或者下载的时候都需要打包和压缩解压，这时候知道压缩和解压的各种命令是很有必要的。<br>常见的压缩文件后缀名有<code>.tar.gz</code>，<code>.gz</code>，<code>.zip</code>和<code>.rar</code>，下面来看看在Linux上它们分别的解压和压缩命令。<br><a id="more"></a></p>
-<h2 id="gzip"><a href="#gzip" class="headerlink" title="gzip"></a>gzip</h2><p>Linux压缩文件中最常见的后缀名即为<code>.gz</code>，<code>gzip</code>是用来压缩和解压<code>.gz</code>文件的命令。</p>
-<h3 id="常用参数"><a href="#常用参数" class="headerlink" title="常用参数"></a>常用参数</h3><ul>
-<li><code>-d</code>或<code>--decompress</code>或<code>--uncompress</code>：解压文件；</li>
-<li><code>-r</code>或<code>--recursive</code>：递归压缩指定文件夹下的文件（该文件夹下的所有文件被压缩成单独的<code>.gz</code>文件）；</li>
-<li><code>-v</code>或<code>--verbose</code>：显示指令执行过程。</li>
-</ul>
-<p><strong>注</strong>：<code>gzip</code>命令只能压缩单个文件，而不能把一个文件夹压缩成一个文件（与打包命令的区别）。</p>
-<h3 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h3><p>压缩当前目录下所有文件，并显示进度：</p>
-<p><center><img src="https://ws2.sinaimg.cn/large/006tNbRwly1fxei1viqinj31020i2alj.jpg" width="80%" alt="gzip"></center></p>
-<h2 id="tar"><a href="#tar" class="headerlink" title="tar"></a>tar</h2><p><code>tar</code>本身是一个打包命令，用来打包或者解包后缀名为<code>.tar</code>。配合参数可同时实现打包和压缩。</p>
-<h3 id="常用参数-1"><a href="#常用参数-1" class="headerlink" title="常用参数"></a>常用参数</h3><ul>
-<li><code>-c</code>或<code>--create</code>：建立新的备份文件；</li>
-<li><code>-x</code>或<code>--extract</code>或<code>--get</code>：从备份文件中还原文件；</li>
-<li><code>-v</code>：显示指令执行过程；</li>
-<li><code>-f</code>或<code>--file</code>：指定备份文件；</li>
-<li><code>-C</code>：指定目的目录；</li>
-<li><code>-z</code>：通过<code>gzip</code>指令处理备份文件；</li>
-<li><code>-j</code>：通过<code>bzip2</code>指令处理备份文件。</li>
-</ul>
-<h3 id="例子-1"><a href="#例子-1" class="headerlink" title="例子"></a>例子</h3><p>最常用的是将<code>tar</code>命令与<code>gzip</code>命令组合起来，直接对文件夹先打包后压缩：</p>
-<p><center><img src="https://ws1.sinaimg.cn/large/006tNbRwly1fxetbja0swj31e60n81a0.jpg" width="80%" alt="tar打包压缩"></center><br>解压解包：</p>
-<p><center><img src="https://ws2.sinaimg.cn/large/006tNbRwly1fxetew4avbj31aw0n67kt.jpg" width="80%" alt="tar解压解包"></center></p>
-<h2 id="zip和unzip"><a href="#zip和unzip" class="headerlink" title="zip和unzip"></a>zip和unzip</h2><p><code>zip</code>命令和<code>unzip</code>命令用在在Linux上处理<code>.zip</code>的压缩文件。</p>
-<h3 id="常用参数-2"><a href="#常用参数-2" class="headerlink" title="常用参数"></a>常用参数</h3><ul>
-<li><code>zip</code><ul>
-<li><code>-v</code>：显示指令执行过程；</li>
-<li><code>-m</code>：不保留原文件；</li>
-<li><code>-r</code>：递归处理。</li>
-</ul>
-</li>
-<li><code>unzip</code><ul>
-<li><code>-v</code>：显示指令执行过程；</li>
-<li><code>-d</code>：解压到指定目录。</li>
-</ul>
-</li>
-</ul>
-<h3 id="例子-2"><a href="#例子-2" class="headerlink" title="例子"></a>例子</h3><p>将两个文件压缩为<code>new.zip</code>且保留原文件：</p>
-<p><center><img src="https://ws1.sinaimg.cn/large/006tNbRwly1fxeu5yhebdj31aa0j8h0b.jpg" width="80%" alt="zip"></center><br>将<code>new.zip</code>解压到上级目录：</p>
-<p><center><img src="https://ws1.sinaimg.cn/large/006tNbRwly1fxeu5y0n96j313i0og7kb.jpg" width="80%" alt="unzip"></center></p>
-<h2 id="rar"><a href="#rar" class="headerlink" title="rar"></a>rar</h2><p><code>.rar</code>是Windows上比较常见的压缩文件格式，在Linux上使用<code>rar</code>命令来操作。</p>
-<h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><p>Linux中默认不带<code>rar</code>工具，需要自行安装，在<a href="https://www.rarlab.com/download.htm" target="_blank" rel="noopener">RARLAB</a>找到自己系统位数对应链接下载直接编译即可，如<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">wget https://www.rarlab.com/rar/rarlinux-x64-5.6.1.tar.gz</span><br><span class="line">tar -zxvf rarlinux-x64-5.6.1.tar.gz</span><br><span class="line">cd rar</span><br><span class="line">make</span><br></pre></td></tr></table></figure></p>
-<h3 id="常用参数-3"><a href="#常用参数-3" class="headerlink" title="常用参数"></a>常用参数</h3><ul>
-<li><code>a</code>：压缩文件；</li>
-<li><code>x</code>：解压文件；</li>
-<li><code>-p</code>：设置密码。密码紧随其后，如<code>-p123</code>。</li>
-</ul>
-<h3 id="例子-3"><a href="#例子-3" class="headerlink" title="例子"></a>例子</h3><p>将两个文件压缩为<code>new.rar</code>，设置密码为123（默认保留原文件）：</p>
-<p><center><img src="https://ws2.sinaimg.cn/large/006tNbRwly1fxev056zfxj31cy0tikao.jpg" width="80%" alt="rar压缩"></center><br>将<code>new.rar</code>解压（默认保留原文件）：</p>
-<p><center><img src="https://ws4.sinaimg.cn/large/006tNbRwly1fxev10vxyvj316u0u04h9.jpg" width="80%" alt="rar解压"></center></p>
-<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><blockquote>
-<p><a href="https://www.cnblogs.com/eoiioe/archive/2008/09/20/1294681.html" target="_blank" rel="noopener">https://www.cnblogs.com/eoiioe/archive/2008/09/20/1294681.html</a><br><a href="https://blog.csdn.net/zyw_anquan/article/details/8672024" target="_blank" rel="noopener">https://blog.csdn.net/zyw_anquan/article/details/8672024</a></p>
-</blockquote>
+        <h2 id="斐波那契数列"><a href="#斐波那契数列" class="headerlink" title="斐波那契数列"></a>斐波那契数列</h2><script type="math/tex; mode=display">a_0=0\\
+a_1=a_2=1\\
+a_n=a_{n-1}+a_{n-2}</script><p><strong>注</strong>：$a_0=0$不是斐波那契数列的第一项，而是第零项。</p>
+<h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>大家都知道斐波那契数列，现在要求输入一个整数n，请你输出斐波那契数列的第n项（从0开始，第0项为0）。<br>n&lt;=39</p>
+<h2 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h2><p>只需注意斐波那契数列的第零项即可。</p>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><p><code>Python(2.7.3)</code><br><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># -*- coding:utf-8 -*-</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">Fibonacci</span><span class="params">(self, n)</span>:</span></span><br><span class="line">        <span class="comment"># write code here</span></span><br><span class="line">        a = [<span class="number">1</span>, <span class="number">1</span>]</span><br><span class="line">        <span class="keyword">if</span> n &lt; <span class="number">0</span>:</span><br><span class="line">            <span class="keyword">return</span></span><br><span class="line">        <span class="keyword">elif</span> n == <span class="number">0</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            length = <span class="number">2</span></span><br><span class="line">            <span class="keyword">while</span> length &lt; n:</span><br><span class="line">                a.append(a[<span class="number">-1</span>] + a[<span class="number">-2</span>])</span><br><span class="line">                length += <span class="number">1</span></span><br><span class="line">            <span class="keyword">return</span> a[n - <span class="number">1</span>]</span><br></pre></td></tr></table></figure></p>
+<p><code>运行时间：27ms</code><br><code>占用内存：5756k</code></p>
 
       
     </div>
@@ -388,13 +334,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2018/11/tar-gzip-zip-rar.html">Linux压缩和解压命令：tar，gzip，zip（unzip），rar</a></p>
+        <p><span>本文标题:</span><a href="/2019/03/target-offer-fibonacci-sequence.html">[剑指Offer]斐波那契数列</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">Suixin</a></p>
-        <p><span>发布时间:</span>2018-11-20, 21:48:59</p>
-        <p><span>最后更新:</span>2019-02-19, 14:04:54</p>
+        <p><span>发布时间:</span>2019-03-02, 14:57:38</p>
+        <p><span>最后更新:</span>2019-03-02, 15:00:06</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2018/11/tar-gzip-zip-rar.html" title="Linux压缩和解压命令：tar，gzip，zip（unzip），rar">https://suixinblog.cn/2018/11/tar-gzip-zip-rar.html</a>
-            <span class="copy-path" data-clipboard-text="原文: https://suixinblog.cn/2018/11/tar-gzip-zip-rar.html　　作者: Suixin" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2019/03/target-offer-fibonacci-sequence.html" title="[剑指Offer]斐波那契数列">https://suixinblog.cn/2019/03/target-offer-fibonacci-sequence.html</a>
+            <span class="copy-path" data-clipboard-text="原文: https://suixinblog.cn/2019/03/target-offer-fibonacci-sequence.html　　作者: Suixin" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
         <p>
@@ -406,16 +352,10 @@
 
     <nav id="article-nav">
         
-            <div id="article-nav-newer" class="article-nav-title">
-                <a href="/2018/11/screen.html">
-                    Linux多重视窗管理命令screen
-                </a>
-            </div>
-        
         
             <div id="article-nav-older" class="article-nav-title">
-                <a href="/2018/11/wget.html">
-                    Linux下载命令wget
+                <a href="/2019/03/target-offer-min-num-in-rotate-array.html">
+                    [剑指Offer]旋转数组的最小数字
                 </a>
             </div>
         
@@ -427,7 +367,7 @@
     <div id="toc" class="toc-article">
         <strong class="toc-title">文章目录</strong>
         
-            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#gzip"><span class="toc-number">1.</span> <span class="toc-text">gzip</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#常用参数"><span class="toc-number">1.1.</span> <span class="toc-text">常用参数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#例子"><span class="toc-number">1.2.</span> <span class="toc-text">例子</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#tar"><span class="toc-number">2.</span> <span class="toc-text">tar</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#常用参数-1"><span class="toc-number">2.1.</span> <span class="toc-text">常用参数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#例子-1"><span class="toc-number">2.2.</span> <span class="toc-text">例子</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#zip和unzip"><span class="toc-number">3.</span> <span class="toc-text">zip和unzip</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#常用参数-2"><span class="toc-number">3.1.</span> <span class="toc-text">常用参数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#例子-2"><span class="toc-number">3.2.</span> <span class="toc-text">例子</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#rar"><span class="toc-number">4.</span> <span class="toc-text">rar</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#安装"><span class="toc-number">4.1.</span> <span class="toc-text">安装</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#常用参数-3"><span class="toc-number">4.2.</span> <span class="toc-text">常用参数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#例子-3"><span class="toc-number">4.3.</span> <span class="toc-text">例子</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#参考"><span class="toc-number">5.</span> <span class="toc-text">参考</span></a></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#斐波那契数列"><span class="toc-number">1.</span> <span class="toc-text">斐波那契数列</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#题目描述"><span class="toc-number">2.</span> <span class="toc-text">题目描述</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#解题思路"><span class="toc-number">3.</span> <span class="toc-text">解题思路</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#代码"><span class="toc-number">4.</span> <span class="toc-text">代码</span></a></li></ol>
         
     </div>
     <style>
@@ -475,15 +415,13 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2018/11/screen.html" title="上一篇: Linux多重视窗管理命令screen">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
 
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/2018/11/wget.html" title="下一篇: Linux下载命令wget">
+            <a href="/2019/03/target-offer-min-num-in-rotate-array.html" title="下一篇: [剑指Offer]旋转数组的最小数字">
                 <i class="fa fa-angle-right"></i>
             </a>
         
