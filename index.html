@@ -421,6 +421,80 @@
 
 
   
+    <article id="post-剑指Offer-变态跳台阶" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2019/03/target-offer-jump-floor-pro.html" class="article-date">
+      <time datetime="2019-03-02T08:42:26.000Z" itemprop="datePublished">2019-03-02</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/03/target-offer-jump-floor-pro.html">[剑指Offer]变态跳台阶</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>一只青蛙一次可以跳上1级台阶，也可以跳上2级……它也可以跳上n级。求该青蛙跳上一个n级的台阶总共有多少种跳法。</p>
+<h2 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h2><ol>
+<li><del>递归法</del>。和<a href="https://suixinblog.cn/2019/03/target-offer-jump-floor.html">跳台阶</a>的思路一样，但是如果台阶数较多的话浪费资源是极高的。</li>
+<li>公式法。简单分析一下问题，即可得出精确解。<script type="math/tex; mode=display">f(n)=1+f(n-1)+f(n-2)+\cdots +f(2)+f(1)\\
+ f(n-1)=1+f(n-2)+\cdots +f(2)+f(1)</script> 上式中1为一次跳上去的跳法。两式相减可得：$f(n)=2f(n-1)$，即多一层台阶，跳法翻倍。而$f(1)=1$，$f(2)=2$，故$f(n)=2^{n-1}$</li>
+</ol>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><p><code>Python(2.7.3)</code></p>
+<h3 id="递归法"><a href="#递归法" class="headerlink" title="递归法"></a><del>递归法</del></h3><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># -*- coding:utf-8 -*-</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">jumpFloorII</span><span class="params">(self, number)</span>:</span></span><br><span class="line">        <span class="comment"># write code here</span></span><br><span class="line">        <span class="keyword">if</span> number &lt; <span class="number">0</span>:</span><br><span class="line">            <span class="keyword">return</span></span><br><span class="line">        <span class="keyword">elif</span> number &lt; <span class="number">3</span>:</span><br><span class="line">            <span class="keyword">return</span> number</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            res = <span class="number">1</span></span><br><span class="line">            <span class="keyword">while</span> number &gt; <span class="number">0</span>:</span><br><span class="line">                number -= <span class="number">1</span></span><br><span class="line">                res += self.jumpFloorII(number)</span><br><span class="line">            <span class="keyword">return</span> res</span><br></pre></td></tr></table></figure>
+<p><code>运行时间：160ms</code><br><code>占用内存：5856k</code></p>
+<h3 id="公式法"><a href="#公式法" class="headerlink" title="公式法"></a>公式法</h3><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># -*- coding:utf-8 -*-</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">jumpFloorII</span><span class="params">(self, number)</span>:</span></span><br><span class="line">        <span class="comment"># write code here</span></span><br><span class="line">        <span class="keyword">if</span> number &lt; <span class="number">0</span>:</span><br><span class="line">            <span class="keyword">return</span></span><br><span class="line">        <span class="keyword">elif</span> number == <span class="number">0</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="keyword">return</span> pow(<span class="number">2</span>, number - <span class="number">1</span>)</span><br></pre></td></tr></table></figure>
+<p><code>运行时间：28ms</code><br><code>占用内存：5728k</code></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/互联网笔试/">互联网笔试</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/剑指Offer/">剑指Offer</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
     <article id="post-剑指Offer-跳台阶" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -450,14 +524,9 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>一只青蛙一次可以跳上1级台阶，也可以跳上2级。求该青蛙跳上一个n级的台阶总共有多少种跳法（先后次序不同算不同的结果）。</p>
-<h2 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h2><p>本质上，跳台阶的跳法是斐波那契数列。假设有8级台阶，那么如果第一次跳1级台阶，则总共的跳法和7级台阶所有的跳法一样多；如果第一次跳2级台阶，则总共的跳法和6级台阶所有的跳法一样多。即$f(8)=f(7)+f(6)$，为斐波那契数列。而$f(1)=1$，$f(2)=2$。</p>
-<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><p><code>Python(2.7.3)</code><br><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># -*- coding:utf-8 -*-</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">jumpFloor</span><span class="params">(self, number)</span>:</span></span><br><span class="line">        <span class="comment"># write code here</span></span><br><span class="line">        <span class="keyword">if</span> number &lt; <span class="number">0</span>:</span><br><span class="line">            <span class="keyword">return</span></span><br><span class="line">        <span class="keyword">elif</span> number &lt; <span class="number">4</span>:</span><br><span class="line">            <span class="keyword">return</span> number</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            a = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]</span><br><span class="line">            length = <span class="number">3</span></span><br><span class="line">            <span class="keyword">while</span> length &lt; number:</span><br><span class="line">                a.append(a[<span class="number">-1</span>] + a[<span class="number">-2</span>])</span><br><span class="line">                length += <span class="number">1</span></span><br><span class="line">            <span class="keyword">return</span> a[<span class="number">-1</span>]</span><br></pre></td></tr></table></figure></p>
-<p><code>运行时间：31ms</code><br><code>占用内存：5740k</code></p>
-<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><blockquote>
-<p><a href="https://www.nowcoder.com/questionTerminal/8c82a5b80378478f9484d87d1c5f12a4?toCommentId=22464" target="_blank" rel="noopener">https://www.nowcoder.com/questionTerminal/8c82a5b80378478f9484d87d1c5f12a4?toCommentId=22464</a></p>
-</blockquote>
-
+              <h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>一只青蛙一次可以跳上1级台阶，也可以跳上2级。求该青蛙跳上一个n级的台阶总共有多少种跳法（先后次序不同算不同的结果）。</p>
+<h2 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h2><p>本质上，跳台阶的跳法是<a href="https://suixinblog.cn/2019/03/target-offer-fibonacci-sequence.html">斐波那契数列</a>。假设有8级台阶，那么如果第一次跳1级台阶，则总共的跳法和7级台阶所有的跳法一样多；如果第一次跳2级台阶，则总共的跳法和6级台阶所有的跳法一样多。即$f(8)=f(7)+f(6)$，为斐波那契数列。而$f(1)=1$，$f(2)=2$。<br>
+          
       
     </div>
     
@@ -474,6 +543,10 @@
         <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/剑指Offer/">剑指Offer</a></li></ul>
     </div>
 
+      
+        <p class="article-more-link">
+          <a href="/2019/03/target-offer-jump-floor.html#more">阅读全文 >></a>
+        </p>
       
       <div class="clearfix"></div>
     </div>
@@ -520,14 +593,11 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h2 id="斐波那契数列"><a href="#斐波那契数列" class="headerlink" title="斐波那契数列"></a>斐波那契数列</h2><script type="math/tex; mode=display">a_0=0\\
+              <h2 id="斐波那契数列"><a href="#斐波那契数列" class="headerlink" title="斐波那契数列"></a>斐波那契数列</h2><script type="math/tex; mode=display">a_0=0\\
 a_1=a_2=1\\
 a_n=a_{n-1}+a_{n-2}</script><p><strong>注</strong>：$a_0=0$不是斐波那契数列的第一项，而是第零项。</p>
-<h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>大家都知道斐波那契数列，现在要求输入一个整数n，请你输出斐波那契数列的第n项（从0开始，第0项为0）。<br>n&lt;=39</p>
-<h2 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h2><p>只需注意斐波那契数列的第零项即可。</p>
-<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><p><code>Python(2.7.3)</code><br><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># -*- coding:utf-8 -*-</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">Fibonacci</span><span class="params">(self, n)</span>:</span></span><br><span class="line">        <span class="comment"># write code here</span></span><br><span class="line">        a = [<span class="number">1</span>, <span class="number">1</span>]</span><br><span class="line">        <span class="keyword">if</span> n &lt; <span class="number">0</span>:</span><br><span class="line">            <span class="keyword">return</span></span><br><span class="line">        <span class="keyword">elif</span> n == <span class="number">0</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            length = <span class="number">2</span></span><br><span class="line">            <span class="keyword">while</span> length &lt; n:</span><br><span class="line">                a.append(a[<span class="number">-1</span>] + a[<span class="number">-2</span>])</span><br><span class="line">                length += <span class="number">1</span></span><br><span class="line">            <span class="keyword">return</span> a[n - <span class="number">1</span>]</span><br></pre></td></tr></table></figure></p>
-<p><code>运行时间：27ms</code><br><code>占用内存：5756k</code><br><strong>注</strong>：实现斐波那契数列不一定需要使用列表，只是使用列表可以把数列完全存储下来，如果只需要某一项的值，完全可以：<br><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># -*- coding:utf-8 -*-</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">Fibonacci</span><span class="params">(self, n)</span>:</span></span><br><span class="line">        <span class="comment"># write code here</span></span><br><span class="line">        a, b = <span class="number">0</span>, <span class="number">1</span></span><br><span class="line">        <span class="keyword">for</span> _ <span class="keyword">in</span> range(n):</span><br><span class="line">            a, b = b, a + b</span><br><span class="line">        <span class="keyword">return</span> a</span><br></pre></td></tr></table></figure></p>
-
+<h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>大家都知道斐波那契数列，现在要求输入一个整数n，请你输出斐波那契数列的第n项（从0开始，第0项为0）。<br>n&lt;=39<br>
+          
       
     </div>
     
@@ -544,6 +614,10 @@ a_n=a_{n-1}+a_{n-2}</script><p><strong>注</strong>：$a_0=0$不是斐波那契�
         <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/剑指Offer/">剑指Offer</a></li></ul>
     </div>
 
+      
+        <p class="article-more-link">
+          <a href="/2019/03/target-offer-fibonacci-sequence.html#more">阅读全文 >></a>
+        </p>
       
       <div class="clearfix"></div>
     </div>
@@ -889,74 +963,6 @@ a_n=a_{n-1}+a_{n-2}</script><p><strong>注</strong>：$a_0=0$不是斐波那契�
       
         <p class="article-more-link">
           <a href="/2019/02/binary-tree.html#more">阅读全文 >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-在服务器部署Jupyter-Notebook" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2019/02/jupyter-notebook.html" class="article-date">
-      <time datetime="2019-02-27T09:14:48.000Z" itemprop="datePublished">2019-02-27</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/02/jupyter-notebook.html">在服务器部署Jupyter Notebook</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <p>Jupyter Notebook（此前被称为 IPython notebook）是一个交互式笔记本，支持运行 40 多种编程语言。它的核心在于展示与快速迭代。<br>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/技术驿站/">技术驿站</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a href="/2019/02/jupyter-notebook.html#more">阅读全文 >></a>
         </p>
       
       <div class="clearfix"></div>
