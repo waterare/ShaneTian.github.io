@@ -12,7 +12,7 @@
       
       <categories>
           
-          <category> 笔试面经 </category>
+          <category> 互联网笔试 </category>
           
       </categories>
       
@@ -39,7 +39,7 @@
       
       <categories>
           
-          <category> 笔试面经 </category>
+          <category> 互联网笔试 </category>
           
       </categories>
       
@@ -68,7 +68,7 @@
       
       <categories>
           
-          <category> 笔试面经 </category>
+          <category> 互联网笔试 </category>
           
       </categories>
       
@@ -95,7 +95,7 @@
       
       <categories>
           
-          <category> 笔试面经 </category>
+          <category> 互联网笔试 </category>
           
           <category> 术业专攻 </category>
           
@@ -145,7 +145,7 @@
       
       <categories>
           
-          <category> 笔试面经 </category>
+          <category> 互联网笔试 </category>
           
           <category> 术业专攻 </category>
           
@@ -170,7 +170,7 @@
       
       <categories>
           
-          <category> 笔试面经 </category>
+          <category> 互联网笔试 </category>
           
       </categories>
       
@@ -195,7 +195,7 @@
       
       <categories>
           
-          <category> 笔试面经 </category>
+          <category> 互联网笔试 </category>
           
           <category> 术业专攻 </category>
           
@@ -222,7 +222,7 @@
       
       <categories>
           
-          <category> 笔试面经 </category>
+          <category> 互联网笔试 </category>
           
           <category> 术业专攻 </category>
           
@@ -249,7 +249,7 @@
       
       <categories>
           
-          <category> 笔试面经 </category>
+          <category> 互联网笔试 </category>
           
       </categories>
       
@@ -276,7 +276,7 @@
       
       <categories>
           
-          <category> 笔试面经 </category>
+          <category> 互联网笔试 </category>
           
       </categories>
       
@@ -303,7 +303,7 @@
       
       <categories>
           
-          <category> 笔试面经 </category>
+          <category> 互联网笔试 </category>
           
       </categories>
       
@@ -330,7 +330,7 @@
       
       <categories>
           
-          <category> 笔试面经 </category>
+          <category> 互联网笔试 </category>
           
       </categories>
       
@@ -357,7 +357,7 @@
       
       <categories>
           
-          <category> 笔试面经 </category>
+          <category> 互联网笔试 </category>
           
           <category> 术业专攻 </category>
           
@@ -384,7 +384,7 @@
       
       <categories>
           
-          <category> 笔试面经 </category>
+          <category> 互联网笔试 </category>
           
       </categories>
       
@@ -411,7 +411,7 @@
       
       <categories>
           
-          <category> 笔试面经 </category>
+          <category> 互联网笔试 </category>
           
       </categories>
       
@@ -436,7 +436,7 @@
       
       <categories>
           
-          <category> 笔试面经 </category>
+          <category> 互联网笔试 </category>
           
       </categories>
       
@@ -472,9 +472,9 @@
             
             <tag> Python </tag>
             
-            <tag> list </tag>
-            
             <tag> dict </tag>
+            
+            <tag> list </tag>
             
             <tag> 踩坑 </tag>
             
@@ -636,9 +636,9 @@
       
       <categories>
           
-          <category> Linux </category>
-          
           <category> 技术驿站 </category>
+          
+          <category> Linux </category>
           
       </categories>
       
@@ -832,20 +832,20 @@
       
       <categories>
           
-          <category> Linux </category>
-          
           <category> 技术驿站 </category>
+          
+          <category> Linux </category>
           
       </categories>
       
       
         <tags>
             
+            <tag> Python </tag>
+            
             <tag> 服务器 </tag>
             
             <tag> 命令行 </tag>
-            
-            <tag> Python </tag>
             
         </tags>
       
@@ -1161,7 +1161,7 @@
       
       <categories>
           
-          <category> 笔试面经 </category>
+          <category> 互联网笔试 </category>
           
       </categories>
       
