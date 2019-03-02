@@ -15,21 +15,18 @@
 
 
 
-<meta name="description" content="之前在服务器跑代码的时候用到了screen会话管理命令，可以新建不同的session来不间断运行shell。而tmux更为强大，不仅提供了会话的管理，还支持同一窗口下分出不同的窗格。总的来说，tmux的结构分为：  session window pane">
-<meta name="keywords" content="服务器,命令行">
+<meta name="description" content="题目描述把一个数组最开始的若干个元素搬到数组的末尾，我们称之为数组的旋转。 输入一个非减排序的数组的一个旋转，输出旋转数组的最小元素。 例如数组{3,4,5,1,2}为{1,2,3,4,5}的一个旋转，该数组的最小值为1。 NOTE：给出的所有元素都大于0，若数组大小为0，请返回0。">
+<meta name="keywords" content="Python,剑指Offer,数组">
 <meta property="og:type" content="article">
-<meta property="og:title" content="强大的tmux">
-<meta property="og:url" content="https://suixinblog.cn/2018/12/tmux.html">
+<meta property="og:title" content="[剑指Offer]旋转数组的最小数字">
+<meta property="og:url" content="https://suixinblog.cn/2019/03/target-offer-min-num-in-rotate-array.html">
 <meta property="og:site_name" content="Suixin&#39;s Blog">
-<meta property="og:description" content="之前在服务器跑代码的时候用到了screen会话管理命令，可以新建不同的session来不间断运行shell。而tmux更为强大，不仅提供了会话的管理，还支持同一窗口下分出不同的窗格。总的来说，tmux的结构分为：  session window pane">
+<meta property="og:description" content="题目描述把一个数组最开始的若干个元素搬到数组的末尾，我们称之为数组的旋转。 输入一个非减排序的数组的一个旋转，输出旋转数组的最小元素。 例如数组{3,4,5,1,2}为{1,2,3,4,5}的一个旋转，该数组的最小值为1。 NOTE：给出的所有元素都大于0，若数组大小为0，请返回0。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://ws1.sinaimg.cn/large/006tNbRwgy1fxylrik0mbj31c00u07wh.jpg">
-<meta property="og:image" content="https://ws2.sinaimg.cn/large/006tNbRwgy1fxyltju6r7j31c00u0u0e.jpg">
-<meta property="og:updated_time" content="2019-02-19T06:12:03.114Z">
+<meta property="og:updated_time" content="2019-03-02T06:17:52.413Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="强大的tmux">
-<meta name="twitter:description" content="之前在服务器跑代码的时候用到了screen会话管理命令，可以新建不同的session来不间断运行shell。而tmux更为强大，不仅提供了会话的管理，还支持同一窗口下分出不同的窗格。总的来说，tmux的结构分为：  session window pane">
-<meta name="twitter:image" content="https://ws1.sinaimg.cn/large/006tNbRwgy1fxylrik0mbj31c00u07wh.jpg">
+<meta name="twitter:title" content="[剑指Offer]旋转数组的最小数字">
+<meta name="twitter:description" content="题目描述把一个数组最开始的若干个元素搬到数组的末尾，我们称之为数组的旋转。 输入一个非减排序的数组的一个旋转，输出旋转数组的最小元素。 例如数组{3,4,5,1,2}为{1,2,3,4,5}的一个旋转，该数组的最小值为1。 NOTE：给出的所有元素都大于0，若数组大小为0，请返回0。">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
@@ -61,7 +58,7 @@
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>强大的tmux | Suixin&#39;s Blog</title>
+<title>[剑指Offer]旋转数组的最小数字 | Suixin&#39;s Blog</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -278,11 +275,11 @@
     </div>
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
 </nav>
-      <div class="body-wrap"><article id="post-强大的tmux" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-剑指Offer-旋转数组的最小数字" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2018/12/tmux.html" class="article-date">
-      <time datetime="2018-12-07T15:58:49.000Z" itemprop="datePublished">2018-12-07</time>
+      <a href="/2019/03/target-offer-min-num-in-rotate-array.html" class="article-date">
+      <time datetime="2019-03-02T06:14:45.000Z" itemprop="datePublished">2019-03-02</time>
 </a>
 
 
@@ -297,7 +294,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      强大的tmux
+      [剑指Offer]旋转数组的最小数字
     </h1>
   
 
@@ -306,13 +303,13 @@
       <div class="article-info article-info-post">
         
     <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/Linux/">Linux</a>
+    <a class="article-category-link" href="/categories/互联网笔试/">互联网笔试</a>
     </div>
 
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/命令行/">命令行</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/服务器/">服务器</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/剑指Offer/">剑指Offer</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/数组/">数组</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -322,52 +319,21 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>之前在服务器跑代码的时候用到了<a href="https://suixinblog.cn/2018/11/screen.html"><code>screen</code>会话管理命令</a>，可以新建不同的session来不间断运行shell。而<code>tmux</code>更为强大，不仅提供了会话的管理，还支持同一窗口下分出不同的窗格。<br>总的来说，<code>tmux</code>的结构分为：</p>
-<ul>
-<li>session<ul>
-<li>window<ul>
-<li>pane</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<a id="more"></a>
-<h2 id="命令行安装"><a href="#命令行安装" class="headerlink" title="命令行安装"></a>命令行安装</h2><p><code>macos</code>使用<code>brew install tmux</code>进行安装；<br><code>CentOS</code>使用<code>yum install tmux</code>进行安装时发现版本为1.8较低，所以通过源码编译的方式进行安装：</p>
-<ol>
-<li><p>安装依赖：</p>
- <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">yum -y install ncurses-devel</span><br><span class="line">yum -y install libevent-devel</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>安装<code>tmux</code></p>
- <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">git clone https://github.com/tmux/tmux.git</span><br><span class="line">cd tmux</span><br><span class="line">sh autogen.sh</span><br><span class="line"><span class="meta">#</span><span class="bash"> 若提示找不到aclocal命令，则安装yum install -y automake</span></span><br><span class="line">./configure &amp;&amp; make</span><br><span class="line"><span class="meta">#</span><span class="bash"> 若提示没有C编译器，则安装yum install -y gcc</span></span><br><span class="line">make install</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>检查版本</p>
- <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">tmux -V</span><br><span class="line"><span class="meta">#</span><span class="bash"> 可能提示无tmux命令，制作软连接即可</span></span><br><span class="line">ln -s /usr/local/bin/tmux /usr/bin/tmux</span><br></pre></td></tr></table></figure>
+        <h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>把一个数组最开始的若干个元素搬到数组的末尾，我们称之为数组的旋转。 输入一个非减排序的数组的一个旋转，输出旋转数组的最小元素。 例如数组{3,4,5,1,2}为{1,2,3,4,5}的一个旋转，该数组的最小值为1。 NOTE：给出的所有元素都大于0，若数组大小为0，请返回0。<br><a id="more"></a></p>
+<h2 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h2><ol>
+<li><del>无脑线性比较法</del>。直接线性遍历，取出最小值返回，与旋转数组无关。时间复杂度为<code>O(n)</code>。</li>
+<li><del>稍微快速的比较法</del>。线性遍历，如果数字变小了，那么那个数字就是最小值；如果整个数组的数字都没变小，那么说明数组为未旋转的数组或数组内元素完全相同，返回数组第一个元素。</li>
+<li><p><strong>二分法</strong>。本质上，旋转数组可以被分为两个不减的数组，分割点即为原数组第一个元素，也就是最小数字。利用该性质可以使用两个指针来实现二分，初始化时将第一个指针指向数组第1个元素，第二个指针指向数组最后一个元素，然后取两个指针中间的指针（取整），如果数值大于等于第一个指针的数字，则该数字为前面不减数组的元素，将第一个指针赋为中间指针；如果数值小于等于第二个指针的数字，则该数字为后面不减数组的元素，将第二个指针赋为中间指针。如果两个指针距离为1，则说明第一个指针已经指向前面不减数组的末尾，第二个指针已经指向第二个不减数组的开头，该数字即为最小数字。</p>
+<p> <em>特殊情况</em>：若第一个指针、第二个指针和中间指针的数字相同，则无法判断中间指针的数字输入哪一个数组。如<code>{1,0,1,1,1}``{1,1,1,0,1}</code>。此时需要线性遍历第一个指针和第二个指针中间的子数组找出最小值（可使用方法2）。<br> 该方法时间复杂度为<code>O(logn)</code>。</p>
 </li>
 </ol>
-<h2 id="常用参数"><a href="#常用参数" class="headerlink" title="常用参数"></a>常用参数</h2><p><code>tmux new -s &lt;name&gt;</code>：<strong>新建</strong>名为<code>name</code>的会话（无<code>-s</code>参数则默认以数字命名）；<br><code>tmux at -t &lt;name&gt;</code>：<strong>恢复（attach）</strong>名为<code>name</code>的会话（无<code>-t</code>参数则默认恢复上一次的会话（<code>at</code>可简写为<code>a</code>）；<br><code>tmux ls</code>：<strong>列出</strong>所有会话；<br><code>tmux kill-session -t &lt;name&gt;</code>：<strong>关闭</strong>名为<code>name</code>的会话；<br><code>tmux kill-server</code>：关闭所有会话。</p>
-<h2 id="快捷键（在tmux-session中）"><a href="#快捷键（在tmux-session中）" class="headerlink" title="快捷键（在tmux session中）"></a>快捷键（在tmux session中）</h2><p>这里所有的快捷键都是以<code>Ctrl+B</code>开头的（Mac也是<code>⌃+B</code>而不是<code>⌘+B</code>）。以下所有命令均在按下前缀<code>Ctrl+B</code>后再按下生效。</p>
-<h3 id="会话"><a href="#会话" class="headerlink" title="会话"></a>会话</h3><p><code>D</code>：<strong>分离（detach）</strong>当前会话（会话仍在后台运行）；<br><code>S</code>：列出所有会话，此时可通过方向键和回车键切换；<br><code>$</code>：重命名当前会话；<br><code>:new -s &lt;name&gt;</code>：创建并进入名为<code>name</code>的会话（不存在父子级关系）。</p>
-<h3 id="窗口（标签页）"><a href="#窗口（标签页）" class="headerlink" title="窗口（标签页）"></a>窗口（标签页）</h3><p><strong>窗口</strong>在tmux中相当于同一个session下的子窗口。<br>想到的使用场景为：在一个多人使用的服务器下，你只需新建自己名字的session<code>tmux new -s suixin</code>，想要再新建会话时，不去<code>tmux new -s suixin2</code>，而是选择在已有的<code>suixin</code>session下新建窗口，避免了多用户用<code>tmux</code>开启巨多session的困扰。（说的有点绕……）<br><code>c</code>：新建窗口；<br><code>w</code>：列出所有窗口，此时可通过方向键和回车键切换；<br><code>n</code>：切换到后一个窗口（使用后面的主题后失效）；<br><code>p</code>：切换到前一个窗口（使用后面的主题后失效）；<br><code>,</code>：重命名当前窗口（不知是否可以在创建时就命名）；<br><code>&amp;</code>：关闭当前窗口。</p>
-<h3 id="窗格（分割窗口）"><a href="#窗格（分割窗口）" class="headerlink" title="窗格（分割窗口）"></a>窗格（分割窗口）</h3><p><strong>窗格</strong>为<code>tmux</code>优于<code>screen</code>的一个强大的功能，可以实现在同一个窗口下分割窗口为多个窗格运行不同的命令，一览无余。棒棒棒！！<br><code>%</code>：垂直分割；<br><code>:</code>：水平分割；<br><code>x</code>：关闭窗格（也可以直接在命令行输入<code>exit</code>）；<br><code>o</code>：交换窗格（将输入切换到下一个窗格）；<br><code>q</code>：显示窗格的编号（和尺寸），此时可通过按下数字切换（使用后面的主题后数字切换失效）；<br><code>{</code>：与上一个窗格交换位置；<br><code>}</code>：与下一个窗格交换位置。</p>
-<h2 id="一个漂亮的tmux配置"><a href="#一个漂亮的tmux配置" class="headerlink" title="一个漂亮的tmux配置"></a>一个漂亮的tmux配置</h2><p>有人配置了一个比较全的tmux，见<a href="https://github.com/gpakosz/.tmux" target="_blank" rel="noopener">https://github.com/gpakosz/.tmux</a> 。<br><strong>新特性</strong>：</p>
-<ul>
-<li>鼠标（开启键为<code>Ctrl+A+M</code>）。可切换windows、panes，鼠标滚动，复制等；</li>
-<li>快捷键前缀改为<code>Ctrl+A</code>并兼容<code>Ctrl+B</code>；</li>
-<li>更改了部分快捷键，使之更方便，见<a href="https://github.com/gpakosz/.tmux#bindings" target="_blank" rel="noopener">https://github.com/gpakosz/.tmux#bindings</a> ；</li>
-<li>美化底栏；</li>
-<li>窗口编号从1开始；</li>
-<li>当前窗口用蓝底显示，当前pane用蓝框显示；</li>
-<li>漂亮的界面。</li>
-</ul>
-<p>拉取文件：<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git clone https://github.com/gpakosz/.tmux.git</span><br><span class="line">ln -s -f .tmux/.tmux.conf</span><br><span class="line">cp .tmux/.tmux.conf.local ./</span><br></pre></td></tr></table></figure></p>
-<p>我修改了<code>~/.tmux.conf.local</code>文件中的左右底栏配置，然后<code>source</code>该文件（好像Linux服务器不能显示电池信息）：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">tmux_conf_theme_status_left=&apos; ❐ #S &apos;</span><br><span class="line">tmux_conf_theme_status_right=&apos;#&#123;prefix&#125;#&#123;pairing&#125;#&#123;synchronized&#125; #&#123;?battery_status, #&#123;battery_status&#125;,&#125;#&#123;?battery_bar, #&#123;battery_bar&#125;,&#125;#&#123;?battery_percentage, #&#123;battery_percentage&#125;,&#125; , %R , %d %b | #&#123;loadavg&#125; | #&#123;username&#125;#&#123;root&#125; | #&#123;hostname&#125; &apos;</span><br></pre></td></tr></table></figure></p>
-<p>我比较常用的窗格设置，左边主界面，右上角可以实时<code>cd</code>到某些文件夹查看，右下角为<code>top</code>：<br><img src="https://ws1.sinaimg.cn/large/006tNbRwgy1fxylrik0mbj31c00u07wh.jpg" alt=""></p>
-<h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><p><code>Ctrl+B+T</code>：显示时间，按任意键返回。<br><img src="https://ws2.sinaimg.cn/large/006tNbRwgy1fxyltju6r7j31c00u0u0e.jpg" alt=""></p>
-<p>查找窗口、调整窗口排序、调整窗格尺寸、同步窗格、文本复制模式等功能在参考中可以找到。</p>
-<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><blockquote>
-<p><a href="https://gist.github.com/ryerh/14b7c24dfd623ef8edc7" target="_blank" rel="noopener">https://gist.github.com/ryerh/14b7c24dfd623ef8edc7</a><br><a href="https://github.com/gpakosz/.tmux" target="_blank" rel="noopener">https://github.com/gpakosz/.tmux</a><br><a href="https://harttle.land/2015/11/06/tmux-startup.html" target="_blank" rel="noopener">https://harttle.land/2015/11/06/tmux-startup.html</a></p>
-</blockquote>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><p><code>Python(2.7.3)</code></p>
+<h3 id="无脑线性比较法"><a href="#无脑线性比较法" class="headerlink" title="无脑线性比较法"></a><del>无脑线性比较法</del></h3><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># -*- coding:utf-8 -*-</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">minNumberInRotateArray</span><span class="params">(self, rotateArray)</span>:</span></span><br><span class="line">        <span class="comment"># write code here</span></span><br><span class="line">        <span class="keyword">if</span> len(rotateArray) == <span class="number">0</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">        res = rotateArray[<span class="number">0</span>]</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> rotateArray:</span><br><span class="line">            <span class="keyword">if</span> i &lt; res:</span><br><span class="line">                res = i</span><br><span class="line">        <span class="keyword">return</span> res</span><br></pre></td></tr></table></figure>
+<p><code>运行时间：1299ms</code><br><code>占用内存：5624k</code></p>
+<h3 id="稍微快速的比较法"><a href="#稍微快速的比较法" class="headerlink" title="稍微快速的比较法"></a><del>稍微快速的比较法</del></h3><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># -*- coding:utf-8 -*-</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">minNumberInRotateArray</span><span class="params">(self, rotateArray)</span>:</span></span><br><span class="line">        <span class="comment"># write code here</span></span><br><span class="line">        <span class="keyword">if</span> len(rotateArray) == <span class="number">0</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">        pre = <span class="number">-1</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> rotateArray:</span><br><span class="line">            <span class="keyword">if</span> i &lt; pre:</span><br><span class="line">                <span class="keyword">return</span> i</span><br><span class="line">            pre = i</span><br><span class="line">        <span class="keyword">return</span> rotateArray[<span class="number">0</span>]</span><br></pre></td></tr></table></figure>
+<p><code>运行时间：1305ms</code><br><code>占用内存：5860k</code></p>
+<h3 id="二分法"><a href="#二分法" class="headerlink" title="二分法"></a>二分法</h3><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># -*- coding:utf-8 -*-</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">minNumberInRotateArray</span><span class="params">(self, rotateArray)</span>:</span></span><br><span class="line">        <span class="comment"># write code here</span></span><br><span class="line">        <span class="keyword">if</span> len(rotateArray) == <span class="number">0</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">        pre = <span class="number">0</span></span><br><span class="line">        aft = len(rotateArray) - <span class="number">1</span></span><br><span class="line">        tmp = pre</span><br><span class="line">        <span class="keyword">while</span> rotateArray[pre] &gt;= rotateArray[aft]:</span><br><span class="line">            <span class="keyword">if</span> aft - pre == <span class="number">1</span>:</span><br><span class="line">                tmp = aft</span><br><span class="line">                <span class="keyword">break</span></span><br><span class="line">            tmp = (pre + aft) // <span class="number">2</span></span><br><span class="line">            <span class="keyword">if</span> rotateArray[tmp] == rotateArray[pre] == rotateArray[aft]:</span><br><span class="line">                res = <span class="number">-1</span></span><br><span class="line">                <span class="keyword">for</span> i <span class="keyword">in</span> rotateArray[pre:aft]:</span><br><span class="line">                    <span class="keyword">if</span> i &lt; res:</span><br><span class="line">                        <span class="keyword">return</span> i</span><br><span class="line">                    res = i</span><br><span class="line">                <span class="keyword">return</span> res</span><br><span class="line">            <span class="keyword">elif</span> rotateArray[tmp] &gt;= rotateArray[pre]:</span><br><span class="line">                pre = tmp</span><br><span class="line">            <span class="keyword">elif</span> rotateArray[tmp] &lt;= rotateArray[aft]:</span><br><span class="line">                aft = tmp</span><br><span class="line">        <span class="keyword">return</span> rotateArray[tmp]</span><br></pre></td></tr></table></figure>
+<p><code>运行时间：1328ms</code><br><code>占用内存：5696k</code><br>注：这里运行时间较长的原因可能为：系统中的测试用例都是比较短的旋转数组，而理论上二分法的时间复杂度会更低，在数组较大时越明显。</p>
 
       
     </div>
@@ -376,13 +342,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2018/12/tmux.html">强大的tmux</a></p>
+        <p><span>本文标题:</span><a href="/2019/03/target-offer-min-num-in-rotate-array.html">[剑指Offer]旋转数组的最小数字</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">Suixin</a></p>
-        <p><span>发布时间:</span>2018-12-07, 23:58:49</p>
-        <p><span>最后更新:</span>2019-02-19, 14:12:03</p>
+        <p><span>发布时间:</span>2019-03-02, 14:14:45</p>
+        <p><span>最后更新:</span>2019-03-02, 14:17:52</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2018/12/tmux.html" title="强大的tmux">https://suixinblog.cn/2018/12/tmux.html</a>
-            <span class="copy-path" data-clipboard-text="原文: https://suixinblog.cn/2018/12/tmux.html　　作者: Suixin" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2019/03/target-offer-min-num-in-rotate-array.html" title="[剑指Offer]旋转数组的最小数字">https://suixinblog.cn/2019/03/target-offer-min-num-in-rotate-array.html</a>
+            <span class="copy-path" data-clipboard-text="原文: https://suixinblog.cn/2019/03/target-offer-min-num-in-rotate-array.html　　作者: Suixin" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
         <p>
@@ -394,16 +360,10 @@
 
     <nav id="article-nav">
         
-            <div id="article-nav-newer" class="article-nav-title">
-                <a href="/2018/12/ssh-timeout.html">
-                    ssh连接服务器超时解决方案
-                </a>
-            </div>
-        
         
             <div id="article-nav-older" class="article-nav-title">
-                <a href="/2018/11/screen.html">
-                    Linux多重视窗管理命令screen
+                <a href="/2019/03/target-offer-reconstruct-binary-tree.html">
+                    [剑指Offer]重建二叉树
                 </a>
             </div>
         
@@ -415,7 +375,7 @@
     <div id="toc" class="toc-article">
         <strong class="toc-title">文章目录</strong>
         
-            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#命令行安装"><span class="toc-number">1.</span> <span class="toc-text">命令行安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#常用参数"><span class="toc-number">2.</span> <span class="toc-text">常用参数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#快捷键（在tmux-session中）"><span class="toc-number">3.</span> <span class="toc-text">快捷键（在tmux session中）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#会话"><span class="toc-number">3.1.</span> <span class="toc-text">会话</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#窗口（标签页）"><span class="toc-number">3.2.</span> <span class="toc-text">窗口（标签页）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#窗格（分割窗口）"><span class="toc-number">3.3.</span> <span class="toc-text">窗格（分割窗口）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#一个漂亮的tmux配置"><span class="toc-number">4.</span> <span class="toc-text">一个漂亮的tmux配置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#其他"><span class="toc-number">5.</span> <span class="toc-text">其他</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#参考"><span class="toc-number">6.</span> <span class="toc-text">参考</span></a></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#题目描述"><span class="toc-number">1.</span> <span class="toc-text">题目描述</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#解题思路"><span class="toc-number">2.</span> <span class="toc-text">解题思路</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#代码"><span class="toc-number">3.</span> <span class="toc-text">代码</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#无脑线性比较法"><span class="toc-number">3.1.</span> <span class="toc-text">无脑线性比较法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#稍微快速的比较法"><span class="toc-number">3.2.</span> <span class="toc-text">稍微快速的比较法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#二分法"><span class="toc-number">3.3.</span> <span class="toc-text">二分法</span></a></li></ol></li></ol>
         
     </div>
     <style>
@@ -463,15 +423,13 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2018/12/ssh-timeout.html" title="上一篇: ssh连接服务器超时解决方案">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
 
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/2018/11/screen.html" title="下一篇: Linux多重视窗管理命令screen">
+            <a href="/2019/03/target-offer-reconstruct-binary-tree.html" title="下一篇: [剑指Offer]重建二叉树">
                 <i class="fa fa-angle-right"></i>
             </a>
         
