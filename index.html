@@ -421,6 +421,74 @@
 
 
   
+    <article id="post-剑指Offer-矩形覆盖" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2019/03/target-offer-rectangle-cover.html" class="article-date">
+      <time datetime="2019-03-02T09:40:19.000Z" itemprop="datePublished">2019-03-02</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/03/target-offer-rectangle-cover.html">[剑指Offer]矩形覆盖</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>我们可以用2*1的小矩形横着或者竖着去覆盖更大的矩形。请问用n个2*1的小矩形无重叠地覆盖一个2*n的大矩形，总共有多少种方法？<br>
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/互联网笔试/">互联网笔试</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/剑指Offer/">剑指Offer</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a href="/2019/03/target-offer-rectangle-cover.html#more">阅读全文 >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
     <article id="post-剑指Offer-变态跳台阶" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -450,18 +518,12 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>一只青蛙一次可以跳上1级台阶，也可以跳上2级……它也可以跳上n级。求该青蛙跳上一个n级的台阶总共有多少种跳法。</p>
+              <h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>一只青蛙一次可以跳上1级台阶，也可以跳上2级……它也可以跳上n级。求该青蛙跳上一个n级的台阶总共有多少种跳法。</p>
 <h2 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h2><ol>
 <li><del>递归法</del>。和<a href="https://suixinblog.cn/2019/03/target-offer-jump-floor.html">跳台阶</a>的思路一样，但是如果台阶数较多的话浪费资源是极高的。</li>
 <li>公式法。简单分析一下问题，即可得出精确解。<script type="math/tex; mode=display">f(n)=1+f(n-1)+f(n-2)+\cdots +f(2)+f(1)\\
- f(n-1)=1+f(n-2)+\cdots +f(2)+f(1)</script> 上式中1为一次跳上去的跳法。两式相减可得：$f(n)=2f(n-1)$，即多一层台阶，跳法翻倍。而$f(1)=1$，$f(2)=2$，故$f(n)=2^{n-1}$</li>
-</ol>
-<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><p><code>Python(2.7.3)</code></p>
-<h3 id="递归法"><a href="#递归法" class="headerlink" title="递归法"></a><del>递归法</del></h3><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># -*- coding:utf-8 -*-</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">jumpFloorII</span><span class="params">(self, number)</span>:</span></span><br><span class="line">        <span class="comment"># write code here</span></span><br><span class="line">        <span class="keyword">if</span> number &lt; <span class="number">0</span>:</span><br><span class="line">            <span class="keyword">return</span></span><br><span class="line">        <span class="keyword">elif</span> number &lt; <span class="number">3</span>:</span><br><span class="line">            <span class="keyword">return</span> number</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            res = <span class="number">1</span></span><br><span class="line">            <span class="keyword">while</span> number &gt; <span class="number">0</span>:</span><br><span class="line">                number -= <span class="number">1</span></span><br><span class="line">                res += self.jumpFloorII(number)</span><br><span class="line">            <span class="keyword">return</span> res</span><br></pre></td></tr></table></figure>
-<p><code>运行时间：160ms</code><br><code>占用内存：5856k</code></p>
-<h3 id="公式法"><a href="#公式法" class="headerlink" title="公式法"></a>公式法</h3><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># -*- coding:utf-8 -*-</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">jumpFloorII</span><span class="params">(self, number)</span>:</span></span><br><span class="line">        <span class="comment"># write code here</span></span><br><span class="line">        <span class="keyword">if</span> number &lt; <span class="number">0</span>:</span><br><span class="line">            <span class="keyword">return</span></span><br><span class="line">        <span class="keyword">elif</span> number == <span class="number">0</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="keyword">return</span> pow(<span class="number">2</span>, number - <span class="number">1</span>)</span><br></pre></td></tr></table></figure>
-<p><code>运行时间：28ms</code><br><code>占用内存：5728k</code></p>
-
+ f(n-1)=1+f(n-2)+\cdots +f(2)+f(1)</script> 上式中1为一次性跳上去的跳法。两式相减可得：$f(n)=2f(n-1)$，即多一层台阶，跳法翻倍。而$f(1)=1$，$f(2)=2$，故$f(n)=2^{n-1}$
+          
       
     </div>
     
@@ -478,6 +540,10 @@
         <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/剑指Offer/">剑指Offer</a></li></ul>
     </div>
 
+      
+        <p class="article-more-link">
+          <a href="/2019/03/target-offer-jump-floor-pro.html#more">阅读全文 >></a>
+        </p>
       
       <div class="clearfix"></div>
     </div>
@@ -895,74 +961,6 @@ a_n=a_{n-1}+a_{n-2}</script><p><strong>注</strong>：$a_0=0$不是斐波那契�
       
         <p class="article-more-link">
           <a href="/2019/03/target-offer-binary-tree-depth.html#more">阅读全文 >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-二叉树基础知识-Python实现" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2019/02/binary-tree.html" class="article-date">
-      <time datetime="2019-02-28T12:32:08.000Z" itemprop="datePublished">2019-02-28</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/02/binary-tree.html">二叉树基础知识+Python实现</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <h2 id="基础知识"><a href="#基础知识" class="headerlink" title="基础知识"></a>基础知识</h2><h3 id="树"><a href="#树" class="headerlink" title="树"></a>树</h3><p><strong>树（Tree）</strong>是一种非线性结构，用来模拟具有树状结构性质的数据集合。它是由$n(n&gt;0)$个有限结点组成一个具有层次关系的集合。树是递归结构，在树的定义中又用到了树的概念。<br>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/互联网笔试/">互联网笔试</a><a class="article-category-link" href="/categories/术业专攻/">术业专攻</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/二叉树/">二叉树</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a href="/2019/02/binary-tree.html#more">阅读全文 >></a>
         </p>
       
       <div class="clearfix"></div>
