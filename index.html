@@ -421,6 +421,76 @@
 
 
   
+    <article id="post-剑指Offer-跳台阶" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2019/03/target-offer-jump-floor.html" class="article-date">
+      <time datetime="2019-03-02T08:12:44.000Z" itemprop="datePublished">2019-03-02</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/03/target-offer-jump-floor.html">[剑指Offer]跳台阶</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>一只青蛙一次可以跳上1级台阶，也可以跳上2级。求该青蛙跳上一个n级的台阶总共有多少种跳法（先后次序不同算不同的结果）。</p>
+<h2 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h2><p>本质上，跳台阶的跳法是斐波那契数列。假设有8级台阶，那么如果第一次跳1级台阶，则总共的跳法和7级台阶所有的跳法一样多；如果第一次跳2级台阶，则总共的跳法和6级台阶所有的跳法一样多。即$f(8)=f(7)+f(6)$，为斐波那契数列。而$f(1)=1$，$f(2)=2$。</p>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><p><code>Python(2.7.3)</code><br><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># -*- coding:utf-8 -*-</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">jumpFloor</span><span class="params">(self, number)</span>:</span></span><br><span class="line">        <span class="comment"># write code here</span></span><br><span class="line">        <span class="keyword">if</span> number &lt; <span class="number">0</span>:</span><br><span class="line">            <span class="keyword">return</span></span><br><span class="line">        <span class="keyword">elif</span> number &lt; <span class="number">4</span>:</span><br><span class="line">            <span class="keyword">return</span> number</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            a = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]</span><br><span class="line">            length = <span class="number">3</span></span><br><span class="line">            <span class="keyword">while</span> length &lt; number:</span><br><span class="line">                a.append(a[<span class="number">-1</span>] + a[<span class="number">-2</span>])</span><br><span class="line">                length += <span class="number">1</span></span><br><span class="line">            <span class="keyword">return</span> a[<span class="number">-1</span>]</span><br></pre></td></tr></table></figure></p>
+<p><code>运行时间：31ms</code><br><code>占用内存：5740k</code></p>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><blockquote>
+<p><a href="https://www.nowcoder.com/questionTerminal/8c82a5b80378478f9484d87d1c5f12a4?toCommentId=22464" target="_blank" rel="noopener">https://www.nowcoder.com/questionTerminal/8c82a5b80378478f9484d87d1c5f12a4?toCommentId=22464</a></p>
+</blockquote>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/互联网笔试/">互联网笔试</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/剑指Offer/">剑指Offer</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
     <article id="post-剑指Offer-斐波那契数列" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -456,7 +526,7 @@ a_n=a_{n-1}+a_{n-2}</script><p><strong>注</strong>：$a_0=0$不是斐波那契�
 <h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>大家都知道斐波那契数列，现在要求输入一个整数n，请你输出斐波那契数列的第n项（从0开始，第0项为0）。<br>n&lt;=39</p>
 <h2 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h2><p>只需注意斐波那契数列的第零项即可。</p>
 <h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><p><code>Python(2.7.3)</code><br><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># -*- coding:utf-8 -*-</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">Fibonacci</span><span class="params">(self, n)</span>:</span></span><br><span class="line">        <span class="comment"># write code here</span></span><br><span class="line">        a = [<span class="number">1</span>, <span class="number">1</span>]</span><br><span class="line">        <span class="keyword">if</span> n &lt; <span class="number">0</span>:</span><br><span class="line">            <span class="keyword">return</span></span><br><span class="line">        <span class="keyword">elif</span> n == <span class="number">0</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            length = <span class="number">2</span></span><br><span class="line">            <span class="keyword">while</span> length &lt; n:</span><br><span class="line">                a.append(a[<span class="number">-1</span>] + a[<span class="number">-2</span>])</span><br><span class="line">                length += <span class="number">1</span></span><br><span class="line">            <span class="keyword">return</span> a[n - <span class="number">1</span>]</span><br></pre></td></tr></table></figure></p>
-<p><code>运行时间：27ms</code><br><code>占用内存：5756k</code></p>
+<p><code>运行时间：27ms</code><br><code>占用内存：5756k</code><br><strong>注</strong>：实现斐波那契数列不一定需要使用列表，只是使用列表可以把数列完全存储下来，如果只需要某一项的值，完全可以：<br><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># -*- coding:utf-8 -*-</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">Fibonacci</span><span class="params">(self, n)</span>:</span></span><br><span class="line">        <span class="comment"># write code here</span></span><br><span class="line">        a, b = <span class="number">0</span>, <span class="number">1</span></span><br><span class="line">        <span class="keyword">for</span> _ <span class="keyword">in</span> range(n):</span><br><span class="line">            a, b = b, a + b</span><br><span class="line">        <span class="keyword">return</span> a</span><br></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -905,77 +975,9 @@ a_n=a_{n-1}+a_{n-2}</script><p><strong>注</strong>：$a_0=0$不是斐波那契�
 
 
   
-    <article id="post-广义表的一些概念" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2019/02/generalized-list.html" class="article-date">
-      <time datetime="2019-02-26T01:58:27.000Z" itemprop="datePublished">2019-02-26</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/02/generalized-list.html">广义表的一些概念</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <h2 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h2><p>广义表（Lists，又称列表）是线性表的推广。广义表是$n(n\geqslant 0)$个元素$a_1,a_2,a_3,…,a_n$的有限序列，其中$a_i$或者是原子项，或者是一个广义表。<br>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/互联网笔试/">互联网笔试</a><a class="article-category-link" href="/categories/术业专攻/">术业专攻</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/广义表/">广义表</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a href="/2019/02/generalized-list.html#more">阅读全文 >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
   
     <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
     </nav>
   
 </div>
