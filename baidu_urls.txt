@@ -1,2 +1,2 @@
-https://suixinblog.cn/2019/03/target-offer-bin-num1.html
-https://suixinblog.cn/2019/03/target-offer-int-power.html
+https://suixinblog.cn/2019/03/target-offer-reorder-array.html
+https://suixinblog.cn/2019/03/target-offer-linked-list-kth-node-to-tail.html
