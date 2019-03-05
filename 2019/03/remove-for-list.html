@@ -15,24 +15,18 @@
 
 
 
-<meta name="description" content="JSON（JavaScript Object Notation）是一种轻量级的数据交换格式，尽管JSON是JavaScript的一个子集，但它是独立于语言的文本格式。在Python中，我们使用json包来实现json文件的读取和写入。">
-<meta name="keywords" content="Python,json">
+<meta name="description" content="Python的for循环可以遍历一个列表，但若需要同时将符合条件的元素删除时，则会出错。">
+<meta name="keywords" content="Python">
 <meta property="og:type" content="article">
-<meta property="og:title" content="利用Python处理json文件">
-<meta property="og:url" content="https://suixinblog.cn/2019/02/python-json.html">
+<meta property="og:title" content="Python遍历列表时删除元素">
+<meta property="og:url" content="https://suixinblog.cn/2019/03/remove-for-list.html">
 <meta property="og:site_name" content="Suixin&#39;s Blog">
-<meta property="og:description" content="JSON（JavaScript Object Notation）是一种轻量级的数据交换格式，尽管JSON是JavaScript的一个子集，但它是独立于语言的文本格式。在Python中，我们使用json包来实现json文件的读取和写入。">
+<meta property="og:description" content="Python的for循环可以遍历一个列表，但若需要同时将符合条件的元素删除时，则会出错。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://ws3.sinaimg.cn/large/006tNc79ly1fzs3tggakvj310o06gtbp.jpg">
-<meta property="og:image" content="https://ws3.sinaimg.cn/large/006tNc79ly1fzs5m8jkf4j30pk03wgmd.jpg">
-<meta property="og:image" content="https://ws4.sinaimg.cn/large/006tNc79ly1fzs65ln3v9j30wi06g41a.jpg">
-<meta property="og:image" content="https://ws3.sinaimg.cn/large/006tNc79ly1fzs6nisyd6j30vq05cmzb.jpg">
-<meta property="og:image" content="https://ws3.sinaimg.cn/large/006tNc79ly1fzs6nsw1xsj30o401it8u.jpg">
-<meta property="og:updated_time" content="2019-02-19T06:11:43.295Z">
+<meta property="og:updated_time" content="2019-03-05T08:09:01.527Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="利用Python处理json文件">
-<meta name="twitter:description" content="JSON（JavaScript Object Notation）是一种轻量级的数据交换格式，尽管JSON是JavaScript的一个子集，但它是独立于语言的文本格式。在Python中，我们使用json包来实现json文件的读取和写入。">
-<meta name="twitter:image" content="https://ws3.sinaimg.cn/large/006tNc79ly1fzs3tggakvj310o06gtbp.jpg">
+<meta name="twitter:title" content="Python遍历列表时删除元素">
+<meta name="twitter:description" content="Python的for循环可以遍历一个列表，但若需要同时将符合条件的元素删除时，则会出错。">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
@@ -64,7 +58,7 @@
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>利用Python处理json文件 | Suixin&#39;s Blog</title>
+<title>Python遍历列表时删除元素 | Suixin&#39;s Blog</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -281,11 +275,11 @@
     </div>
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
 </nav>
-      <div class="body-wrap"><article id="post-利用Python处理json文件" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-Python遍历列表时删除元素" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2019/02/python-json.html" class="article-date">
-      <time datetime="2019-02-02T09:42:13.000Z" itemprop="datePublished">2019-02-02</time>
+      <a href="/2019/03/remove-for-list.html" class="article-date">
+      <time datetime="2019-03-05T08:07:41.000Z" itemprop="datePublished">2019-03-05</time>
 </a>
 
 
@@ -300,7 +294,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      利用Python处理json文件
+      Python遍历列表时删除元素
     </h1>
   
 
@@ -315,7 +309,7 @@
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/json/">json</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -325,26 +319,35 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>JSON（JavaScript Object Notation）是一种轻量级的数据交换格式，尽管JSON是JavaScript的一个子集，但它是独立于语言的文本格式。<br>在Python中，我们使用<code>json</code>包来实现json文件的读取和写入。<br><a id="more"></a></p>
-<h2 id="读取json文件"><a href="#读取json文件" class="headerlink" title="读取json文件"></a>读取json文件</h2><p>使用<code>json.loads()</code>或<code>json.load()</code>两个函数来读取json文件。</p>
-<h3 id="json-loads"><a href="#json-loads" class="headerlink" title="json.loads()"></a><code>json.loads()</code></h3><p><code>json.loads()</code>用来解析包含JSON数据的字符串，解析后变量格式为字典。<br>用法：</p>
-<p><center><img src="https://ws3.sinaimg.cn/large/006tNc79ly1fzs3tggakvj310o06gtbp.jpg" ,="" width="50%" alt="json.loads()用法"></center></p>
-<h3 id="json-load"><a href="#json-load" class="headerlink" title="json.load()"></a><code>json.load()</code></h3><p><code>json.load()</code>用来解析json文件，这也是和<code>json.loads()</code>唯一的区别。<br>解析json文件时，要么该文件只包含一行（只有一个字典），要么每个字典是列表的一个元素，如图：</p>
-<p><center><img src="https://ws3.sinaimg.cn/large/006tNc79ly1fzs5m8jkf4j30pk03wgmd.jpg" ,="" width="50%" alt="json.load()用法"></center><br>如果是后一种，则解析出的变量也为列表格式，每个元素是对应的字典。</p>
-<h2 id="编码为json格式"><a href="#编码为json格式" class="headerlink" title="编码为json格式"></a>编码为json格式</h2><p>使用<code>json.dumps()</code>或<code>json.dump()</code>两个函数来编码json格式。</p>
-<h3 id="json-dumps"><a href="#json-dumps" class="headerlink" title="json.dumps()"></a><code>json.dumps()</code></h3><p><code>json.dumps()</code>将一个Python数据结构（字典）编码成json格式的字符串。<br>用法：</p>
-<p><center><img src="https://ws4.sinaimg.cn/large/006tNc79ly1fzs65ln3v9j30wi06g41a.jpg" ,="" width="50%" alt="json.dumps()用法"></center></p>
-<h3 id="json-dump"><a href="#json-dump" class="headerlink" title="json.dump()"></a><code>json.dump()</code></h3><p><code>json.dump()</code>将一个Python数据结构（字典）编码成json格式，并写入到文件中。<br>用法：</p>
-<p><center><img src="https://ws3.sinaimg.cn/large/006tNc79ly1fzs6nisyd6j30vq05cmzb.jpg" ,="" width="50%" alt="json.dump()用法"></center><br><code>jj.json</code>文件为：</p>
-<p><center><img src="https://ws3.sinaimg.cn/large/006tNc79ly1fzs6nsw1xsj30o401it8u.jpg" ,="" width="50%" alt="写入的json文件"></center></p>
-<h3 id="共有参数"><a href="#共有参数" class="headerlink" title="共有参数"></a>共有参数</h3><ul>
-<li><code>ensure_ascii=True</code>：如果有中文时，需改为False，即不转义为ASCII码；</li>
-<li><code>indent=None</code>：缩进。默认为紧凑格式，0/负数或者<code>&quot;&quot;</code>为只换行，正数代表缩进多少个空格，也可以使用<code>&quot;\t&quot;</code>等；</li>
-<li><code>sort_keys=False</code>：是否按照键排序；</li>
-<li><code>separators=None</code>：分隔符。默认为<code>None</code>（即<code>(&quot;, &quot;, &quot;: &quot;)</code>），可以改为紧凑形式<code>(&quot;,&quot;, &quot;:&quot;)</code>等。</li>
-</ul>
+        <p>Python的for循环可以遍历一个列表，但若需要同时将符合条件的元素删除时，则会出错。<br><a id="more"></a></p>
+<h2 id="出错"><a href="#出错" class="headerlink" title="出错"></a>出错</h2><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">s = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">1</span>, <span class="number">1</span>]</span><br><span class="line">s1 = s</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> s1:</span><br><span class="line">    <span class="keyword">if</span> i == <span class="number">1</span>:</span><br><span class="line">        s1.remove(i)</span><br><span class="line">print(s1)</span><br></pre></td></tr></table></figure>
+<p>输出：<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[2, 3, 4, 1]</span><br></pre></td></tr></table></figure></p>
+<p>另一种：<br><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">s2 = s</span><br><span class="line"><span class="keyword">for</span> idx <span class="keyword">in</span> range(len(s2)):</span><br><span class="line">    <span class="keyword">if</span> s2[idx] == <span class="number">1</span>:</span><br><span class="line">        <span class="keyword">del</span> s2[idx]</span><br><span class="line">print(s2)</span><br></pre></td></tr></table></figure></p>
+<p>输出：<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Traceback (most recent call last):</span><br><span class="line">  File <span class="string">"temp.py"</span>, line 11, <span class="keyword">in</span> &lt;module&gt;</span><br><span class="line">    <span class="keyword">if</span> s2[idx] == 1:</span><br><span class="line">IndexError: list index out of range</span><br></pre></td></tr></table></figure></p>
+<h3 id="出错原因"><a href="#出错原因" class="headerlink" title="出错原因"></a>出错原因</h3><p>Python中用for发起任何形式的遍历时，它的遍历顺序都是从最初就确定的，而在遍历中删除了元素会导致当前索引的变化，所以遍历中间取到的索引的那个值已经变了，会漏掉一些元素。另一种错误是删除元素后列表长度缩小了，所以会超出索引范围。</p>
+<h2 id="正确删除法"><a href="#正确删除法" class="headerlink" title="正确删除法"></a>正确删除法</h2><ol>
+<li><p>使用<code>filter()</code>函数过滤掉符合指定条件的元素。 </p>
+ <figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">s3 = s</span><br><span class="line">print(list(filter(<span class="keyword">lambda</span> x: x != <span class="number">1</span>, s3)))</span><br></pre></td></tr></table></figure>
+<p> 此处<code>lambda</code>为Python中函数的简化定义形式。</p>
+</li>
+<li>使用列表解析式。</li>
+</ol>
+<pre><code><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">s4 = [i <span class="keyword">for</span> i <span class="keyword">in</span> s <span class="keyword">if</span> i != <span class="number">1</span>]</span><br><span class="line">print(s4)</span><br></pre></td></tr></table></figure>
+</code></pre><ol>
+<li><p>把原始列表拷贝给一个新列表，遍历新列表，修改原始列表（或相反）。</p>
+ <figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">s6 = s</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> s6[:]:</span><br><span class="line">    <span class="keyword">if</span> i == <span class="number">1</span>:</span><br><span class="line">        s6.remove(i)</span><br><span class="line">print(s6)</span><br></pre></td></tr></table></figure>
+<p> 但是，下面的赋值操作给新列表是不行的，因为新变量和原变量的物理地址是相同的，可通过<code>id()</code>函数查看。</p>
+ <figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">s5 = s</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> s:</span><br><span class="line">    <span class="keyword">if</span> i == <span class="number">1</span>:</span><br><span class="line">        s5.remove(i)</span><br><span class="line">print(s5)</span><br></pre></td></tr></table></figure>
+<p> 可通过<a href="http://www.runoob.com/w3cnote/python-understanding-dict-copy-shallow-or-deep.html" target="_blank" rel="noopener">深拷贝</a>解决上述问题：</p>
+ <figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> copy</span><br><span class="line"></span><br><span class="line">s5 = copy.deepcopy(s)</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> s:</span><br><span class="line">    <span class="keyword">if</span> i == <span class="number">1</span>:</span><br><span class="line">        s5.remove(i)</span><br><span class="line">print(s5)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>用<code>while</code>循环来做判断条件。</p>
+ <figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">s7 = s</span><br><span class="line"><span class="keyword">while</span> <span class="number">1</span> <span class="keyword">in</span> s7:</span><br><span class="line">    s7.remove(<span class="number">1</span>)</span><br><span class="line">print(s7)</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>上述4种方法的输出皆为：<code>[2, 3, 4]</code>。</p>
 <h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><blockquote>
-<p><a href="https://docs.python.org/3/library/json.html" target="_blank" rel="noopener">https://docs.python.org/3/library/json.html</a></p>
+<p><a href="https://segmentfault.com/a/1190000007214571" target="_blank" rel="noopener">https://segmentfault.com/a/1190000007214571</a><br><a href="http://www.runoob.com/w3cnote/python-understanding-dict-copy-shallow-or-deep.html" target="_blank" rel="noopener">http://www.runoob.com/w3cnote/python-understanding-dict-copy-shallow-or-deep.html</a></p>
 </blockquote>
 
       
@@ -354,13 +357,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2019/02/python-json.html">利用Python处理json文件</a></p>
+        <p><span>本文标题:</span><a href="/2019/03/remove-for-list.html">Python遍历列表时删除元素</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">Suixin</a></p>
-        <p><span>发布时间:</span>2019-02-02, 17:42:13</p>
-        <p><span>最后更新:</span>2019-02-19, 14:11:43</p>
+        <p><span>发布时间:</span>2019-03-05, 16:07:41</p>
+        <p><span>最后更新:</span>2019-03-05, 16:09:01</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2019/02/python-json.html" title="利用Python处理json文件">https://suixinblog.cn/2019/02/python-json.html</a>
-            <span class="copy-path" data-clipboard-text="原文: https://suixinblog.cn/2019/02/python-json.html　　作者: Suixin" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2019/03/remove-for-list.html" title="Python遍历列表时删除元素">https://suixinblog.cn/2019/03/remove-for-list.html</a>
+            <span class="copy-path" data-clipboard-text="原文: https://suixinblog.cn/2019/03/remove-for-list.html　　作者: Suixin" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
         <p>
@@ -372,16 +375,10 @@
 
     <nav id="article-nav">
         
-            <div id="article-nav-newer" class="article-nav-title">
-                <a href="/2019/02/python-excel.html">
-                    Python处理Excel文件(csv, xls, xlsx)
-                </a>
-            </div>
-        
         
             <div id="article-nav-older" class="article-nav-title">
-                <a href="/2019/01/transformer.html">
-                    The Transformer
+                <a href="/2019/03/target-offer-print-matrix.html">
+                    [剑指Offer]顺时针打印矩阵
                 </a>
             </div>
         
@@ -393,7 +390,7 @@
     <div id="toc" class="toc-article">
         <strong class="toc-title">文章目录</strong>
         
-            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#读取json文件"><span class="toc-number">1.</span> <span class="toc-text">读取json文件</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#json-loads"><span class="toc-number">1.1.</span> <span class="toc-text">json.loads()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#json-load"><span class="toc-number">1.2.</span> <span class="toc-text">json.load()</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#编码为json格式"><span class="toc-number">2.</span> <span class="toc-text">编码为json格式</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#json-dumps"><span class="toc-number">2.1.</span> <span class="toc-text">json.dumps()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#json-dump"><span class="toc-number">2.2.</span> <span class="toc-text">json.dump()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#共有参数"><span class="toc-number">2.3.</span> <span class="toc-text">共有参数</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#参考"><span class="toc-number">3.</span> <span class="toc-text">参考</span></a></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#出错"><span class="toc-number">1.</span> <span class="toc-text">出错</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#出错原因"><span class="toc-number">1.1.</span> <span class="toc-text">出错原因</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#正确删除法"><span class="toc-number">2.</span> <span class="toc-text">正确删除法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#参考"><span class="toc-number">3.</span> <span class="toc-text">参考</span></a></li></ol>
         
     </div>
     <style>
@@ -441,15 +438,13 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2019/02/python-excel.html" title="上一篇: Python处理Excel文件(csv, xls, xlsx)">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
 
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/2019/01/transformer.html" title="下一篇: The Transformer">
+            <a href="/2019/03/target-offer-print-matrix.html" title="下一篇: [剑指Offer]顺时针打印矩阵">
                 <i class="fa fa-angle-right"></i>
             </a>
         
