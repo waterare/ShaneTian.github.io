@@ -421,6 +421,74 @@
 
 
   
+    <article id="post-剑指Offer-二叉树的镜像" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2019/03/target-offer-binary-tree-mirror.html" class="article-date">
+      <time datetime="2019-03-05T02:43:25.000Z" itemprop="datePublished">2019-03-05</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/03/target-offer-binary-tree-mirror.html">[剑指Offer]二叉树的镜像</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>操作给定的二叉树，将其变换为源二叉树的镜像。<br>
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/互联网笔试/">互联网笔试</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/二叉树/">二叉树</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/剑指Offer/">剑指Offer</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a href="/2019/03/target-offer-binary-tree-mirror.html#more">阅读全文 >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
     <article id="post-剑指Offer-树的子结构" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -882,78 +950,6 @@
       
         <p class="article-more-link">
           <a href="/2019/03/target-offer-rectangle-cover.html#more">阅读全文 >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-剑指Offer-变态跳台阶" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2019/03/target-offer-jump-floor-pro.html" class="article-date">
-      <time datetime="2019-03-02T08:42:26.000Z" itemprop="datePublished">2019-03-02</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/03/target-offer-jump-floor-pro.html">[剑指Offer]变态跳台阶</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>一只青蛙一次可以跳上1级台阶，也可以跳上2级……它也可以跳上n级。求该青蛙跳上一个n级的台阶总共有多少种跳法。</p>
-<h2 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h2><ol>
-<li><del>递归法</del>。和<a href="https://suixinblog.cn/2019/03/target-offer-jump-floor.html">跳台阶</a>的思路一样，但是如果台阶数较多的话浪费资源是极高的。</li>
-<li>公式法。简单分析一下问题，即可得出精确解。<script type="math/tex; mode=display">f(n)=1+f(n-1)+f(n-2)+\cdots +f(2)+f(1)\\
- f(n-1)=1+f(n-2)+\cdots +f(2)+f(1)</script> 上式中1为一次性跳上去的跳法。两式相减可得：$f(n)=2f(n-1)$，即多一层台阶，跳法翻倍。而$f(1)=1$，$f(2)=2$，故$f(n)=2^{n-1}$
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/互联网笔试/">互联网笔试</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/剑指Offer/">剑指Offer</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a href="/2019/03/target-offer-jump-floor-pro.html#more">阅读全文 >></a>
         </p>
       
       <div class="clearfix"></div>
