@@ -3,6 +3,33 @@
   
     
     <entry>
+      <title>[剑指Offer]栈的压入、弹出序列</title>
+      <link href="/2019/03/target-offer-is-pop-order.html"/>
+      <url>/2019/03/target-offer-is-pop-order.html</url>
+      
+        <content type="html"><![CDATA[<h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>输入两个整数序列，第一个序列表示栈的压入顺序，请判断第二个序列是否可能为该栈的弹出顺序。假设压入栈的所有数字均不相等。例如序列1,2,3,4,5是某栈的压入顺序，序列4,5,3,2,1是该压栈序列对应的一个弹出序列，但4,3,5,1,2就不可能是该压栈序列的弹出序列。（注意：这两个序列的长度是相等的）<br><a id="more"></a></p><h2 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h2><p><strong>思路：</strong>使用一个辅助的栈，遍历压栈序列，依次压入辅助栈中，如果压入的元素与出栈序列首位元素相同，则连续出栈，直到不同为止，同时将出栈序列删除首位元素。入栈完毕后，如果出栈序列为空，则返回<code>True</code>，否则返回<code>False</code>。</p><h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><p><code>Python(2.7.3)</code><br><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># -*- coding:utf-8 -*-</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">IsPopOrder</span><span class="params">(self, pushV, popV)</span>:</span></span><br><span class="line">        <span class="comment"># write code here</span></span><br><span class="line">        stack = []</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> pushV:</span><br><span class="line">            stack.append(i)</span><br><span class="line">            <span class="keyword">while</span> popV:</span><br><span class="line">                <span class="keyword">if</span> popV[<span class="number">0</span>] == stack[<span class="number">-1</span>]:</span><br><span class="line">                    popV.pop(<span class="number">0</span>)</span><br><span class="line">                    stack.pop()</span><br><span class="line">                <span class="keyword">else</span>:</span><br><span class="line">                    <span class="keyword">break</span></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> popV:</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">True</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">False</span></span><br></pre></td></tr></table></figure></p><p><code>运行时间：46ms</code><br><code>占用内存：5840k</code></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 互联网笔试 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Python </tag>
+            
+            <tag> 剑指Offer </tag>
+            
+            <tag> 栈 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
       <title>[剑指Offer]包含min函数的栈</title>
       <link href="/2019/03/target-offer-min-stack.html"/>
       <url>/2019/03/target-offer-min-stack.html</url>
@@ -863,9 +890,9 @@
             
             <tag> Python </tag>
             
-            <tag> list </tag>
-            
             <tag> dict </tag>
+            
+            <tag> list </tag>
             
             <tag> 踩坑 </tag>
             
@@ -1120,7 +1147,7 @@
       <link href="/2018/11/screen.html"/>
       <url>/2018/11/screen.html</url>
       
-        <content type="html"><![CDATA[<p>在日常的编码中肯定需要登录到远程Linux服务器，经常需要在上面运行一些需要很长时间才能完成的任务，如：传输文件、跑爬虫代码等，需要保证退出服务器的连接，该任务也不会终止掉。使用<code>nohup</code>命令已经可以完成一些较为简单的任务（<a href="https://suixinblog.cn/2018/11/nohup.html">nohup：在Linux服务器后台跑程序</a>），但真正的多会话管理还是要用到<code>screen</code>命令。<br>一般的Linux系统都自带<code>screen</code>命令，所以无需手动安装。<br><a id="more"></a></p><h2 id="常用参数"><a href="#常用参数" class="headerlink" title="常用参数"></a>常用参数</h2><ul><li><code>-S</code>：后加作业名称新建一个screen作业；</li><li><code>-ls</code>或<code>-list</code>：列出目前的所有screen作业；</li><li><code>-d</code>：后加作业名称远程使该作业离线；</li><li><code>-r</code>：后加作业名称恢复该离线的作业；</li><li><code>-wipe</code>：删除已经无法使用的作业。</li></ul><h2 id="快捷键（在screen-session中）"><a href="#快捷键（在screen-session中）" class="headerlink" title="快捷键（在screen session中）"></a>快捷键（在screen session中）</h2><p>进入一个screen session后，可能你开始跑一些程序，这时不能在命令行输入任何东西，就需要使用快捷键来操作。这里所有的快捷键都是以<code>Ctrl+A</code>开头的（Mac也是<code>⌃+A</code>而不是<code>⌘+A</code>）。</p><ul><li><code>Ctrl+A+D</code>：detach当前session，会将当前的session任务放到后台执行，回到还没进入当前session的状态，即使断开远程连接session也不会中断（<strong>最常用</strong>）；</li><li><code>Ctrl+A+T</code>：在底线显示当前时间以及登入时间；</li><li><code>Ctrl+A+K</code>：强行关闭当前的window；</li><li><code>Ctrl+A+W</code>：显示所有window列表；</li><li><code>Ctrl+A+X</code>：锁定当前window，需要用用户密码解锁。</li></ul><h2 id="在session中启用鼠标滚动"><a href="#在session中启用鼠标滚动" class="headerlink" title="在session中启用鼠标滚动"></a>在session中启用鼠标滚动</h2><p>screen默认设置中在session中不能使用鼠标滚屏。通过在<code>/etc/screenrc</code>文件中加入以下内容启动鼠标滚动：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">termcapinfo xterm* ti@:te@</span><br></pre></td></tr></table></figure></p><h2 id="经典使用方式"><a href="#经典使用方式" class="headerlink" title="经典使用方式"></a>经典使用方式</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 新建suixinPython作业</span></span><br><span class="line">screen -S suixinPython</span><br><span class="line"><span class="meta">#</span><span class="bash"> 在新作业中运行长时间的代码</span></span><br><span class="line">python test.py</span><br><span class="line"><span class="meta">#</span><span class="bash"> 使用快捷键detach当前session</span></span><br><span class="line">⌃+A+D</span><br><span class="line"><span class="meta">#</span><span class="bash"> 退出ssh连接</span></span><br><span class="line">exit</span><br><span class="line"><span class="meta">#</span><span class="bash"> 重新链接服务器</span></span><br><span class="line">ssh root@……</span><br><span class="line"><span class="meta">#</span><span class="bash"> 恢复suixinPython会话</span></span><br><span class="line">screen -r suixinPython</span><br></pre></td></tr></table></figure><h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><blockquote><p><a href="https://www.cnblogs.com/mchina/archive/2013/01/30/2880680.html" target="_blank" rel="noopener">https://www.cnblogs.com/mchina/archive/2013/01/30/2880680.html</a></p></blockquote>]]></content>
+        <content type="html"><![CDATA[<p>在日常的编码中肯定需要登录到远程Linux服务器，经常需要在上面运行一些需要很长时间才能完成的任务，如：传输文件、跑爬虫代码等，需要保证退出服务器的连接，该任务也不会终止掉。使用<code>nohup</code>命令已经可以完成一些较为简单的任务（<a href="https://suixinblog.cn/2018/11/nohup.html">nohup：在Linux服务器后台跑程序</a>），但真正的多会话管理还是要用到<code>screen</code>命令。<br>一般的Linux系统都自带<code>screen</code>命令，所以无需手动安装。<br><a id="more"></a></p><h2 id="常用参数"><a href="#常用参数" class="headerlink" title="常用参数"></a>常用参数</h2><ul><li><code>-S</code>：后加作业名称新建一个screen作业；</li><li><code>-ls</code>或<code>-list</code>：列出目前的所有screen作业；</li><li><code>-d</code>：后加作业名称远程使该作业离线；</li><li><code>-r</code>：后加作业名称恢复该离线的作业；</li><li><code>-wipe</code>：删除已经无法使用的作业。</li></ul><h2 id="快捷键（在screen-session中）"><a href="#快捷键（在screen-session中）" class="headerlink" title="快捷键（在screen session中）"></a>快捷键（在screen session中）</h2><p>进入一个screen session后，可能你开始跑一些程序，这时不能在命令行输入任何东西，就需要使用快捷键来操作。这里所有的快捷键都是以<code>Ctrl+A</code>开头的（Mac也是<code>⌃+A</code>而不是<code>⌘+A</code>）。</p><ul><li><code>Ctrl+A+D</code>：detach当前session，会将当前的session任务放到后台执行，回到还没进入当前session的状态，即使断开远程连接session也不会中断（<strong>最常用</strong>）；</li><li><code>Ctrl+A+T</code>：在底线显示当前时间以及登入时间；</li><li><code>Ctrl+A+K</code>：强行关闭当前的window；</li><li><code>Ctrl+A+W</code>：显示所有window列表；</li><li><code>Ctrl+A+X</code>：锁定当前window，需要用用户密码解锁。</li></ul><h2 id="在session中启用鼠标滚动"><a href="#在session中启用鼠标滚动" class="headerlink" title="在session中启用鼠标滚动"></a>在session中启用鼠标滚动</h2><p>screen默认设置中在session中不能使用鼠标滚屏。通过在<code>/etc/screenrc</code>文件中加入以下内容启动鼠标滚动：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">termcapinfo xterm* ti@:te@</span><br></pre></td></tr></table></figure></p><h2 id="经典使用方式"><a href="#经典使用方式" class="headerlink" title="经典使用方式"></a>经典使用方式</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span> 新建suixinPython作业</span><br><span class="line">screen -S suixinPython</span><br><span class="line"><span class="meta">#</span> 在新作业中运行长时间的代码</span><br><span class="line">python test.py</span><br><span class="line"><span class="meta">#</span> 使用快捷键detach当前session</span><br><span class="line">⌃+A+D</span><br><span class="line"><span class="meta">#</span> 退出ssh连接</span><br><span class="line">exit</span><br><span class="line"><span class="meta">#</span> 重新链接服务器</span><br><span class="line">ssh root@……</span><br><span class="line"><span class="meta">#</span> 恢复suixinPython会话</span><br><span class="line">screen -r suixinPython</span><br></pre></td></tr></table></figure><h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><blockquote><p><a href="https://www.cnblogs.com/mchina/archive/2013/01/30/2880680.html" target="_blank" rel="noopener">https://www.cnblogs.com/mchina/archive/2013/01/30/2880680.html</a></p></blockquote>]]></content>
       
       
       <categories>
@@ -1232,11 +1259,11 @@
       
         <tags>
             
+            <tag> Python </tag>
+            
             <tag> 服务器 </tag>
             
             <tag> 命令行 </tag>
-            
-            <tag> Python </tag>
             
         </tags>
       
