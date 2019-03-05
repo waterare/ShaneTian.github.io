@@ -3,6 +3,33 @@
   
     
     <entry>
+      <title>[剑指Offer]从上往下打印二叉树</title>
+      <link href="/2019/03/target-offer-print-from-top-to-bottom-binary-tree.html"/>
+      <url>/2019/03/target-offer-print-from-top-to-bottom-binary-tree.html</url>
+      
+        <content type="html"><![CDATA[<h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>从上往下打印出二叉树的每个节点，同层节点从左至右打印。</p><h2 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h2><p>二叉树的层次遍历，使用队列来实现。见<a href="https://suixinblog.cn/2019/02/binary-tree.html#%E4%BA%8C%E5%8F%89%E6%A0%91%E7%B1%BB">二叉树的七种遍历方法</a>。<br><a id="more"></a></p><h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><p><code>Python(2.7.3)</code><br><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># -*- coding:utf-8 -*-</span></span><br><span class="line"><span class="comment"># class TreeNode:</span></span><br><span class="line"><span class="comment">#     def __init__(self, x):</span></span><br><span class="line"><span class="comment">#         self.val = x</span></span><br><span class="line"><span class="comment">#         self.left = None</span></span><br><span class="line"><span class="comment">#         self.right = None</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="comment"># 返回从上到下每个节点值列表，例：[1,2,3]</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">PrintFromTopToBottom</span><span class="params">(self, root)</span>:</span></span><br><span class="line">        <span class="comment"># write code here</span></span><br><span class="line">        l = []</span><br><span class="line">        <span class="keyword">if</span> root <span class="keyword">is</span> <span class="keyword">None</span>:</span><br><span class="line">            <span class="keyword">return</span> l</span><br><span class="line">        queue = []</span><br><span class="line">        queue.append(root)</span><br><span class="line">        <span class="keyword">while</span> queue:</span><br><span class="line">            node = queue.pop(<span class="number">0</span>)</span><br><span class="line">            l.append(node.val)</span><br><span class="line">            <span class="keyword">if</span> node.left <span class="keyword">is</span> <span class="keyword">not</span> <span class="keyword">None</span>:</span><br><span class="line">                queue.append(node.left)</span><br><span class="line">            <span class="keyword">if</span> node.right <span class="keyword">is</span> <span class="keyword">not</span> <span class="keyword">None</span>:</span><br><span class="line">                queue.append(node.right)</span><br><span class="line">        <span class="keyword">return</span> l</span><br></pre></td></tr></table></figure></p><p><code>运行时间：27ms</code><br><code>占用内存：5728k</code></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 互联网笔试 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Python </tag>
+            
+            <tag> 剑指Offer </tag>
+            
+            <tag> 二叉树 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
       <title>[剑指Offer]栈的压入、弹出序列</title>
       <link href="/2019/03/target-offer-is-pop-order.html"/>
       <url>/2019/03/target-offer-is-pop-order.html</url>

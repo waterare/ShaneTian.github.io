@@ -1,2 +1,2 @@
+https://suixinblog.cn/2019/03/target-offer-print-from-top-to-bottom-binary-tree.html
 https://suixinblog.cn/2019/03/target-offer-is-pop-order.html
-https://suixinblog.cn/2019/03/target-offer-min-stack.html

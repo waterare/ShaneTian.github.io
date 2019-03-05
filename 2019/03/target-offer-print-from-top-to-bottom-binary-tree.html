@@ -15,18 +15,18 @@
 
 
 
-<meta name="description" content="栈栈(Stack，堆栈)是限制在表的一端进行插入和删除运算的线性表，通常称插入、删除的这一端为栈顶(Top)，另一端为栈底(Bottom)。先进后出(FILO)。top= -1时为空栈，top=0只能说明栈中只有一个元素，并且元素进栈时top应该自增。  顺序存储栈：顺序存储结构； 链栈：链式存储结构。插入和删除操作仅限制在链头位置上进行。栈顶指针就是链表的头指针。通常不会出现栈满的情况。 不需要">
-<meta name="keywords" content="Python,栈">
+<meta name="description" content="题目描述从上往下打印出二叉树的每个节点，同层节点从左至右打印。 解题思路二叉树的层次遍历，使用队列来实现。见二叉树的七种遍历方法。">
+<meta name="keywords" content="Python,剑指Offer,二叉树">
 <meta property="og:type" content="article">
-<meta property="og:title" content="栈的基础知识+Python实现">
-<meta property="og:url" content="https://suixinblog.cn/2019/02/stack.html">
+<meta property="og:title" content="[剑指Offer]从上往下打印二叉树">
+<meta property="og:url" content="https://suixinblog.cn/2019/03/target-offer-print-from-top-to-bottom-binary-tree.html">
 <meta property="og:site_name" content="Suixin&#39;s Blog">
-<meta property="og:description" content="栈栈(Stack，堆栈)是限制在表的一端进行插入和删除运算的线性表，通常称插入、删除的这一端为栈顶(Top)，另一端为栈底(Bottom)。先进后出(FILO)。top= -1时为空栈，top=0只能说明栈中只有一个元素，并且元素进栈时top应该自增。  顺序存储栈：顺序存储结构； 链栈：链式存储结构。插入和删除操作仅限制在链头位置上进行。栈顶指针就是链表的头指针。通常不会出现栈满的情况。 不需要">
+<meta property="og:description" content="题目描述从上往下打印出二叉树的每个节点，同层节点从左至右打印。 解题思路二叉树的层次遍历，使用队列来实现。见二叉树的七种遍历方法。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-03-02T03:14:30.573Z">
+<meta property="og:updated_time" content="2019-03-05T14:31:19.260Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="栈的基础知识+Python实现">
-<meta name="twitter:description" content="栈栈(Stack，堆栈)是限制在表的一端进行插入和删除运算的线性表，通常称插入、删除的这一端为栈顶(Top)，另一端为栈底(Bottom)。先进后出(FILO)。top= -1时为空栈，top=0只能说明栈中只有一个元素，并且元素进栈时top应该自增。  顺序存储栈：顺序存储结构； 链栈：链式存储结构。插入和删除操作仅限制在链头位置上进行。栈顶指针就是链表的头指针。通常不会出现栈满的情况。 不需要">
+<meta name="twitter:title" content="[剑指Offer]从上往下打印二叉树">
+<meta name="twitter:description" content="题目描述从上往下打印出二叉树的每个节点，同层节点从左至右打印。 解题思路二叉树的层次遍历，使用队列来实现。见二叉树的七种遍历方法。">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
@@ -58,7 +58,7 @@
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>栈的基础知识+Python实现 | Suixin&#39;s Blog</title>
+<title>[剑指Offer]从上往下打印二叉树 | Suixin&#39;s Blog</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -275,11 +275,11 @@
     </div>
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
 </nav>
-      <div class="body-wrap"><article id="post-栈的基础知识-Python实现" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-剑指Offer-从上往下打印二叉树" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2019/02/stack.html" class="article-date">
-      <time datetime="2019-02-24T03:02:54.000Z" itemprop="datePublished">2019-02-24</time>
+      <a href="/2019/03/target-offer-print-from-top-to-bottom-binary-tree.html" class="article-date">
+      <time datetime="2019-03-05T14:29:05.000Z" itemprop="datePublished">2019-03-05</time>
 </a>
 
 
@@ -294,7 +294,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      栈的基础知识+Python实现
+      [剑指Offer]从上往下打印二叉树
     </h1>
   
 
@@ -303,13 +303,13 @@
       <div class="article-info article-info-post">
         
     <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/互联网笔试/">互联网笔试</a><a class="article-category-link" href="/categories/术业专攻/">术业专攻</a>
+    <a class="article-category-link" href="/categories/互联网笔试/">互联网笔试</a>
     </div>
 
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/栈/">栈</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/二叉树/">二叉树</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/剑指Offer/">剑指Offer</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -319,64 +319,10 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h2 id="栈"><a href="#栈" class="headerlink" title="栈"></a>栈</h2><p>栈(Stack，堆栈)是限制在表的一端进行插入和删除运算的线性表，通常称插入、删除的这一端为栈顶(Top)，另一端为栈底(Bottom)。先进后出(FILO)。top= -1时为空栈，top=0只能说明栈中只有一个元素，并且元素进栈时top应该自增。</p>
-<ol>
-<li>顺序存储栈：顺序存储结构；</li>
-<li>链栈：链式存储结构。插入和删除操作仅限制在链头位置上进行。栈顶指针就是链表的头指针。通常不会出现栈满的情况。 不需要判断栈满但需要判断栈空；</li>
-<li>堆栈溢出一般是循环的递归调用、大数据结构的局部变量导致的。<a id="more"></a>
-</li>
-</ol>
-<h3 id="栈的复杂度"><a href="#栈的复杂度" class="headerlink" title="栈的复杂度"></a>栈的复杂度</h3><h4 id="时间复杂度"><a href="#时间复杂度" class="headerlink" title="时间复杂度"></a>时间复杂度</h4><p><strong>平均：</strong></p>
-<div class="table-container">
-<table>
-<thead>
-<tr>
-<th></th>
-<th>访问</th>
-<th>搜索</th>
-<th>插入</th>
-<th>删除</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>栈</td>
-<td>O(n)</td>
-<td>O(n)</td>
-<td>O(1)</td>
-<td>O(1)</td>
-</tr>
-</tbody>
-</table>
-</div>
-<p><strong>最差：</strong></p>
-<div class="table-container">
-<table>
-<thead>
-<tr>
-<th></th>
-<th>访问</th>
-<th>搜索</th>
-<th>插入</th>
-<th>删除</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>栈</td>
-<td>O(n)</td>
-<td>O(n)</td>
-<td>O(1)</td>
-<td>O(1)</td>
-</tr>
-</tbody>
-</table>
-</div>
-<h4 id="空间复杂度"><a href="#空间复杂度" class="headerlink" title="空间复杂度"></a>空间复杂度</h4><p><strong>最差：</strong>O(n)</p>
-<h2 id="Python实现"><a href="#Python实现" class="headerlink" title="Python实现"></a>Python实现</h2><p>使用Python中的list可以简单的实现堆栈。<br><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Stack</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="string">"""堆栈"""</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self)</span>:</span></span><br><span class="line">        self.items = []</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">is_empty</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> self.items == []</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">peek</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="string">"""返回栈顶元素"""</span></span><br><span class="line">        <span class="keyword">if</span> self.is_empty():</span><br><span class="line">            <span class="keyword">return</span></span><br><span class="line">        <span class="keyword">return</span> self.items[len(self.items) - <span class="number">1</span>]</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">push</span><span class="params">(self, item)</span>:</span></span><br><span class="line">        <span class="string">"""压栈"""</span></span><br><span class="line">        <span class="keyword">return</span> self.items.append(item)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">pop</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="string">"""出栈"""</span></span><br><span class="line">        <span class="keyword">if</span> self.is_empty():</span><br><span class="line">            <span class="keyword">return</span></span><br><span class="line">        <span class="keyword">return</span> self.items.pop()</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">size</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> len(self.items)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">test</span><span class="params">()</span>:</span></span><br><span class="line">    S = Stack()</span><br><span class="line">    print(<span class="string">'栈是否为空：'</span>, S.is_empty())</span><br><span class="line">    print(<span class="string">"压栈'2'"</span>)</span><br><span class="line">    S.push(<span class="number">2</span>)</span><br><span class="line">    print(<span class="string">'栈顶为：'</span>, S.peek())</span><br><span class="line">    print(<span class="string">"压栈'3'"</span>)</span><br><span class="line">    S.push(<span class="number">3</span>)</span><br><span class="line">    print(<span class="string">"栈顶为："</span>, S.peek())</span><br><span class="line">    print(<span class="string">"出栈"</span>)</span><br><span class="line">    S.pop()</span><br><span class="line">    print(<span class="string">"栈的大小："</span>, S.size())</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    test()</span><br></pre></td></tr></table></figure></p>
-<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><blockquote>
-<p><a href="https://github.com/Jack-Lee-Hiter/AlgorithmsByPython/blob/master/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84.md#%E6%A0%88" target="_blank" rel="noopener">数据结构：栈</a><br><a href="https://blog.csdn.net/xuqiang20121991/article/details/54139431" target="_blank" rel="noopener">https://blog.csdn.net/xuqiang20121991/article/details/54139431</a></p>
-</blockquote>
+        <h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>从上往下打印出二叉树的每个节点，同层节点从左至右打印。</p>
+<h2 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h2><p>二叉树的层次遍历，使用队列来实现。见<a href="https://suixinblog.cn/2019/02/binary-tree.html#%E4%BA%8C%E5%8F%89%E6%A0%91%E7%B1%BB">二叉树的七种遍历方法</a>。<br><a id="more"></a></p>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><p><code>Python(2.7.3)</code><br><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># -*- coding:utf-8 -*-</span></span><br><span class="line"><span class="comment"># class TreeNode:</span></span><br><span class="line"><span class="comment">#     def __init__(self, x):</span></span><br><span class="line"><span class="comment">#         self.val = x</span></span><br><span class="line"><span class="comment">#         self.left = None</span></span><br><span class="line"><span class="comment">#         self.right = None</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="comment"># 返回从上到下每个节点值列表，例：[1,2,3]</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">PrintFromTopToBottom</span><span class="params">(self, root)</span>:</span></span><br><span class="line">        <span class="comment"># write code here</span></span><br><span class="line">        l = []</span><br><span class="line">        <span class="keyword">if</span> root <span class="keyword">is</span> <span class="keyword">None</span>:</span><br><span class="line">            <span class="keyword">return</span> l</span><br><span class="line">        queue = []</span><br><span class="line">        queue.append(root)</span><br><span class="line">        <span class="keyword">while</span> queue:</span><br><span class="line">            node = queue.pop(<span class="number">0</span>)</span><br><span class="line">            l.append(node.val)</span><br><span class="line">            <span class="keyword">if</span> node.left <span class="keyword">is</span> <span class="keyword">not</span> <span class="keyword">None</span>:</span><br><span class="line">                queue.append(node.left)</span><br><span class="line">            <span class="keyword">if</span> node.right <span class="keyword">is</span> <span class="keyword">not</span> <span class="keyword">None</span>:</span><br><span class="line">                queue.append(node.right)</span><br><span class="line">        <span class="keyword">return</span> l</span><br></pre></td></tr></table></figure></p>
+<p><code>运行时间：27ms</code><br><code>占用内存：5728k</code></p>
 
       
     </div>
@@ -385,13 +331,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2019/02/stack.html">栈的基础知识+Python实现</a></p>
+        <p><span>本文标题:</span><a href="/2019/03/target-offer-print-from-top-to-bottom-binary-tree.html">[剑指Offer]从上往下打印二叉树</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">Suixin</a></p>
-        <p><span>发布时间:</span>2019-02-24, 11:02:54</p>
-        <p><span>最后更新:</span>2019-03-02, 11:14:30</p>
+        <p><span>发布时间:</span>2019-03-05, 22:29:05</p>
+        <p><span>最后更新:</span>2019-03-05, 22:31:19</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2019/02/stack.html" title="栈的基础知识+Python实现">https://suixinblog.cn/2019/02/stack.html</a>
-            <span class="copy-path" data-clipboard-text="原文: https://suixinblog.cn/2019/02/stack.html　　作者: Suixin" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2019/03/target-offer-print-from-top-to-bottom-binary-tree.html" title="[剑指Offer]从上往下打印二叉树">https://suixinblog.cn/2019/03/target-offer-print-from-top-to-bottom-binary-tree.html</a>
+            <span class="copy-path" data-clipboard-text="原文: https://suixinblog.cn/2019/03/target-offer-print-from-top-to-bottom-binary-tree.html　　作者: Suixin" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
         <p>
@@ -403,16 +349,10 @@
 
     <nav id="article-nav">
         
-            <div id="article-nav-newer" class="article-nav-title">
-                <a href="/2019/02/queue.html">
-                    队列的基础知识+Python实现
-                </a>
-            </div>
-        
         
             <div id="article-nav-older" class="article-nav-title">
-                <a href="/2019/02/target-offer-regulation.html">
-                    [剑指Offer]正则表达式匹配
+                <a href="/2019/03/target-offer-is-pop-order.html">
+                    [剑指Offer]栈的压入、弹出序列
                 </a>
             </div>
         
@@ -424,7 +364,7 @@
     <div id="toc" class="toc-article">
         <strong class="toc-title">文章目录</strong>
         
-            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#栈"><span class="toc-number">1.</span> <span class="toc-text">栈</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#栈的复杂度"><span class="toc-number">1.1.</span> <span class="toc-text">栈的复杂度</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#时间复杂度"><span class="toc-number">1.1.1.</span> <span class="toc-text">时间复杂度</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#空间复杂度"><span class="toc-number">1.1.2.</span> <span class="toc-text">空间复杂度</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Python实现"><span class="toc-number">2.</span> <span class="toc-text">Python实现</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#参考"><span class="toc-number">3.</span> <span class="toc-text">参考</span></a></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#题目描述"><span class="toc-number">1.</span> <span class="toc-text">题目描述</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#解题思路"><span class="toc-number">2.</span> <span class="toc-text">解题思路</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#代码"><span class="toc-number">3.</span> <span class="toc-text">代码</span></a></li></ol>
         
     </div>
     <style>
@@ -472,15 +412,13 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2019/02/queue.html" title="上一篇: 队列的基础知识+Python实现">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
 
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/2019/02/target-offer-regulation.html" title="下一篇: [剑指Offer]正则表达式匹配">
+            <a href="/2019/03/target-offer-is-pop-order.html" title="下一篇: [剑指Offer]栈的压入、弹出序列">
                 <i class="fa fa-angle-right"></i>
             </a>
         
