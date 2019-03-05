@@ -16,14 +16,14 @@
 
 
 <meta name="description" content="Python的for循环可以遍历一个列表，但若需要同时将符合条件的元素删除时，则会出错。">
-<meta name="keywords" content="Python">
+<meta name="keywords" content="Python,list">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Python遍历列表时删除元素">
 <meta property="og:url" content="https://suixinblog.cn/2019/03/remove-for-list.html">
 <meta property="og:site_name" content="Suixin&#39;s Blog">
 <meta property="og:description" content="Python的for循环可以遍历一个列表，但若需要同时将符合条件的元素删除时，则会出错。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-03-05T08:10:42.769Z">
+<meta property="og:updated_time" content="2019-03-05T08:13:42.004Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Python遍历列表时删除元素">
 <meta name="twitter:description" content="Python的for循环可以遍历一个列表，但若需要同时将符合条件的元素删除时，则会出错。">
@@ -309,7 +309,7 @@
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/list/">list</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -330,10 +330,9 @@
  <figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">s3 = s</span><br><span class="line">print(list(filter(<span class="keyword">lambda</span> x: x != <span class="number">1</span>, s3)))</span><br></pre></td></tr></table></figure>
 <p> 此处<code>lambda</code>为Python中函数的简化定义形式。</p>
 </li>
-<li>使用列表解析式。</li>
-</ol>
-<pre><code><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">s4 = [i <span class="keyword">for</span> i <span class="keyword">in</span> s <span class="keyword">if</span> i != <span class="number">1</span>]</span><br><span class="line">print(s4)</span><br></pre></td></tr></table></figure>
-</code></pre><ol>
+<li><p>使用列表解析式。</p>
+ <figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">s4 = [i <span class="keyword">for</span> i <span class="keyword">in</span> s <span class="keyword">if</span> i != <span class="number">1</span>]</span><br><span class="line">print(s4)</span><br></pre></td></tr></table></figure>
+</li>
 <li><p>把原始列表拷贝给一个新列表，遍历新列表，修改原始列表（或相反）。</p>
  <figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">s6 = s</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> s6[:]:</span><br><span class="line">    <span class="keyword">if</span> i == <span class="number">1</span>:</span><br><span class="line">        s6.remove(i)</span><br><span class="line">print(s6)</span><br></pre></td></tr></table></figure>
 <p> 但是，下面的赋值操作给新列表是不行的，因为新变量和原变量的物理地址是相同的，可通过<code>id()</code>函数查看。</p>
@@ -360,7 +359,7 @@
         <p><span>本文标题:</span><a href="/2019/03/remove-for-list.html">Python遍历列表时删除元素</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">Suixin</a></p>
         <p><span>发布时间:</span>2019-03-05, 16:07:41</p>
-        <p><span>最后更新:</span>2019-03-05, 16:10:42</p>
+        <p><span>最后更新:</span>2019-03-05, 16:13:42</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2019/03/remove-for-list.html" title="Python遍历列表时删除元素">https://suixinblog.cn/2019/03/remove-for-list.html</a>
             <span class="copy-path" data-clipboard-text="原文: https://suixinblog.cn/2019/03/remove-for-list.html　　作者: Suixin" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
