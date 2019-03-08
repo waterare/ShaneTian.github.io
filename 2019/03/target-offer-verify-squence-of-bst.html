@@ -15,18 +15,18 @@
 
 
 
-<meta name="description" content="题目描述输入两个整数序列，第一个序列表示栈的压入顺序，请判断第二个序列是否可能为该栈的弹出顺序。假设压入栈的所有数字均不相等。例如序列1,2,3,4,5是某栈的压入顺序，序列4,5,3,2,1是该压栈序列对应的一个弹出序列，但4,3,5,1,2就不可能是该压栈序列的弹出序列。（注意：这两个序列的长度是相等的）">
-<meta name="keywords" content="Python,剑指Offer,栈">
+<meta name="description" content="二叉搜索树二叉查找树（Binary Search Tree），（又：二叉搜索树，二叉排序树），它有下列两种情况：">
+<meta name="keywords" content="Python,剑指Offer,二叉树">
 <meta property="og:type" content="article">
-<meta property="og:title" content="[剑指Offer]栈的压入、弹出序列">
-<meta property="og:url" content="https://suixinblog.cn/2019/03/target-offer-is-pop-order.html">
+<meta property="og:title" content="[剑指Offer]二叉搜索树的后序遍历序列">
+<meta property="og:url" content="https://suixinblog.cn/2019/03/target-offer-verify-squence-of-bst.html">
 <meta property="og:site_name" content="Suixin&#39;s Blog">
-<meta property="og:description" content="题目描述输入两个整数序列，第一个序列表示栈的压入顺序，请判断第二个序列是否可能为该栈的弹出顺序。假设压入栈的所有数字均不相等。例如序列1,2,3,4,5是某栈的压入顺序，序列4,5,3,2,1是该压栈序列对应的一个弹出序列，但4,3,5,1,2就不可能是该压栈序列的弹出序列。（注意：这两个序列的长度是相等的）">
+<meta property="og:description" content="二叉搜索树二叉查找树（Binary Search Tree），（又：二叉搜索树，二叉排序树），它有下列两种情况：">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-03-05T09:21:17.753Z">
+<meta property="og:updated_time" content="2019-03-06T02:30:45.443Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="[剑指Offer]栈的压入、弹出序列">
-<meta name="twitter:description" content="题目描述输入两个整数序列，第一个序列表示栈的压入顺序，请判断第二个序列是否可能为该栈的弹出顺序。假设压入栈的所有数字均不相等。例如序列1,2,3,4,5是某栈的压入顺序，序列4,5,3,2,1是该压栈序列对应的一个弹出序列，但4,3,5,1,2就不可能是该压栈序列的弹出序列。（注意：这两个序列的长度是相等的）">
+<meta name="twitter:title" content="[剑指Offer]二叉搜索树的后序遍历序列">
+<meta name="twitter:description" content="二叉搜索树二叉查找树（Binary Search Tree），（又：二叉搜索树，二叉排序树），它有下列两种情况：">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
@@ -58,7 +58,7 @@
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>[剑指Offer]栈的压入、弹出序列 | Suixin&#39;s Blog</title>
+<title>[剑指Offer]二叉搜索树的后序遍历序列 | Suixin&#39;s Blog</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -275,11 +275,11 @@
     </div>
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
 </nav>
-      <div class="body-wrap"><article id="post-剑指Offer-栈的压入、弹出序列" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-剑指Offer-二叉搜索树的后序遍历序列" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2019/03/target-offer-is-pop-order.html" class="article-date">
-      <time datetime="2019-03-05T09:20:31.000Z" itemprop="datePublished">2019-03-05</time>
+      <a href="/2019/03/target-offer-verify-squence-of-bst.html" class="article-date">
+      <time datetime="2019-03-06T02:29:31.000Z" itemprop="datePublished">2019-03-06</time>
 </a>
 
 
@@ -294,7 +294,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      [剑指Offer]栈的压入、弹出序列
+      [剑指Offer]二叉搜索树的后序遍历序列
     </h1>
   
 
@@ -309,7 +309,7 @@
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/剑指Offer/">剑指Offer</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/栈/">栈</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/二叉树/">二叉树</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/剑指Offer/">剑指Offer</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -319,10 +319,23 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>输入两个整数序列，第一个序列表示栈的压入顺序，请判断第二个序列是否可能为该栈的弹出顺序。假设压入栈的所有数字均不相等。例如序列1,2,3,4,5是某栈的压入顺序，序列4,5,3,2,1是该压栈序列对应的一个弹出序列，但4,3,5,1,2就不可能是该压栈序列的弹出序列。（注意：这两个序列的长度是相等的）<br><a id="more"></a></p>
-<h2 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h2><p><strong>思路：</strong>使用一个辅助的栈，遍历压栈序列，依次压入辅助栈中，如果压入的元素与出栈序列首位元素相同，则连续出栈，直到不同为止，同时将出栈序列删除首位元素。入栈完毕后，如果出栈序列为空，则返回<code>True</code>，否则返回<code>False</code>。</p>
-<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><p><code>Python(2.7.3)</code><br><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># -*- coding:utf-8 -*-</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">IsPopOrder</span><span class="params">(self, pushV, popV)</span>:</span></span><br><span class="line">        <span class="comment"># write code here</span></span><br><span class="line">        stack = []</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> pushV:</span><br><span class="line">            stack.append(i)</span><br><span class="line">            <span class="keyword">while</span> popV:</span><br><span class="line">                <span class="keyword">if</span> popV[<span class="number">0</span>] == stack[<span class="number">-1</span>]:</span><br><span class="line">                    popV.pop(<span class="number">0</span>)</span><br><span class="line">                    stack.pop()</span><br><span class="line">                <span class="keyword">else</span>:</span><br><span class="line">                    <span class="keyword">break</span></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> popV:</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">True</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">False</span></span><br></pre></td></tr></table></figure></p>
-<p><code>运行时间：46ms</code><br><code>占用内存：5840k</code></p>
+        <h2 id="二叉搜索树"><a href="#二叉搜索树" class="headerlink" title="二叉搜索树"></a>二叉搜索树</h2><p>二叉查找树（Binary Search Tree），（又：二叉搜索树，二叉排序树），它有下列两种情况：<br><a id="more"></a></p>
+<ol>
+<li>空树；</li>
+<li>具有下列性质的二叉树：<ol>
+<li>若它的左子树不空，则左子树上所有结点的值均小于它的根结点的值；</li>
+<li>若它的右子树不空，则右子树上所有结点的值均大于它的根结点的值；</li>
+<li>它的左、右子树也分别为二叉排序树。</li>
+</ol>
+</li>
+</ol>
+<h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>输入一个整数数组，判断该数组是不是某二叉搜索树的后序遍历的结果。如果是则输出Yes,否则输出No。假设输入的数组的任意两个数字都互不相同。</p>
+<h2 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h2><p>根据二叉搜索树的特性，左子树&lt;根结点&lt;右子树，而后序遍历为LRN，故序列的最后一个值一定为根节点。前面的序列被根节点分为左子树和右子树，左子树值都比根节点小，右子树值都比根节点大，否则不是二叉搜索树，如此递归即可。</p>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><p><code>Python(2.7.3)</code><br><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># -*- coding:utf-8 -*-</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">VerifySquenceOfBST</span><span class="params">(self, sequence)</span>:</span></span><br><span class="line">        <span class="comment"># write code here</span></span><br><span class="line">        <span class="keyword">if</span> len(sequence) == <span class="number">0</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">False</span></span><br><span class="line">        <span class="keyword">elif</span> len(sequence) == <span class="number">1</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">True</span></span><br><span class="line">        <span class="keyword">elif</span> len(sequence) == <span class="number">2</span> <span class="keyword">and</span> sequence[<span class="number">0</span>] != sequence[<span class="number">-1</span>]:</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">True</span></span><br><span class="line">        root = sequence[<span class="number">-1</span>]</span><br><span class="line">        <span class="keyword">for</span> idx, i <span class="keyword">in</span> enumerate(sequence):</span><br><span class="line">            <span class="keyword">if</span> i &gt; root:</span><br><span class="line">                <span class="keyword">break</span></span><br><span class="line">        s_left = sequence[:idx]</span><br><span class="line">        s_right = sequence[idx:<span class="number">-1</span>]</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> s_right:</span><br><span class="line">            <span class="keyword">if</span> i &lt;= root:</span><br><span class="line">                <span class="keyword">return</span> <span class="keyword">False</span></span><br><span class="line">        <span class="keyword">if</span> len(s_left) == <span class="number">0</span>:</span><br><span class="line">            <span class="keyword">return</span> self.VerifySquenceOfBST(s_right)</span><br><span class="line">        <span class="keyword">elif</span> len(s_right) == <span class="number">0</span>:</span><br><span class="line">            <span class="keyword">return</span> self.VerifySquenceOfBST(s_left)</span><br><span class="line">        <span class="keyword">return</span> self.VerifySquenceOfBST(s_left) <span class="keyword">and</span> self.VerifySquenceOfBST(s_right)</span><br></pre></td></tr></table></figure></p>
+<p><code>运行时间：27ms</code><br><code>占用内存：5728k</code></p>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><blockquote>
+<p><a href="https://baike.baidu.com/item/%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91" target="_blank" rel="noopener">https://baike.baidu.com/item/%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91</a></p>
+</blockquote>
 
       
     </div>
@@ -331,13 +344,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2019/03/target-offer-is-pop-order.html">[剑指Offer]栈的压入、弹出序列</a></p>
+        <p><span>本文标题:</span><a href="/2019/03/target-offer-verify-squence-of-bst.html">[剑指Offer]二叉搜索树的后序遍历序列</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">Suixin</a></p>
-        <p><span>发布时间:</span>2019-03-05, 17:20:31</p>
-        <p><span>最后更新:</span>2019-03-05, 17:21:17</p>
+        <p><span>发布时间:</span>2019-03-06, 10:29:31</p>
+        <p><span>最后更新:</span>2019-03-06, 10:30:45</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2019/03/target-offer-is-pop-order.html" title="[剑指Offer]栈的压入、弹出序列">https://suixinblog.cn/2019/03/target-offer-is-pop-order.html</a>
-            <span class="copy-path" data-clipboard-text="原文: https://suixinblog.cn/2019/03/target-offer-is-pop-order.html　　作者: Suixin" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2019/03/target-offer-verify-squence-of-bst.html" title="[剑指Offer]二叉搜索树的后序遍历序列">https://suixinblog.cn/2019/03/target-offer-verify-squence-of-bst.html</a>
+            <span class="copy-path" data-clipboard-text="原文: https://suixinblog.cn/2019/03/target-offer-verify-squence-of-bst.html　　作者: Suixin" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
         <p>
@@ -350,15 +363,15 @@
     <nav id="article-nav">
         
             <div id="article-nav-newer" class="article-nav-title">
-                <a href="/2019/03/target-offer-print-from-top-to-bottom-binary-tree.html">
-                    [剑指Offer]从上往下打印二叉树
+                <a href="/2019/03/target-offer-find-path-binary-tree.html">
+                    [剑指Offer]二叉树中和为某一值的路径
                 </a>
             </div>
         
         
             <div id="article-nav-older" class="article-nav-title">
-                <a href="/2019/03/target-offer-min-stack.html">
-                    [剑指Offer]包含min函数的栈
+                <a href="/2019/03/target-offer-print-from-top-to-bottom-binary-tree.html">
+                    [剑指Offer]从上往下打印二叉树
                 </a>
             </div>
         
@@ -370,7 +383,7 @@
     <div id="toc" class="toc-article">
         <strong class="toc-title">文章目录</strong>
         
-            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#题目描述"><span class="toc-number">1.</span> <span class="toc-text">题目描述</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#解题思路"><span class="toc-number">2.</span> <span class="toc-text">解题思路</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#代码"><span class="toc-number">3.</span> <span class="toc-text">代码</span></a></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#二叉搜索树"><span class="toc-number">1.</span> <span class="toc-text">二叉搜索树</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#题目描述"><span class="toc-number">2.</span> <span class="toc-text">题目描述</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#解题思路"><span class="toc-number">3.</span> <span class="toc-text">解题思路</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#代码"><span class="toc-number">4.</span> <span class="toc-text">代码</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#参考"><span class="toc-number">5.</span> <span class="toc-text">参考</span></a></li></ol>
         
     </div>
     <style>
@@ -418,7 +431,7 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2019/03/target-offer-print-from-top-to-bottom-binary-tree.html" title="上一篇: [剑指Offer]从上往下打印二叉树">
+            <a href="/2019/03/target-offer-find-path-binary-tree.html" title="上一篇: [剑指Offer]二叉树中和为某一值的路径">
                 <i class="fa fa-angle-left"></i>
             </a>
         
@@ -426,7 +439,7 @@
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/2019/03/target-offer-min-stack.html" title="下一篇: [剑指Offer]包含min函数的栈">
+            <a href="/2019/03/target-offer-print-from-top-to-bottom-binary-tree.html" title="下一篇: [剑指Offer]从上往下打印二叉树">
                 <i class="fa fa-angle-right"></i>
             </a>
         

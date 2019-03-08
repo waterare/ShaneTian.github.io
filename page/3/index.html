@@ -277,11 +277,11 @@
 </nav>
       <div class="body-wrap">
   
-    <article id="post-剑指Offer-用两个栈实现队列" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-Python中dict的值为list的问题" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2019/03/target-offer-queue-from-two-stacks.html" class="article-date">
-      <time datetime="2019-03-01T13:19:31.000Z" itemprop="datePublished">2019-03-01</time>
+      <a href="/2019/02/python-dict-list-trouble.html" class="article-date">
+      <time datetime="2019-02-19T05:56:03.000Z" itemprop="datePublished">2019-02-19</time>
 </a>
 
 
@@ -296,7 +296,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/03/target-offer-queue-from-two-stacks.html">[剑指Offer]用两个栈实现队列</a>
+      <a class="article-title" href="/2019/02/python-dict-list-trouble.html">Python中dict的值为list的问题</a>
     </h1>
   
 
@@ -306,8 +306,7 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-              <h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>用两个栈来实现一个队列，完成队列的Push和Pop操作。 队列中的元素为int类型。</p>
-<h2 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h2><p>可以使用两个栈来存储队列，一个stack1用来正序存储该队列（这个栈的栈底为队首），方便从队尾入队操作，另一个stack2用来逆序存储该队列（这个栈的栈底为队尾），方便从队首出队操作。入队时，将stack2的元素逐渐转移到stack1，并入栈该元素；出队时，将stack1的元素逐渐转移到stack2，并出栈一个元素。<br>
+              <p>本质上，如果你设置一个dict的值为list，那么你大概率是想该dict的键能够映射多个值，并且能够不断的增添、删除或者修改。<br>Python中list的操作总是简单的，所以很多时候我都将容器设置为list，而在这次操作中，却踩了坑。<br>
           
       
     </div>
@@ -316,18 +315,18 @@
       
       
     <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/互联网笔试/">互联网笔试</a>
+    <a class="article-category-link" href="/categories/编程语言/">编程语言</a>
     </div>
 
 
       
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/剑指Offer/">剑指Offer</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/栈/">栈</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/队列/">队列</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/dict/">dict</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/list/">list</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/踩坑/">踩坑</a></li></ul>
     </div>
 
       
         <p class="article-more-link">
-          <a href="/2019/03/target-offer-queue-from-two-stacks.html#more">阅读全文 >></a>
+          <a href="/2019/02/python-dict-list-trouble.html#more">阅读全文 >></a>
         </p>
       
       <div class="clearfix"></div>
@@ -346,11 +345,11 @@
 
 
   
-    <article id="post-剑指Offer-二叉树的深度" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-Python处理Excel文件-csv-xls-xlsx" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2019/03/target-offer-binary-tree-depth.html" class="article-date">
-      <time datetime="2019-03-01T08:32:49.000Z" itemprop="datePublished">2019-03-01</time>
+      <a href="/2019/02/python-excel.html" class="article-date">
+      <time datetime="2019-02-17T11:52:27.000Z" itemprop="datePublished">2019-02-17</time>
 </a>
 
 
@@ -365,7 +364,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/03/target-offer-binary-tree-depth.html">[剑指Offer]二叉树的深度</a>
+      <a class="article-title" href="/2019/02/python-excel.html">Python处理Excel文件(csv, xls, xlsx)</a>
     </h1>
   
 
@@ -375,8 +374,7 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-              <h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>输入一棵二叉树，求该树的深度。从根结点到叶结点依次经过的结点（含根、叶结点）形成树的一条路径，最长路径的长度为树的深度。</p>
-<h2 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h2><p>在<a href="https://suixinblog.cn/2019/02/binary-tree.html#%E4%BA%8C%E5%8F%89%E6%A0%91%E7%B1%BB">二叉树Python实现</a>中已经写过，这里直接照搬一下。基本思路是递归，从根节点出发，求其左右子树的深度，取左右子树的深度+1的较大者为当前树的深度（求所有子树深度的时候使用递归）。如果到达叶子结点，那么返回0。<br>
+              <p>Excel文件格式主要有csv，xlsx和xlsx，对于不同的格式，我们使用不同的包来进行处理。<br>
           
       
     </div>
@@ -385,18 +383,18 @@
       
       
     <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/互联网笔试/">互联网笔试</a>
+    <a class="article-category-link" href="/categories/编程语言/">编程语言</a>
     </div>
 
 
       
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/二叉树/">二叉树</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/剑指Offer/">剑指Offer</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Excel/">Excel</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li></ul>
     </div>
 
       
         <p class="article-more-link">
-          <a href="/2019/03/target-offer-binary-tree-depth.html#more">阅读全文 >></a>
+          <a href="/2019/02/python-excel.html#more">阅读全文 >></a>
         </p>
       
       <div class="clearfix"></div>
@@ -415,11 +413,11 @@
 
 
   
-    <article id="post-二叉树基础知识-Python实现" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-利用Python处理json文件" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2019/02/binary-tree.html" class="article-date">
-      <time datetime="2019-02-28T12:32:08.000Z" itemprop="datePublished">2019-02-28</time>
+      <a href="/2019/02/python-json.html" class="article-date">
+      <time datetime="2019-02-02T09:42:13.000Z" itemprop="datePublished">2019-02-02</time>
 </a>
 
 
@@ -434,7 +432,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/02/binary-tree.html">二叉树基础知识+Python实现</a>
+      <a class="article-title" href="/2019/02/python-json.html">利用Python处理json文件</a>
     </h1>
   
 
@@ -444,7 +442,7 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-              <h2 id="基础知识"><a href="#基础知识" class="headerlink" title="基础知识"></a>基础知识</h2><h3 id="树"><a href="#树" class="headerlink" title="树"></a>树</h3><p><strong>树（Tree）</strong>是一种非线性结构，用来模拟具有树状结构性质的数据集合。它是由$n(n&gt;0)$个有限结点组成一个具有层次关系的集合。树是递归结构，在树的定义中又用到了树的概念。<br>
+              <p>JSON（JavaScript Object Notation）是一种轻量级的数据交换格式，尽管JSON是JavaScript的一个子集，但它是独立于语言的文本格式。<br>在Python中，我们使用<code>json</code>包来实现json文件的读取和写入。<br>
           
       
     </div>
@@ -453,18 +451,18 @@
       
       
     <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/互联网笔试/">互联网笔试</a><a class="article-category-link" href="/categories/术业专攻/">术业专攻</a>
+    <a class="article-category-link" href="/categories/编程语言/">编程语言</a>
     </div>
 
 
       
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/二叉树/">二叉树</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/json/">json</a></li></ul>
     </div>
 
       
         <p class="article-more-link">
-          <a href="/2019/02/binary-tree.html#more">阅读全文 >></a>
+          <a href="/2019/02/python-json.html#more">阅读全文 >></a>
         </p>
       
       <div class="clearfix"></div>
@@ -483,11 +481,11 @@
 
 
   
-    <article id="post-在服务器部署Jupyter-Notebook" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-The-Transformer" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2019/02/jupyter-notebook.html" class="article-date">
-      <time datetime="2019-02-27T09:14:48.000Z" itemprop="datePublished">2019-02-27</time>
+      <a href="/2019/01/transformer.html" class="article-date">
+      <time datetime="2019-01-18T10:16:53.000Z" itemprop="datePublished">2019-01-18</time>
 </a>
 
 
@@ -502,7 +500,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/02/jupyter-notebook.html">在服务器部署Jupyter Notebook</a>
+      <a class="article-title" href="/2019/01/transformer.html">The Transformer</a>
     </h1>
   
 
@@ -512,7 +510,351 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-              <p>Jupyter Notebook（此前被称为 IPython notebook）是一个交互式笔记本，支持运行 40 多种编程语言。它的核心在于展示与快速迭代。<br>
+              <p>Transformer是个叠加的“自注意力机制（Self Attention）”构成的深度网络，是目前NLP里最强的特征提取器。<br>论文：<a href="https://arxiv.org/abs/1706.03762" target="_blank" rel="noopener">Attention Is All You Need</a><br>
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/术业专攻/">术业专攻</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/NLP/">NLP</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/深度学习/">深度学习</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a href="/2019/01/transformer.html#more">阅读全文 >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-Python递归处理目录下的文件" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2019/01/os-walk.html" class="article-date">
+      <time datetime="2019-01-13T05:27:30.000Z" itemprop="datePublished">2019-01-13</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/01/os-walk.html">Python递归处理目录下的文件</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <p>使用<code>os</code>模块的<code>os.walk()</code>函数可以递归地遍历目录。<br>
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/编程语言/">编程语言</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a href="/2019/01/os-walk.html#more">阅读全文 >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-Python打印带颜色的字符串" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2019/01/print-colorful.html" class="article-date">
+      <time datetime="2019-01-13T03:52:28.000Z" itemprop="datePublished">2019-01-13</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/01/print-colorful.html">Python打印带颜色的字符串</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <p>可以使用Python中自带的<code>print</code>输出带有颜色或者背景的字符串。<br>
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/编程语言/">编程语言</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a href="/2019/01/print-colorful.html#more">阅读全文 >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-Linux文件权限管理命令chmod" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2018/12/chmod.html" class="article-date">
+      <time datetime="2018-12-17T13:02:08.000Z" itemprop="datePublished">2018-12-17</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/12/chmod.html">Linux文件权限管理命令chmod</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <p>经常会用到命令诸如<code>chmod +x anaconda3.sh</code>之类的命令，今天对Linux文件的权限做总结。<br>
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/Linux/">Linux</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/命令行/">命令行</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a href="/2018/12/chmod.html#more">阅读全文 >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-monitorix-服务器监控程序安装及配置" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2018/12/monitorix-glances.html" class="article-date">
+      <time datetime="2018-12-14T09:43:10.000Z" itemprop="datePublished">2018-12-14</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/12/monitorix-glances.html">monitorix--服务器监控程序安装及配置</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <p>monitorix是一个轻量的Linux监控程序，可以实现远程监控，而且有非常丰富的图形。</p>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>以CentOS为例，Ubuntu大同小异。<br>
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/Linux/">Linux</a><a class="article-category-link" href="/categories/技术驿站/">技术驿站</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/服务器/">服务器</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a href="/2018/12/monitorix-glances.html#more">阅读全文 >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-Anaconda快速使用教程" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2018/12/anaconda.html" class="article-date">
+      <time datetime="2018-12-12T13:07:16.000Z" itemprop="datePublished">2018-12-12</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/12/anaconda.html">Anaconda快速使用教程</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <blockquote>
+<p>Anaconda 是一种Python语言的免费增值开源发行版，用于进行大规模数据处理、预测分析，和科学计算，致力于简化包的管理和部署。Anaconda使用软件包管理系统Conda进行包管理。—<a href="https://zh.wikipedia.org/wiki/Anaconda_(Python%E5%8F%91%E8%A1%8C%E7%89%88" target="_blank" rel="noopener">维基百科</a>)<br>The Most Popular Python Data Science Platform —<a href="https://www.anaconda.com" target="_blank" rel="noopener">https://www.anaconda.com</a></p>
+</blockquote>
+<p>Anaconda具有非常多的优点：开源、全平台支持、优秀的包管理器<code>conda</code>、<strong>简单的环境管理器</strong>、对Python的友好支持……作为日常使用Python和Linux服务器开发的同学简直没有理由不用它啊！<br>
           
       
     </div>
@@ -527,12 +869,702 @@
 
       
     <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Anaconda/">Anaconda</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a href="/2018/12/anaconda.html#more">阅读全文 >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-ssh连接服务器超时解决方案" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2018/12/ssh-timeout.html" class="article-date">
+      <time datetime="2018-12-08T03:26:41.000Z" itemprop="datePublished">2018-12-08</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/12/ssh-timeout.html">ssh连接服务器超时解决方案</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <p>经常需要连接到Linux服务器，发现过一段时间不输入命令，服务器的ssh连接就会断开，又需要重新ssh登录。<br>
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/Linux/">Linux</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/服务器/">服务器</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a href="/2018/12/ssh-timeout.html#more">阅读全文 >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-强大的tmux" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2018/12/tmux.html" class="article-date">
+      <time datetime="2018-12-07T15:58:49.000Z" itemprop="datePublished">2018-12-07</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/12/tmux.html">强大的tmux</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <p>之前在服务器跑代码的时候用到了<a href="https://suixinblog.cn/2018/11/screen.html"><code>screen</code>会话管理命令</a>，可以新建不同的session来不间断运行shell。而<code>tmux</code>更为强大，不仅提供了会话的管理，还支持同一窗口下分出不同的窗格。<br>总的来说，<code>tmux</code>的结构分为：</p>
+<ul>
+<li>session<ul>
+<li>window<ul>
+<li>pane</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/Linux/">Linux</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/命令行/">命令行</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/服务器/">服务器</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a href="/2018/12/tmux.html#more">阅读全文 >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-Linux多重视窗管理命令screen" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2018/11/screen.html" class="article-date">
+      <time datetime="2018-11-25T03:38:44.000Z" itemprop="datePublished">2018-11-25</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/11/screen.html">Linux多重视窗管理命令screen</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <p>在日常的编码中肯定需要登录到远程Linux服务器，经常需要在上面运行一些需要很长时间才能完成的任务，如：传输文件、跑爬虫代码等，需要保证退出服务器的连接，该任务也不会终止掉。使用<code>nohup</code>命令已经可以完成一些较为简单的任务（<a href="https://suixinblog.cn/2018/11/nohup.html">nohup：在Linux服务器后台跑程序</a>），但真正的多会话管理还是要用到<code>screen</code>命令。<br>一般的Linux系统都自带<code>screen</code>命令，所以无需手动安装。<br>
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/Linux/">Linux</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/命令行/">命令行</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/服务器/">服务器</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a href="/2018/11/screen.html#more">阅读全文 >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-Linux压缩和解压命令：tar，gzip，zip（unzip），rar" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2018/11/tar-gzip-zip-rar.html" class="article-date">
+      <time datetime="2018-11-20T13:48:59.000Z" itemprop="datePublished">2018-11-20</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/11/tar-gzip-zip-rar.html">Linux压缩和解压命令：tar，gzip，zip（unzip），rar</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <p>很多大型文件或者数据从服务器上传或者下载的时候都需要打包和压缩解压，这时候知道压缩和解压的各种命令是很有必要的。<br>常见的压缩文件后缀名有<code>.tar.gz</code>，<code>.gz</code>，<code>.zip</code>和<code>.rar</code>，下面来看看在Linux上它们分别的解压和压缩命令。<br>
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/Linux/">Linux</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/命令行/">命令行</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/服务器/">服务器</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a href="/2018/11/tar-gzip-zip-rar.html#more">阅读全文 >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-Linux下载命令wget" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2018/11/wget.html" class="article-date">
+      <time datetime="2018-11-16T14:57:33.000Z" itemprop="datePublished">2018-11-16</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/11/wget.html">Linux下载命令wget</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <p><code>wget</code>是Linux下下载文件的最常用命令。<code>wget</code>支持<code>HTTP</code>，<code>HTTPS</code>和<code>FTP</code>协议，支持自动下载，即可以在用户退出系统后在后台执行，直到下载结束。<br><strong>用法</strong>：<code>wget [参数] [URL]</code><br>
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/Linux/">Linux</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/命令行/">命令行</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/服务器/">服务器</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a href="/2018/11/wget.html#more">阅读全文 >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-nohup：在Linux服务器后台跑程序" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2018/11/nohup.html" class="article-date">
+      <time datetime="2018-11-07T02:45:35.000Z" itemprop="datePublished">2018-11-07</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/11/nohup.html">nohup：在Linux服务器后台跑程序</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <p>一些时间长的命令经常需要在后台运行，但苦于通常我们都是通过PC去连接服务器，一直保持<code>ssh</code>连接是不太现实的，这时就需要一些命令使得断开<code>ssh</code>连接后服务器依旧在运行命令。<br>
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/Linux/">Linux</a><a class="article-category-link" href="/categories/技术驿站/">技术驿站</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/命令行/">命令行</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/服务器/">服务器</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a href="/2018/11/nohup.html#more">阅读全文 >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-Linux三个命令：ps，grep，tail" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2018/10/ps-grep-tail.html" class="article-date">
+      <time datetime="2018-10-31T15:19:28.000Z" itemprop="datePublished">2018-10-31</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/10/ps-grep-tail.html">Linux三个命令：ps，grep，tail</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <p>这几天在服务器上跑Python的几个程序，因为运行时间较长，所以涉及到后台运行的问题，顺便也深入了解了一下Linux的几个命令。<br>
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/Linux/">Linux</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/命令行/">命令行</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/服务器/">服务器</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a href="/2018/10/ps-grep-tail.html#more">阅读全文 >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-线性分类模型-四-——贝叶斯观点下的Logistic回归" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2018/10/linear-classification4.html" class="article-date">
+      <time datetime="2018-10-20T12:39:26.000Z" itemprop="datePublished">2018-10-20</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/10/linear-classification4.html">线性分类模型(四)——贝叶斯观点下的Logistic回归</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <h2 id="拉普拉斯近似"><a href="#拉普拉斯近似" class="headerlink" title="拉普拉斯近似"></a>拉普拉斯近似</h2><p>目标：因为待近似的分布$p(\pmb{z})$不是高斯分布，故寻找一个高斯近似$q(\pmb{z})$，它的中心位于$p(\pmb{z})$的众数的位置。<br>思路：将待近似的分布$p(\pmb{z})$在众数$\pmb{z}_0$做泰勒展开，去掉三阶项以及更高阶。<br>
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/术业专攻/">术业专攻</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/分类/">分类</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/机器学习/">机器学习</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a href="/2018/10/linear-classification4.html#more">阅读全文 >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-线性分类模型-三-——判别式模型" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2018/10/linear-classification3.html" class="article-date">
+      <time datetime="2018-10-20T04:23:32.000Z" itemprop="datePublished">2018-10-20</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/10/linear-classification3.html">线性分类模型(三)——判别式模型</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <p>判别式方法：直接对条件概率分布$p(C_k|\pmb{x})$进行建模。<br>相比生成式方法有两个优点：需要训练的参数更少，预测表现会提升（尤其当类条件概率密度的假设没有很好的近似真实分布的时候）。</p>
+<h2 id="logistic回归"><a href="#logistic回归" class="headerlink" title="logistic回归"></a>logistic回归</h2>
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/术业专攻/">术业专攻</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/分类/">分类</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/机器学习/">机器学习</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a href="/2018/10/linear-classification3.html#more">阅读全文 >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-Python命令行解析器argparse的使用" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2018/10/argparse.html" class="article-date">
+      <time datetime="2018-10-19T13:45:33.000Z" itemprop="datePublished">2018-10-19</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/10/argparse.html">Python命令行解析器argparse的使用</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <p>argparse是Python内置的一个用于命令项选项与参数解析的模块，在编写脚本的过程中是非常常用的。<br>在其使用中主要包含三个步骤：<br>
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/编程语言/">编程语言</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
         <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li></ul>
     </div>
 
       
         <p class="article-more-link">
-          <a href="/2019/02/jupyter-notebook.html#more">阅读全文 >></a>
+          <a href="/2018/10/argparse.html#more">阅读全文 >></a>
         </p>
       
       <div class="clearfix"></div>
@@ -551,11 +1583,11 @@
 
 
   
-    <article id="post-广义表的一些概念" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-git常用命令" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2019/02/generalized-list.html" class="article-date">
-      <time datetime="2019-02-26T01:58:27.000Z" itemprop="datePublished">2019-02-26</time>
+      <a href="/2018/10/git.html" class="article-date">
+      <time datetime="2018-10-16T03:16:16.000Z" itemprop="datePublished">2018-10-16</time>
 </a>
 
 
@@ -570,7 +1602,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/02/generalized-list.html">广义表的一些概念</a>
+      <a class="article-title" href="/2018/10/git.html">git常用命令</a>
     </h1>
   
 
@@ -580,7 +1612,7 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-              <h2 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h2><p>广义表（Lists，又称列表）是线性表的推广。广义表是$n(n\geqslant 0)$个元素$a_1,a_2,a_3,…,a_n$的有限序列，其中$a_i$或者是原子项，或者是一个广义表。<br>
+              <p>让我们一起学习如何使用git进行版本管理吧！<br>
           
       
     </div>
@@ -589,370 +1621,18 @@
       
       
     <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/互联网笔试/">互联网笔试</a><a class="article-category-link" href="/categories/术业专攻/">术业专攻</a>
+    <a class="article-category-link" href="/categories/技术驿站/">技术驿站</a>
     </div>
 
 
       
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/广义表/">广义表</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/git/">git</a></li></ul>
     </div>
 
       
         <p class="article-more-link">
-          <a href="/2019/02/generalized-list.html#more">阅读全文 >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-2017校招真题-小米-「电话号码分身」" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2019/02/recruit-telephone-number.html" class="article-date">
-      <time datetime="2019-02-24T08:53:58.000Z" itemprop="datePublished">2019-02-24</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/02/recruit-telephone-number.html">2017校招真题--小米--「电话号码分身」</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>继MIUI8推出手机分身功能之后，MIUI9计划推出一个电话号码分身的功能：首先将电话号码中的每个数字加上8取个位，然后使用对应的大写字母代替 （”ZERO”, “ONE”, “TWO”, “THREE”, “FOUR”, “FIVE”, “SIX”, “SEVEN”, “EIGHT”, “NINE”）， 然后随机打乱这些字母，所生成的字符串即为电话号码对应的分身。<br><strong>输入描述:</strong></p>
-<blockquote>
-<p>第一行是一个整数T（1 ≤ T ≤ 100)表示测试样例数；接下来T行，每行给定一个分身后的电话号码的分身（长度在3到10000之间）。</p>
-</blockquote>
-<p><strong>输出描述:</strong></p>
-<blockquote>
-<p>输出T行，分别对应输入中每行字符串对应的分身前的最小电话号码（允许前导0）。<br>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/互联网笔试/">互联网笔试</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/字符串/">字符串</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a href="/2019/02/recruit-telephone-number.html#more">阅读全文 >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-队列的基础知识-Python实现" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2019/02/queue.html" class="article-date">
-      <time datetime="2019-02-24T06:56:26.000Z" itemprop="datePublished">2019-02-24</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/02/queue.html">队列的基础知识+Python实现</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <h2 id="队列"><a href="#队列" class="headerlink" title="队列"></a>队列</h2><p>队列(Queue)也是一种运算受限的线性表。它只允许在表的一端进行插入，而在另一端进行删除。允许删除的一端称为队头(front)，允许插入的一端称为队尾(rear)。先进先出(FIFO)。<br>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/互联网笔试/">互联网笔试</a><a class="article-category-link" href="/categories/术业专攻/">术业专攻</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/队列/">队列</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a href="/2019/02/queue.html#more">阅读全文 >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-栈的基础知识-Python实现" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2019/02/stack.html" class="article-date">
-      <time datetime="2019-02-24T03:02:54.000Z" itemprop="datePublished">2019-02-24</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/02/stack.html">栈的基础知识+Python实现</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <h2 id="栈"><a href="#栈" class="headerlink" title="栈"></a>栈</h2><p>栈(Stack，堆栈)是限制在表的一端进行插入和删除运算的线性表，通常称插入、删除的这一端为栈顶(Top)，另一端为栈底(Bottom)。先进后出(FILO)。top= -1时为空栈，top=0只能说明栈中只有一个元素，并且元素进栈时top应该自增。</p>
-<ol>
-<li>顺序存储栈：顺序存储结构；</li>
-<li>链栈：链式存储结构。插入和删除操作仅限制在链头位置上进行。栈顶指针就是链表的头指针。通常不会出现栈满的情况。 不需要判断栈满但需要判断栈空；</li>
-<li>堆栈溢出一般是循环的递归调用、大数据结构的局部变量导致的。
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/互联网笔试/">互联网笔试</a><a class="article-category-link" href="/categories/术业专攻/">术业专攻</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/栈/">栈</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a href="/2019/02/stack.html#more">阅读全文 >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-剑指Offer-正则表达式匹配" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2019/02/target-offer-regulation.html" class="article-date">
-      <time datetime="2019-02-23T11:08:22.000Z" itemprop="datePublished">2019-02-23</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/02/target-offer-regulation.html">[剑指Offer]正则表达式匹配</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>请实现一个函数用来匹配包括’.’和’*‘的正则表达式。模式中的字符’.’表示任意一个字符，而’*‘表示它前面的字符可以出现任意次（包含0次）。 在本题中，匹配是指字符串的所有字符匹配整个模式。例如，字符串”aaa”与模式”a.a”和”ab*ac*a”匹配，但是与”aa.a”和”ab*a”均不匹配<br>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/互联网笔试/">互联网笔试</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/剑指Offer/">剑指Offer</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/正则表达式/">正则表达式</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a href="/2019/02/target-offer-regulation.html#more">阅读全文 >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-剑指Offer-反转链表" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2019/02/target-offer-reverse-linked-list.html" class="article-date">
-      <time datetime="2019-02-23T06:36:17.000Z" itemprop="datePublished">2019-02-23</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/02/target-offer-reverse-linked-list.html">[剑指Offer]反转链表</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <p><a href="https://suixinblog.cn/2019/02/linked-list.html">链表的基础知识+Python实现四种链表</a></p>
-<h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>输入一个链表，反转链表后，输出新链表的表头。</p>
-<h2 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h2><p>只需要一个中间节点过渡一下就好。<br>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/互联网笔试/">互联网笔试</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/剑指Offer/">剑指Offer</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/链表/">链表</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a href="/2019/02/target-offer-reverse-linked-list.html#more">阅读全文 >></a>
+          <a href="/2018/10/git.html#more">阅读全文 >></a>
         </p>
       
       <div class="clearfix"></div>
@@ -973,7 +1653,7 @@
   
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/page/2/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><a class="extend next" rel="next" href="/page/4/">Next &raquo;</a>
+      <a class="extend prev" rel="prev" href="/page/2/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/4/">Next &raquo;</a>
     </nav>
   
 </div>
